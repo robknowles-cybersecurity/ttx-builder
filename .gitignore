@@ -1,0 +1,25 @@
+# This repository IS the webroot. Anything committed here is a file nginx will
+# be asked to serve, so the ignore list is a security control, not tidiness.
+#
+# Editor and backup droppings — the exact class of file that caused the
+# 2026-08-08 webroot exposure on the ita vhost. The nginx config 404s them too;
+# this is the second layer.
+*.bak
+*.bak.*
+*.bak-*
+*.orig
+*.rej
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Working files that must never reach a webroot
+*.tmp
+scratch/
+staging/
+
+# If a build step is ever added, its inputs do not belong here
+node_modules/
+package-lock.json

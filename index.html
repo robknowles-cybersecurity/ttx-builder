@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TTX Builder — Insider Threat Tabletop Exercise Generator</title>
+<meta name="description" content="Build a printable insider threat tabletop exercise: facilitator gamebook, role sheets, inject handouts, after-action pack and a companion slide deck. Set six dials and generate.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/ttx.css">
+<link rel="stylesheet" href="assets/print.css" media="print">
+</head>
+<body>
+
+<header class="banner">
+  <div class="banner__keyline">
+    <p class="banner__kicker">An Insider Threat Exercise</p>
+    <h1 class="banner__title">TTX Builder</h1>
+    <div class="banner__rule"></div>
+    <p class="banner__sub">You set the dials. The exercise assembles itself.</p>
+  </div>
+</header>
+
+<p class="masthead-note">Facilitator&rsquo;s console &middot; Set six dials, then generate</p>
+
+<main class="wrap">
+
+  <div class="lede">
+    <p><span class="you">YOU are the Insider Threat Program</span>, and in nine days you have to run a tabletop for people who outrank you, in a room where half the seats belong to departments that do not report to you.</p>
+    <p>This tool builds that exercise. Set the dials below and it assembles a facilitator gamebook of numbered sections, a private character sheet for every seat at the table, inject handouts ready to deal out, an after-action pack, and a companion slide deck. Everything prints. Nothing phones home &mdash; the whole thing assembles in your browser.</p>
+  </div>
+
+  <div class="plate" role="img" aria-label="Halftone illustration placeholder: a figure at a desk, lit from one side.">
+    <span class="plate__caption">Plate I &mdash; The candidate, 08:40 Tuesday</span>
+  </div>
+
+  <form class="console" id="console" novalidate>
+
+    <!-- DIAL 1 ------------------------------------------------------------- -->
+    <fieldset class="dial">
+      <legend>1 &middot; Scenario</legend>
+      <p class="dial__hint">What happened. Two more are in the writing queue.</p>
+      <div class="cards">
+
+        <label class="card">
+          <input type="radio" name="scenario" value="dprk-hire" checked>
+          <span class="card__face">
+            <span class="card__title">The Candidate</span>
+            <span class="card__tag">A remote engineer was hired in eleven days. Nobody has met them.</span>
+          </span>
+        </label>
+
+        <label class="card">
+          <input type="radio" name="scenario" value="departure" disabled>
+          <span class="card__face">
+            <span class="card__title">The Long Goodbye</span>
+            <span class="card__tag">A resignation, a thirty-day notice period, and a great deal of downloading.</span>
+            <span class="card__soon">Coming soon</span>
+          </span>
+        </label>
+
+        <label class="card">
+          <input type="radio" name="scenario" value="privileged" disabled>
+          <span class="card__face">
+            <span class="card__title">Keys to the Kingdom</span>
+            <span class="card__tag">The administrator who can delete the evidence of what the administrator did.</span>
+            <span class="card__soon">Coming soon</span>
+          </span>
+        </label>
+
+      </div>
+    </fieldset>
+
+    <!-- DIAL 2 ------------------------------------------------------------- -->
+    <fieldset class="dial">
+      <legend>2 &middot; Industry</legend>
+      <p class="dial__hint">Sets the organisation, the crown jewels, the regulator, and the small details that make the room believe it.</p>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="industry" value="finserv" checked>
+          <span class="opt__label"><span class="opt__name">Financial services</span>
+          <span class="opt__note">Payments ledger, customer PII, examiners</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="industry" value="healthcare">
+          <span class="opt__label"><span class="opt__name">Healthcare</span>
+          <span class="opt__note">EHR, imaging archive, OCR</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="industry" value="dib">
+          <span class="opt__label"><span class="opt__name">Defense industrial base</span>
+          <span class="opt__note">Export-controlled data, reporting clocks</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="industry" value="tech">
+          <span class="opt__label"><span class="opt__name">Technology</span>
+          <span class="opt__note">Source, signing keys, fast onboarding</span></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- DIAL 3 ------------------------------------------------------------- -->
+    <fieldset class="dial">
+      <legend>3 &middot; Program maturity</legend>
+      <p class="dial__hint">Be honest. It changes how the facilitator frames authority questions.</p>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="maturity" value="formal" checked>
+          <span class="opt__label"><span class="opt__name">Formal program</span>
+          <span class="opt__note">Named owner, charter, standing working group</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="maturity" value="adhoc">
+          <span class="opt__label"><span class="opt__name">Ad hoc / emerging</span>
+          <span class="opt__note">It is a hat somebody wears on Thursdays</span></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- DIAL 4 ------------------------------------------------------------- -->
+    <fieldset class="dial">
+      <legend>4 &middot; Duration</legend>
+      <p class="dial__hint">Sections are filtered to fit the clock. Shorter runs drop the optional beats.</p>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="duration" value="60">
+          <span class="opt__label"><span class="opt__name">60 minutes</span>
+          <span class="opt__note">Core spine only</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="duration" value="90" checked>
+          <span class="opt__label"><span class="opt__name">90 minutes</span>
+          <span class="opt__note">The usual booking</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="duration" value="120">
+          <span class="opt__label"><span class="opt__name">120 minutes</span>
+          <span class="opt__note">Room for the argument to happen properly</span></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- DIAL 5 ------------------------------------------------------------- -->
+    <fieldset class="dial">
+      <legend>5 &middot; Roles at the table</legend>
+      <p class="dial__hint">Tick the seats you will actually fill. Questions belonging to empty seats fold into the facilitator&rsquo;s copy, so the perspective is still represented.</p>
+      <div class="opts">
+        <label class="opt"><input type="checkbox" name="roles" value="int_lead" checked>
+          <span class="opt__label"><span class="opt__name">Insider Threat lead</span></span></label>
+        <label class="opt"><input type="checkbox" name="roles" value="soc" checked>
+          <span class="opt__label"><span class="opt__name">SOC / Detection</span></span></label>
+        <label class="opt"><input type="checkbox" name="roles" value="hr" checked>
+          <span class="opt__label"><span class="opt__name">HR</span></span></label>
+        <label class="opt"><input type="checkbox" name="roles" value="legal" checked>
+          <span class="opt__label"><span class="opt__name">Legal</span></span></label>
+        <label class="opt"><input type="checkbox" name="roles" value="it_iam" checked>
+          <span class="opt__label"><span class="opt__name">IT / IAM</span></span></label>
+        <label class="opt"><input type="checkbox" name="roles" value="physec">
+          <span class="opt__label"><span class="opt__name">Physical Security</span></span></label>
+        <label class="opt"><input type="checkbox" name="roles" value="comms">
+          <span class="opt__label"><span class="opt__name">Comms</span></span></label>
+        <label class="opt"><input type="checkbox" name="roles" value="exec">
+          <span class="opt__label"><span class="opt__name">Executive sponsor</span></span></label>
+      </div>
+    </fieldset>
+
+    <!-- DIAL 6 ------------------------------------------------------------- -->
+    <fieldset class="dial">
+      <legend>6 &middot; Difficulty</legend>
+      <p class="dial__hint">First-timer rewrites the hard beats in plainer terms and prints facilitator coaching. Veteran adds the distractions.</p>
+      <div class="opts">
+        <label class="opt">
+          <input type="radio" name="difficulty" value="first_timer">
+          <span class="opt__label"><span class="opt__name">First-timer friendly</span>
+          <span class="opt__note">Plainer framing, coaching notes printed</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="difficulty" value="standard" checked>
+          <span class="opt__label"><span class="opt__name">Standard</span>
+          <span class="opt__note">The exercise as written</span></span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="difficulty" value="veteran">
+          <span class="opt__label"><span class="opt__name">Veteran</span>
+          <span class="opt__note">Red herrings included, terser briefings</span></span>
+        </label>
+      </div>
+    </fieldset>
+
+    <!-- TOGGLE -------------------------------------------------------------- -->
+    <label class="toggle">
+      <input type="checkbox" name="linear" id="linear">
+      <span>
+        <span class="toggle__name">Classic linear mode</span>
+        <span class="toggle__note">Collapse every branch to its first option, so the book reads straight through with no page turning. Useful when you are briefing rather than running.</span>
+      </span>
+    </label>
+
+    <div class="actions">
+      <button type="submit" class="btn" id="generate">Generate the exercise</button>
+      <a class="sample-link" id="sample" href="exercise.html?s=dprk-hire&amp;i=finserv&amp;m=formal&amp;d=90&amp;r=int_lead,soc,hr,legal,it_iam&amp;x=standard&amp;l=0">See a sample exercise &rarr;</a>
+    </div>
+
+    <div class="notice notice--quiet" id="nojs-note">
+      <p class="notice__head">Heads up</p>
+      <p>This console needs JavaScript to assemble the exercise &mdash; everything happens in your browser, and nothing you select is sent anywhere.</p>
+    </div>
+
+  </form>
+
+  <footer class="foot">
+    <p><strong>What this is.</strong> A generator for insider threat tabletop exercises, presented as a numbered gamebook because that format does something useful: it forces a room to commit to a decision before it learns what the decision cost.</p>
+    <p><strong>Design note.</strong> The look is an original homage to the branching-narrative paperbacks of the early 1980s &mdash; the cream stock, the red banner, the numbered sections. It is not affiliated with, endorsed by, or derived from any publisher or series.</p>
+    <p>Part of <a href="https://insiderthreatanalyst.com/">insiderthreatanalyst.com</a>.</p>
+  </footer>
+
+</main>
+
+<script src="assets/ttx.js"></script>
+</body>
+</html>

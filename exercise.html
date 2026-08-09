@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your exercise — TTX Builder</title>
+<meta name="description" content="A generated insider threat tabletop exercise: facilitator gamebook, role sheets, inject handouts and after-action pack, ready to print.">
+<meta name="robots" content="noindex, follow">
+<link rel="stylesheet" href="assets/ttx.css">
+<link rel="stylesheet" href="assets/print.css" media="print">
+</head>
+<body>
+
+<nav class="viewbar no-print" aria-label="Exercise views">
+  <div class="viewbar__group" role="tablist" aria-label="Exercise views">
+    <button type="button" class="tab" role="tab" id="tab-gamebook" aria-controls="view-gamebook" aria-selected="true">Facilitator gamebook</button>
+    <button type="button" class="tab" role="tab" id="tab-roles"    aria-controls="view-roles"    aria-selected="false">Role sheets</button>
+    <button type="button" class="tab" role="tab" id="tab-injects"  aria-controls="view-injects"  aria-selected="false">Inject handouts</button>
+    <button type="button" class="tab" role="tab" id="tab-aar"      aria-controls="view-aar"      aria-selected="false">After-action pack</button>
+  </div>
+  <span class="viewbar__spacer"></span>
+  <div class="viewbar__group">
+    <button type="button" class="tab tab--act" id="deck">Download deck (.pptx)</button>
+    <a class="tab" href="index.html">Change the dials</a>
+  </div>
+</nav>
+
+<header class="banner">
+  <div class="banner__keyline">
+    <p class="banner__kicker" id="head-kicker">An Insider Threat Exercise</p>
+    <h1 class="banner__title" id="head-title">&nbsp;</h1>
+    <div class="banner__rule"></div>
+    <p class="banner__sub" id="head-tagline">&nbsp;</p>
+  </div>
+</header>
+
+<main class="wrap" id="main">
+
+  <div class="notice" id="status">
+    <p class="notice__head">Assembling</p>
+    <p>Reading the scenario and setting the dials&hellip;</p>
+  </div>
+
+  <section class="view" id="view-gamebook" role="tabpanel" aria-labelledby="tab-gamebook"></section>
+  <section class="view" id="view-roles"    role="tabpanel" aria-labelledby="tab-roles"    hidden></section>
+  <section class="view" id="view-injects"  role="tabpanel" aria-labelledby="tab-injects"  hidden></section>
+  <section class="view" id="view-aar"      role="tabpanel" aria-labelledby="tab-aar"      hidden></section>
+
+  <footer class="foot">
+    <p>Generated in your browser from a static scenario file. Nothing you selected was sent anywhere.</p>
+    <p>An original homage to the branching-narrative paperbacks of the early 1980s. Not affiliated with, endorsed by, or derived from any publisher or series.</p>
+    <p><a href="index.html">Back to the console</a> &middot; Part of <a href="https://insiderthreatanalyst.com/">insiderthreatanalyst.com</a></p>
+  </footer>
+
+</main>
+
+<script src="vendor/pptxgen.bundle.js"></script>
+<script src="assets/engine.js"></script>
+<script src="assets/pptx.js"></script>
+<script src="assets/render.js"></script>
+</body>
+</html>

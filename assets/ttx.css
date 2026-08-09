@@ -1,0 +1,925 @@
+/* ============================================================================
+   TTX Builder — design language
+   ----------------------------------------------------------------------------
+   An homage to the look of early-1980s branching-narrative paperbacks: cream
+   pulp stock, a bold red-and-white banner of our own composition, heavy serif
+   display type, halftone plate art, and numbered sections you are told to turn
+   to. Original work throughout — no reproduction of any publisher's trade
+   dress, logo lockup, or cover layout.
+
+   Fonts are web-safe stacks tonight (no webfont payload, no third-party
+   font host). See TODO at the foot of this file for custom-font candidates.
+   ========================================================================== */
+
+:root {
+  /* -- ink & stock ------------------------------------------------------- */
+  --paper:        #f4ead6;   /* cream pulp */
+  --paper-lit:    #fbf5e8;   /* the lighter sheet a card sits on */
+  --paper-deep:   #e7d9be;   /* shadowed edge / rule */
+  --ink:          #1d1815;   /* warm near-black, like worn letterpress */
+  --ink-soft:     #4a4038;
+  --ink-faint:    #7d7061;
+
+  /* -- the banner -------------------------------------------------------- */
+  --signal:       #b0202a;   /* paperback red */
+  --signal-deep:  #8a1820;
+  --signal-lit:   #d4353f;
+  --knock:        #fffdf6;   /* white knocked out of the red */
+
+  /* -- functional -------------------------------------------------------- */
+  --rule:         #c9b795;
+  --private:      #7a2530;   /* the PRIVATE KNOWLEDGE box */
+  --focus:        #2f6f8f;
+
+  /* -- type -------------------------------------------------------------- */
+  --display: "Bookman Old Style", Bookman, "URW Bookman L", "Palatino Linotype",
+             Palatino, "Book Antiqua", Georgia, serif;
+  --body:    Georgia, "Times New Roman", Times, serif;
+  --mono:    "Courier New", Courier, monospace;
+
+  --measure: 34rem;          /* comfortable reading column */
+}
+
+/* ==========================================================================
+   Reset-ish
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background-color: var(--paper);
+  /* Faint fibre in the stock. Two very low-contrast gradients, no image. */
+  background-image:
+    repeating-linear-gradient(0deg,   rgba(120, 96, 60, 0.022) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg,  rgba(120, 96, 60, 0.016) 0 1px, transparent 1px 4px);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: var(--signal-deep); }
+a:hover { color: var(--signal); }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   The banner — original composition
+   A solid red band, a white keyline held inside it, a small kicker above a
+   heavy letterspaced title. Deliberately NOT a cover reproduction.
+   ========================================================================== */
+
+.banner {
+  background: var(--signal);
+  background-image: linear-gradient(180deg, var(--signal-lit) 0%, var(--signal) 42%, var(--signal-deep) 100%);
+  color: var(--knock);
+  border-bottom: 3px solid var(--ink);
+  padding: 0.35rem;
+}
+
+.banner__keyline {
+  border: 2px solid var(--knock);
+  border-radius: 1px;
+  padding: 1.15rem 1.25rem 1.05rem;
+  text-align: center;
+}
+
+.banner__kicker {
+  font-family: var(--display);
+  font-size: 0.68rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+  opacity: 0.92;
+}
+
+.banner__title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(1.7rem, 5.2vw, 3.1rem);
+  line-height: 1.02;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.24);
+}
+
+.banner__rule {
+  width: 5.5rem;
+  height: 3px;
+  background: var(--knock);
+  margin: 0.8rem auto 0.7rem;
+}
+
+.banner__sub {
+  font-family: var(--body);
+  font-style: italic;
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.wrap {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.wrap--reading { max-width: var(--measure); }
+
+.masthead-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.7rem 1rem 0;
+}
+
+.lede {
+  font-size: 1.06rem;
+  max-width: 46rem;
+  margin: 1.6rem auto 0;
+}
+
+.lede p { margin: 0 0 0.9rem; }
+
+.you {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================================
+   Halftone plate — placeholder art
+   A CSS-only duotone: dot screen over a two-stop wash. No image files, so
+   nothing to hot-link and nothing to license.
+   ========================================================================== */
+
+.plate {
+  position: relative;
+  margin: 2rem auto;
+  max-width: 30rem;
+  aspect-ratio: 3 / 2;
+  border: 2px solid var(--ink);
+  background-image:
+    radial-gradient(ellipse at 32% 28%, var(--paper-lit) 0%, transparent 55%),
+    linear-gradient(155deg, var(--signal-deep) 0%, var(--ink) 58%, var(--ink) 100%);
+  overflow: hidden;
+  filter: contrast(1.12) sepia(0.22);
+}
+
+/* the dot screen itself */
+.plate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--paper) 30%, transparent 31%);
+  background-size: 5px 5px;
+  background-position: 0 0;
+  mix-blend-mode: screen;
+  opacity: 0.55;
+}
+
+.plate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.55) 26%, transparent 27%);
+  background-size: 3px 3px;
+  background-position: 1px 1px;
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+}
+
+.plate__caption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 2;
+  background: rgba(20, 16, 14, 0.72);
+  color: var(--knock);
+  font-family: var(--display);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   The console — six dials
+   ========================================================================== */
+
+.console { margin: 2.2rem auto 3rem; }
+
+.dial {
+  border: 2px solid var(--ink);
+  background: var(--paper-lit);
+  padding: 1.1rem 1.25rem 1.25rem;
+  margin: 0 0 1.4rem;
+  box-shadow: 4px 4px 0 var(--paper-deep);
+}
+
+.dial > legend {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper-lit);
+  padding: 0.28rem 0.7rem;
+  margin-left: -0.25rem;
+}
+
+.dial__hint {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0.55rem 0 0.9rem;
+}
+
+/* -- scenario cards (radio) ---------------------------------------------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.9rem;
+}
+
+.card { position: relative; margin: 0; }
+
+.card input[type="radio"] {
+  position: absolute;
+  top: 0.85rem; left: 0.85rem;
+  margin: 0;
+}
+
+.card__face {
+  display: block;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  padding: 0.85rem 0.9rem 0.9rem 2.4rem;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.card input[type="radio"]:checked ~ .card__face {
+  background: var(--knock);
+  box-shadow: inset 0 0 0 2px var(--signal);
+  transform: translate(-1px, -1px);
+}
+
+.card input[type="radio"]:disabled ~ .card__face {
+  cursor: not-allowed;
+  opacity: 0.55;
+  background: repeating-linear-gradient(135deg,
+    var(--paper) 0 8px, var(--paper-deep) 8px 16px);
+}
+
+.card__title {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.04rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+}
+
+.card__tag { display: block; font-size: 0.88rem; color: var(--ink-soft); font-style: italic; }
+
+.card__soon {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-family: var(--display);
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--paper-lit);
+  padding: 0.15rem 0.5rem;
+}
+
+/* -- option rows (radio / checkbox) --------------------------------------- */
+
+.opts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.45rem 1.1rem;
+}
+
+.opt {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.3rem 0.2rem;
+  cursor: pointer;
+}
+
+.opt input { margin: 0.32rem 0 0; flex: none; }
+
+.opt__label { display: block; }
+
+.opt__name { font-weight: 700; }
+
+.opt__note {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* -- the linear toggle ---------------------------------------------------- */
+
+.toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  border: 2px dashed var(--ink);
+  background: var(--paper-lit);
+  padding: 0.9rem 1rem;
+  margin: 0 0 1.6rem;
+  cursor: pointer;
+}
+
+.toggle input { margin: 0.35rem 0 0; flex: none; }
+
+.toggle__name {
+  font-family: var(--display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.86rem;
+}
+
+.toggle__note { display: block; font-size: 0.88rem; color: var(--ink-soft); font-style: italic; }
+
+/* -- actions -------------------------------------------------------------- */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+  margin: 0 0 3rem;
+}
+
+.btn {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--knock);
+  background: var(--signal);
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 0.85rem 1.9rem;
+  cursor: pointer;
+  transition: transform 0.07s ease, box-shadow 0.07s ease;
+}
+
+.btn:hover { background: var(--signal-lit); }
+
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.btn--quiet {
+  background: var(--paper-lit);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--paper-deep);
+  font-size: 0.82rem;
+  padding: 0.55rem 1.1rem;
+  letter-spacing: 0.12em;
+}
+
+.btn--quiet:hover { background: var(--knock); }
+
+.sample-link {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--signal-deep);
+  text-decoration: none;
+  border-bottom: 3px solid var(--signal);
+  padding-bottom: 2px;
+}
+
+.sample-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* ==========================================================================
+   Output views
+   ========================================================================== */
+
+.viewbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--ink);
+  border-bottom: 3px solid var(--signal);
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.viewbar__group { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.viewbar__spacer { flex: 1 1 auto; }
+
+.tab {
+  font-family: var(--display);
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--paper);
+  border: 2px solid transparent;
+  padding: 0.42rem 0.85rem;
+  cursor: pointer;
+}
+
+.tab:hover { border-color: var(--paper-deep); }
+
+.tab[aria-selected="true"] {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+  font-weight: 700;
+}
+
+.tab--act { color: var(--knock); border-color: var(--signal); }
+.tab--act:hover { background: var(--signal); border-color: var(--signal); }
+
+.view { padding: 2rem 0 4rem; }
+.view[hidden] { display: none; }
+
+/* -- front matter --------------------------------------------------------- */
+
+.frontmatter {
+  border: 3px double var(--ink);
+  background: var(--paper-lit);
+  padding: 1.4rem 1.5rem;
+  margin: 0 0 2.4rem;
+}
+
+.frontmatter h2 {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.2rem;
+}
+
+.frontmatter__tagline { font-style: italic; margin: 0 0 1.1rem; color: var(--ink-soft); }
+
+.specsheet {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 1.1rem;
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.specsheet dt {
+  font-family: var(--display);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding-top: 0.22rem;
+}
+
+.specsheet dd { margin: 0; }
+
+/* -- numbered sections ---------------------------------------------------- */
+
+.section {
+  margin: 0 0 2.6rem;
+  padding: 0 0 1.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section:last-child { border-bottom: 0; }
+
+.section__head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  margin: 0 0 0.8rem;
+}
+
+.section__num {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--signal);
+  flex: none;
+  min-width: 2.4rem;
+  text-align: right;
+  text-shadow: 1px 1px 0 var(--paper-deep);
+}
+
+.section__kind {
+  font-family: var(--display);
+  font-size: 0.66rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 0.15rem;
+}
+
+.section__body p { margin: 0 0 0.95rem; max-width: var(--measure); }
+
+.section--herring .section__num { color: var(--ink-faint); }
+
+.herring-flag {
+  font-family: var(--display);
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--ink-faint);
+  color: var(--paper-lit);
+  padding: 0.12rem 0.45rem;
+  margin-left: 0.5rem;
+}
+
+/* -- the TURN TO motif ---------------------------------------------------- */
+
+.decision {
+  border: 2px solid var(--ink);
+  background: var(--paper-lit);
+  padding: 1.1rem 1.2rem;
+  margin: 1.4rem 0 0;
+  box-shadow: 4px 4px 0 var(--paper-deep);
+}
+
+.decision__prompt {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 0.9rem;
+}
+
+.decision__list { list-style: none; margin: 0; padding: 0; }
+
+.decision__item {
+  border-top: 1px solid var(--rule);
+  padding: 0.75rem 0 0.2rem;
+}
+
+.decision__item:first-child { border-top: 0; padding-top: 0; }
+
+.turn-to {
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--signal-deep);
+  margin-top: 0.3rem;
+}
+
+.turn-to__n {
+  display: inline-block;
+  background: var(--signal);
+  color: var(--knock);
+  padding: 0.08rem 0.5rem;
+  margin-left: 0.2rem;
+  letter-spacing: 0.08em;
+}
+
+.turn-to--retarget { color: var(--ink-faint); }
+
+.decision__collapsed {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  margin: 0.9rem 0 0;
+  border-top: 1px dashed var(--rule);
+  padding-top: 0.6rem;
+}
+
+/* -- questions ------------------------------------------------------------ */
+
+.qblock { margin: 1.3rem 0 0; }
+
+.qblock__head {
+  font-family: var(--display);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.45rem;
+}
+
+.qlist { margin: 0 0 0.9rem; padding-left: 1.3rem; max-width: var(--measure); }
+.qlist li { margin: 0 0 0.4rem; }
+
+.qblock--folded {
+  border-left: 3px solid var(--rule);
+  padding-left: 0.9rem;
+  background: rgba(201, 183, 149, 0.14);
+}
+
+.qblock--folded .qblock__head { color: var(--signal-deep); }
+
+.folded-why {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+}
+
+/* -- coaching ------------------------------------------------------------- */
+
+.coaching {
+  border: 1px dashed var(--ink-faint);
+  background: rgba(255, 253, 246, 0.6);
+  padding: 0.8rem 1rem;
+  margin: 1.2rem 0 0;
+}
+
+.coaching__head {
+  font-family: var(--display);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.4rem;
+}
+
+.coaching ul { margin: 0; padding-left: 1.2rem; }
+.coaching li { margin: 0 0 0.35rem; font-size: 0.94rem; }
+
+/* ==========================================================================
+   Role sheets
+   ========================================================================== */
+
+.sheet {
+  border: 3px double var(--ink);
+  background: var(--paper-lit);
+  padding: 1.5rem 1.6rem 1.7rem;
+  margin: 0 0 2.2rem;
+}
+
+.sheet__kicker {
+  font-family: var(--display);
+  font-size: 0.66rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.25rem;
+}
+
+.sheet__title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.9rem;
+  border-bottom: 3px solid var(--signal);
+  padding-bottom: 0.4rem;
+}
+
+.sheet__briefing { max-width: var(--measure); }
+.sheet__briefing p { margin: 0 0 0.9rem; }
+
+.sheet h4 {
+  font-family: var(--display);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 1.3rem 0 0.45rem;
+}
+
+.sheet ul { margin: 0; padding-left: 1.3rem; max-width: var(--measure); }
+.sheet li { margin: 0 0 0.4rem; }
+
+/* the boxed secret */
+.private {
+  border: 3px solid var(--private);
+  background: repeating-linear-gradient(135deg,
+    rgba(122, 37, 48, 0.05) 0 10px, transparent 10px 20px);
+  padding: 1rem 1.1rem 1.1rem;
+  margin: 1.4rem 0 0;
+}
+
+.private__head {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.76rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--knock);
+  background: var(--private);
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  margin: -1.55rem 0 0.75rem;
+}
+
+.private__warn {
+  font-size: 0.84rem;
+  font-style: italic;
+  color: var(--private);
+  margin: 0 0 0.6rem;
+}
+
+.private ul { margin: 0; padding-left: 1.3rem; }
+
+/* ==========================================================================
+   Inject handouts
+   ========================================================================== */
+
+.inject {
+  border: 2px solid var(--ink);
+  background: var(--knock);
+  margin: 0 0 2.2rem;
+}
+
+.inject__chrome {
+  font-family: var(--display);
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.inject__meta {
+  padding: 0.9rem 1.1rem;
+  border-bottom: 2px solid var(--ink);
+  font-family: var(--mono);
+  font-size: 0.88rem;
+}
+
+.inject__meta div { margin: 0 0 0.2rem; }
+.inject__meta b { display: inline-block; min-width: 5.2rem; }
+
+.inject__body {
+  padding: 1.1rem;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* kind treatments */
+.inject--email  .inject__chrome { background: #24384a; }
+.inject--dlp    .inject__chrome { background: var(--signal-deep); }
+.inject--dlp    .inject__meta   { background: rgba(176, 32, 42, 0.07); }
+.inject--hr     .inject__chrome { background: #4a3a24; }
+.inject--news   .inject__chrome { background: #2c2c2c; }
+
+.inject--news .inject__body {
+  font-family: var(--body);
+  column-count: 2;
+  column-gap: 1.6rem;
+  column-rule: 1px solid var(--rule);
+  white-space: normal;
+}
+
+.inject--news .inject__meta {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   AAR pack
+   ========================================================================== */
+
+.aar__head {
+  font-family: var(--display);
+  font-size: 1.3rem;
+  letter-spacing: 0.03em;
+  border-bottom: 3px solid var(--signal);
+  padding-bottom: 0.35rem;
+  margin: 0 0 1.1rem;
+}
+
+.worksheet { list-style: none; margin: 0 0 2.4rem; padding: 0; }
+
+.worksheet li {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.7rem 0 0.5rem;
+  max-width: 48rem;
+}
+
+.worksheet__q { margin: 0 0 0.6rem; }
+
+/* the ruled space someone writes in */
+.worksheet__lines {
+  height: 3.1rem;
+  background-image: repeating-linear-gradient(180deg,
+    transparent 0 1.5rem, var(--rule) 1.5rem calc(1.5rem + 1px));
+}
+
+.objective {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--rule);
+  padding: 0.7rem 0;
+  max-width: 48rem;
+}
+
+.objective__box {
+  flex: none;
+  width: 1.05rem;
+  height: 1.05rem;
+  border: 2px solid var(--ink);
+  margin-top: 0.28rem;
+}
+
+/* ==========================================================================
+   Notices
+   ========================================================================== */
+
+.notice {
+  border-left: 5px solid var(--signal);
+  background: var(--paper-lit);
+  padding: 0.85rem 1rem;
+  margin: 0 0 1.6rem;
+  font-size: 0.92rem;
+}
+
+.notice__head {
+  font-family: var(--display);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+}
+
+.notice ul { margin: 0.3rem 0 0; padding-left: 1.2rem; }
+
+.notice--quiet { border-left-color: var(--rule); }
+
+.foot {
+  border-top: 2px solid var(--ink);
+  margin-top: 3rem;
+  padding: 1.2rem 0 2.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.foot p { margin: 0 0 0.5rem; max-width: 46rem; }
+
+/* ==========================================================================
+   Small screens — usable, but this is a desktop-and-paper tool
+   ========================================================================== */
+
+@media (max-width: 40rem) {
+  body { font-size: 16px; }
+  .banner__keyline { padding: 0.9rem 0.7rem; }
+  .section__head { flex-wrap: wrap; gap: 0.4rem; }
+  .section__num { font-size: 2.1rem; min-width: 0; text-align: left; }
+  .specsheet { grid-template-columns: 1fr; gap: 0.1rem 0; }
+  .specsheet dd { margin-bottom: 0.55rem; }
+  .inject--news .inject__body { column-count: 1; }
+  .viewbar { position: static; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* ============================================================================
+   TODO — typography
+   Web-safe stacks are in place tonight so the site ships with zero font
+   payload and no third-party font host (which also keeps the CSP tight).
+   Candidates for a self-hosted display face, all with licences that permit
+   self-hosting:
+     - Bitter          (SIL OFL) — slab serif, close to the pulp-paperback feel
+     - Zilla Slab      (SIL OFL) — heavier slab, good for the banner
+     - Alegreya        (SIL OFL) — book serif with real character at text sizes
+     - Vollkorn        (SIL OFL) — warm body serif, pairs with a slab display
+   If adopted: subset to latin, self-host under /assets/fonts, add font-display:
+   swap, and keep the current stacks as the fallback chain.
+   ========================================================================== */

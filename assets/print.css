@@ -1,0 +1,241 @@
+/* ============================================================================
+   TTX Builder — print stylesheet
+   ----------------------------------------------------------------------------
+   Loaded with media="print". The screen design leans on background fills, and
+   browsers drop those by default, so everything structural here is carried by
+   BORDERS and TYPE — the output stays legible whether or not the operator
+   ticks "Background graphics" in the print dialog. Where a fill genuinely
+   carries meaning (the banner, the PRIVATE KNOWLEDGE box) we ask for it with
+   print-color-adjust and still keep a border underneath.
+
+   Pagination policy:
+     - role sheets   : one per page (hard break)
+     - inject handouts: one per page (hard break) — each is handed to the room
+                        separately, so they must not share paper
+     - gamebook sections: never split across a page boundary, but several may
+                        share a page. Real gamebooks pack numbered sections;
+                        one-per-page would triple the print job for no gain.
+                        Flip .section to `break-after: page` if the desk wants
+                        strict one-per-page.
+   ========================================================================== */
+
+@page {
+  size: letter;
+  margin: 0.75in 0.7in;
+}
+
+html, body {
+  background: #fff !important;
+  background-image: none !important;
+  color: #000;
+  font-size: 11.5pt;
+  line-height: 1.45;
+}
+
+/* -- chrome that must never reach paper ---------------------------------- */
+
+.viewbar,
+.no-print,
+.btn,
+.actions,
+.console,
+.sample-link,
+.toggle,
+nav {
+  display: none !important;
+}
+
+/* Views are tab-switched on screen; only the visible one prints. */
+.view[hidden] { display: none !important; }
+
+/* -- masthead ------------------------------------------------------------- */
+
+.banner {
+  border: 2pt solid #000;
+  border-bottom-width: 3pt;
+  background: #b0202a !important;
+  background-image: none !important;
+  color: #fff !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  padding: 2pt;
+  margin-bottom: 12pt;
+}
+
+.banner__keyline { border: 1.5pt solid #fff; padding: 10pt 8pt; }
+.banner__title { font-size: 22pt; text-shadow: none; }
+.banner__kicker { font-size: 7pt; }
+.banner__sub { font-size: 10pt; }
+.banner__rule { background: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.masthead-note, .plate, .lede { display: none !important; }
+
+.wrap { max-width: none; padding: 0; }
+
+/* -- front matter --------------------------------------------------------- */
+
+.frontmatter {
+  border: 1.5pt double #000;
+  background: transparent !important;
+  padding: 10pt 12pt;
+  margin-bottom: 16pt;
+  break-inside: avoid;
+}
+
+.frontmatter h2 { font-size: 16pt; }
+.specsheet { font-size: 10pt; }
+.specsheet dt { color: #444; }
+
+/* -- gamebook sections ---------------------------------------------------- */
+
+.section {
+  break-inside: avoid;
+  page-break-inside: avoid;      /* legacy alias for older engines */
+  border-bottom: 0.5pt solid #999;
+  margin-bottom: 14pt;
+  padding-bottom: 10pt;
+}
+
+.section__num {
+  color: #b0202a !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 20pt;
+  text-shadow: none;
+}
+
+.section__kind { color: #555; border-bottom: 1pt solid #999; }
+.section__body p { max-width: none; orphans: 3; widows: 3; }
+
+/* Decision blocks are the thing a facilitator reads aloud — keep them whole. */
+.decision {
+  border: 1.5pt solid #000;
+  background: transparent !important;
+  box-shadow: none;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  padding: 8pt 10pt;
+}
+
+.turn-to { color: #000; }
+
+.turn-to__n {
+  background: #b0202a !important;
+  color: #fff !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  border: 0.5pt solid #000;    /* survives even if fills are stripped */
+  padding: 0 4pt;
+}
+
+.qlist, .sheet ul, .notice ul { max-width: none; }
+
+.coaching {
+  border: 0.75pt dashed #666;
+  background: transparent !important;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.qblock--folded { background: transparent !important; border-left: 2pt solid #999; }
+
+.herring-flag {
+  background: transparent !important;
+  color: #555 !important;
+  border: 0.5pt solid #999;
+}
+
+/* -- role sheets: one seat, one page -------------------------------------- */
+
+.sheet {
+  break-after: page;
+  page-break-after: always;
+  break-inside: avoid-page;
+  border: 1.5pt double #000;
+  background: transparent !important;
+  padding: 12pt 14pt;
+  margin: 0;
+}
+
+.sheet:last-child { break-after: auto; page-break-after: auto; }
+
+.sheet__title { font-size: 17pt; border-bottom: 2pt solid #b0202a; }
+
+.private {
+  border: 2pt solid #7a2530;
+  background: transparent !important;
+  padding: 9pt 10pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.private__head {
+  background: #7a2530 !important;
+  color: #fff !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  border: 0.5pt solid #000;
+}
+
+.private__warn { color: #7a2530; }
+
+/* -- injects: one handout, one page --------------------------------------- */
+
+.inject {
+  break-after: page;
+  page-break-after: always;
+  break-inside: avoid-page;
+  border: 1.5pt solid #000;
+  background: transparent !important;
+  margin: 0;
+}
+
+.inject:last-child { break-after: auto; page-break-after: auto; }
+
+.inject__chrome {
+  background: #000 !important;
+  color: #fff !important;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  font-size: 7pt;
+}
+
+.inject__meta { border-bottom: 1pt solid #000; background: transparent !important; }
+.inject__body { font-size: 10pt; }
+
+/* -- AAR ------------------------------------------------------------------ */
+
+.aar__head { font-size: 14pt; border-bottom: 2pt solid #b0202a; break-after: avoid; }
+
+.worksheet li, .objective {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  max-width: none;
+}
+
+/* The ruled writing space must survive background-stripping, so draw it with
+   a bottom border per line rather than a repeating gradient. */
+.worksheet__lines {
+  background-image: none !important;
+  height: auto;
+  border-bottom: 0.5pt solid #666;
+  padding-top: 30pt;
+  margin-bottom: 6pt;
+}
+
+.objective__box { border: 1pt solid #000; }
+
+/* -- notices -------------------------------------------------------------- */
+
+.notice {
+  border: 0.75pt solid #999;
+  border-left-width: 3pt;
+  background: transparent !important;
+  break-inside: avoid;
+  font-size: 9.5pt;
+}
+
+.foot { border-top: 1pt solid #000; font-size: 8.5pt; color: #444; }
+
+/* Links print as plain text — a URL in brackets is noise on a handout. */
+a { color: #000; text-decoration: none; }
