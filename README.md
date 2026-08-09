@@ -163,5 +163,5 @@ exercises the fallback path.
 
 ## Known gaps
 
-See the session status doc under `/root/.cc-status/` for the current residual
+See `/root/STATUS-pe183-ttx-builder-2026-08-09.md` for the current residual
 list.
