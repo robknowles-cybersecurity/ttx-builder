@@ -1,0 +1,616 @@
+{
+  "meta": {
+    "id": "the-approach",
+    "title": "The Approach",
+    "tagline": "A consulting invitation, a garnishment order, and a very patient stranger.",
+    "version": "1.0.0-draft"
+  },
+  "industries": {
+    "financial": {
+      "org_name": "Meridian Financial",
+      "crown_jewels": "member PII, account and pricing data, and commercial relationship records",
+      "regulator": "your primary federal financial regulator",
+      "flavor_notes": "BSA/AML and member-notification obligations apply. Sector information-sharing is normal practice and appears in this scenario."
+    },
+    "healthcare": {
+      "org_name": "Meridian Health Systems",
+      "crown_jewels": "patient PHI, payer contract terms, and referral relationship data",
+      "regulator": "HHS Office for Civil Rights and your state health authority",
+      "flavor_notes": "HIPAA acquisition-based breach analysis applies sharply in the controlled-continuation branch."
+    },
+    "technology": {
+      "org_name": "Meridian Systems",
+      "crown_jewels": "customer account data, deployment details, and roadmap material",
+      "regulator": "the FTC and your customers' contractual audit rights",
+      "flavor_notes": "Customer-environment knowledge raises the stakes: what an account manager knows can become someone else's intrusion plan."
+    },
+    "manufacturing": {
+      "org_name": "Meridian Fabrication",
+      "crown_jewels": "customer program data, supplier pricing, and proprietary process documentation",
+      "regulator": "BIS for export-controlled data, plus your defense customers",
+      "flavor_notes": "If any solicited material is export-controlled, the outside firm's interest may itself be a reportable collection attempt."
+    }
+  },
+  "roles": [
+    {
+      "id": "int_lead",
+      "title": "Insider Threat Program Lead",
+      "briefing": "You own insider risk detection and response coordination. This case will test the part of your program that exists on paper but has never run: the part that responds to a person under pressure, not just an account behaving badly.",
+      "authorities": [
+        "Initiate an insider risk inquiry and assign an analyst",
+        "Request enhanced monitoring through IT/IAM under existing policy",
+        "Convene the cross-functional response group",
+        "Recommend intervention, investigation, or both"
+      ],
+      "private_knowledge": [
+        "Your program's approved policy includes a financial-stressor indicator review. It was ratified fourteen months ago and never operationalized — no feed, no threshold, no owner. The garnishment order that should have triggered it went nowhere. You know this. Nobody else at the table does yet.",
+        "A sector security briefing two months ago described expert-network and consulting-front elicitation targeting client-facing staff, including the spot-assess-develop-recruit progression. It is in your files.",
+        "You have exactly one precedent for a supportive intervention in this company's history, and it predates you."
+      ]
+    },
+    {
+      "id": "soc",
+      "title": "SOC Manager",
+      "briefing": "You run detection. This case is uncomfortable for you in a specific way: your tooling saw pieces of it and dispositioned them correctly by the rules you wrote. The rules were the gap.",
+      "authorities": [
+        "Isolate a host or kill a session during active exfiltration",
+        "Preserve logs and forensic images",
+        "Tune, suppress, or escalate alerts"
+      ],
+      "private_knowledge": [
+        "Two weeks ago DLP flagged a 6,800-record customer export by this user. It auto-matched the business justification 'territory planning' and closed. Analyst screen time on the alert: eleven seconds. That is not the analyst's failure; it is the playbook working as designed.",
+        "The subject holds a legitimate, role-appropriate removable-media exception and a grandfathered personal cloud sync client from a retired pilot program. Your visibility on both is partial.",
+        "Weekend VPN sessions on this account are up roughly fourfold over ninety days, all policy-compliant."
+      ]
+    },
+    {
+      "id": "hr",
+      "title": "HR Business Partner",
+      "briefing": "You hold the personnel file and the parts of this story that are nobody's business until suddenly they are everybody's. You will spend this exercise defending a line: risk context is not moral failing, and the file in your hands is not a verdict.",
+      "authorities": [
+        "Access the personnel and hiring file",
+        "Initiate supportive engagement, suspension, or termination processes with Legal's concurrence",
+        "Route and manage ethics-line reports"
+      ],
+      "private_knowledge": [
+        "The subject is a nine-year employee with two promotions and a current rating of exceeds expectations. Until this year, the file is spotless.",
+        "A court-ordered wage garnishment was processed against his pay three months ago, and last month he requested a hardship retirement-plan withdrawal citing an unexpected family expense. Both were handled routinely and confidentially.",
+        "Five weeks ago the ethics line received a vague concern about him from a coworker. It was routed to you, assessed as non-actionable, and parked. It is still parked."
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "General Counsel / Legal",
+      "briefing": "Two clients today: the company, and the process. You are alert to a specific trap in this scenario — a room full of good people deciding a man is a thief because he is broke — and to its mirror image: a room so worried about fairness that customer data walks out the door while everyone feels appropriate.",
+      "authorities": [
+        "Issue litigation holds and direct evidence preservation",
+        "Approve or block employment actions and any monitoring expansion",
+        "Engage outside counsel and law enforcement",
+        "Determine notification and disclosure obligations"
+      ],
+      "private_knowledge": [
+        "Financial-stress information came to the company through payroll and benefits channels. Using it as the sole basis for adverse action is a legal and ethical minefield; using it as one input to a risk review, under the approved policy, is defensible. The distinction will need to be said out loud today, probably by you.",
+        "If solicited material was provided to an outside firm under a signed agreement, that agreement is evidence — and the outside firm knows exactly how it reads.",
+        "In the branch where data leaves under observation: notification obligations can attach at acquisition, not at the company's convenience. A controlled operation is a decision to start that clock yourselves."
+      ]
+    },
+    {
+      "id": "it_iam",
+      "title": "IT / Identity and Access Management Lead",
+      "briefing": "You own accounts and access scopes. Your discomfort in this exercise is quiet but specific: every access this person holds was granted correctly, one reasonable decision at a time, and the sum of those reasonable decisions is the problem.",
+      "authorities": [
+        "Suspend or restrict accounts on documented request",
+        "Adjust access scopes and revoke sessions and tokens",
+        "Account for and retrieve issued equipment and exceptions"
+      ],
+      "private_knowledge": [
+        "Last month the subject requested read access to an adjacent customer segment, citing a cross-sell initiative. His manager's approval reads, in full: fine with me if the VP is good. The VP's reply: Greg is my guy, approve.",
+        "The grandfathered personal cloud sync client on his laptop survived three cleanup campaigns because his name was on the pilot exception list and nobody wanted to break a top performer's workflow.",
+        "A quiet scope reduction — trimming the adjacent-segment access without touching anything else — is technically trivial and organizationally loud. He would notice within a day."
+      ]
+    },
+    {
+      "id": "physec",
+      "title": "Physical Security / Corporate Security",
+      "briefing": "You hold badge records, the after-hours picture, and the relationship with the FBI field office. In this scenario your channel matters for an unusual reason: the most interesting subject may not be your employee at all.",
+      "authorities": [
+        "Access badge, visitor, and shipping records",
+        "Coordinate with law enforcement when directed",
+        "Support protective and workplace-safety processes"
+      ],
+      "private_knowledge": [
+        "Badge records show the subject on a floor he does not sit on, after hours, four times in six weeks. The floor holds the commercial print and records room. Nobody reviews that report unless asked.",
+        "Your field office contact ran a private-sector briefing this spring on consulting-front elicitation. Their interest, they said plainly, is the outside network — companies that call early get help; companies that call after termination get sympathy.",
+        "You have met the subject. He co-ran the charity 5K two years running. You will spend this exercise managing your own disbelief, and you know it."
+      ]
+    },
+    {
+      "id": "comms",
+      "title": "Communications Lead",
+      "briefing": "You manage the narrative the company tells itself as much as the one it tells the world. This case has a pre-existing story problem: sales leadership has spent a quarter muttering about a leak, and the workforce watches how this ends.",
+      "authorities": [
+        "Draft and approve internal and external statements",
+        "Manage press inquiries and executive communications",
+        "Shape the internal message about reporting and consequences"
+      ],
+      "private_knowledge": [
+        "A competitor's latest offering landed suspiciously well-tailored to your renewal book. Sales leadership has said the word leak in three separate meetings. No one has said a name.",
+        "Whatever happens to this employee will be the loudest internal communication the insider threat program has ever sent, whether or not you write a word.",
+        "The ethics line's annual report goes to the board next month. Its numbers are low, and the board asked why last year."
+      ]
+    },
+    {
+      "id": "exec",
+      "title": "Executive Sponsor (Business Line VP)",
+      "briefing": "The subject is one of yours — a top account manager you have personally championed. You speak for the business, for leadership's risk appetite, and today, uncomfortably, for the part of the org chart that approved several of the decisions now on the table.",
+      "authorities": [
+        "Accept or escalate business risk decisions",
+        "Authorize disruption to client relationships and revenue activity",
+        "Carry the recommendation to the C-suite and the board"
+      ],
+      "private_knowledge": [
+        "The adjacent-segment access request that now looks sinister: you approved it in nine words, from your phone, in a taxi. Greg is my guy, approve.",
+        "Revenue pressure this year is real. If it emerges that customer data reached a competitor through your organization, that is an existential board conversation with your name in it.",
+        "He asked you, eight months ago at an offsite, half-joking, whether the company ever does salary advances. You laughed it off. You have not thought about it since. You are thinking about it now."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "s01",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "FACILITATOR BRIEFING. This is a discussion exercise, not a test; it works when people disagree out loud and discover who owns a gap. Ground rules to read to the room: everything is fictional — every person, organization, and document is an invented composite; answer with what your organization would actually do, not what the binder wishes; what is said here stays here except the improvement items we write down. One more ground rule, specific to this scenario, and worth reading slowly: this exercise involves an employee under financial pressure. Financial stress is common, lawful, and overwhelmingly innocent — it appears here as risk context that a sophisticated outside actor exploits, not as evidence of bad character. We assess behaviors, access, and outside contact. If this room leaves believing that struggling employees are suspects, the exercise has failed no matter what else it finds. Assign a note-taker who is not playing a role. Hand out character sheets; two minutes of silent reading; private knowledge is each player's to reveal when it would naturally surface — that is the game. At each numbered decision, poll the room, take the majority, ties go to the most senior role present, and turn to the section indicated.",
+      "coaching": [
+        "First-time facilitators: read the sensitivity ground rule verbatim rather than improvising it. It is the one paragraph in this exercise where wording matters most.",
+        "Open with one sentence of role introduction per player. Note out loud which seats are empty today — the gaps are findings too.",
+        "Your two tools all day: the printed questions, and five seconds of silence after each one. The silence is not dead air; it is where the honest answers form."
+      ]
+    },
+    {
+      "id": "s02",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART ONE: A GOOD YEAR ON PAPER. Read aloud. You are the insider threat capability of {{org_name}}. Greg Mercer has been a senior account manager here for nine years — two promotions, a current rating of exceeds expectations, the kind of employee who co-runs the charity 5K and remembers your kid's name. His book of business touches {{crown_jewels}}. This has been a strange year around him, though nobody has assembled the pieces: sales leadership keeps muttering that a competitor's new offering lands too well against your renewal book, and a few people who work near Greg would say — if anyone asked, and nobody has — that he has seemed different lately. Today, three routine items from three different systems are about to arrive at three different desks. None of them is alarming alone. Your organization's first test is whether they ever meet.",
+      "difficulty_variants": {
+        "veteran": {
+          "body": "PART ONE: A GOOD YEAR ON PAPER. Read aloud. You are the insider threat capability of {{org_name}}. Greg Mercer has been a senior account manager here for nine years — two promotions, exceeds expectations, co-runs the charity 5K. His book touches {{crown_jewels}}. This has been a strange year around him: sales leadership mutters that a competitor lands too well against your renewal book, and people near Greg would say he has seemed different — if anyone asked. Meanwhile, across the building, a facilities coordinator named Marcus Webb has had a visibly terrible year of his own, and his name is about to enter this story for reasons that will test whether this room can tell pressure from threat. Three routine items from three systems are about to arrive at three desks. None is alarming alone. The first test is whether they ever meet."
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "The first item reached the ethics line five weeks ago. Hand out or read the report as received.",
+      "inject": {
+        "kind": "ethics_line_report",
+        "from": "Ethics and Integrity Line — web submission, anonymous, routed to HR",
+        "subject": "Concern re: colleague (submitter marked: not urgent)",
+        "body": "I do not want to get anyone in trouble and maybe this is nothing. G. in commercial accounts has been different for a couple of months. Defensive about his screen when people walk up, which he never used to be. New watch, which is nobody's business, I know. At lunch he made a joke about his other job and then immediately said he was kidding. He is a good guy and one of the best to work with. I just felt like someone should know. Please do not make this a thing."
+      },
+      "coaching": [
+        "Ask the room what they notice about the reporter, not just the reported. Someone should land on: this is what almost every real report sounds like — apologetic, hedged, loyal, and accurate. How your organization treats this reporter determines whether you ever get another one."
+      ]
+    },
+    {
+      "id": "s04",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The second item sits in the HR file. Hand out or read the excerpt — and watch how it feels to read it, because that feeling is part of the exercise.",
+      "inject": {
+        "kind": "hr_memo",
+        "from": "HR case file excerpt — MERCER, G., assembled for this review",
+        "subject": "Payroll and benefits activity, trailing 120 days (confidential)",
+        "body": "Day 1: court-ordered wage garnishment received and processed against employee pay; handled per standard procedure, employee notified, no manager visibility per policy. Day 68: employee contacted benefits to ask about loan and hardship-withdrawal options against retirement plan. Day 74: hardship withdrawal request submitted, reason given: unexpected family expense; approved per plan rules. Tenure context: nine years, two promotions, current rating exceeds expectations, no disciplinary history. Note appended for this review only: none of the above was visible to security, management, or any risk function at the time, by design.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Over the last four months, three things happened in Greg Mercer's pay and benefits records: a court ordered part of his wages garnished; he asked what his options were for borrowing against his retirement plan; and he then took a hardship withdrawal for an unexpected family expense. Each was processed routinely and confidentially — security and his own management never saw any of it, on purpose, because that is how these systems are designed. His work record over nine years is excellent. Plain reading: this is a good employee under real financial pressure, and until today, no part of the company that thinks about risk knew it."
+          }
+        }
+      }
+    },
+    {
+      "id": "s05",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION ONE. Stop before anyone mentions Greg's data access. The room is currently holding exactly two things: a parked ethics note and a confidential file describing lawful financial hardship. This discussion is about what your organization is allowed and willing to DO with those two things — and it is the discussion most programs have never had out loud.",
+      "questions": {
+        "all": [
+          "In your real organization, today: is there any mechanism by which those three payroll events and that ethics note would ever appear in the same conversation? Should there be — and who would you trust to sit in the middle of it?",
+          "Say the uncomfortable version out loud: what is the difference between a stressor-informed risk program and a system that punishes employees for being broke? Where exactly is the line, and who enforces it? If you have a formal program with a ratified stressor policy: has it ever actually fired? If you do not: who in this room would even receive this information?"
+        ],
+        "int_lead": [
+          "Your private knowledge includes a policy gap. This is the natural moment. Reveal it, and let the room react before you defend it."
+        ],
+        "hr": [
+          "The ethics note has been parked with you for five weeks. Defend the original routing decision honestly — it was defensible — and then say what would have to change for it to route differently."
+        ],
+        "legal": [
+          "Draw the line for the room: what use of payroll-derived stress information is defensible, what is radioactive, and what words should never appear in a case file about it?"
+        ],
+        "exec": [
+          "Would you want to be told that one of your top performers is under this kind of pressure — and what would you honestly do with that knowledge? Answer as yourself, not as the policy."
+        ]
+      },
+      "coaching": [
+        "This discussion has no villain and no alert. If the room is uncomfortable, it is working. Do not rescue them with the next inject until the silence has done its job at least twice."
+      ]
+    },
+    {
+      "id": "s06",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART TWO: THE THIRD ITEM. Read aloud. The third routine item is the one that finally makes the pieces meet. Prompted by sales leadership's leak muttering, the SOC runs a retrospective sweep of outbound patterns around the renewal book — and in the course of it, an analyst pulls the email history of the accounts closest to the competitor's suspicious wins. In Greg Mercer's mailbox, filed neatly in a folder named Consulting, the sweep surfaces an invitation from eleven months ago, and the correspondence that followed it. At almost the same hour, the same sweep re-opens a DLP alert from two weeks ago that had been closed in eleven seconds. Hand out the next two artifacts together."
+    },
+    {
+      "id": "s07",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Artifact one: how it started, eleven months ago.",
+      "inject": {
+        "kind": "email",
+        "from": "Halcyon Advisory Group, Client Research — to G. Mercer (work address)",
+        "subject": "Expert consultation invitation — sector compensation: 500/hr",
+        "body": "Dear Mr. Mercer, Halcyon Advisory connects industry practitioners with institutional clients seeking market perspective. Your background in commercial account management surfaced through our research network, and several of our clients would value your general perspective on sector dynamics, service trends, and the competitive landscape. Consultations are typically one hour by phone, compensated at 500 per hour, and governed by a mutual confidentiality agreement. To be clear at the outset: we never ask experts to share confidential or proprietary information belonging to their employers — our clients value informed perspective, not secrets. Many of our experts consult alongside full-time roles. If you are open to it, my calendar link is below. Warm regards, D. Okafor-Reyes, Senior Research Associate.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Dear Mr. Mercer, Halcyon Advisory connects industry practitioners with institutional clients seeking market perspective. Several of our clients would value your general perspective on sector dynamics and the competitive landscape. Consultations are one hour by phone, compensated at 500 per hour, under a mutual confidentiality agreement. We never ask experts to share confidential or proprietary employer information — our clients value informed perspective, not secrets. Many of our experts consult alongside full-time roles. Facilitator note, read aloud: invitations like this are a real and mostly legitimate industry — thousands of professionals do paid expert calls lawfully. That is exactly what makes this vector work: the first ask is always genuinely innocent. Watch what the later artifacts do to the phrase we never ask."
+          }
+        }
+      },
+      "coaching": [
+        "Ask the room to raise a hand if they, personally, have ever received an email like this. Then ask what would have made them say yes eleven months ago. The honest answers are the exercise."
+      ]
+    },
+    {
+      "id": "s08",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Artifact two: the alert that closed in eleven seconds, re-opened.",
+      "inject": {
+        "kind": "dlp_alert",
+        "from": "{{org_name}} DLP platform — disposition record, re-opened by retrospective sweep",
+        "subject": "Customer-data export, account GMERCER — original disposition: closed, business-justified",
+        "body": "Original event, 14 days ago: export of 6,812 customer records including contact, product holding, and renewal-window fields to local spreadsheet by account GMERCER. Auto-matched business justification: territory planning, Q3. Playbook action: close without escalation. Analyst interaction time: 11 seconds. Re-opened note, today: export scope exceeds the subject's assigned book by approximately 2,400 records, drawn from an adjacent customer segment to which read access was granted 5 weeks ago. Local file retained on endpoint; egress from endpoint not observed by this platform; platform visibility on the endpoint's legacy personal-sync client and approved removable media is limited."
+      }
+    },
+    {
+      "id": "s09",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Pulled from the access-request system an hour later. Read it aloud slowly, including the timestamps.",
+      "inject": {
+        "kind": "it_ticket",
+        "from": "Access request 48211 — adjacent commercial segment, read scope. Requestor: G. Mercer",
+        "subject": "Business justification and approval chain, verbatim",
+        "body": "Requestor justification: Supporting cross-sell initiative with adjacent segment renewal data, per discussion with leadership. Manager approval, submitted from mobile, 6:47 AM: fine with me if the VP is good. VP approval, submitted from mobile, 6:51 AM: Greg is my guy, approve. Provisioned automatically at 6:52 AM. Elapsed time from request to access: 14 hours, of which 13 were overnight."
+      },
+      "coaching": [
+        "Do not let the room dunk on the approvers. Ask instead: how many approvals did each of you grant from your phone this month, and what was your average deliberation time? The nine-word approval is not a character flaw; it is the system's actual control strength, measured."
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "red_herring": true,
+      "body": "COMPLICATION (VETERAN TABLES ONLY — skip unless Difficulty is Veteran). While the sweep runs, a well-meaning manager forwards security a concern of his own: Marcus Webb, a facilities coordinator, has had a public and visibly awful year — a bankruptcy filing anyone can look up, a repossessed truck the whole parking lot noticed, and a demeanor to match. He also badges in early and leaves late. The room now has two names and one afternoon. The truth, available to any player who proposes actually looking: Webb's access touches conference rooms and HVAC schedules, not {{crown_jewels}}; his early badge-ins correlate with the building's coffee vendor delivery he signs for; he has received no outside approach of any kind; and his year is simply a hard year, being survived lawfully. If the room spends more time on Webb than the two minutes his access profile deserves, let them — then make them articulate, for the after-action record, exactly why they did.",
+      "questions": {
+        "all": [
+          "Webb has worse stressors than Mercer and none of the behaviors or access. Build the triage rule from this comparison: what combination actually earns program attention — and does your real organization's instinct match the rule you just wrote?",
+          "Who in this room is permanently assigned the job of saying the sentence: stress is not a case?"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "type": "discussion",
+      "durations": ["60", "90", "120"],
+      "body": "DISCUSSION TWO. Assemble the whole picture out loud, in order: an eleven-month-old consulting invitation and a Consulting folder; a quarter of too-good competitor wins; lawful, invisible financial pressure; an oversized export closed in eleven seconds; adjacent-segment access approved in eighteen words; and a five-week-old ethics note that said other job. Facilitator: ALL questions first.",
+      "questions": {
+        "all": [
+          "State the leading hypothesis in one sentence and the strongest innocent alternative in one sentence. Notice which one the room WANTS to be true about a nine-year colleague — and name the direction that bias pushes your judgment, because it pushes every real case too.",
+          "What do you still not know that most changes the answer — and which of the unknowns can be resolved without anyone talking to Greg?"
+        ],
+        "int_lead": [
+          "The sector briefing on consulting-front elicitation is in your files. Walk the room through the recruitment progression it describes, and mark honestly which stage the evidence suggests Greg is at."
+        ],
+        "soc": [
+          "Eleven seconds. Defend your playbook's economics to this room — the alert volume that made eleven seconds rational — and then say what one change makes this specific miss structurally impossible."
+        ],
+        "hr": [
+          "You now hold the stress file, the ethics note, and this picture. Say what HR's role is in the next 72 hours — advocate, investigator, both, neither — and who decides."
+        ],
+        "legal": [
+          "If a signed Halcyon agreement exists, it is both evidence and leverage — theirs and ours. What must be true before anyone at this table uses the word theft, even privately?"
+        ],
+        "physec": [
+          "Your field office contact said companies that call early get help. Early is now. Argue for and against making that call before the company has decided anything else."
+        ],
+        "exec": [
+          "You approved the access in nine words and laughed off a question about salary advances eight months ago. Say what you owe this process now — and what you owe Greg."
+        ]
+      },
+      "coaching": [
+        "Somewhere in this discussion, someone will say we should just talk to him. Do not resolve it — that instinct IS the next section. Park it visibly on the board and let the pressure build until the decision point makes it official."
+      ]
+    },
+    {
+      "id": "s12",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT ONE. Read aloud. Every insider threat program lives somewhere on a line between two identities: a capability that helps people off a bad path early, and a capability that builds cases. Today the room must choose where this case starts. Before the vote, cross-cast the steelman: have HR argue for the quiet investigation, and have Legal argue for the early conversation, sixty seconds each. Then poll; majority rules; ties to the most senior role present.",
+      "decision": {
+        "prompt": "The company's next move on Greg Mercer:",
+        "options": [
+          {
+            "label": "ENGAGE EARLY — a structured, supportive conversation with Greg within 48 hours, HR and management led, security briefed but offstage: name the outside-contact policy, offer help, and give him a door to walk through. Accept that you are acting before you can prove anything, and that he may lie, tip his handler, or be innocent and insulted.",
+            "goto": "s13"
+          },
+          {
+            "label": "BUILD THE CASE — quiet investigation first: preserve evidence, tighten monitoring on the account under counsel's paper, verify the Halcyon relationship and the export's fate, and say nothing to Greg. Accept that {{crown_jewels}} stay within his reach while you watch, and that every additional day he digs deeper is a day you chose.",
+            "goto": "s20"
+          }
+        ]
+      },
+      "coaching": [
+        "First-time facilitators: name the stakes plainly before the vote — this is not a tactics question, it is the room deciding what kind of program it runs. Real programs split on this and argue about it at conferences. There is no safe answer, only owned ones."
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH A: THE CONVERSATION. Read aloud. It happens Thursday morning: Greg, his VP, and HR, in a small room with coffee that nobody touches. It is framed exactly as designed — concern, the outside-engagement policy, an open door. Greg is composed for about ninety seconds. Then, in pieces, some of it comes out: yes, he has been doing paid consulting; a firm called Halcyon found him last fall; it was general market conversations, an hour here and there, completely aboveboard — they were extremely clear they never wanted anything confidential. He needed the money; he does not elaborate and nobody asks him to. He is adamant on one point, and visibly frightened underneath it: he never gave them anything real. Asked whether he ever provided documents, he pauses four seconds too long and says: nothing that was not basically public. He agrees to bring in his agreement with Halcyon. He does not mention, because he is not asked and does not volunteer it, any recent messages from them. HR's read afterward, delivered to this room in one sentence: that man is relieved and terrified at the same time, and I do not think we heard the whole story."
+    },
+    {
+      "id": "s14",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Friday. Greg brings the paperwork, as agreed. Legal reads it in four minutes and looks up before finishing. Hand out the excerpt.",
+      "inject": {
+        "kind": "contract_excerpt",
+        "from": "Halcyon Advisory Group — Expert Consultation Agreement, G. Mercer, with amendments. Excerpted by counsel",
+        "subject": "Scope language, original versus amended",
+        "body": "Original agreement, section 2, Scope: Expert will provide general market perspective in scheduled consultations. Expert shall not disclose confidential or proprietary information of any current employer. Amendment One, month 4, section 2 revised: Consultations may include review and discussion of market landscape documentation as mutually agreed. Compensation revised from hourly to per-engagement. Amendment Two, month 7: Adds monthly retainer of 4,000 for ongoing availability and documentation review, wired to account of Expert's designation. Section 8, both versions, unchanged, counsel's underline: All materials exchanged and the existence of this engagement are strictly confidential to the parties. Counsel's margin note: watch what section 2 becomes while section 8 never moves."
+      },
+      "coaching": [
+        "Let Legal's line land, then ask the room to say in plain words what documentation review means by amendment two, and what the unchanged mutual-confidentiality clause was for from day one."
+      ]
+    },
+    {
+      "id": "s15",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Saturday, 9:12 PM. Greg, by his own account shaken by the Thursday meeting, has gone quiet on Halcyon — skipped a scheduled call. This arrives on his personal phone. He shows it to HR on Monday morning, hands unsteady, which is how it reaches this room. Read it aloud, slowly.",
+      "inject": {
+        "kind": "text_message",
+        "from": "D. Okafor-Reyes (Halcyon) — personal message to G. Mercer",
+        "subject": "(text message thread, three messages, eleven minutes)",
+        "body": "greg. missed you thursday, hope everything is ok. clients were very happy with the last landscape review, there is real appetite for the renewal-cycle material we discussed. // also, one thing worth saying as a friend: the agreement you signed has confidentiality running both directions. employers can misunderstand consulting relationships, and misunderstandings are noisy for everyone. nobody wants noise. // retainer can go to 6 if the next review lands this month. same time thursday? you have been great to work with and i would hate for that to change."
+      },
+      "coaching": [
+        "Do not analyze it for them. Ask one question and count to five: what happened to the word friend between the first message and the last? Then ask the harder one: reading this, is Greg an offender, a victim, or both — and does your answer change what the company does next, or only how it feels about it?"
+      ]
+    },
+    {
+      "id": "s16",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "BRANCH A PRESSURE (120-minute exercises only). Monday afternoon. Following the Thursday conversation, HR quietly refreshed the outside-engagement policy reminder in the commercial division's newsletter — deliberately routine in tone. This lands in the security inbox two days later.",
+      "inject": {
+        "kind": "email",
+        "from": "A second commercial-division employee — to corporate security, forwarding an external message",
+        "subject": "FW: Expert consultation invitation — is this the kind of thing the policy note meant?",
+        "body": "Hi — I saw the note in the division newsletter about outside consulting engagements. I got the message below last week and had been meaning to ask someone about it anyway. Reads flattering but something felt off about how much they already knew about my book. Forwarding in case it is the kind of thing you meant. Attached: Halcyon Advisory Group invitation, addressed by name and title, referencing the employee's specific market segment, offering 500 per hour, signed D. Okafor-Reyes, Senior Research Associate."
+      },
+      "questions": {
+        "all": [
+          "One approach is an employee problem; two is a targeting campaign against {{org_name}}. Say out loud what changes in scope, urgency, and external reporting the moment this forward arrives.",
+          "This employee reported within a week of a gentle policy reminder. What does that tell you about what your workforce would surface if it believed surfacing was safe — and what has it been sitting on until now?"
+        ]
+      }
+    },
+    {
+      "id": "s18",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "BRANCH A DISCUSSION. On the table: a partial disclosure with a four-second pause in the middle of it, a contract whose scope crept while its silence clause held still, a coercive text thread that Greg brought in himself, and a man who is simultaneously your policy violator, your best witness, and this network's victim. Facilitator: work the questions, then move to the branch decision.",
+      "questions": {
+        "all": [
+          "Greg showed you the texts voluntarily. List what that single act changes — legally, practically, morally — and what it cannot change no matter how much the room likes him.",
+          "The handler's leverage is Greg's fear of his employer. This room IS the employer. What could the company say to Greg, today, that takes that leverage away — and what does it cost to say it?"
+        ],
+        "legal": [
+          "Structure the fork for the room: what a cooperation posture requires and protects, versus what a for-cause posture requires and protects. Include the money he took, the pause on the word documents, and what each posture does to the company's position with the regulator and with Halcyon.",
+          "Personal counsel for Greg: whose interest does it serve for him to have it, and when do you tell him so?"
+        ],
+        "int_lead": [
+          "Map the text thread to the recruitment progression from the sector briefing, stage by stage, and mark where an off-ramp still exists — for Greg, and for whoever Halcyon approaches next."
+        ],
+        "hr": [
+          "You were in the room Thursday. Give your honest read on whether Greg walks through a door if one is opened — and say what supporting him would actually consist of, in concrete nouns, not sentiment."
+        ],
+        "physec": [
+          "Your field office contact wants the network. Greg is a live line into it. Say the operational version of that sentence, and then say the human version, and make the room hold both."
+        ],
+        "exec": [
+          "Nine years, two promotions, your endorsement. Tell the room what accountability you think looks like here — for Greg, and for the approval chain with your name in it."
+        ]
+      }
+    },
+    {
+      "id": "s19",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT TWO — BRANCH A. Read aloud. Counsel needs a posture by end of day, because Halcyon expects an answer from Greg by Thursday, and whatever Greg does next, the company will have chosen it with him or for him. Poll the room.",
+      "decision": {
+        "prompt": "With the disclosure, the contract, and the texts in hand, the company's posture on Greg Mercer will be:",
+        "options": [
+          {
+            "label": "THE DOOR — a cooperation posture: suspend his customer-data access quietly and keep him employed under a documented agreement; support him with counsel; take the whole package — Greg included, as a cooperating victim-witness — to federal law enforcement aimed at Halcyon; accept that you are betting the company's name on a man who has already lied to you at least once.",
+            "goto": "e1"
+          },
+          {
+            "label": "THE LINE — an accountability posture: terminate for cause on the policy violation and the money; refer the matter, Greg included, to law enforcement and let prosecutors sort victim from offender; recover what can be recovered and litigate the rest; accept that the only person who can hand you Halcyon just lost every reason to.",
+            "goto": "e2"
+          }
+        ]
+      },
+      "coaching": [
+        "Whichever way it goes, ask the minority to state for the record the risk the majority just accepted. That sentence belongs in the after-action verbatim."
+      ]
+    },
+    {
+      "id": "s20",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH B: THE QUIET CASE. Read aloud. The room chooses evidence before conversation. Counsel papers an enhanced-monitoring authorization on the account by Wednesday; the ethics note, the HR file, and the DLP record are preserved under hold; IT quietly confirms the adjacent-segment access and the legacy sync client without touching either. The verification file builds fast and gets worse as it builds: open-source checks tie Halcyon Advisory to a shell address and a research associate identity that appears, under a different surname, in a sector advisory about collection fronts; the fourteen-day-old export file is confirmed still resident on Greg's endpoint; and payment-pattern review — done properly, through counsel — finds two inbound wires consistent with the amended agreement's retainer. For six days, watching works. On day seven at 6:03 AM, it stops being abstract: the DLP tripwire pages the on-call — the resident export file, re-saved overnight under a new name, has begun staging to the legacy personal sync client in eleven throttled chunks. Three have left. Eight have not. The sync client, honoring its decade-old configuration, is uploading politely, at pilot-program speeds. You have, the on-call estimates, about ninety minutes."
+    },
+    {
+      "id": "s21",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The page, as it hit the on-call phone. Hand it out and start a visible timer if you have one — the room should feel the ninety minutes.",
+      "inject": {
+        "kind": "dlp_alert",
+        "from": "{{org_name}} DLP platform — TRIPWIRE, watch-plan account GMERCER — active event",
+        "subject": "Staged egress in progress: customer-data file to legacy personal sync",
+        "body": "06:03: File renewal_view_q3_final.xlsx (6,812 customer records incl. adjacent-segment scope) re-saved 02:14 under name family_budget_backup.xlsx. 02:41: staging to legacy personal-cloud sync client initiated, 11 chunks, throttled by client-era bandwidth cap. Status at page time: 3 of 11 chunks transferred to external service; transfer ETA for remainder approx 94 minutes at observed rate. Watch-plan standing instruction: page, do not auto-block — blocking decision reserved to case group. Endpoint online; user session active; VPN geolocation consistent with residence."
+      },
+      "coaching": [
+        "Resist the urge to fast-forward. Make the room spend real minutes deciding while the fictional clock runs — the discomfort of deliberating during an active event is the most transferable experience this branch offers."
+      ]
+    },
+    {
+      "id": "s22",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "BRANCH B PRESSURE (120-minute exercises only). Outside counsel, briefed on the watch plan last week, sent this memo yesterday — eighteen hours before the tripwire fired. Someone at the table has already read it. Hand it out now.",
+      "inject": {
+        "kind": "legal_memo",
+        "from": "Outside counsel — privileged and confidential memo to General Counsel, {{org_name}}",
+        "subject": "Watched-exposure risk in continued-monitoring posture",
+        "body": "Summarizing our advice from Tuesday's call. The enhanced-monitoring posture is defensible and well-papered. One exposure requires decision discipline in advance: if monitored activity progresses to acquisition of {{crown_jewels}} by an external party while the company observes, notification and reporting obligations to {{regulator}} and affected individuals may attach at the moment of acquisition — not at the conclusion of the company's investigation, and not at a time of its choosing. A monitoring plan that contemplates allowing any transfer to complete, for attribution or evidentiary purposes, is therefore a plan to start those clocks deliberately. We recommend the case group decide NOW, in writing, what it will do in the first ten minutes of an active egress event, because it will not want to decide then."
+      },
+      "questions": {
+        "all": [
+          "The memo asked for a pre-decision that was not made. The event is now live. What is the cost, in this exact moment, of last week's deferral — and who owns it?",
+          "Counsel drew the acquisition line in advance. Restate it in one sentence a board member would understand, and say which of the two options in front of you crosses it."
+        ]
+      }
+    },
+    {
+      "id": "s23",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "BRANCH B DISCUSSION. Three chunks gone, eight pending, ninety minutes, a confirmed front on the other end, and a watch plan that reserved this exact decision to this exact group. Facilitator: this discussion runs concurrently with the fictional clock — keep it under fifteen real minutes, then force the decision.",
+      "questions": {
+        "all": [
+          "Establish what the three transferred chunks contain — can anyone at this table say right now, and if not, what does that ignorance do to every option on the table?",
+          "The watch plan said page, do not auto-block, reserving judgment to humans. Was that reservation wisdom or vanity? Answer honestly, because your organization has playbooks with the same clause."
+        ],
+        "soc": [
+          "Give the room its technical options in plain language — block the client, kill the session, isolate the endpoint, throttle further, or watch — with what each one tells Greg and whoever is receiving."
+        ],
+        "legal": [
+          "Three chunks of {{crown_jewels}} may already constitute acquisition. Walk the room through what is now likely owed, to whom, on what clock — and how each of the two decision options changes that answer."
+        ],
+        "int_lead": [
+          "Six days ago the room chose the quiet case. Grade the choice as a process with the information available then — and say what tripwire design would have made this morning boring instead of cinematic."
+        ],
+        "physec": [
+          "Your field office contact told you early callers get help. It is day seven and 6:40 AM. Is that call being made this morning regardless of the vote — and if so, say it now so the room decides with that fact on the table."
+        ],
+        "exec": [
+          "Whatever the room chooses in five minutes, you brief the CEO in three hours. Draft the sentence that explains why the company watched for six days, in words you would say with a straight face."
+        ]
+      }
+    },
+    {
+      "id": "s24",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT TWO — BRANCH B. Read aloud. Eight chunks remain. The on-call is holding. The room decides now.",
+      "decision": {
+        "prompt": "With staged egress in progress and roughly ninety minutes on the clock, the company will:",
+        "options": [
+          {
+            "label": "INTERDICT NOW — block the sync, isolate the endpoint, suspend access and Greg in the same hour, preserve everything, and take the case — Greg, Halcyon, the three transferred chunks — to law enforcement today. Certain containment; the recipient network learns you saw them, and attribution likely dies at a shell address.",
+            "goto": "e3"
+          },
+          {
+            "label": "CONTROLLED CONTINUATION — under counsel's live supervision, allow a constrained version of the transfer to proceed while working with federal law enforcement in real time to identify the receiving infrastructure and the network behind Halcyon. Accept, with eyes open, that you are electing acquisition of {{crown_jewels}} and starting every clock counsel warned about — on purpose, for reach.",
+            "goto": "e4"
+          }
+        ]
+      },
+      "coaching": [
+        "If the room splits angrily here, you have run this exercise correctly. Take the vote, honor it, and write the minority's one-sentence objection into the record before turning the page."
+      ]
+    },
+    {
+      "id": "e1",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — YOU OPENED THE DOOR. Read aloud. With personal counsel beside him and a cooperation agreement over him, Greg tells the whole story, including the part the four-second pause was hiding: two landscape reviews that were nothing like public, built from the oversized export. The company's package — his testimony, the contract with its creeping amendments, the text thread, the wires — reaches a federal task force that has been circling this network for a year and calls it, with feeling, the first inside view anyone has handed us. D. Okafor-Reyes turns out to be a working alias of a known collection facilitator; the sector notice that follows is specific enough to burn the Halcyon front entirely. The regulator conversation about the export is uncomfortable and survivable: you found it, you contained it, you brought it forward. Greg repays what he took under the agreement, works eight more months in a role without customer data, and leaves on quiet, decent terms of his own choosing. The ethics-line reporter is told, in privacy-shaped generalities, that their note mattered. Next quarter the line receives three reports; two are nothing; one is exactly what the program exists for. The cost, and it is real: a faction of this room never fully accepts that he kept his badge, and says so at the after-action, and is not wrong to. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This ending required the company to absorb visible unfairness — a violator, supported — in exchange for the network, the culture signal, and the whole truth. Could your real organization make that trade? Name the person or body with the authority to make it, and the constituency that would object loudest."
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — YOU HELD THE LINE. Read aloud. The termination is clean, well-papered, and legally unimpeachable: the policy violation is documented, the money is undeniable, and outside counsel calls it the most defensible for-cause file she has seen this year. And then the case goes quiet in every direction at once. Greg, facing his own exposure, follows his lawyer's only advice and stops talking — to you, and more importantly, to the prosecutors who needed him to reach Halcyon. The front's address churns; D. Okafor-Reyes evaporates; the task force adds your file to a stack of almosts. The recovered export accounts for the file on his endpoint; what the two landscape reviews contained, nobody who knows is saying. Sales leadership keeps muttering, because the competitor keeps landing well. Six months later, a Halcyon-shaped invitation — new name, same shape — reaches another employee in the commercial division. That employee watched Greg Mercer walked out on a Tuesday with a box. The invitation is deleted. Nothing is reported. The program is feared, respected, and blind. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "Every individual step in this ending was correct, and the sum is a quieter, darker company. Find the step where a different choice was still possible — and say what your real organization's employees currently believe happens to people who come forward, because that belief, not your policy, is your actual reporting program."
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — YOU PULLED THE PLUG. Read aloud. The block lands at 6:58 AM; the endpoint isolates cleanly; eight chunks die in the queue. The suspension, the interview he declines, and the referral all happen before lunch, and the case against Greg Mercer is a straight line: watched staging, blocked egress, preserved everything. Three chunks — 1,860 records — reached the receiving service; notification counsel gets to work, and the regulator, hearing it from you first with a timeline that shows six disciplined days and a ninety-minute decisive morning, is professional about it. The receiving infrastructure is subpoenaed and resolves to a shell that resolves to nothing; D. Okafor-Reyes is an alias with no forwarding address; the task force thanks you sincerely for a well-built file about a network it still cannot see. Greg is prosecuted on the clean facts and pleads. The photo of him being walked out makes the rounds internally within an hour, captioned by the rumor mill. Deterrence, the after-action notes, is now real at {{org_name}} — measurably: badge anomalies drop, exception requests drop, and, in a line item nobody knows how to score, the ethics line goes very, very quiet. Somewhere in the commercial division, the next Greg — and the sector briefing says there is one — reads the room and decides that whatever is happening to him, he will handle it alone. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This is the competent ending: contained, prosecuted, defensible, and lonely. What would it take for your organization to get this outcome AND keep the door open for the next person under pressure — or are those two results actually in tension, and if so, which does your program optimize for today?"
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — YOU LET IT RUN. Read aloud. It takes three supervised weeks, a federal liaison practically living in your SOC, and counsel documenting every hour of it. It works. The receiving infrastructure, watched patiently, resolves through two hops to a collection network the task force has chased across four sectors; the flow you permitted becomes the pattern-of-life evidence that identifies its operators; and buried in the takedown's seized records is something nobody expected — indicators of a second recruited insider, at a peer institution, who is quietly intercepted before their own day seven. The sector notice, when it finally publishes, is built substantially on what {{org_name}} allowed itself to see. That is the win, and it is real, and these are the invoices: the clocks counsel warned about all ran — the {{regulator}} engagement is long, pointed, and includes the phrase elected exposure in a document you will read many times; notification goes to every affected individual, and a plaintiffs' firm's letter arrives citing the watched window, discoverable and deliberate; and Greg Mercer, who spent three additional weeks digging deeper while his employer observed, faces a sentencing memo materially worse than the one a day-seven interdiction would have written him — a fact his attorney states plainly, on the record, looking at your general counsel. The room that chose this ending gets the sector's gratitude, a hard conversation about its members' data, and a question it will be asked at the after-action, at the board, and at the deposition. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "You bought the network with your customers' data and Greg's downside. The trade was arguable — so argue it: have one side of the table defend the choice to the regulator, and the other side defend day-seven interdiction to the task force that would have lost the network. Which defense sounds better out loud, and is that the same as which was right?"
+        ]
+      }
+    }
+  ],
+  "aar": {
+    "hotwash": [
+      "One word from each person: how did that feel? (Around the table before any analysis.)",
+      "The signals in this case — a garnishment, an ethics note, an eleven-second alert, a nine-word approval — all existed in your organization's systems before anyone assembled them. Which assembly mechanism that this exercise required does your real organization actually have?",
+      "Where did the room treat financial stress as suspicion rather than context — be honest, cite the moment — and what guardrail keeps a real program from becoming that?",
+      "Which private-knowledge reveal changed the room's picture most, and how long did its holder sit on it? What does that say about how information moves in a real case?",
+      "The engage-early versus build-the-case fork: now that you have seen where your branch led, would you vote the same way with the same information? Say why in one sentence.",
+      "What does your workforce currently believe happens to someone who comes forward — about themselves or a colleague — and what evidence would change that belief?",
+      "Name one thing your organization should start, one it should stop, and one it should keep, based on today."
+    ],
+    "objectives": [
+      "O1 — RECOGNIZE: Evaluate the organization's ability to recognize elicitation and recruitment tradecraft, including consulting and expert-network fronts targeting client-facing staff.",
+      "O2 — GOVERN: Test whether stressor-derived information has a defined, defensible, and actually operationalized path into risk decisions — and where the ethical guardrails on its use live.",
+      "O3 — DECIDE: Exercise the engage-early versus investigate-quietly doctrine, including who owns that decision and on what facts.",
+      "O4 — DISPOSE: Test the organization's ability to hold the victim-offender continuum honestly — off-ramp design, cooperation postures, and the cultural signal every disposition sends.",
+      "O5 — ENGAGE: Evaluate external engagement centered on the outside actor — law enforcement timing, sector sharing, and the notification discipline required when monitored data is at stake."
+    ]
+  }
+}

@@ -22,6 +22,19 @@ section that says "turn to 14" does not.
 
 ---
 
+## Scenarios
+
+| Scenario | Id | State |
+|---|---|---|
+| **The New Hire** — your best remote developer may not exist. | `dprk-hire` | Live |
+| **The Approach** — a consulting invitation, a garnishment order, and a very patient stranger. | `the-approach` | Live |
+| **Keys to the Kingdom** — the administrator who can delete the evidence of what the administrator did. | `privileged` | In development |
+
+Each is a self-contained JSON file in `content/`. Adding one is a content job,
+not a code job — see the authoring checklist below.
+
+---
+
 ## Running an exercise
 
 **You need:** a room, a printer, 60–120 minutes, and somebody to facilitate.

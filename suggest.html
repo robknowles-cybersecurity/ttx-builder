@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suggest a scenario — TTX Builder</title>
+<meta name="description" content="Suggest an insider threat tabletop scenario for TTX Builder, or report a correction. Two short email templates and a link to the issue tracker.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/ttx.css">
+<link rel="stylesheet" href="assets/print.css" media="print">
+</head>
+<body>
+
+<header class="banner">
+  <div class="banner__keyline">
+    <p class="banner__kicker">Reader Participation</p>
+    <h1 class="banner__title">Suggest &amp; Correct</h1>
+    <div class="banner__rule"></div>
+    <p class="banner__sub">The next scenario comes out of somebody&rsquo;s real week.</p>
+  </div>
+</header>
+
+<p class="masthead-note">Two ways in &middot; Both of them are email</p>
+
+<main class="wrap">
+
+  <div class="lede">
+    <p><span class="you">YOU have run the exercise</span> &mdash; or read it, disagreed with it, and spotted the thing that would not survive contact with your own programme. Either is worth an email.</p>
+    <p>There is no form here and no account to make. Nothing on this site collects anything about you, and a suggestion box that did would be a strange exception. The two buttons below open your mail client with a subject line and a short template already filled in. Delete any part of the template that does not apply.</p>
+  </div>
+
+  <!-- The two mailto links are wrapped in Cloudflare's email_off opt-out
+       comments. Without them the zone's Email Address Obfuscation rewrites each href to
+       /cdn-cgi/l/email-protection#<hex> and injects a decoder script to restore
+       it on click. Two reasons not to accept that here. First, the encoded blob
+       captures the raw attribute source, "&amp;" entity and all; if the decoder
+       writes that back with setAttribute — which does not re-parse entities —
+       the separator becomes "&amp;body=" and the body template is silently
+       dropped, leaving the subject intact so the failure looks like success.
+       Second, it makes a plain mailto link depend on JavaScript, on a site whose
+       whole claim is that nothing here needs to phone home. Keep these wrappers.
+       ------------------------------------------------------------------------ -->
+
+  <!-- CTA 1 ---------------------------------------------------------------- -->
+  <section class="ask">
+    <h2 class="ask__title">Suggest a scenario</h2>
+    <p class="ask__body">The scenarios that work are the ones built around a decision with no clean answer &mdash; where every option costs something, and the room has to spend it in front of everyone. If you have one, three lines is plenty.</p>
+    <p class="ask__prompts">The template asks for: the premise &middot; the decision that makes it hard &middot; the roles it stresses</p>
+    <!--email_off-->
+    <p class="ask__act">
+      <a class="btn" href="mailto:hello@insiderthreatanalyst.com?subject=%5BTTX%5D%20Scenario%20suggestion&amp;body=Premise%20%28what%20happens%2C%20in%20a%20sentence%20or%20two%29%3A%0D%0A%0D%0A%0D%0AThe%20decision%20that%20makes%20it%20hard%3A%0D%0A%0D%0A%0D%0ARoles%20it%20stresses%3A%0D%0A%0D%0A">Email a scenario idea</a>
+    </p>
+    <!--/email_off-->
+  </section>
+
+  <!-- CTA 2 ---------------------------------------------------------------- -->
+  <section class="ask">
+    <h2 class="ask__title">Report a correction</h2>
+    <p class="ask__body">Wrong authority for a role, a legal step in the wrong order, a regulator that does not work that way, a section that points somewhere it should not. Corrections to the tradecraft are as welcome as corrections to the typography, and rather more useful.</p>
+    <p class="ask__prompts">The template asks for: the page or section &middot; what is wrong</p>
+    <!--email_off-->
+    <p class="ask__act">
+      <a class="btn" href="mailto:hello@insiderthreatanalyst.com?subject=%5BTTX%5D%20Correction%20or%20feedback&amp;body=Page%20or%20section%3A%0D%0A%0D%0A%0D%0AWhat%20is%20wrong%3A%0D%0A%0D%0A">Email a correction</a>
+    </p>
+    <!--/email_off-->
+  </section>
+
+  <p class="ask__alt">Prefer a tracker? Technical issues &mdash; a broken build, a rendering fault, a deck that will not open &mdash; can go to <a href="https://github.com/robknowles-cybersecurity/ttx-builder/issues">the issue tracker on GitHub</a>.</p>
+
+  <footer class="foot">
+    <p><strong>What happens next.</strong> Suggestions are read, and the good ones go into the writing queue. Not every idea becomes a scenario &mdash; a tabletop needs a decision at its centre, not just an incident &mdash; but the reasoning gets a reply either way.</p>
+    <p>An original homage to the branching-narrative paperbacks of the early 1980s. Not affiliated with, endorsed by, or derived from any publisher or series.</p>
+    <p><a href="index.html">Back to the console</a> &middot; Part of <a href="https://insiderthreatanalyst.com/">insiderthreatanalyst.com</a></p>
+  </footer>
+
+</main>
+
+</body>
+</html>
