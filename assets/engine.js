@@ -52,13 +52,24 @@ var TTX = (function () {
      veteran     : swap in the veteran variant where present, no coaching,
                    INCLUDE red herrings. */
 
-  function bodyForDifficulty(section, difficulty) {
-    var variants = section.difficulty_variants || {};
+  /* Works on ANY object carrying `body` + `difficulty_variants`, because two
+     levels of the schema now use that shape:
+
+       section.difficulty_variants.<level>.body         (s02 — reframes the section)
+       section.inject.difficulty_variants.<level>.body  (s07 — rewrites the artefact itself)
+
+     The inject-level form was added by the desk after the original dispatch:
+     a first-timer needs the DLP alert's own text to spell out what it is
+     showing, which is a different edit from softening the narrative around it.
+     Keeping one function means the two levels can never drift apart. */
+
+  function bodyForDifficulty(carrier, difficulty) {
+    var variants = (carrier && carrier.difficulty_variants) || {};
     var chosen = variants[difficulty];
     if (chosen && typeof chosen.body === 'string' && chosen.body.length) {
       return { body: chosen.body, variantUsed: difficulty };
     }
-    return { body: section.body || '', variantUsed: null };
+    return { body: (carrier && carrier.body) || '', variantUsed: null };
   }
 
   /* -- filtering ------------------------------------------------------------
@@ -99,7 +110,7 @@ var TTX = (function () {
       }
 
       var role = rolesById[key];
-      var title = role ? role.title : key;
+      var title = role ? subst(role.title, tokens) : key;
 
       if (selectedRoleIds.indexOf(key) !== -1) {
         out.byRole.push({ roleId: key, roleTitle: title, items: items });
@@ -182,10 +193,32 @@ var TTX = (function () {
     /* 4. Build the resolved sections. */
     var sections = kept.map(function (s, i) {
       var picked = bodyForDifficulty(s, sel.difficulty);
+      var type = s.type || 'narrative';
+
+      /* Flow control — contract items 2 and 4.
+         The gamebook is read in array order and falls through from one section
+         to the next, EXCEPT where flow terminates. Two types terminate it:
+
+           'decision' — the room chooses and jumps. Reading on is wrong, and in
+                        this scenario it is actively misleading: the branches are
+                        contiguous array slices, so the section printed after a
+                        branch's closing decision is the OTHER branch's opening.
+                        Falling through from s21 would land the room in s17.
+           'epilogue' — an ending. The four endings sit consecutively in the
+                        array, so falling out of one reads the next three.
+
+         Everything else falls through safely, precisely because every branch
+         slice is terminated by a decision (contract item 3). The renderer must
+         print a visible stop for anything non-null here. */
+      var flowStop = (type === 'decision') ? 'decision'
+                   : (type === 'epilogue') ? 'epilogue'
+                   : null;
+
       var view = {
         id: s.id,
         num: i + 1,
-        type: s.type || 'narrative',
+        type: type,
+        flowStop: flowStop,
         body: subst(picked.body, tokens),
         variantUsed: picked.variantUsed,
         redHerring: s.red_herring === true,
@@ -196,11 +229,17 @@ var TTX = (function () {
       };
 
       if (s.inject) {
+        /* Same variant rule as the section body, one level down. The result
+           still goes through subst() — the first-timer variant of s07 carries
+           {{crown_jewels}}, so skipping substitution here would print literal
+           braces on a handout that lands in a participant's hands. */
+        var injectPick = bodyForDifficulty(s.inject, sel.difficulty);
         view.inject = {
           kind: (s.inject.kind || 'memo').toLowerCase(),
           from: subst(s.inject.from || '', tokens),
           subject: subst(s.inject.subject || '', tokens),
-          body: subst(s.inject.body || '', tokens),
+          body: subst(injectPick.body, tokens),
+          variantUsed: injectPick.variantUsed,
           sectionNum: view.num
         };
       }
@@ -239,7 +278,7 @@ var TTX = (function () {
       });
       return {
         id: r.id,
-        title: r.title,
+        title: subst(r.title || '', tokens),
         briefing: subst(r.briefing || '', tokens),
         authorities: substAll(r.authorities, tokens),
         privateKnowledge: substAll(r.private_knowledge, tokens),
@@ -273,13 +312,17 @@ var TTX = (function () {
           veteran: 'Veteran'
         })[sel.difficulty] || sel.difficulty,
         classicLinear: !!sel.classicLinear,
-        roles: selectedRoleIds.map(function (id) { return rolesById[id].title; })
+        roles: selectedRoleIds.map(function (id) { return subst(rolesById[id].title || '', tokens); })
       },
+      /* org_name / crown_jewels / regulator are the token VALUES, so they are
+         emitted as authored — running subst over them would be a no-op at best.
+         flavor_notes is prose the desk may well write with tokens in it, so it
+         goes through like every other body-bearing field. */
       industry: industry ? {
         orgName: industry.org_name,
         crownJewels: industry.crown_jewels,
         regulator: industry.regulator,
-        flavorNotes: industry.flavor_notes
+        flavorNotes: subst(industry.flavor_notes || '', tokens)
       } : null,
       sections: sections,
       roleSheets: roleSheets,

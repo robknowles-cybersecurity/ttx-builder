@@ -117,6 +117,22 @@ nav {
   padding: 8pt 10pt;
 }
 
+/* The flow terminator MUST print. It is the only thing preventing a facilitator
+   from reading a decision straight on into the other branch, or an ending
+   straight on into the three endings the room did not reach. Black rule, no
+   fill, so it survives a printer with backgrounds stripped. */
+.flowstop {
+  border-left: 3pt solid #000;
+  border-top: 0.5pt dashed #666;
+  padding: 5pt 0 5pt 7pt;
+  margin-top: 8pt;
+  font-size: 10pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.flowstop strong { color: #000; text-transform: uppercase; letter-spacing: 0.05em; }
+
 .turn-to { color: #000; }
 
 .turn-to__n {

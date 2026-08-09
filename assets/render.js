@@ -67,7 +67,7 @@
                   .filter(Boolean);
     return {
       scenario:      q.get('s') || 'dprk-hire',
-      industry:      q.get('i') || 'finserv',
+      industry:      q.get('i') || 'financial',
       maturity:      q.get('m') || 'formal',
       duration:      q.get('d') || '90',
       difficulty:    q.get('x') || 'standard',
@@ -197,10 +197,25 @@
     });
     box.appendChild(ul);
 
+    /* Contract item 2 — a decision ALWAYS jumps, and this line is what makes
+       that true on paper. Without it a facilitator reading down the page slides
+       into the next printed section, which after a branch-closing decision is
+       the OTHER branch's opening. It prints; it is not screen chrome. */
+    var stop = el('p', 'flowstop');
     if (decision.collapsed) {
-      box.appendChild(el('p', 'decision__collapsed',
-        'Classic linear mode: the alternative branches are collapsed for this run. The exercise continues at the section above.'));
+      var only = decision.options[0];
+      stop.appendChild(document.createTextNode(
+        'Classic linear: the alternative branches are collapsed, so there is one way on — '));
+      stop.appendChild(el('strong', null,
+        'turn to section ' + (only && only.gotoNum !== null ? String(only.gotoNum) : '—')));
+      stop.appendChild(document.createTextNode('. Do not simply read on.'));
+    } else {
+      stop.appendChild(el('strong', null, 'Stop here.'));
+      stop.appendChild(document.createTextNode(
+        ' Turn to the section the room chose. Do not read on — the section printed next ' +
+        'belongs to the other branch.'));
     }
+    box.appendChild(stop);
 
     return box;
   }
@@ -249,6 +264,19 @@
         coach.appendChild(el('p', 'coaching__head', 'Facilitator coaching'));
         coach.appendChild(list(section.coaching));
         art.appendChild(coach);
+      }
+
+      /* Contract item 4 — epilogues terminate into the after-action pack and
+         are reachable only by goto. All four endings are stored consecutively,
+         so without this an epilogue reads straight into the alternative
+         endings. Decisions print their own stop inside renderDecision(). */
+      if (section.flowStop === 'epilogue') {
+        var end = el('p', 'flowstop');
+        end.appendChild(el('strong', null, 'This ending closes the exercise.'));
+        end.appendChild(document.createTextNode(
+          ' Stop the clock and go to the after-action pack. Do not read on — the sections ' +
+          'that follow are the endings the room did not reach.'));
+        art.appendChild(end);
       }
 
       mount.appendChild(art);

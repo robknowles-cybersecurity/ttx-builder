@@ -1,25 +1,77 @@
 # This repository IS the webroot. Anything committed here is a file nginx will
 # be asked to serve, so the ignore list is a security control, not tidiness.
-#
-# Editor and backup droppings — the exact class of file that caused the
-# 2026-08-08 webroot exposure on the ita vhost. The nginx config 404s them too;
-# this is the second layer.
+# It is the second layer; the vhost 404s these classes too. Neither layer is
+# allowed to be the only one.
+
+# -- Editor and backup droppings ---------------------------------------------
+# The exact class of file that caused the 2026-08-08 webroot exposure on the
+# ita vhost.
 *.bak
 *.bak.*
 *.bak-*
 *.orig
 *.rej
-*~
 *.swp
 *.swo
+*~
 .DS_Store
 Thumbs.db
 
-# Working files that must never reach a webroot
+# -- Ops, status and working notes -------------------------------------------
+# Session status reports, run logs, deploy notes, handover docs and authoring
+# notes. These describe the infrastructure, name paths, and sometimes quote
+# config — none of it belongs in a public repository, and none of it belongs in
+# a directory a web server is pointed at. The webroot is both.
+#
+# The pattern is deliberately broad: a note-class file is far more likely to be
+# created under a name nobody predicted than to be created under one of these.
+STATUS-*
+STATUS-*.md
+*-STATUS.md
+*-status.md
+CONTENT-NOTES.md
+*-NOTES.md
+*-notes.md
+NOTES.md
+TODO.md
+HANDOVER*.md
+RUNBOOK*.md
+DEPLOY-NOTES*.md
+*.draft
+*.draft.*
+drafts/
+notes/
+.cc-status/
+
+# -- Logs ---------------------------------------------------------------------
+*.log
+logs/
+
+# -- Anything credential-shaped ----------------------------------------------
+# Nothing here should ever hold a secret — the site has no backend and makes no
+# authenticated calls. This block exists so that stays true by accident as well
+# as by design.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa*
+id_ed25519*
+*.credentials
+credentials*
+secrets*
+.netrc
+
+# -- Working files that must never reach a webroot ---------------------------
 *.tmp
+*.temp
 scratch/
 staging/
+tmp/
 
-# If a build step is ever added, its inputs do not belong here
+# -- Build inputs, if a build step is ever added ------------------------------
 node_modules/
 package-lock.json

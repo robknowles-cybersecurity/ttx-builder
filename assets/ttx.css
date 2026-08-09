@@ -610,13 +610,24 @@ a:hover { color: var(--signal); }
 
 .turn-to--retarget { color: var(--ink-faint); }
 
-.decision__collapsed {
-  font-size: 0.85rem;
-  font-style: italic;
-  color: var(--ink-faint);
-  margin: 0.9rem 0 0;
+/* Flow terminator. Printed after every decision and every epilogue, because
+   the gamebook is read sequentially and those two places are exactly where
+   reading on is wrong. Deliberately loud rather than a soft footnote: a
+   facilitator scanning a page mid-exercise has to catch it. Rendered with a
+   left rule rather than a fill so it survives a printer with backgrounds off. */
+.flowstop {
+  font-size: 0.92rem;
+  margin: 1.1rem 0 0;
+  padding: 0.6rem 0 0.6rem 0.85rem;
+  border-left: 4px solid var(--signal);
   border-top: 1px dashed var(--rule);
-  padding-top: 0.6rem;
+  color: var(--ink);
+}
+
+.flowstop strong {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--signal);
 }
 
 /* -- questions ------------------------------------------------------------ */
