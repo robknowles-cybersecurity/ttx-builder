@@ -1,0 +1,614 @@
+{
+  "meta": {
+    "id": "the-long-goodbye",
+    "title": "The Long Goodbye",
+    "tagline": "A resignation, a two-week notice period, and a great deal of downloading.",
+    "version": "1.0.0-draft"
+  },
+  "industries": {
+    "financial": {
+      "org_name": "Meridian Financial",
+      "crown_jewels": "the client book, the pricing models, and the member data sitting behind them",
+      "regulator": "your primary federal financial regulator and your state attorney general",
+      "flavor_notes": "Client lists and pricing models are the classic trade-secret fight, and the classic loss: a departing architect who takes pricing hands a competitor a quarter of free road. Note that anything containing member identifiers converts this from a commercial dispute into a notification problem."
+    },
+    "healthcare": {
+      "org_name": "Meridian Health Systems",
+      "crown_jewels": "the patient data platform, the payer contract models, and the clinical integration designs",
+      "regulator": "HHS Office for Civil Rights and your state health authority",
+      "flavor_notes": "The sharp edge here is a single file. A design document is a commercial matter; the same document with a patient-identified sample data set embedded in it is a reportable event on a statutory clock. Nobody in the room will know which one they have until somebody opens it."
+    },
+    "manufacturing": {
+      "org_name": "Meridian Fabrication",
+      "crown_jewels": "the process designs, the CAD vault, and the qualification data the contracts depend on",
+      "regulator": "your defense customers, and BIS and DDTC for export-controlled technical data",
+      "flavor_notes": "Export-controlled technical data leaving the company is a separate legal event with its own reporting obligations, independent of intent and independent of whether anyone ever uses it. That obligation does not wait for your investigation to finish."
+    },
+    "technology": {
+      "org_name": "Meridian Systems",
+      "crown_jewels": "the product source, the architecture reference set, and the customer implementation library",
+      "regulator": "the FTC and your customers' contractual audit rights",
+      "flavor_notes": "Every engineer in this building keeps a personal library of things they have written. The boundary between a career portfolio and the company's intellectual property has never been written down here, which means today it will be decided by whoever argues hardest."
+    }
+  },
+  "roles": [
+    {
+      "id": "int_lead",
+      "title": "Insider Threat Program Lead",
+      "briefing": "You own insider risk detection and response coordination. This is the most common insider case there is, which is exactly why it is hard: the volume of ordinary departures means your program's credibility depends on getting the proportion right, not the verdict.",
+      "authorities": [
+        "Initiate an insider risk inquiry and assign an analyst",
+        "Request departure-triggered review of prior activity through IT/IAM",
+        "Convene the cross-functional response group",
+        "Recommend, but not order, access changes"
+      ],
+      "private_knowledge": [
+        "Your departure-triggered review exists in policy and has been run four times in two years, always after somebody senior asked for it by name. It has never once run automatically on a resignation.",
+        "Your data-loss tooling is tuned for volume. It cannot see context, so the alerts it raises are almost always benign, which is why the queue that holds them is triaged last and closed fast.",
+        "The single control that would have prevented this entire exercise is not a technical one. It is a one-page written statement of what an employee may keep when they leave, agreed by Legal and HR and told to people on their first day. Your company does not have one. You have asked for it twice."
+      ]
+    },
+    {
+      "id": "soc",
+      "title": "SOC Manager",
+      "briefing": "Your tooling saw most of this and told nobody who could act on it, in a way that was completely correct by the rules as written. You will spend today explaining the difference between an alert that fired and a signal that arrived.",
+      "authorities": [
+        "Query data-loss, endpoint and mail telemetry",
+        "Preserve logs and forensic images",
+        "Tune, suppress, or escalate alerts"
+      ],
+      "private_knowledge": [
+        "Four data-loss alerts on this employee in five weeks. All four were auto-closed as low severity by rule, because his role legitimately requires him to work inside {{crown_jewels}} every day, and because a fifth of your alert volume comes from people doing exactly that.",
+        "Endpoint telemetry retention is 45 days. The behaviour that would most change this room's mind starts about 51 days ago. You can describe the shape of it from aggregate counters; you cannot produce the detail, and you will have to say that out loud.",
+        "You can see that a personal cloud sync client ran on his workstation. You cannot see what went through it. That distinction is the difference between an incident and a suspicion, and the room will not want to hear it."
+      ]
+    },
+    {
+      "id": "hr",
+      "title": "HR Business Partner",
+      "briefing": "You hold a clean resignation, an angry manager who wants him walked out of the building in the next ten minutes, and a personnel file with a small piece of paper in it that is about to complicate everything.",
+      "authorities": [
+        "Access the personnel and hiring file",
+        "Conduct or defer the exit interview",
+        "Initiate suspension or immediate separation with Legal's concurrence",
+        "Manage notice-period arrangements and final pay"
+      ],
+      "private_knowledge": [
+        "Six years, consistently strong reviews, no disciplinary history, resigned by email on a Monday morning with two weeks' notice and an offer to hand over properly. His destination is a direct competitor, which he disclosed voluntarily and was not asked to.",
+        "His confidentiality agreement is signed. The intellectual property assignment clause was rewritten in 2021 to cover derivative and personal work product. He is on the pre-2021 version, because nobody re-papered the existing staff. Roughly ninety people are in the same position.",
+        "In his second year he asked a manager, in writing, whether he could keep copies of designs he had personally authored for his professional portfolio. The manager replied, in writing, of course, that is your work. That manager left the company in 2023. The exchange is in the file."
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "General Counsel / Legal",
+      "briefing": "You are the only person in the room who knows that the central question here is genuinely unsettled rather than merely awkward, and you should say so early, because a room that believes the answer is obvious will make an expensive decision inside ten minutes.",
+      "authorities": [
+        "Issue litigation holds and direct evidence preservation",
+        "Approve or block employment actions and monitoring expansion",
+        "Send demand letters and engage outside counsel",
+        "Determine notification and disclosure obligations"
+      ],
+      "private_knowledge": [
+        "Trade secret protection depends on the company having actually treated the material as a secret. A written manager approval to keep personal design work, sitting in the employee's own file, is the kind of document that gets read aloud slowly by opposing counsel.",
+        "Telling a competitor that their new hire is a thief, before you can prove it, is a defamation and tortious interference exposure that can cost more than the material is worth. Telling them nothing, and then suing in eight months, has its own problems.",
+        "Preservation obligations attach when litigation is reasonably anticipated, and they attach to your systems, not only to his. If this room decides today to pursue him, the mailbox purge scheduled for the end of the month becomes a spoliation problem the moment it runs. Separately: if any of what he holds falls into the category {{regulator}} cares about, a notification clock is already running alongside everything else this room is arguing about."
+      ]
+    },
+    {
+      "id": "it_iam",
+      "title": "IT / Identity and Access Management Lead",
+      "briefing": "Every access he used was access he was supposed to have. Your part of this exercise is about what an ordinary set of permissions looks like from the outside when someone has already decided to be suspicious.",
+      "authorities": [
+        "Suspend or restrict accounts on documented request",
+        "Adjust access scopes and revoke sessions and tokens",
+        "Recover company equipment and manage the technical offboarding sequence"
+      ],
+      "private_knowledge": [
+        "A personal cloud sync client was approved for his workstation in 2022 by a named exception, for a customer engagement that required it. The engagement ended in 2022. The exception is still open and has never been reviewed.",
+        "His company laptop is company property and is in his possession. A second device registered to him has been on the corporate wireless network for two years. Nobody knows whether it is a personal tablet or something else, because the register records the person and not the hardware.",
+        "If this room asks you to revoke everything right now, you can do it in four minutes and you will also destroy your best chance of understanding what happened, because live access is how you observe and revoked access is how you guess."
+      ]
+    },
+    {
+      "id": "physec",
+      "title": "Physical Security / Corporate Security",
+      "briefing": "Your records are unremarkable and that is your contribution: somebody in this room needs to hold the line that unremarkable is a finding, not a gap waiting to be filled with a theory.",
+      "authorities": [
+        "Access badge, visitor, and equipment-movement records",
+        "Coordinate with law enforcement when directed",
+        "Manage the physical exit and equipment recovery"
+      ],
+      "private_knowledge": [
+        "Badge records for the last three months are entirely ordinary, with one Saturday afternoon six weeks ago, ninety minutes, which he logged in the building book with the reason given as clearing my desk area.",
+        "He returned a spare monitor to the equipment desk last week, unprompted, and asked whether he needed to return the laptop bag as well. The clerk told him to keep it.",
+        "Your field office contact, when you called about a case like this last year, was direct: most of these never become anything, and the ones that do are usually visible early because the person lies about something small. Nobody in this exercise has yet lied about anything."
+      ]
+    },
+    {
+      "id": "comms",
+      "title": "Communications Lead",
+      "briefing": "There is no external story here yet, and there may never be one. Your work today is entirely internal, and it is more consequential than it looks: how this company treats a competent person who leaves is the single most watched piece of internal communication there is.",
+      "authorities": [
+        "Draft and approve internal and external statements",
+        "Manage press inquiries and executive communications",
+        "Shape the internal message about departures and expectations"
+      ],
+      "private_knowledge": [
+        "His team likes him. Three of the six have publicly congratulated him already. At least two of them will be approached by the same competitor within the year, and what they saw happen this week is what they will weigh.",
+        "The last person walked out of this building, two years ago, was walked out on a suspicion that turned out to be wrong. Nobody was ever told it turned out to be wrong. People still tell that story.",
+        "If this becomes litigation, the internal message you write today becomes a document in it. So does the one you decide not to write."
+      ]
+    },
+    {
+      "id": "exec",
+      "title": "Executive Sponsor (VP or C-suite)",
+      "briefing": "You speak for the business and for leadership's risk appetite. You are also, quietly, one of the reasons this is happening, and the exercise will work better if you say so early rather than defending yourself for ninety minutes.",
+      "authorities": [
+        "Accept or escalate business risk decisions",
+        "Authorise disruption to client-facing work",
+        "Authorise litigation spend and carry the recommendation upward"
+      ],
+      "private_knowledge": [
+        "Eight months ago you flagged him as a retention risk in a talent review and proposed a counter-offer path. Nothing was done. The note is in the deck, on a slide nobody read past.",
+        "On two of your three largest accounts, the client relationship is genuinely his rather than the company's. Both of those clients have already asked, informally, where he is going. That is a commercial problem this room will be tempted to solve with a legal instrument.",
+        "You personally approved the 2022 cloud-sync exception, in a one-line email, to unblock a delivery date. You had forgotten until about four minutes ago."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "s01",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "FACILITATOR BRIEFING. This is a discussion exercise, not a test. It works when people disagree out loud and discover who owns a gap. Ground rules to read to the room: everything is fictional, and every person, organisation and document in it is an invented composite; answer with what your organisation would actually do, not what the binder wishes; what is said here stays here, except the improvement items we write down.\n\nTwo ground rules are specific to this scenario. First: resigning to join a competitor is lawful, ordinary, and something most people in this room have done or will do. The overwhelming majority of departing employees take nothing at all, and a program that treats a resignation letter as a risk indicator will spend its credibility fast and have none left when it matters. Second: we are not going to discuss how anyone would move data out of a company. Not the tooling, not the tradecraft. The exercise is the decisions: what you notice, when you act, what you can actually prove, and where the line is between a person's career and a company's property.\n\nThat last question is the real subject of this exercise, and you should tell the room now that it does not have a clean answer. It is genuinely contested in law, it is contested inside most companies, and it will be contested at this table.\n\nAssign a note-taker who is not playing a role. Hand out character sheets and give the room two minutes of silent reading. At each numbered decision, poll the room, take the majority, ties go to the most senior role present, and turn to the section indicated.",
+      "coaching": [
+        "First-time facilitators: this scenario runs hot in a way the others do not, because almost everybody at the table has personally kept something from a previous job, or wondered whether they were allowed to. Use that. Somewhere in the first half hour, ask the room how many of them have a folder of their own work from a former employer. The honesty of the rest of the session depends on that question being asked without judgement.",
+        "The pressure in this exercise is time, not danger. His last day is in two weeks and every decision gets more expensive as it approaches. Say the number of days remaining out loud at the start of each part.",
+        "Your two tools all day: the printed questions, and five seconds of silence after each one. Do not fill the silence."
+      ]
+    },
+    {
+      "id": "s02",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART ONE: TWO WEEKS' NOTICE. Read aloud.\n\nYou are the insider threat capability of {{org_name}}, and what you are here to protect is {{crown_jewels}}. At 09:12 on a Monday, Samir Haddad, a principal solutions architect of six years, resigns by email with two weeks' notice. He is going to Northbrace, a direct competitor. He volunteered that, unprompted, in the second line of the letter. He offers to hand over properly and names the three accounts he thinks need the most care.\n\nHis manager forwards the letter to HR at 09:20 with four words on top: walk him out today.\n\nBy 11:00 a departure-triggered review has been requested, mostly because his manager kept asking. And the review comes back with something that changes the temperature in the room, which is that the interesting part of this story does not start on Monday morning. It starts about five weeks before he resigned.\n\nEverything you are about to see, he had permission to do.",
+      "difficulty_variants": {
+        "veteran": {
+          "body": "PART ONE: TWO WEEKS' NOTICE. Read aloud.\n\nYou are the insider threat capability of {{org_name}}, custodian of {{crown_jewels}}. At 09:12 on a Monday, Samir Haddad, principal solutions architect, six years, resigns with two weeks' notice. He is going to Northbrace, a direct competitor, which he volunteered unprompted. He offers to hand over properly. His manager forwards the letter to HR at 09:20 with four words on top: walk him out today.\n\nA departure-triggered review comes back by 11:00, and the interesting part of the story does not start on Monday morning. It starts about five weeks earlier.\n\nOne complication you should hold from the beginning: Samir is not the largest data mover in this building this month. That is Bettina Holl, in the same practice, whose numbers will make his look modest, and whose name is going to arrive in front of this room at precisely the wrong moment.\n\nEverything you are about to see, both of them had permission to do."
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "The resignation itself, with the HR file note that came back attached to it. Hand it out or read it as received.",
+      "inject": {
+        "kind": "hr",
+        "from": "People Operations, departure record, to the response group",
+        "subject": "Resignation, S. Haddad, principal solutions architect, notice period 14 days",
+        "body": "RESIGNATION TEXT, in full: I am resigning from {{org_name}} with two weeks' notice, with my last day two weeks from Friday. I have accepted a role at Northbrace. I am telling you that now rather than making anyone ask. I would like to hand over properly, and the three accounts I would prioritise are in the attached note. It has been six good years and I am sorry to go. Samir\n\nHRBP FILE NOTE. Six years. Consistently strong reviews, no disciplinary history, no open grievance. Manager has requested immediate removal from the building; I have not actioned that pending this group's view.\n\nTwo items from the file the group should have before it decides anything.\n\nFirst: his confidentiality agreement is signed and current. The intellectual property assignment clause was rewritten in 2021 to cover derivative and personally authored work product. He is on the pre-2021 wording, because existing staff were never re-papered. Approximately ninety current employees are in the same position.\n\nSecond: in his second year he asked his then-manager, in writing, whether he could keep copies of designs he had personally authored, for a professional portfolio. The reply, in writing, on company mail, was: of course, that is your work. That manager left in 2023. Both messages are in the file. I am putting them in front of you now rather than in six months."
+      },
+      "coaching": [
+        "Almost every room reacts to the manager's four words before it reacts to anything else. Ask why walk him out today was the first instinct, and whether it is a security judgement, a commercial one, or a wounded one. All three are legitimate; they lead to different exercises."
+      ]
+    },
+    {
+      "id": "s04",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The departure-triggered review's first output. This is the document that turns a resignation into a case, and the room should notice that it was available for five weeks before anybody looked at it.",
+      "inject": {
+        "kind": "dlp",
+        "from": "Security Operations, departure-triggered review, aggregate activity summary",
+        "subject": "S. Haddad, prior 60 days versus rolling 12-month baseline",
+        "body": "Method: aggregate counters only. Detail-level telemetry is retained 45 days; the window of interest begins at approximately day 51. What follows is shape, not content.\n\nDay 51 to day 36: document repository access approximately 3x his rolling baseline, concentrated in the repositories that hold {{crown_jewels}}. Consistent in kind with his role. Unusual in volume for him specifically.\n\nDay 35 to day 21: four data-loss policy alerts raised, severity low, all auto-closed by rule within 24 hours. Rule basis: role handles customer material in bulk. No analyst opened any of the four.\n\nDay 20 to day 6: personal cloud sync client active on his workstation on 9 days. We can see that it ran. We cannot see what passed through it. The client is present under an approved exception dated 2022.\n\nDay 6 to day 0: removable media attached twice, 40 minutes and 6 minutes. Volume not recorded by the current configuration.\n\nDay 0: resignation.\n\nAnalyst caveat, stated for the record: this pattern is also consistent with an experienced architect assembling handover material, refreshing a reference library he uses weekly, and clearing personal files off a work laptop before leaving. We are not able to distinguish those from the counters alone, and we will not be able to distinguish them from the counters ever.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "What we can see, in shape only. Detailed records are kept for 45 days, and the period that matters starts about 51 days ago, so for the earliest part we have counts and nothing else.\n\nSTARTING ABOUT 51 DAYS AGO: he opened documents at roughly three times his own normal rate, concentrated in {{crown_jewels}}, exactly the material a person in his job uses. Normal in kind, high in volume for him.\n\nABOUT 35 DAYS AGO: the data-loss tooling raised four alerts on him. All four were automatically closed as low priority, by a rule that exists because people in his role legitimately move customer material all day. No human being looked at any of them.\n\nABOUT 20 DAYS AGO: a personal cloud storage program ran on his work computer on nine separate days. We can see that it ran. We cannot see what went into it. It is there under an approved exception from 2022 that nobody ever closed.\n\nIN THE LAST WEEK: a USB device was plugged in twice. We did not record how much went onto it.\n\nTODAY: he resigned.\n\nANALYST CAVEAT, and read this one aloud: every single line above is also what it looks like when a good architect prepares a handover, refreshes a library he uses every week, and clears his personal files off a work laptop before he leaves. We cannot tell those apart from these numbers, and we never will be able to.\n\nFACILITATOR NOTE: that caveat is the exercise. Watch how quickly the room stops repeating it."
+          }
+        }
+      },
+      "coaching": [
+        "Make somebody read the analyst caveat aloud a second time at the end of the discussion. Rooms absorb the timeline and discard the caveat within about four minutes, and the whole scenario is built to expose that."
+      ]
+    },
+    {
+      "id": "s05",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION ONE. A clean resignation, an angry manager, a written permission from 2019, a contract clause that does not apply to him, and five weeks of elevated activity that nobody looked at until he handed in his notice. Thirteen days remain. Facilitator: ALL questions first, then the seats.",
+      "questions": {
+        "all": [
+          "Four data-loss alerts fired and closed themselves. Was that a tooling failure, a tuning failure, a staffing failure, or a correct decision that happens to look bad in hindsight? Pick one and defend it, because the fix is different for each.",
+          "You are looking at this activity because he resigned. Say plainly what that means: would any of it have been reviewed if he had stayed, and is a resignation an acceptable trigger for looking backwards at somebody's work?"
+        ],
+        "hr": [
+          "His manager wants him walked out. Give the room your actual recommendation and the reason, and say which parts of it are risk and which are optics."
+        ],
+        "legal": [
+          "There is a written manager approval in the file saying his personal design work is his. Tell this room, in plain language and before it forms a view, how much that document is worth."
+        ],
+        "soc": [
+          "The most interesting fifteen days are past your retention. Say what you would have needed in place on day 51 for today to be a different conversation, and what that would have cost."
+        ],
+        "int_lead": [
+          "Your departure-triggered review has run four times in two years, always because someone senior asked. What would it take to make it run automatically, and what does your organisation do with the volume that would produce?"
+        ]
+      },
+      "coaching": [
+        "If the room is unanimous within five minutes, it has skipped the hard question. Ask the dissenting position out loud yourself: what if he took nothing, and everything on that timeline is a man doing his job and then tidying his desk?"
+      ]
+    },
+    {
+      "id": "s06",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART TWO: WHAT THE TOOLS ACTUALLY HOLD. Read aloud.\n\nEleven days remain. Nobody has spoken to Samir Haddad about any of this. He is working, visibly and well: he has written two handover documents, booked three client transition calls, and asked his manager twice for an hour to go through the account files properly. His manager has not replied to either request.\n\nOver the next day, three more things arrive. A mail-gateway report of what he has sent to his personal address. An endpoint summary of what left by removable media and cloud sync, to the limited extent that anyone can say. And a statement from his manager, taken by HR, which is the document that makes this genuinely difficult rather than merely tense.\n\nNone of these three is a smoking gun. Two of them are partly exculpatory. That is normal, and it is the part of real casework that tabletop exercises usually leave out."
+    },
+    {
+      "id": "s07",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Artefact one: the mail gateway report. It covers ninety days of messages from his work account to his personal address.",
+      "inject": {
+        "kind": "email",
+        "from": "Security Operations, mail gateway review, INC-3308",
+        "subject": "S. Haddad, work account to personal address, 90-day summary",
+        "body": "Total: 31 messages from his {{org_domain}} account to his personal address in 90 days, against a 12-month baseline of roughly 2 per month.\n\n21 of the 31 are unambiguously personal or administrative: a payslip, insurance forms, two conference booking confirmations, a photograph of a whiteboard from a team social, benefits paperwork.\n\n6 contain material he personally authored: three architecture design documents bearing his name as author, a presentation he delivered at an industry conference under the company's banner, and two internal write-ups of engagements he led. All six are company-branded. All six are also the exact material his 2019 written permission appears to describe.\n\n3 contain material he did not author: two colleagues' design documents from the same practice, and a template pack maintained by another team.\n\n1 is a spreadsheet named accounts-overview-final. It contains 412 rows: client name, contract renewal date, annual value, primary contact name, and a free-text column headed relationship notes. He built it and maintained it himself. It is the working document he ran his portfolio from, and there is no other copy of it anywhere in the company, because he never put it in the repository.\n\nMail retention is 400 days and all 31 messages are preserved."
+      },
+      "coaching": [
+        "Deal with the 21 first, deliberately and slowly. If the room lets you skip past them to the spreadsheet, it has just modelled exactly the bias that produces wrongful accusations. Then ask, for each of the remaining ten, whether the room's answer changes: same person, same week, same channel, three very different documents."
+      ]
+    },
+    {
+      "id": "s08",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Artefact two: the endpoint and device summary. It is short, and its most important line is the one that says what cannot be known.",
+      "inject": {
+        "kind": "dlp",
+        "from": "Endpoint and device review, INC-3308",
+        "subject": "Removable media, cloud sync, and company equipment, S. Haddad",
+        "body": "REMOVABLE MEDIA. Two attachments in the last six days, 40 minutes and 6 minutes. The current endpoint configuration records that a device was attached; it does not record volume or file names. That configuration option exists and is not enabled. It was reviewed in 2024 and left disabled on performance grounds.\n\nCLOUD SYNC. Personal sync client active on 9 days in the last 20, under exception EXC-1188, approved 2022 for a specific customer engagement, sponsored by the executive who signed it in a one-line email. The engagement closed in 2022. The exception has no review date. We can confirm the client ran. We cannot see, and will never be able to see, what it carried.\n\nEQUIPMENT. Company laptop is with him and in daily use. A spare monitor was returned unprompted last week. A second device registered to him has been on the corporate wireless network for two years; the asset register records the person, not the hardware, so we cannot say what it is.\n\nSTATED PLAINLY, for the record: on the two channels most likely to matter, removable media and cloud sync, this company has no visibility at all, and would not have had any if it had been watching him from day one. Anything the group concludes about those two channels will be an inference from behaviour, not a finding from evidence."
+      }
+    },
+    {
+      "id": "s09",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Artefact three. HR takes a statement from his manager, in the ordinary way, and it does not do what the manager intended it to do.",
+      "inject": {
+        "kind": "memo",
+        "from": "People Operations, record of interview, practice manager, INC-3308",
+        "subject": "Manager statement regarding S. Haddad, transcribed and agreed",
+        "body": "Manager states that the employee has been disengaged for months, that the volume of downloading is obviously preparation, and that the accounts overview spreadsheet is the company's single most commercially sensitive document.\n\nAsked when he last reviewed that spreadsheet: does not recall reviewing it. Asked whether it exists anywhere in the company's repositories: believes not. Asked who instructed the employee to build it: nobody, he just did it, that is why he is good.\n\nAsked about the employee's requests for handover time: confirms two requests in the last eleven days. Confirms he did not reply to either. Reason given: I was not going to help him tidy up before he goes to a competitor.\n\nAsked whether the employee had been told, at any point, what he could and could not keep: states that everybody knows. Asked whether it is written down anywhere: states that he assumes so. It is not.\n\nHRBP note appended: I want the group to see the shape of this. The most sensitive document in this matter is one the company never asked for, never reviewed, never stored, and would not have known existed if he had not emailed it to himself. We are about to argue that it is our crown jewel, and the record will show that until eleven days ago we did not know we had it.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "The manager says the employee has been disengaged for months, that the downloading is obviously preparation, and that the accounts spreadsheet is the company's most commercially sensitive document.\n\nAsked when he last looked at that spreadsheet: cannot recall ever looking at it.\nAsked whether a copy exists in company systems: believes not.\nAsked who told the employee to build it: nobody, he just did, that is why he is good.\nAsked about the employee's two requests for handover time in the last eleven days: confirms both. Confirms he replied to neither. Reason given: I was not going to help him tidy up before he goes to a competitor.\nAsked whether the employee was ever told what he could and could not keep: everybody knows.\nAsked whether that is written down anywhere: assumes so. It is not.\n\nHRBP note appended: the most sensitive document in this matter is one the company never asked for, never reviewed, never stored, and would not have known existed if he had not emailed it to himself.\n\nFACILITATOR NOTE, read aloud: this inject is the hinge of the exercise. A company can only protect as a secret something it has actually treated as a secret. Ask the room what this company did, at any point in six years, that treated that spreadsheet as valuable. The honest answer is nothing, and the room has to decide what to do anyway."
+          }
+        }
+      },
+      "coaching": [
+        "Two separate findings live in this one document and rooms usually only take the first. One: the company never protected the thing it now calls its crown jewel. Two: the manager refused handover twice, which is the single decision most likely to convert an orderly departure into a hostile one. Make the room name both before moving on."
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "red_herring": true,
+      "body": "COMPLICATION. While the group is working through the mail report, the data-loss queue produces a second name, and the numbers are much worse.\n\nBettina Holl, same practice, seven years, has moved roughly 40 gigabytes to external storage in the last three weeks. That is many times Samir Haddad's entire visible footprint. She has been in the office late eleven times in that period. She has downloaded, in bulk, from the repositories that hold {{crown_jewels}}. And when the analyst who spotted it went to look at her record, he found that her line manager changed three weeks ago, which in most people's mental model is what a person about to leave looks like.\n\nThe truth, available to any player who proposes actually asking her or reading the ticket: Bettina Holl is running the migration of a major client onto a new platform. The 40 gigabytes is the client's own data being staged for that migration, into storage the client provided and the company contracted for. There is a change ticket, an approved data transfer authorisation, and a statement of work with the client's signature on it. Her late nights are the migration cutover window, which was published to the practice four weeks ago. Her manager changed because the practice reorganised and forty people moved.\n\nShe is not leaving. She is doing the largest and best-run piece of client work in the building this quarter, and if this room contacts her employer, her client, or her about a data-loss concern without reading the ticket first, it will have done real damage to a real person and taught forty of her colleagues never to touch a bulk transfer again.\n\nVolume is not intent. Put that sentence in the after-action record.",
+      "questions": {
+        "all": [
+          "Bettina Holl moved forty times more data than Samir Haddad and is entirely innocent. Build the rule out of that: what does your program need alongside volume before a number becomes a concern, and does your tooling actually have access to that context or does a human have to go and find it?",
+          "How long would it take your organisation to establish that a 40-gigabyte transfer was authorised, and who would have to be asked? If the answer is more than an hour, what happens to the person in the meantime?"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "type": "discussion",
+      "durations": ["60", "90", "120"],
+      "body": "DISCUSSION TWO. Assemble it out loud: a clean resignation to a competitor, five weeks of elevated but role-consistent access, four self-closing alerts, nine days of cloud sync nobody can see into, two removable media attachments nobody measured, thirty-one messages to a personal address of which twenty-one are innocuous and one is a client book that exists nowhere else, a written 2019 permission, an unamended contract, and a manager who refused handover twice. Nine days remain. Facilitator: ALL questions first.",
+      "questions": {
+        "all": [
+          "State the leading hypothesis in one sentence and the strongest innocent explanation in one sentence, and make the innocent one genuinely strong, because it is. Then say which parts of your evidence would look identical under both, and notice how much of it that is.",
+          "The was-it-his-to-take question is now unavoidable. Take a position as a room, out loud, on the three architecture documents he personally authored, and then say whether your organisation's written policy supports the position you just took. If there is no written policy, say that instead."
+        ],
+        "legal": [
+          "Give the room your honest assessment of the company's position if it acted today: what you could demand, what you could prove, and what a competent opposing counsel does with the 2019 email and the un-re-papered contract."
+        ],
+        "hr": [
+          "Nine days remain and nobody has spoken to him. Say whether that is a deliberate strategy or an accident, and what it costs either way."
+        ],
+        "it_iam": [
+          "You have an open exception from 2022 with no review date and an unidentified second device on your wireless. Neither is about Samir Haddad. How many more of each do you have?"
+        ],
+        "soc": [
+          "You have no visibility on the two channels most likely to matter. Say what you would ask for on Monday, and be specific about what it costs, because someone in this room controls that budget."
+        ],
+        "exec": [
+          "Two of your three largest clients have already asked where he is going. Say what you actually want out of this: the material back, the clients kept, a deterrent message to the building, or him punished. They pull in different directions and this room deserves to know which one you are steering by."
+        ],
+        "comms": [
+          "Six people on his team are watching how this goes. Describe what they will see under each of the two options this room is about to vote on."
+        ],
+        "physec": [
+          "Nothing in your records is unusual. Say so plainly, and hold that line for the rest of the exercise, because somebody is about to ask you to reinterpret a Saturday afternoon."
+        ]
+      },
+      "coaching": [
+        "The spreadsheet will dominate unless you manage it. It is the strongest item against him and also the item the company protected least. Force the room to hold both facts at once for at least two minutes before it votes.",
+        "Watch for the room concluding that because he took some things, he took everything. That inference is the most common real-world failure in this case type and it is what turns a recoverable dispute into a lost lawsuit."
+      ]
+    },
+    {
+      "id": "s12",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT ONE. Read aloud.\n\nNine days of notice period remain. The room has an activity picture it cannot fully resolve, a client book in an employee's personal mailbox, a written permission that undercuts the company's position, and a man who is still coming to work and still trying to hand over.\n\nEverything after this vote flows from one question: is his remaining notice period an exposure to be closed, or an opportunity to be used?\n\nBefore the poll, cross-cast the steelman: have HR argue for ending it today and have Legal argue for running it out. Sixty seconds each. Then poll; majority rules; ties to the most senior role present.",
+      "decision": {
+        "prompt": "The company's handling of Samir Haddad's notice period will be:",
+        "options": [
+          {
+            "label": "WALK HIM OUT TODAY. End the notice period immediately on full pay, recover the laptop, revoke access, preserve everything, and take the investigation to conclusion without him in the building. Accept that you lose the handover on three major accounts, that six colleagues watch a well-liked man leave under escort on a suspicion nobody has explained to him, that he will hear the company's theory first from a lawyer, and that you have converted a cooperative departure into an adversarial one before establishing whether you had a case.",
+            "goto": "s13"
+          },
+          {
+            "label": "RUN THE NOTICE PERIOD. Keep him working, unsupervised in no way that he notices: reassign him to handover work only, quietly narrow his access to what that requires, preserve everything now, brief his manager to accept the handover he has twice been refused, and use the remaining nine days to establish what you actually have. Accept that he retains legitimate access for another nine days, that if he is taking material he has nine more days to do it, and that if this becomes litigation you will be asked why you left him in place.",
+            "goto": "s19"
+          }
+        ]
+      },
+      "coaching": [
+        "Rooms with strong HR representation walk him out. Rooms with strong Legal representation run the notice period. Name that pattern before the vote if you see it forming, because it is worth the room knowing that its answer may be a function of who happened to be in the seats."
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH A: YOU WALK HIM OUT. Read aloud.\n\nIt is done at 14:00, professionally, by HR with a security officer present and not, to anyone's credit, in front of the team. He is told his notice period is being paid out and that his access is being closed. He asks, twice, whether he has done something wrong. He is told that the company is not in a position to discuss it. He hands over the laptop, signs the equipment receipt, asks HR to thank his team, and leaves.\n\nThe cost lands the same afternoon. Three client transition calls are cancelled. Two of the three largest accounts learn within the day that he has gone and that nobody has been introduced; one of them calls your executive sponsor directly to ask what has happened to their architect. Two handover documents are half-finished in his drafts folder, and the third was never written.\n\nAnd on the team floor, six people watch a security officer walk a well-liked colleague to the door with no explanation given to anybody. By the end of the week the version circulating in the building is that he was marched out for stealing, which is not something the company has said, not something the company can currently prove, and not something the company can now unsay.",
+      "coaching": [
+        "Ask who, in the real organisation, was responsible for telling the team something true. Then ask what they would have been allowed to say. The gap between those two answers is a genuine finding and most companies have never closed it."
+      ]
+    },
+    {
+      "id": "s14",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "This arrives on day three, from a law firm, and it is not what the room expects. It is calm.",
+      "inject": {
+        "kind": "memo",
+        "from": "Outside counsel for S. Haddad, to the General Counsel, {{org_name}}",
+        "subject": "Your former employee, and an offer",
+        "body": "We act for Samir Haddad. He was removed from your premises without explanation and has since heard from three former colleagues that he is believed to have stolen from you. He has not been told what he is alleged to have done.\n\nOur client's position, stated plainly and without waiting to be asked. He holds copies of three architecture design documents he personally authored, a conference presentation he personally delivered, and two engagement write-ups he personally wrote. He holds them on the basis of a written approval from his then-manager which we understand is in your own personnel file. He also holds a spreadsheet of his own client portfolio which he built and maintained himself and which he accepts is commercially sensitive to you.\n\nHe holds nothing else. He has not provided any of it to Northbrace, has not been asked to, and has instructed us that he will not.\n\nOur client's offer, open for fourteen days. He will submit every device in his possession for inspection by an independent forensic examiner of your nomination and at your cost, will delete anything you identify, and will provide a sworn attestation as to what he holds and what he has passed on. In exchange he asks for a written statement from you to your own staff that he has not been accused of wrongdoing, and confirmation that you will say nothing to Northbrace that suggests otherwise.\n\nWe note that our client offered handover twice and was refused twice. We would rather resolve this in fourteen days than in fourteen months, and so, we suspect, would you."
+      },
+      "coaching": [
+        "The room will look for the trap. There may not be one. Ask what it would mean, emotionally and institutionally, to accept an offer that is better than the outcome the company could win in court, from a man the company has already treated as guilty."
+      ]
+    },
+    {
+      "id": "s15",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The forensic examination of the returned laptop reports on day five. It is thorough, and it settles less than the room hoped.",
+      "inject": {
+        "kind": "dlp",
+        "from": "Digital forensics, returned company laptop, INC-3308",
+        "subject": "Examination findings, company equipment only",
+        "body": "SCOPE. The returned company laptop only. We have no access to his personal devices, his personal cloud storage, or the removable media. Any statement about those is outside our scope and outside our knowledge.\n\nFINDINGS.\n\n1. The 31 messages to his personal address are confirmed as reported. No further mail exfiltration channel identified.\n\n2. Removable media: two attachments confirmed, consistent with a single consumer USB device. Contents unknown and unknowable from this evidence. File system artefacts are consistent with a copy operation on the first attachment. We cannot say what was copied or how much.\n\n3. Cloud sync: the client was configured with his personal account and a single synchronised folder. The folder no longer exists on this machine. Its former contents cannot be recovered from this evidence.\n\n4. No evidence of deliberate anti-forensic activity. No wiping utilities, no timestamp manipulation, no encrypted containers. His browser history for the entire period is intact and was not cleared, including the fortnight before he resigned.\n\n5. Point 4 deserves emphasis and we make it as an examiner's observation rather than a conclusion: a person consciously stealing at scale usually leaves some sign of trying to hide it. This machine has none. That is evidence of something. It is not proof of anything."
+      },
+      "coaching": [
+        "Finding 4 flips a lot of rooms, and it should be examined rather than swallowed. Ask what the absence of concealment is actually worth: it is genuinely probative, and it is also exactly what you would see from someone who believed, rightly or wrongly, that he was entitled to what he took."
+      ]
+    },
+    {
+      "id": "s16",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "Counsel's assessment, circulated before the decision. Read it in full; it is the coldest document in the exercise.",
+      "inject": {
+        "kind": "memo",
+        "from": "Office of the General Counsel, privileged and confidential",
+        "subject": "Position assessment, and what fourteen months looks like",
+        "body": "IF WE PURSUE. Our strongest item is the client portfolio spreadsheet, and even there we must prove we treated it as a secret. We did not store it, review it, classify it, or know it existed. Our own manager, on the record, cannot say when he last looked at it. Against that, opposing counsel has a written approval from our manager telling him his design work is his, an intellectual property clause we never applied to him, a refusal of handover repeated twice, and an escorted removal with no explanation given. Discovery will also reach our own retention decisions, our disabled logging option, and an executive-approved cloud exception that was never reviewed. Add that if any part of what he holds engages {{regulator}}, that is a separate track with its own clock, which this office can neither settle nor postpone.\n\nIF WE ACCEPT HIS OFFER. Independent forensic inspection at our cost, deletion on our identification, and a sworn attestation. The price is a statement to our own staff that he is not accused of wrongdoing, which is currently true, and silence toward his new employer, which we cannot responsibly break anyway.\n\nIF WE DO NOTHING. The material stays where it is. We learn nothing. We will be asked in two years why we did not act, by someone who will have forgotten what we knew today.\n\nA NOTE THIS OFFICE IS OBLIGED TO PUT IN WRITING. The mailbox purge scheduled for month end must be suspended immediately. Litigation is now reasonably anticipated, and preservation attaches to our systems as fully as to his. If that purge runs on schedule, our position stops being about what he took and starts being about what we destroyed."
+      }
+    },
+    {
+      "id": "s17",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION THREE, BRANCH A. He is gone, the building thinks he was marched out for stealing, his lawyer has offered you more than a court would, and your own counsel has told you the company's position is weaker than its feelings. Facilitator: ALL questions first, then the seats.",
+      "questions": {
+        "all": [
+          "His offer gives you inspection, deletion and an attestation, which is materially everything you would win, in two weeks rather than fourteen months. Say out loud what the company would be buying by refusing it, and be honest if part of the answer is pride.",
+          "The forensics found no concealment at all. Does that change your view of the man, your view of the case, or neither? Answer individually before anyone answers as a group."
+        ],
+        "legal": [
+          "You have told the room the position is weak. Now give them the recommendation, in one sentence, with a number attached to the alternative."
+        ],
+        "comms": [
+          "Half the building believes he was walked out for theft. If the company accepts his offer, what do you tell those people, and what do you tell them if it does not?"
+        ],
+        "hr": [
+          "You executed the removal correctly and it produced this. Say what you would build into your process so the next one carries a true explanation to the team on the same day."
+        ],
+        "exec": [
+          "One of your largest clients has called about their missing architect. Say what you tell them, and whether anything in that answer is about protecting the company rather than the client."
+        ],
+        "soc": [
+          "The mailbox purge runs at month end and Legal has told you to suspend it. Who actually presses that button in your organisation, and what happens if they are on leave?"
+        ]
+      }
+    },
+    {
+      "id": "s18",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT TWO, BRANCH A. Read aloud.\n\nDay six. You have a forensic report that closes nothing, a legal assessment that says your position is weaker than your grievance, and an open offer with eight days left on it. The executive sponsor wants the client relationships stabilised. The manager wants him sued. Poll the room.",
+      "decision": {
+        "prompt": "The company's response to the offer, and its posture toward Northbrace, will be:",
+        "options": [
+          {
+            "label": "FORMAL DEMAND AND NOTICE TO THE COMPETITOR. Reject the offer, send a demand letter asserting the company's ownership of everything he holds, put Northbrace formally on notice of a trade-secret concern regarding their new hire, and prepare for litigation. Accept that counsel has told you the position is weak, that discovery will examine your own retention and access failures in public, that you may be creating a defamation exposure, and that a man who volunteered his own conduct in writing will now say nothing for two years.",
+            "goto": "e1"
+          },
+          {
+            "label": "SCOPED RETURN AND ATTEST. Accept the offer, define the scope narrowly and precisely, appoint the independent examiner, identify what must be deleted, take the sworn attestation, issue the internal statement that he is not accused of wrongdoing, and say nothing to Northbrace. Accept that you will never know what was on the USB device, that the manager will regard it as a surrender, and that you are trading certainty you cannot obtain for closure you can.",
+            "goto": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s19",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH B: YOU RUN THE NOTICE PERIOD. Read aloud.\n\nThe decision is quiet and it takes discipline. Preservation goes on today, including a hold on the month-end mailbox purge. His access is narrowed to handover scope, which as a matter of fact removes very little, because handover scope for a principal architect is nearly everything, {{crown_jewels}} included. His manager is instructed, in writing and against his objection, to sit down with him for the handover he has twice refused.\n\nAnd then the ordinary thing happens, which is the thing this branch was designed to buy. Over the next nine days Samir Haddad does the handover properly. He writes the third document. He introduces his successor to all three major clients on calls he leads and does not sabotage. He annotates the client portfolio spreadsheet, uploads it into the company repository where it has never been, and tells his manager, in a meeting HR has minuted, that he has a copy of it and would like to know what the company wants him to do with it.\n\nOn day seven of nine he asks for a meeting with HR and says he has been told by two colleagues that security has been looking at him, and would somebody please tell him what is going on. That question is now yours to answer or refuse, and there is no third option.",
+      "coaching": [
+        "Two things in this section deserve a stop. First, the client book is now in the company's repository, which means the branch that felt riskier has materially improved the company's legal position. Second, he has asked the direct question. Ask the room, before moving on, what its answer is, because the next inject depends on the room having sat with it."
+      ]
+    },
+    {
+      "id": "s20",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The exit interview, held on day eight of nine, by an HRBP who was briefed to listen rather than to trap. Read it as a record.",
+      "inject": {
+        "kind": "hr",
+        "from": "People Operations, exit interview record, S. Haddad, day 8 of notice",
+        "subject": "Exit interview, transcribed and agreed with the employee",
+        "body": "On leaving: says the reason is the work, not the money. Says he asked for a principal-level design track three times in two years and was told each time that the practice needed him on accounts.\n\nOn what he holds, unprompted and before being asked: says he has copies of three design documents he wrote, a conference talk he gave, two engagement write-ups, and the portfolio spreadsheet. Says he kept the first six on the basis of a written approval from his manager in 2019, which he offers to forward and does, from his personal address, during the meeting. Says the spreadsheet is different, that he built it himself but it is plainly the company's business, and asks directly what the company wants him to do with his copy.\n\nAsked about the USB device: says he copied family photographs and personal tax documents off the laptop, and a folder of his own design work. Asked whether any company material other than his own authored work went onto it: says no. Offers, without being asked, to have the device examined.\n\nAsked about the cloud sync: says it has been on that machine since 2022 and he had forgotten it was there, and that it syncs his personal folder, which contained the same portfolio of his own work.\n\nAsked whether Northbrace has asked him for anything: says no, and that his offer letter has a clause forbidding him to bring anything, which he offers to show and does.\n\nHRBP note appended: he answered every question, volunteered three things nobody had asked about, and offered his devices twice. That is either an honest man or a very well-prepared one, and I am recording that I cannot tell which from an interview. What I can record is that he has now put his own account on paper before knowing what we hold, which makes it checkable."
+      },
+      "coaching": [
+        "The value of this inject is that it is checkable. Ask the room what it would do with a statement that can be tested against the mail report and the endpoint data, and note that walking him out on day one would have made this document impossible to obtain."
+      ]
+    },
+    {
+      "id": "s21",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "And on the final day, the thing that keeps this from being a comfortable branch.",
+      "inject": {
+        "kind": "dlp",
+        "from": "Security Operations, final-day review, INC-3308",
+        "subject": "Activity during the notice period, and one item that does not reconcile",
+        "body": "NOTICE-PERIOD ACTIVITY. Nine days. Access consistent with handover throughout. No removable media. No cloud sync activity, the client having been removed from the workstation on day two by IT under the narrowed scope. Three messages to his personal address, all administrative, all reviewed. Repository uploads: 4, including the client portfolio spreadsheet. Handover documents completed: 3 of 3.\n\nTHE ITEM THAT DOES NOT RECONCILE. His exit interview account covers the mail, the cloud sync, and the second USB attachment. It does not account for the first one, six days before he resigned, 40 minutes, with file system artefacts consistent with a copy operation. He described one device session, not two. When the mail report, the exit interview and the endpoint record are laid side by side, everything reconciles except those 40 minutes.\n\nWe cannot say what happened in that window. It may be the same device on a separate occasion, forgotten, which is entirely plausible over six weeks. It may be nothing. It is also the only place in this entire investigation where his own account and our records do not meet, and it would be dishonest of us to bury it in a summary.\n\nHis last day is today. He leaves at 17:00."
+      },
+      "coaching": [
+        "Do not let the room treat this as a gotcha and do not let it wave it away. Both moves are wrong. The forty minutes is genuinely unexplained and it is also genuinely the kind of thing people forget. Make somebody argue each side before the vote."
+      ]
+    },
+    {
+      "id": "s22",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION THREE, BRANCH B. The handover is done, the client book is in the repository, his account is on paper and mostly checks out, he has offered his devices for examination, and forty minutes of one afternoon six weeks ago does not reconcile with anything. He leaves at 17:00 today. Facilitator: ALL questions first.",
+      "questions": {
+        "all": [
+          "Running the notice period bought you a complete handover, the client book back in company hands, and a checkable statement, and it cost you nine days of access you could not fully monitor. Price that trade out loud, and say whether you would make it again with only what you knew on day one.",
+          "One item does not reconcile. Say what weight it carries: is forty unexplained minutes six weeks ago enough to change the company's posture toward a man whose account has otherwise been corroborated at every point you could test it?"
+        ],
+        "legal": [
+          "Your position is now materially stronger than it was on day one and you did not litigate anything to get there. Name the three specific facts that improved it, and say which of them you could have manufactured any other way."
+        ],
+        "hr": [
+          "He asked, on day seven, what was going on, and somebody in this room decided what to tell him. Say what that answer was and whether it was the right one, now that you have seen the exit interview it preceded."
+        ],
+        "it_iam": [
+          "The cloud sync client came off on day two under narrowed scope, four years after the exception that put it there expired. How many equivalent exceptions are open right now, and what triggers a review of one?"
+        ],
+        "exec": [
+          "All three accounts were handed over on calls he led. Say what that is worth in revenue terms, and then say whether that number should have been part of the day-one decision."
+        ],
+        "soc": [
+          "Forty minutes, six weeks ago, unmeasurable because a configuration option is disabled on performance grounds. Take that to whoever owns that decision. What is your ask, in one sentence?"
+        ]
+      }
+    },
+    {
+      "id": "s23",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT THREE, BRANCH B. Read aloud.\n\nIt is 15:30 on his last day. He has done everything asked and several things that were not. He still holds copies of six documents he authored, under a 2019 written permission the company's own file confirms, and a copy of a client book that is now also back in the company's repository. Forty minutes remain unexplained.\n\nHe is expecting to shake hands at 17:00. Counsel needs a decision before that. Poll the room.",
+      "decision": {
+        "prompt": "On the question of what was his to take, the company will:",
+        "options": [
+          {
+            "label": "DRAW THE LINE. Take the position that everything produced here belongs to the company regardless of who authored it: issue a formal demand before he leaves the building for the return and deletion of all six documents and the portfolio copy, require a signed attestation as a condition of his final payment, and treat the unexplained forty minutes as an open matter to be pursued. Accept that you are overriding your own written permission from 2019, that you are doing it at 16:00 on the last day of a cooperative handover, and that ninety other employees are on the same contract wording and will hear about this.",
+            "goto": "e3"
+          },
+          {
+            "label": "SCOPED RETURN AND ATTEST. Accept the distinction he has been drawing all along: the portfolio spreadsheet comes back and is deleted from his copies under independent verification, the six authored documents he keeps under the 2019 approval with a written acknowledgement that they are not to be used at Northbrace, he attests to what he holds, and the forty minutes is put to him directly in the next fifteen minutes rather than left as a suspicion. Accept that you are settling on terms he proposed, that the manager will call it a surrender, and that you will never be certain about those forty minutes.",
+            "goto": "e4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e1",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU MADE THE FORMAL DEMAND. Read aloud.\n\nThe demand letter goes on day seven. Northbrace is put on notice on day eight, and does exactly what a well-advised company does: it suspends Samir Haddad on full pay pending its own review, which takes eleven weeks, at the end of which it reinstates him with an apology and a note in his file that he was accused and cleared.\n\nThe litigation runs fourteen months. It surfaces, in order: your disabled endpoint logging configuration, your 45-day retention decision, an executive-approved cloud exception never reviewed in four years, ninety employees on superseded contract wording, a manager who could not say when he had last looked at the document he called the crown jewel, and a written approval from that company telling the defendant his work was his own. Two of those items become the story. None of them is about him.\n\nIt settles in month fourteen. He returns and deletes the material, which is what he offered in week one. The company's costs are roughly nine times what it would have spent on the independent examiner. The client book was, in the end, returned; two of the three clients on it had already moved, one of them to Northbrace, in month four, when their architect was suspended and nobody from your company called them.\n\nInside the building, the effect is durable and not the one intended. Two of his six team members leave within eighteen months, one of them to Northbrace. The insider threat program is now understood, correctly, as the function that sues people who resign. Voluntary disclosures at exit interviews stop entirely, because the last person who volunteered everything got a demand letter for his trouble.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This ending achieved the stated objective, the material came back, and cost roughly nine times the alternative plus two clients and two employees. Identify the earliest decision in the whole exercise that, changed, would have avoided it, and say honestly whether the room would have had the information to change it at that moment."
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU ACCEPTED THE SCOPED RETURN. Read aloud.\n\nThe independent examiner is appointed in week two and reports in week five. Every device is produced, including the USB, which contains family photographs, tax documents, and a folder of his own authored design work, exactly as described. The portfolio spreadsheet is deleted from three locations under verification. He signs the attestation. Nothing is found that he had not already disclosed, and the examiner records one caveat that never goes away: an attestation and an inspection establish what is there, not what was once there and has been moved somewhere the examiner cannot look.\n\nThe internal statement goes out and is two sentences long: that Samir Haddad has left the company, and that he has not been accused of wrongdoing. The people who watched him escorted out read it, and about half of them believe it.\n\nThe cost is real. Two of the three major accounts required six months of senior attention to stabilise, and one of them renewed short. The manager who wanted him sued regards the outcome as a defeat, says so in three meetings, and leaves the following year for unrelated reasons. And nobody ever establishes what was in the first forty-minute window, because nobody ever asked him about it directly while there was still a conversation to have.\n\nWhat improves is structural and it improves fast, because the near-miss frightened people usefully. A one-page statement of what an employee may keep is written by Legal and HR inside six weeks and given to people on their first day. The 2021 contract wording is applied to all ninety employees. Endpoint volume logging is enabled. The 2022 cloud exception is closed along with sixty-one others found in the same sweep. And the departure-triggered review is made automatic, which produces, in the first year, thirty-one reviews, twenty-nine of which are closed in under an hour by exactly the kind of context that Bettina Holl's change ticket would have provided.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This branch reached a good outcome after an avoidable start: the company walked him out first and negotiated afterwards. Ask the uncomfortable version of the question. If the offer had never come, would this room have found its way here on its own, or did an outcome this good depend on the other side being more reasonable than you were?"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU DREW THE LINE. Read aloud.\n\nThe demand is put to him at 16:10 on his last day, in a room with two people he has never met, after nine days in which he handed over three accounts, wrote three documents and volunteered his own conduct twice. He reads it, asks whether the company is aware that its own manager gave him written permission in 2019, is told that the company's position is that the permission was not the manager's to give, and signs nothing. He leaves at 16:40, twenty minutes early, and does not shake anyone's hand.\n\nWhat follows is not litigation, because he has an offer letter forbidding him to bring anything and no interest in a fight. He simply stops cooperating. The forty minutes is never explained, because the only person who could explain it was, in the last twenty minutes of six years, given a reason not to. He returns nothing, is pursued for four months, and eventually deletes the portfolio spreadsheet under a negotiated agreement that costs more in legal time than the examiner would have cost in week one. He keeps the six authored documents, because after eleven months your outside counsel advises that the 2019 email makes that fight unwinnable and always did.\n\nInternally, the effect is the one nobody modelled. The demand was served on a man visibly doing the right thing, and forty people in that practice heard about it within a week. The next three departures from the practice give the legal minimum notice, hand over nothing, and answer no questions at their exit interviews. One of them is asked directly whether she holds any company material and declines to answer on the record, having watched what candour bought Samir Haddad.\n\nThe handover, at least, held. All three accounts stayed.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "The company got its handover and then spent the goodwill that produced it, in the last thirty minutes, for material it could not ultimately keep. Name the mechanism in your organisation that would have stopped that decision. If the honest answer is that the loudest person in the room decides, say so, and write down who that is."
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU SPLIT IT WHERE HE DID. Read aloud.\n\nThe conversation happens at 15:50 and lasts twenty minutes. He is asked directly about the forty-minute window, and his answer is immediate and unremarkable: that was the first attempt, the drive was formatted wrong and he copied the photographs and gave up. He offers the device. The independent examiner takes it the following week and finds precisely that, along with a partial copy of his own design folder, and reports that the artefacts are consistent with his account.\n\nThe portfolio spreadsheet is deleted from his copies under verification. He keeps the six documents he authored, under the 2019 approval, with a written acknowledgement that he will not use them at Northbrace, which he signs without argument because it is what he had been saying for two weeks. He leaves at 17:20, late, because the handover call with the third client ran over.\n\nThe residue is honest. You never proved a negative, and you never will: an attestation covers what a person will say and an inspection covers what a device holds, and neither reaches what somebody remembers. Two people in this room believe the company was too generous and say so in the after-action, and their argument is not a weak one. The manager calls it a surrender for about six months.\n\nWhat the company keeps is not the material. It is that all three accounts stayed, that the client book is in the repository for the first time in six years, that the next four people who resigned from that practice all offered handovers and two of them volunteered material they were not asked about, and that a one-page statement of what an employee may keep now exists and is given to people on their first day. Eleven months later Samir Haddad refers a candidate to your recruiting team. She is hired.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This branch resolved the unexplained item in twenty minutes by asking a direct question, having spent nine days earning the standing to ask it. Say what your organisation would have had to do differently to be able to ask that question at all, and who would have had to authorise it."
+        ]
+      }
+    }
+  ],
+  "aar": {
+    "hotwash": [
+      "One word from each person: how did that feel? Around the table, before any analysis.",
+      "Show of hands, honestly: how many of you hold work you produced at a previous employer? Now say what your organisation's written rule is on that. If nobody can state it, you have found the control that would have prevented this entire exercise.",
+      "Four data-loss alerts fired on this employee and closed themselves automatically. Go and find out, this month, how many alerts of that class your tooling closed in the last ninety days, and who, if anyone, would have seen them.",
+      "Bettina Holl moved forty times more data than the subject and was entirely innocent. What does your program require alongside volume before a number becomes a concern, and how long does it take to get it?",
+      "The walk-him-out versus run-the-notice-period fork: now that you have seen where your branch led, would you vote the same way with the same information? One sentence of why.",
+      "Name the single document in this exercise that most damaged the company's position. It was written by one of your own managers, in good faith, in about nine seconds. What is your process for the next nine-second email of that kind?",
+      "Name one thing your organisation should start, one it should stop, and one it should keep, based on today."
+    ],
+    "objectives": [
+      "O1 RECOGNIZE: Evaluate the ability to detect and contextualize pre-departure data movement, and whether volume-based alerting can tell an authorized bulk transfer from an unauthorized one without a human going to look.",
+      "O2 GOVERN: Test whether the organization has a written, communicated standard for what an employee may retain on departure, and whether its contractual and policy instruments are actually applied to its current workforce.",
+      "O3 DECIDE: Exercise the notice-period decision, including who owns it, what the immediate-removal option costs in handover, client continuity and workforce trust, and what running the period out can be used to obtain.",
+      "O4 PRESERVE: Test the organization's ability to identify anticipated litigation, suspend routine deletion on its own systems, and preserve evidence proportionately and in time.",
+      "O5 PROPORTION: Evaluate whether the organization can match its response to what it can actually prove, and can separate the material it wants back from the message it sends to everyone still employed."
+    ]
+  }
+}

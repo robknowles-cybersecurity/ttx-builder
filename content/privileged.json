@@ -1,0 +1,628 @@
+{
+  "meta": {
+    "id": "privileged",
+    "title": "Keys to the Kingdom",
+    "tagline": "The administrator who can delete the evidence of what the administrator did.",
+    "version": "1.0.0-draft"
+  },
+  "industries": {
+    "financial": {
+      "org_name": "Meridian Financial",
+      "crown_jewels": "the core banking platform, the payment gateway, and the backup estate that is supposed to outlive both",
+      "regulator": "your primary federal financial regulator",
+      "flavor_notes": "Operational resilience obligations apply: a destructive event is a reportable incident on a recovery-time clock, not only a security matter. Your recovery-time objectives were filed with a regulator by someone who assumed the backups would be there."
+    },
+    "healthcare": {
+      "org_name": "Meridian Health Systems",
+      "crown_jewels": "the electronic health record, the clinical scheduling estate, and the backups clinical continuity depends on",
+      "regulator": "HHS Office for Civil Rights and your state health authority",
+      "flavor_notes": "Downtime here is a patient-safety event before it is anything else. Your downtime procedures exist on paper and were last exercised as a fire drill. Availability, not confidentiality, is the sharp edge in this scenario."
+    },
+    "manufacturing": {
+      "org_name": "Meridian Fabrication",
+      "crown_jewels": "the engineering workstations on the plant network, the CAD vault, and the backup estate",
+      "regulator": "your defense customers, and BIS and DDTC for export-controlled technical data",
+      "flavor_notes": "A line stoppage carries contractual penalties measured per shift. The IT and OT boundary matters here: an administrator whose account reaches across it is a different problem from one who does not, and this room may not know which it has."
+    },
+    "technology": {
+      "org_name": "Meridian Systems",
+      "crown_jewels": "the production control plane, the build and release pipeline, and the backup estate",
+      "regulator": "the FTC and your customers' contractual audit rights",
+      "flavor_notes": "You publish an availability commitment and a status page. Both make an internal destructive event externally visible within minutes, which changes who has to be told and how fast."
+    }
+  },
+  "roles": [
+    {
+      "id": "int_lead",
+      "title": "Insider Threat Program Lead",
+      "briefing": "You own insider risk detection and response coordination. This case tests the part of your program nobody wanted to write: what it does when the person of concern administers the systems your program runs on. Everything you would normally reach for, he maintains.",
+      "authorities": [
+        "Initiate an insider risk inquiry and assign an analyst",
+        "Request enhanced monitoring through IT/IAM under existing policy",
+        "Convene the cross-functional response group",
+        "Recommend, but not order, access suspension"
+      ],
+      "private_knowledge": [
+        "Your program's privileged-user monitoring is a policy you wrote and a capability you do not own. The logs that would show it are collected, retained and administered by the team the subject belongs to. You have raised this twice in writing.",
+        "Your escalation criteria list eleven risk indicators. None of them is administrator. The matrix was built around data movement, and this scenario is not primarily about data movement.",
+        "A sector briefing eight months ago covered destructive insider events and their pre-incident pattern: a grievance with a date on it, a widening of access that outruns the role, and a quiet interest in the recovery path. It is in your files. You have not reread it since."
+      ]
+    },
+    {
+      "id": "soc",
+      "title": "SOC Manager",
+      "briefing": "You run detection. Your discomfort in this exercise is precise: your rules are tuned to catch an account behaving unlike itself, and this account behaving like a wrecking ball is indistinguishable from this account doing its job well.",
+      "authorities": [
+        "Isolate a host or kill a session during an active incident",
+        "Preserve logs and forensic images",
+        "Tune, suppress, or escalate alerts"
+      ],
+      "private_knowledge": [
+        "Audit forwarding from one management host has been intermittent for six weeks. It is ticketed against a known agent defect, the vendor has acknowledged it, and the ticket is open. You believe the explanation. You also cannot rule out the other one, and you have not said that sentence to anyone.",
+        "The subject's account sits on your privileged-user exclusion list for exactly the activity class you would otherwise alert on. He requested the exclusion during the estate migration, you approved it, and it was correct at the time.",
+        "You cannot currently prove a negative about the backup estate, because the backup estate's logs are collected by the backup estate. That is an architecture decision from before your time, and today it is the whole problem."
+      ]
+    },
+    {
+      "id": "hr",
+      "title": "HR Business Partner",
+      "briefing": "You hold the performance plan, the grievance, and a personnel file that reads like a commendation until nine weeks ago. You will spend this exercise defending a line: a performance plan is a management tool, not an accusation, and a man being angry about one is not a finding.",
+      "authorities": [
+        "Access the personnel and hiring file",
+        "Initiate supportive engagement, suspension, or termination processes with Legal's concurrence",
+        "Route and manage grievances and ethics-line reports"
+      ],
+      "private_knowledge": [
+        "Eleven years. Two ratings of exceeds expectations in the last three cycles. A Director of Infrastructure role posted internally, interviewed for, and filled nine weeks ago by an external hire. A thirty-day performance plan opened four weeks ago at the new director's initiative, over your written reservation that the timing would read badly.",
+        "He has requested a skip-level meeting twice. Both requests were deferred by the executive's office, the second without a reason. He has not asked a third time.",
+        "The last engagement survey carried an anonymous free-text comment from within his team: we are one person away from not being able to restore anything. It was summarised upward as a resourcing concern."
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "General Counsel / Legal",
+      "briefing": "Two clients today: the company, and the process. You are watching for a specific failure mode, a room deciding a man is a saboteur because he is visibly aggrieved, and for its mirror image, a room so careful about employment law that the estate goes dark while everyone behaves impeccably.",
+      "authorities": [
+        "Issue litigation holds and direct evidence preservation",
+        "Approve or block employment actions and any monitoring expansion",
+        "Engage outside counsel and law enforcement",
+        "Determine notification and disclosure obligations"
+      ],
+      "private_knowledge": [
+        "Evidence preservation on systems the subject administers is the one instruction you cannot route through the subject's own team, and that team is small. Say this out loud early; it changes who does the work and how the first hour is sequenced.",
+        "Accelerating a performance plan into a termination, timed to a security concern the company cannot yet articulate, is the exact fact pattern a plaintiff's lawyer builds a retaliation claim on. Documenting the security rationale contemporaneously is what separates a defensible action from an expensive one.",
+        "A destructive event that reaches {{crown_jewels}} starts clocks that do not care whose fault it was or how sympathetic the cause. Some of those clocks are shorter than the time this room will spend deciding."
+      ]
+    },
+    {
+      "id": "it_iam",
+      "title": "IT / Identity and Access Management Lead",
+      "briefing": "You own accounts and access scopes. Your discomfort is quiet and total: every privilege this man holds was granted correctly, one reasonable exception at a time, most of them approved by you, and you cannot currently produce a complete list of them.",
+      "authorities": [
+        "Suspend or restrict accounts on documented request",
+        "Adjust access scopes and revoke sessions and tokens",
+        "Account for and retrieve issued equipment and standing exceptions"
+      ],
+      "private_knowledge": [
+        "He was added to the backup administrators group during the estate migration two years ago. The migration's access plan had a removal step with a named owner. The owner left the company eleven months ago and the step was never closed. It has appeared on every quarterly exception report since, each time as an accepted risk.",
+        "A break-glass account exists for the management estate. Its credential is held in a vault that he administers. Nobody in this room can tell you, right now, whether that is a problem or just an awkward sentence.",
+        "Revoking his privileges is about ten minutes of work and an organisational fire alarm. He would know within a minute. Three of the systems he holds have no second qualified administrator, and one of those three is in {{crown_jewels}}."
+      ]
+    },
+    {
+      "id": "physec",
+      "title": "Physical Security / Corporate Security",
+      "briefing": "You hold badge records, the after-hours picture, and the relationship with the field office. In a destructive-risk scenario your channel matters earlier than usual, because the thing you are trying to prevent cannot be undone after it happens.",
+      "authorities": [
+        "Access badge, visitor, and equipment-movement records",
+        "Coordinate with law enforcement when directed",
+        "Support protective and workplace-safety processes"
+      ],
+      "private_knowledge": [
+        "Badge records place him in the data hall on a Saturday three weeks ago for twenty-two minutes, with no change ticket open against him. He has legitimate standing access to that room and has been in it on a Saturday perhaps forty times in eleven years.",
+        "Your field office contact briefed the sector this spring on destructive insider events. Their line, delivered flatly: call us before, not after. After, we are writing a report about your outage.",
+        "You have known him nine years. He rebuilt your team's radio dispatch system twice, on his own time, and refused the gift card. You will spend this exercise managing your own disbelief, and you should say so to the room rather than let it steer you quietly."
+      ]
+    },
+    {
+      "id": "comms",
+      "title": "Communications Lead",
+      "briefing": "This case has a story problem before it has a story. A visible outage and a visible frog-march say very different things to a workforce that has spent nine weeks watching how the new director's arrival is going, and you will be writing whichever one happens.",
+      "authorities": [
+        "Draft and approve internal and external statements",
+        "Manage press inquiries and executive communications",
+        "Shape the internal message about reporting and consequences"
+      ],
+      "private_knowledge": [
+        "The Director hire was unpopular and people said so in open channels. Two of those messages are still there. Any action taken against him this month will be read by his team as the sequel to that decision, whatever the memo says.",
+        "The company publishes an availability commitment. If {{crown_jewels}} go down, the disclosure conversation starts before the internal investigation has a first finding.",
+        "Whatever happens here is the loudest message the insider threat program has ever sent about what happens to a person on a performance plan. You cannot opt out of sending it."
+      ]
+    },
+    {
+      "id": "exec",
+      "title": "Executive Sponsor (VP, Infrastructure)",
+      "briefing": "He is one of yours. You hired him, promoted him twice, called him the best operator in the building in front of people, and then gave the Director job to someone else. You speak for the business and for leadership's risk appetite, and today, uncomfortably, for several of the decisions now on the table.",
+      "authorities": [
+        "Accept or escalate business risk decisions",
+        "Authorise disruption to production and revenue-bearing activity",
+        "Carry the recommendation to the C-suite and the board"
+      ],
+      "private_knowledge": [
+        "You told him there would be other opportunities. The conversation lasted four minutes, in a corridor, and you have not followed up in nine weeks. You have thought about it maybe twice. He has thought about it every day.",
+        "The performance plan was the new director's idea. You approved it in a forwarded email without reading the attachment, because you were on your way to a board prep session.",
+        "You know, and have never said in a meeting, that if he walked out today there are two systems in this company nobody else can restore. That fact has been convenient for eleven years and is about to become the most expensive thing on your desk."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "s01",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "FACILITATOR BRIEFING. This is a discussion exercise, not a test. It works when people disagree out loud and discover who owns a gap. Ground rules to read to the room: everything is fictional, and every person, organisation and document in it is an invented composite; answer with what your organisation would actually do, not what the binder wishes; what is said here stays here, except the improvement items we write down.\n\nTwo ground rules are specific to this scenario and both are worth reading slowly. First: this exercise involves an employee who was passed over for promotion and placed on a performance plan. Grievance is ordinary, lawful, and overwhelmingly harmless. The overwhelming majority of aggrieved employees do their jobs and get on with their lives. It appears here as context that a very small number of people act on, not as evidence of character, and the exercise will punish a room that forgets the difference. Second: we will not, at any point today, discuss how any of this would technically be done. Not the tampering, not the scheduled job, not the credential hoarding. If someone starts, stop them. The exercise is the decisions: what you notice, when you act, who you tell, and what each choice costs.\n\nAssign a note-taker who is not playing a role. Hand out character sheets and give the room two minutes of silent reading. Private knowledge is each player's to reveal when it would naturally surface, and that is the game. At each numbered decision, poll the room, take the majority, ties go to the most senior role present, and turn to the section indicated.",
+      "coaching": [
+        "First-time facilitators: read both sensitivity ground rules verbatim rather than improvising them. The second one, no technique, will be tested by somebody in the first twenty minutes, usually with the phrase just hypothetically. Have the sentence ready: we are not doing that today, and here is the question I actually want answered.",
+        "Open with one sentence of role introduction per player. Name the empty seats out loud. In this scenario an empty IT/IAM chair is not a gap in the exercise, it is the finding.",
+        "Your two tools all day: the printed questions, and five seconds of silence after each one. The silence is not dead air. It is where the honest answers form."
+      ]
+    },
+    {
+      "id": "s02",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART ONE: THE MAN WHO KEEPS THE LIGHTS ON. Read aloud.\n\nYou are the insider threat capability of {{org_name}}. Curtis Hale is a principal systems administrator and has been here eleven years. He built most of what runs underneath {{crown_jewels}}, he has been paged at three in the morning more times than anyone has counted, and until this quarter his file reads like a commendation.\n\nNine weeks ago the Director of Infrastructure role he had interviewed for went to an external hire. Four weeks ago that new director opened a thirty-day performance plan on him, citing communication and stakeholder management. People who work near Curtis would tell you, if anyone asked, and nobody has, that he has been quieter since, and scrupulously, pointedly correct. He has stopped volunteering.\n\nToday, three routine items from three different systems are about to arrive at three different desks. None of them is alarming alone. Your organisation's first test is whether they ever meet.",
+      "difficulty_variants": {
+        "veteran": {
+          "body": "PART ONE: THE MAN WHO KEEPS THE LIGHTS ON. Read aloud.\n\nYou are the insider threat capability of {{org_name}}. Curtis Hale, principal systems administrator, eleven years, built most of what runs underneath {{crown_jewels}}. Nine weeks ago the Director role went to an external hire. Four weeks ago that director opened a thirty-day performance plan on him. He has gone quiet and scrupulously correct, and he has stopped volunteering.\n\nMeanwhile, two floors down, a network engineer named Terrence Ovitt has spent the same nine weeks being loudly, formally and publicly furious about the same hire: a filed grievance, an open channel he posts in, and a manager who has started documenting. His name is about to enter this story and test whether this room can tell noise from risk.\n\nThree routine items from three systems are about to arrive at three desks. None is alarming alone. The first test is whether they ever meet."
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "The first item is four weeks old and has been sitting in a personnel file. Hand it out or read it as received.",
+      "inject": {
+        "kind": "hr",
+        "from": "People Operations, performance management record (confidential)",
+        "subject": "30-day performance improvement plan, C. Hale, Infrastructure",
+        "body": "Manager statement of concern: stakeholder communication and change-management discipline.\n\nExamples cited: two changes executed inside the freeze window without prior notification to the new director; a project meeting the employee left after fourteen minutes; a written escalation to a peer team the manager describes as abrupt.\n\nEmployee response, recorded verbatim at the employee's request: I executed both changes under the standing break-fix authority I have held for eleven years and I logged both. I left the meeting because I was paged. I would like a skip-level.\n\nPlan duration 30 days, review at 15.\n\nHRBP note appended: I have advised the manager that opening a plan on a long-tenured employee nine weeks after an unsuccessful internal promotion, on these examples, is likely to be perceived as retaliatory regardless of intent, and I recommend a coaching conversation first. Manager has elected to proceed."
+      },
+      "coaching": [
+        "Ask the room to notice that HR's own note predicted exactly the problem the company now has, in writing, four weeks early, and was overruled. Then ask: in your organisation, what happens to a written HRBP reservation that a manager overrules? Who reads it? Most rooms discover the honest answer is nobody."
+      ]
+    },
+    {
+      "id": "s04",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The second item is nineteen days old. It is an internal email, and it is the most reasonable document in this exercise.",
+      "inject": {
+        "kind": "email",
+        "from": "C. Hale <c.hale@{{org_domain}}>, to VP Infrastructure, copy to People Operations",
+        "subject": "Request for a skip-level (second request)",
+        "body": "I would like thirty minutes.\n\nI am not asking you to reverse the hire and I am not going to relitigate the interview. I would like to understand what changed, because for eleven years the answer to every hard problem in this estate was call Curtis, and the written record now says my communication is a concern. Those two things cannot both be new.\n\nI have three specific things I want to put in front of you, and one of them is a risk to this company that has nothing to do with me and that I have raised twice.\n\nI will take any thirty minutes you have, including early or late.\n\nCurtis",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "I would like thirty minutes.\n\nI am not asking you to reverse the hire and I am not going to relitigate the interview. I would like to understand what changed, because for eleven years the answer to every hard problem in this estate was call Curtis, and the written record now says my communication is a concern. Those two things cannot both be new.\n\nI have three specific things I want to put in front of you, and one of them is a risk to this company that has nothing to do with me and that I have raised twice.\n\nI will take any thirty minutes you have, including early or late.\n\nCurtis\n\nFACILITATOR NOTE, read aloud: hold on to the sentence about a risk to this company that has nothing to do with me. This is a genuine attempt to escalate a real problem through a legitimate channel, and it is about to be ignored. Watch what the room does with it later, once it has decided he is the problem."
+          }
+        }
+      }
+    },
+    {
+      "id": "s05",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION ONE. Two documents, both entirely ordinary, four weeks and nineteen days old. Nothing security has ever seen. Facilitator: ALL questions first, then the seats.",
+      "questions": {
+        "all": [
+          "Nothing in front of you is a security event. Would either of these documents ever reach this room in your real organisation, and if the honest answer is no, is that correct, or is it just how the plumbing happens to be laid?",
+          "Name the difference between a risk indicator and a personnel matter, in one sentence you would be willing to read aloud to the person concerned."
+        ],
+        "hr": [
+          "Your own file note predicted this. Walk the room through what you would need, in authority, policy or a named recipient, for that note to have gone somewhere other than the file."
+        ],
+        "int_lead": [
+          "Your escalation matrix has eleven indicators and none of them is administrator. Say what you would add today, and then say honestly whether adding it would make your program better or just busier."
+        ],
+        "exec": [
+          "He asked you for thirty minutes, twice, and told you one of the things he wanted to raise was a company risk unrelated to himself. You have not replied. What was the actual reason, and how many people in your organisation are currently in the same queue?"
+        ],
+        "legal": [
+          "If this room starts a file on him now, on this material, what does that file look like in a deposition eighteen months from now?"
+        ]
+      },
+      "coaching": [
+        "Do not let the room resolve the tension between risk indicator and personnel matter. It is the spine of the whole exercise and it should stay uncomfortable until the after-action."
+      ]
+    },
+    {
+      "id": "s06",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART TWO: THREE DESKS. Read aloud.\n\nNobody has assembled anything yet, and for the next few minutes nobody will.\n\nThe quarterly access review lands in IT/IAM's queue, where it has landed every quarter for two years. A six-week-old monitoring ticket gets its weekly touch in the SOC and stays open. And a junior administrator, working through a change-freeze readiness checklist that exists only because the company has a freeze coming, opens a management host she has never had a reason to open before.\n\nNone of these three people knows about the other two, or about a performance plan, or about a skip-level request that went unanswered. This is the ordinary condition of every organisation. The rest of this exercise asks what yours has that would make the three of them meet before something happens rather than after."
+    },
+    {
+      "id": "s07",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Artefact one: the quarterly access review exception report. This is its ninth consecutive appearance.",
+      "inject": {
+        "kind": "memo",
+        "from": "Identity Governance, quarterly privileged access review, exception register",
+        "subject": "Q3 exceptions, accepted risks carried forward",
+        "body": "EXC-0412. Group: backup administrators. Member: C. Hale, principal systems administrator. Basis: estate migration, temporary elevation. Planned removal: migration close-out task 7.3, owner J. Ferreira. Status: OWNER NOT IN DIRECTORY. Carried forward, quarters 2 through 9. Risk acceptance: infrastructure management.\n\nEXC-0455. Break-glass credential for the management estate is held in a vault administered by the infrastructure team. No segregation of duty between vault custodian and privileged consumer. Carried forward, quarters 5 through 9. Risk acceptance: infrastructure management.\n\nEXC-0470. Privileged-user alerting exclusion, account C.HALE-ADM, activity class bulk administrative. Basis: migration noise reduction. Review date: passed, quarter 6. Carried forward. Risk acceptance: security operations.\n\nReviewer note: 3 of 3 exceptions on this register are accepted by the same function that benefits from them.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "EXC-0412. Group: backup administrators. Member: C. Hale. Why he was added: a migration two years ago that needed him there temporarily. The task that was supposed to remove him afterwards has an owner who left the company. Carried forward unchanged for nine quarters.\n\nEXC-0455. The emergency break-glass password for the management systems is kept in a vault looked after by the same team that would use it. Nobody outside that team can check it. Carried forward for five quarters.\n\nEXC-0470. The subject's administrator account is excluded from a security alert that would otherwise fire on bulk administrative activity. He asked for the exclusion during the migration because it was generating noise. It was correct then, and its review date passed three quarters ago.\n\nReviewer note: all three of these exceptions are signed off by the same team that benefits from them.\n\nFACILITATOR NOTE, read aloud: none of this is misconduct. Every line is a reasonable decision that outlived its reason. That is what privileged access drift looks like inside a well-run company."
+          }
+        }
+      },
+      "coaching": [
+        "Ask who in the room has an exception register carrying a line item older than the person who owns the line item. Then ask what would have to be true for that line to be closed rather than carried."
+      ]
+    },
+    {
+      "id": "s08",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Artefact two: a monitoring ticket, six weeks old, touched weekly, still open.",
+      "inject": {
+        "kind": "dlp",
+        "from": "Security Operations, ticket SOC-7719, weekly review note",
+        "subject": "Intermittent audit forwarding gap, management host MGMT-02, vendor defect",
+        "body": "Symptom: audit event forwarding from MGMT-02 stops for intervals of 40 to 190 minutes, then resumes. Nine occurrences in six weeks.\n\nVendor has acknowledged a known agent defect matching the symptom, with a fix in a release scheduled for next quarter. Workaround: none available without a maintenance window.\n\nAnalyst note, week 4: gaps do not correlate with host load or with scheduled jobs.\nAnalyst note, week 5: asked infrastructure whether anything else runs in the windows. Answer was no.\nAnalyst note, week 6: proposing we close as known defect and reopen after the vendor release. Approver: pending.\n\nRetention note: forwarded events are held 400 days centrally. Events not forwarded exist only in the local log on MGMT-02, retention 30 days, administered locally."
+      },
+      "coaching": [
+        "The last sentence is the whole inject. Read it twice. Ask the room who administers MGMT-02, and watch how long it takes someone to say the name out loud."
+      ]
+    },
+    {
+      "id": "s09",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Artefact three, and the one that turns a personnel matter into an incident. It arrives at 16:40 on a Thursday from a junior administrator who has been with the company seven months.",
+      "inject": {
+        "kind": "memo",
+        "from": "P. Anand, systems administrator II, to her team lead, copy to change management",
+        "subject": "Change-freeze readiness: unattributed scheduled job on MGMT-02, please advise",
+        "body": "Working the freeze readiness checklist, item 6, inventory of scheduled jobs on management hosts.\n\nMGMT-02 has one I cannot attribute. It is not in the runbook, not in change management, and not in the job register. It was created eleven days ago. It is scheduled to run on a recurring basis, and it does not run while a condition holds. From the job's own description field, the condition is an account check. Its target is the backup catalogue.\n\nThe description field contains one line of free text, which I am reproducing exactly because I do not know what to make of it: hold.\n\nI asked in the team channel who owns it and got no reply in two hours, which is unusual. I have not touched it, changed it, or disabled it. I am escalating because item 6 says escalate anything unattributed, and because I do not like it.\n\nPlease advise before the freeze starts Monday.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Working the change-freeze readiness checklist, item 6, inventory of scheduled jobs on management hosts.\n\nMGMT-02 has one I cannot attribute. It is not in the runbook, not in change management, and not in the job register. It was created eleven days ago. It runs on a repeating schedule, and it does NOT run as long as a certain condition holds true. From the job's own description, that condition is a check on whether a particular account is still active. Its target is the backup catalogue.\n\nThe description field contains one line of free text and I am reproducing it exactly because I do not know what to make of it: hold.\n\nI asked in the team channel who owns it and got no reply in two hours, which is unusual. I have not touched it, changed it, or disabled it. Please advise before the freeze starts Monday.\n\nFACILITATOR NOTE, read aloud: a job that keeps NOT doing something as long as a condition holds is what the literature calls a dead-man switch. It is arranged so the thing happens when the person stops being there. Do not discuss how it is built. The only question that matters today is what this room does in the next hour. And note that the person who found it did the single most valuable thing in this entire exercise: she escalated something she could not explain, to a channel outside her own team, and she did not touch it."
+          }
+        }
+      },
+      "coaching": [
+        "P. Anand is the hero of this exercise and the room will skate past her. Stop and make them say what she did right: escalated outside her own team, preserved rather than fixed, and named her discomfort as a reason. Then ask what your organisation does to a seven-month administrator who escalates something about an eleven-year one, because the answer to that determines whether you ever get this ticket in real life."
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "red_herring": true,
+      "body": "COMPLICATION. While the room is absorbing the scheduled job, a manager two floors down forwards security a concern of his own, and it is a much better story.\n\nTerrence Ovitt, a network engineer, has spent nine weeks being loudly and publicly furious about the same director hire: a formal grievance with his name on it, three posts in an open channel that are still up and are genuinely intemperate, and a manager who has started keeping a document. He has after-hours access. He was overheard saying somebody should let this place find out what happens without us. He is, by common agreement, the angriest man in the building.\n\nThe truth, available to any player who proposes actually looking: Ovitt's privileges reach switch and firewall configuration on the corporate network and stop dead at the boundary. Not the backup estate, not MGMT-02, not {{crown_jewels}}. He has created no scheduled job anywhere. His after-hours pattern is a documented follow-the-sun rota he has been on for two years. And he filed his grievance through the process, in his own name, which is the single most cooperative thing an angry employee can do.\n\nHe is not your problem. He is your control group. If the room spends more time on Ovitt than his access profile deserves, let them, and then make them articulate, for the after-action record, exactly why the loud man was more interesting than the quiet one.",
+      "questions": {
+        "all": [
+          "Ovitt is angrier, louder and on the record. Hale is quieter and holds the keys. Build the triage rule out of that comparison: what combination of grievance, capability and behaviour actually earns program attention, and does your real organisation's instinct match the rule you just wrote?",
+          "Who in this room is permanently assigned the job of saying the sentence: being angry is not a case?"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "type": "discussion",
+      "durations": ["60", "90", "120"],
+      "body": "DISCUSSION TWO. Assemble the whole picture out loud, in order: an eleven-year administrator passed over nine weeks ago; a performance plan HR advised against in writing; two ignored requests for thirty minutes, one of which said he wanted to raise a company risk; a group membership carried as an accepted risk for nine quarters; a break-glass credential in a vault he administers; an alerting exclusion whose review date passed; a six-week audit-forwarding gap on the one host whose local logs he keeps; and, eleven days old, an unattributed job on that host, aimed at the backup catalogue, that runs only when an account check fails. Facilitator: ALL questions first.",
+      "questions": {
+        "all": [
+          "State the leading hypothesis in one sentence and the strongest innocent alternative in one sentence, and make the innocent one genuinely strong, because there is one. Then name which one this room WANTS to be true about a man who has been paged at three in the morning for eleven years, and say which direction that wanting pushes you.",
+          "What do you still not know that most changes the answer, and which of those unknowns can be resolved without Curtis Hale finding out you are asking?"
+        ],
+        "int_lead": [
+          "Your privileged-user monitoring is a policy you own and a capability his team runs. Say out loud what you can and cannot verify in the next hour without going through the people you may be investigating."
+        ],
+        "soc": [
+          "Six weeks, nine occurrences, and a vendor defect that genuinely exists. Defend your ticket. Then say what one change would have made a benign explanation and a malicious one distinguishable at week one instead of week six."
+        ],
+        "hr": [
+          "You wrote the reservation. It came true. Say what HR's role is in the next 72 hours, advocate, investigator, both or neither, and who decides, because the answer is about to be tested."
+        ],
+        "legal": [
+          "There is a scheduled job aimed at the backup catalogue and an employee on a performance plan. Say precisely what must be true before anyone at this table connects those two facts in writing, and what preservation you are ordering in the next ten minutes."
+        ],
+        "it_iam": [
+          "You cannot currently produce a complete list of his privileges. How long would producing one take, who would have to run it, and would he know you had asked?"
+        ],
+        "physec": [
+          "Twenty-two minutes in the data hall on a Saturday, no ticket, and forty prior Saturdays that were entirely normal. Argue both readings, then tell the room which one you would be willing to put in a document."
+        ],
+        "comms": [
+          "Whatever this room decides, you write it, and your own brief says you cannot opt out of sending it. Before the vote, name the option on the table that you could not make sound fair to his team — and then say whether that difficulty is a reason to avoid it or just the cost of doing it."
+        ],
+        "exec": [
+          "You approved the performance plan without reading the attachment, and you know there are two systems nobody else can restore. Say what you owe this process now, and what you owe Curtis Hale."
+        ]
+      },
+      "coaching": [
+        "Someone will say we should just ask him. Do not resolve it. That instinct is the decision point, and here it is a genuinely defensible choice. Park it visibly and let the pressure build.",
+        "If the room reaches certainty in under five minutes, slow it down with one question: which of these facts would look different if he were innocent and simply very good at his job? Several of them would not look different at all. That is the honest difficulty of privileged-user cases."
+      ]
+    },
+    {
+      "id": "s12",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT ONE. Read aloud.\n\nIn an ordinary insider case, containment buys you safety while you investigate. In a privileged-access case it does not, because the act of revocation is itself an event the subject observes. If something is set to fire when his account check fails, revocation is the trigger. That is the trap in this scenario and the room should feel it before it votes.\n\nBefore the poll, cross-cast the steelman: have IT/IAM argue for leaving access intact, and have the SOC argue for pulling it now. Sixty seconds each. Then poll; majority rules; ties to the most senior role present.",
+      "decision": {
+        "prompt": "The company's next move on Curtis Hale:",
+        "options": [
+          {
+            "label": "REMOVE THE KEYS NOW. Treat the scheduled job as hostile until proven otherwise: revoke privileged access, force credential rotation across the estate, take MGMT-02's local logs under preservation, and stand up recovery verification ahead of everything else. Accept that he knows within the minute, that you may be pulling the trigger you are trying to disarm, that three systems lose their only qualified administrator today, and that you are doing all of it on an eleven-day-old job you have not yet proven is his.",
+            "goto": "s13"
+          },
+          {
+            "label": "MAP IT FIRST. Spend the hours before you act producing what you do not have: a complete inventory of what he actually holds, what depends on it, what the job actually targets, and whether the backups are recoverable at all. Leave access substantially intact under counsel's paper and whatever monitoring you can stand up outside his team. Accept that every hour of mapping is an hour he retains the ability to act, and that if you are wrong about how much time you have, the after-action will be about this decision and nothing else.",
+            "goto": "s19"
+          }
+        ]
+      },
+      "coaching": [
+        "First-time facilitators: name the stakes plainly before the vote. This is not a tactics question. It is the room discovering that in privileged-access cases the safe option does not exist, only the owned one. Real organisations split on this. Say so."
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH A: THE KEYS COME OFF. Read aloud.\n\nIt happens at 07:15 on Friday, sequenced by counsel and executed by two people who are not on Curtis Hale's team. Privileged access is revoked, sessions are killed, credential rotation begins across the estate, and the scheduled job on MGMT-02 is preserved and then disabled, in that order. It takes nine minutes. Nothing fires.\n\nThe relief in the room lasts about ninety seconds, until the invoices start arriving. Rotation breaks two integrations nobody had documented, and one of them sits under {{crown_jewels}}. The outage is forty minutes and it is visible. Two systems now have no qualified administrator and a third has one who has never done it alone.\n\nAnd at 07:31, before anyone has called him, Curtis Hale's badge is used at the front door, because Friday is a normal working day and nobody thought to put the front door in a nine-minute plan. He is standing in the lobby with a coffee, watching his badge fail at the turnstile, in front of eleven colleagues.",
+      "coaching": [
+        "Sit in the lobby image for a moment. Ask the room who owned that step. In most organisations the honest answer is that the plan had a technical sequence and no human one."
+      ]
+    },
+    {
+      "id": "s14",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "He sends this from his personal phone at 08:02, from the car park, to his VP and to People Operations. Deal it out and let the room read it in silence before anyone speaks.",
+      "inject": {
+        "kind": "email",
+        "from": "Curtis Hale (personal address), to VP Infrastructure, copy to People Operations",
+        "subject": "Re: Request for a skip-level (second request)",
+        "body": "My badge does not work. Nobody has called me.\n\nI assume this is about the job on MGMT-02, so let me save everyone a week. Yes, I built it. It is not what your security people think it is, and I will explain it to anyone who asks me a question instead of an accusation. It runs a backup catalogue integrity check, and it holds, meaning it does nothing, for as long as my account is active. I built it during the migration to catch the failure mode where this estate loses its last qualified operator and nobody notices for a fortnight. It has run zero times. You can check that. Check it.\n\nI asked for thirty minutes twice, and I told you one of the things I wanted to raise was a risk to this company that had nothing to do with me. It was that we are one person deep on three systems and that person is on a performance plan.\n\nI am now, apparently, also a suspect. Whatever you decide, fix that.\n\nCurtis",
+        "difficulty_variants": {
+          "veteran": {
+            "body": "My badge does not work. Nobody has called me.\n\nI assume this is about the job on MGMT-02. Yes, I built it. It is not what your security people think it is and I will explain it to anyone who asks me a question instead of an accusation. It runs a backup catalogue integrity check and it holds while my account is active. I built it during the migration to catch the failure mode where this estate loses its last qualified operator and nobody notices for a fortnight. It has run zero times. Check that.\n\nI asked for thirty minutes twice, and I told you one of the things I wanted to raise was a risk to this company that had nothing to do with me. It was that we are one person deep on three systems and that person is on a performance plan.\n\nI am now, apparently, also a suspect. Whatever you decide, fix that.\n\nCurtis"
+          }
+        }
+      }
+    },
+    {
+      "id": "s15",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "By 14:00 the forensic and rotation work has produced findings, and they do not resolve cleanly in either direction. This is the report the room has to decide on.",
+      "inject": {
+        "kind": "dlp",
+        "from": "Incident response, preliminary findings, INC-2291",
+        "subject": "MGMT-02 job, credential holdings, and the six-week forwarding gap",
+        "body": "1. SCHEDULED JOB. Created 11 days ago by C.HALE-ADM. Description field consistent with the employee's account of it. Execution count: zero. Target: backup catalogue. Effect if executed: catalogue integrity verification. We assess that the job does what he says it does. We also assess that a job of this structure could be repointed by its owner in under a minute, and that we would not have seen it at all if P. Anand had not looked. Both statements are true and neither is a conclusion.\n\n2. CREDENTIAL HOLDINGS. A personal password vault export dated 14 months ago, recovered from his workstation profile, containing 31 service-account credentials. 19 are for accounts decommissioned before the export. 12 remain live. 9 of the 12 should have been rotated when a colleague left 11 months ago and were not. There is a closed ticket asserting that rotation was completed.\n\n3. FORWARDING GAP. 7 of 9 gap windows on MGMT-02 contain no privileged session by any account. 2 windows contain a session by C.HALE-ADM, both matching change tickets he raised, approved and closed normally. The vendor defect is real and reproducible in test. We cannot distinguish, from what survives, between a defect that happened to overlap two legitimate sessions and anything else. Local logs for 4 of the 9 occurrences aged out at 30 days before this incident opened."
+      },
+      "coaching": [
+        "The phrase that should stop the room is we cannot distinguish, from what survives. Ask them what decision they would have to make TODAY if the honest forensic answer stays permanently ambiguous, because in privileged-user cases it very often does."
+      ]
+    },
+    {
+      "id": "s16",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "Counsel circulates this before the afternoon session. It is short and it is not comfortable.",
+      "inject": {
+        "kind": "memo",
+        "from": "Office of the General Counsel, privileged and confidential, prepared for the response group",
+        "subject": "Sequencing exposure, and the two records this company now holds",
+        "body": "This company holds two records of the same nine weeks.\n\nRECORD ONE: a long-tenured employee raised a resourcing risk twice through legitimate channels, was not answered, was placed on a performance plan his HR business partner advised against in writing, and was then removed from the building without a conversation.\n\nRECORD TWO: an employee with unresolved privileged access, a credential cache, an unexplained logging gap and a job pointed at the backup catalogue was contained before he could act.\n\nBoth records are true. Both are documented. Which one a tribunal, or {{regulator}}, reads first depends almost entirely on what this room does in the next 48 hours and how contemporaneously it writes down why.\n\nTwo specific points. First: the security rationale for this morning's action must be documented now, by the people who held it this morning, not reconstructed next month. Second: the nine unrotated service-account credentials are this company's failure, not his, and they are discoverable. Any narrative resting on him having held credentials he should not have had will meet the closed ticket asserting they were rotated."
+      }
+    },
+    {
+      "id": "s17",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION THREE, BRANCH A. The estate is safe, the man is in the car park, the forensics are ambiguous, and counsel has just told you that you are holding two true stories. Facilitator: ALL questions first, then the seats.",
+      "questions": {
+        "all": [
+          "The estate is safe and it cost you a forty-minute outage, two orphaned systems and a man humiliated in a lobby. Was it worth it? Answer with the information you had at 07:15, not the information you have now.",
+          "If the forensic answer stays permanently ambiguous, what does this company do with him? Say the actual disposition out loud, not the process that leads to one."
+        ],
+        "it_iam": [
+          "Rotation broke two undocumented integrations. That is not a Curtis Hale finding, it is a you finding. What else in this estate would break if you did the same thing on Monday to somebody else?"
+        ],
+        "hr": [
+          "He is in the car park and he has emailed twice. What is the next contact, who makes it, and what is the first sentence?"
+        ],
+        "soc": [
+          "Four of the nine gap windows aged out locally before this incident opened. Say what retention change you would make on Monday, and what it would cost."
+        ],
+        "exec": [
+          "Two systems have no administrator and the man who ran them is suspended. Say what you are doing about that this weekend, and note for the record that this is the risk he asked to talk to you about."
+        ],
+        "legal": [
+          "Write the one-sentence contemporaneous security rationale for this morning's action. Out loud. Now. That sentence is the whole exercise for your seat."
+        ]
+        ,
+        "comms": [
+          "Two of the messages about his promotion are still sitting in open channels, and his team will read this morning as the sequel. Draft the first internal line out loud, now, and then tell the room which part of it you could not defend in six weeks if the forensics land the other way."
+        ]
+      }
+    },
+    {
+      "id": "s18",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT TWO, BRANCH A. Read aloud.\n\nYou have an ambiguous forensic picture, a defensible security action taken on thin evidence, an employment file that predicted this, and a man who has offered to explain. The performance plan's thirty-day review is Monday. Counsel needs a posture by end of day. Poll the room.",
+      "decision": {
+        "prompt": "With the findings, the memo and his account in hand, the company's posture on Curtis Hale will be:",
+        "options": [
+          {
+            "label": "SEPARATE AND FORMALISE. Treat unresolvable ambiguity as unacceptable in a privileged role: end the employment relationship on the accumulated access and policy findings, take the whole package to outside counsel and to law enforcement for their assessment, and rebuild the estate's administration without him. Accept that you are ending an eleven-year career on evidence your own responders called indistinguishable, that his email will be read aloud somewhere, and that every administrator in the building will draw a conclusion from it.",
+            "goto": "e1"
+          },
+          {
+            "label": "INVESTIGATE WITH HIM IN THE ROOM. Treat him as the best available witness to your own estate: reinstate him to a role with no privileged access, under a documented agreement, and have him walk your responders through the job, the vault export and the three systems nobody else can run. Suspend the performance plan pending review. Accept that you are keeping a man whose conduct you cannot fully explain, that some of this room will never accept it, and that if you are wrong you will have handed the investigation to its subject.",
+            "goto": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s19",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH B: YOU MAP IT FIRST. Read aloud.\n\nThe room chooses knowledge over speed, and counsel papers it carefully: a documented preservation instruction, a two-person inventory team drawn from outside infrastructure, and an explicit decision log recording that access was left in place deliberately, and by whom.\n\nNobody speaks to Curtis Hale. He works a normal Friday. He runs a change at 11:20, correctly, with a ticket.\n\nBy Monday afternoon the inventory team has something the company has never had: an actual list. It is worse than anyone expected and it is not mainly about him. He holds standing privilege on forty-one systems, of which his role justifies about half. Twenty-two other people hold privileges that survive no examination at all, including four who no longer work here.\n\nAnd the recovery verification nobody had ordered in two years produces the finding that reframes the entire exercise: of the three backup sets protecting {{crown_jewels}}, one has been failing its integrity check silently since April. The company has been one bad day away from an unrecoverable outage for four months, and not because of anything Curtis Hale did.",
+      "coaching": [
+        "Let that last sentence land before anyone speaks. The room came looking for a saboteur and found an organisation. Ask them, gently, which finding they would rather have had on Friday morning."
+      ]
+    },
+    {
+      "id": "s20",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The inventory team's summary reaches the response group on Monday at 17:00. Deal it out.",
+      "inject": {
+        "kind": "memo",
+        "from": "Privileged access inventory, two-person team from outside infrastructure, INC-2291",
+        "subject": "What we found, and what we still cannot see",
+        "body": "Scope: standing privilege across the management estate and the backup estate.\n\n1. The subject holds standing privilege on 41 systems. Role-justified on 19. The remainder accumulated through 6 named projects, each with a documented approval. Nothing was taken. Everything was given.\n\n2. Twenty-two other identities hold privileges that fail the same test, including 4 belonging to people who no longer work here. One of those 4 has been used in the last 90 days. We have not established by whom.\n\n3. The MGMT-02 scheduled job is consistent with a backup catalogue integrity check and has never executed. Its author is the subject's account. It holds while a named account is active. We report the structure without an interpretation of intent.\n\n4. Recovery verification, the first in 24 months: backup set 2 of 3 protecting {{crown_jewels}} has been failing integrity silently since 11 April. Sets 1 and 3 verify. A restore is possible today and would not have been possible on eleven separate days between April and now.\n\n5. What we cannot see: MGMT-02 local logs older than 30 days, which covers 4 of the 9 forwarding-gap windows. That evidence is gone, and it was gone before anyone asked for it."
+      }
+    },
+    {
+      "id": "s21",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "And then, on Tuesday morning, the thing the room chose to risk arrives. Not as an outage, as a resignation.",
+      "inject": {
+        "kind": "hr",
+        "from": "People Operations, to the response group, marked urgent",
+        "subject": "Resignation received, C. Hale, effective immediately, notice waived",
+        "body": "Received 07:44 by email. Text in full:\n\nI am resigning effective immediately. I will not be working a notice period. Everything I run is documented in the runbooks I wrote, and the handover notes are in the team share, where they have been for three years. Please do not contact me for support after today. I will not be available. Curtis\n\nHRBP note appended: the fifteen-day performance plan review was held yesterday afternoon by the Director of Infrastructure. I was not invited and learned of it this morning. I am told the review recorded insufficient progress.\n\nI am flagging that this room decided on Friday to leave his access in place while it investigated him, and that nobody told the Director of Infrastructure not to hold a performance review in the middle of it. As of 07:44 he has no reason to cooperate with anything, and until his access is revoked he still has all of it."
+      },
+      "coaching": [
+        "This is the invoice for the mapping branch, and it is not the invoice the room expected. Ask them who was responsible for telling the Director not to hold that review. In most organisations nobody was, because nobody drew the boundary of who is inside the investigation and who is not."
+      ]
+    },
+    {
+      "id": "s22",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION THREE, BRANCH B. You have a complete access picture for the first time in the company's history, a silently failing backup set, twenty-two other unexamined privilege holders, a dead account somebody has been using, and the subject of your investigation has just resigned with immediate effect and still holds every key. Facilitator: ALL questions first.",
+      "questions": {
+        "all": [
+          "The mapping branch bought a finding that may have saved this company, the failing backup set, and paid for it with four days in which your subject retained full privilege and then resigned. Price that trade out loud, and say whether you would make it again knowing only what you knew on Friday.",
+          "One of the four departed-employee accounts has been used in the last 90 days and you do not know by whom. That is a second incident inside your first one. Who owns it, and does anything about today's decision change because of it?"
+        ],
+        "it_iam": [
+          "He resigns at 07:44 and his access is still live. Walk the room through the next fifteen minutes, in order, and say which step you would get wrong under pressure."
+        ],
+        "legal": [
+          "He has waived notice and asked not to be contacted. Say what preservation, what handover obligation and what agreement you can still reach for, and what you have lost."
+        ],
+        "hr": [
+          "A performance review was held on the subject of an active investigation, by a manager nobody had told. Design the boundary rule that stops that happening, in one sentence, and name who enforces it."
+        ],
+        "exec": [
+          "Backup set 2 of 3 has been failing since April. You are the executive sponsor of the function that owns it. Say the sentence you are going to say to the board, and then say the one you are going to say to your director."
+        ],
+        "soc": [
+          "Four of nine gap windows are permanently unrecoverable because local retention is 30 days and nobody asked in time. What is the rule that would have preserved them, and what does it cost to run that rule by default?"
+        ]
+        ,
+        "comms": [
+          "The company publishes an availability commitment and the backup set has been failing quietly since April. Say who has to be told and when the clock starts — the day it began, the day you found it, or the day this room admitted it — and be honest about which of those your organisation would actually pick."
+        ]
+      }
+    },
+    {
+      "id": "s23",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT THREE, BRANCH B. Read aloud.\n\nIt is 08:10 on Tuesday. The man is gone, the keys are not, the backups are one third broken, and the room's own investigation has produced a finding about the company that is larger than the finding about the person. Counsel needs a posture within the hour. Poll the room.",
+      "decision": {
+        "prompt": "With the resignation in hand and the access still live, the company will:",
+        "options": [
+          {
+            "label": "TREAT IT AS AN INCIDENT. Revoke everything now, preserve on the assumption of hostility, engage law enforcement and outside counsel on the scheduled job and the credential cache, and pursue the handover obligation formally. Accept that you are escalating against a man your own inventory could not show had taken anything, that he will be told by a lawyer rather than by a colleague, and that the message to every remaining administrator is that this is how eleven years ends.",
+            "goto": "e3"
+          },
+          {
+            "label": "TREAT IT AS A DEPARTURE. Run a rigorous, unhurried offboarding: revoke on the documented schedule, preserve quietly, ask him through counsel for a paid handover on the three orphaned systems, and put the weight of the response onto the twenty-two other privilege holders and the failing backup set. Accept that you are letting a man you never fully explained walk out with the company's goodwill, and that if something surfaces in six months this decision will be read as the moment you looked away.",
+            "goto": "e4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "e1",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU SEPARATED AND FORMALISED. Read aloud.\n\nThe termination is executed cleanly and documented well, and the estate is demonstrably safe. The job never ran. The credentials are rotated. The exception register is emptied inside six weeks by a team working frightened.\n\nLaw enforcement takes the referral, reviews it in three weeks, and declines, not unkindly. Their assessment, in a sentence you will read several times: the artefacts are consistent with the employee's explanation and with the alternative, and we would not be able to say which to a jury.\n\nThe tribunal claim arrives in month four and settles in month nine, confidentially, for a figure the CFO calls cheaper than the discovery. The settlement is not the cost. The cost is this. The two orphaned systems take eleven months and an eye-watering contractor bill to become supportable, and in month three one of them fails in a way Curtis Hale would have fixed in forty minutes. And your administrators learned something. Three of the six people on that team leave within the year, and the exit interviews, which you commissioned honestly, say a version of the same thing: that the company decided an eleven-year record was worth less than an ambiguity, and that any of them could be next.\n\nThe insider threat program's referral volume from IT falls to zero and stays there. You were safe, you were defensible, and you are alone.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This ending is defensible at every individual step and catastrophic in aggregate. Find the step where a different decision would have changed the aggregate without accepting more risk. If the room cannot find one, say that out loud, because that is the finding."
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU PUT HIM IN THE ROOM. Read aloud.\n\nIt is the most uncomfortable fortnight anyone can remember. He arrives angry, stays angry for four days, and then, somewhere in the middle of walking two responders through the backup estate, becomes an engineer again.\n\nWhat he gives you is worth more than the investigation ever was. The vault export was a habit from a decommissioning project and he is embarrassed by it. The job is what he said it was, and he shows the responders the failure mode it was built to catch. And the sentence that stops the room is his, delivered flatly on day six: you know set 2 has been failing since April, right?\n\nYou did not. The company fixes it that week.\n\nCurtis Hale finishes the engagement, does not return to a privileged role, and leaves seven months later for a competitor, on good terms, having trained his replacement properly. The unresolvable ambiguity is never resolved; counsel's file records it in exactly those words. Two people in this room never fully accept the disposition and say so on the record, and they are not wrong to.\n\nWhat changes is structural. Privileged access reviews get an owner who does not report to infrastructure. The exception register is emptied. Retention on management hosts goes to 400 days. And the program gets a written rule that an administrator under investigation is investigated by people who do not depend on him. Referrals from IT go up.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This ending required the company to absorb visible unfairness, a man it could not explain, kept and trusted with the investigation, in exchange for the truth about its own estate. Could your real organisation make that trade? Name the person with the authority to make it, and the constituency that would object loudest."
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU TREATED IT AS AN INCIDENT. Read aloud.\n\nThe revocation at 08:20 is nineteen minutes slower than it should have been, and nothing fires, because there was never anything to fire.\n\nThe formal posture does two things, one good and one expensive. The good one: the pressure of a real incident finally moves the organisation. Twenty-two privilege holders are cleaned up in a month, the four departed accounts are killed, and the one that had been used inside ninety days turns out to be a monitoring integration a vendor built in 2023 and never told anyone about. A genuine finding, closed properly, that would otherwise have sat there for years. The failing backup set is repaired and the verification schedule becomes real.\n\nThe expensive one: outside counsel bills for four months, law enforcement declines the referral in six weeks, and Curtis Hale, who resigned leaving runbooks and handover notes three years old and complete, retains a lawyer, declines the handover request, and says nothing else, ever. The three orphaned systems are rebuilt from his documentation, which is excellent, by people who resent needing it.\n\nAnd in the industry, in the way these things travel, the story that circulates is not the story of the failing backup set. It is the story of a company that raided an administrator on a performance plan, found nothing, and called the FBI. You will be asked about it in interviews for two years.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "The incident posture fixed more of your organisation than any other branch in this exercise, and cost you the most reputationally. Argue it both ways: half the table defends the escalation to the workforce, half defends a softer posture to the board. Which defence sounds better out loud, and is that the same as which one was right?"
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: YOU TREATED IT AS A DEPARTURE. Read aloud.\n\nIt works, and the discomfort never entirely goes away.\n\nAccess is revoked on a documented schedule by 09:40. He accepts the paid handover through counsel: three days, professional, thorough. He answers every question he is asked, including the ones about the job and the vault export, which counsel records and which resolve nothing and everything.\n\nThe company's real problem gets the attention. The failing backup set. The twenty-two privilege holders. The four dead accounts. The exception register that carried the same line for nine quarters. Eleven months later {{org_name}} survives a genuine infrastructure failure that would, on April's posture, have been an unrecoverable one, and nobody outside this room ever connects that survival to this week.\n\nThe residue: you never established what the job was for, and you decided not to need to. Counsel's file says, in terms, that the company assessed the residual risk as acceptable and moved on, a sentence that is either mature or negligent depending entirely on facts you chose not to pursue. Two people in this room believe to this day that the company let something go. They may be right. Nothing has ever surfaced.\n\nTHE END, of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "This branch decided that the organisation's failure was the bigger threat than the person, and acted accordingly. Name the evidence that would have to appear for that call to look negligent rather than mature, and say whether your organisation has any mechanism that would surface it six months from now."
+        ]
+      }
+    }
+  ],
+  "aar": {
+    "hotwash": [
+      "One word from each person: how did that feel? Around the table, before any analysis.",
+      "Every signal here already existed in your systems before anyone assembled them: the passed-over promotion, the plan HR advised against, the two ignored requests, the exception carried for nine quarters, the logging gap on the host he administered locally. What assembles them in your organisation, and who reads the result?",
+      "Where did this room treat grievance as evidence? Be honest and cite the moment. Then say what guardrail keeps a real program from becoming that.",
+      "Your subject administers the systems your investigation depends on. Name, specifically, what your program can verify today without going through the people it might be investigating. If the honest list is short, that is the most important finding of the day.",
+      "The remove-the-keys versus map-it-first fork: now that you have seen where your branch led, would you vote the same way with the same information? One sentence of why.",
+      "P. Anand escalated something she could not explain, outside her own team, and did not touch it. What does your organisation do to a seven-month employee who does that about an eleven-year one, and what would a realistic person expect to happen to her?",
+      "Name one thing your organisation should start, one it should stop, and one it should keep, based on today."
+    ],
+    "objectives": [
+      "O1 RECOGNIZE: Evaluate the organization's ability to recognize privileged-access drift and destructive-risk indicators, including access that outlives its justification and logging gaps on hosts the subject administers.",
+      "O2 GOVERN: Test whether performance and grievance information has a defined, defensible path into risk decisions, and where the guardrails against treating grievance as evidence actually live.",
+      "O3 DECIDE: Exercise the containment paradox specific to privileged users, that revocation is itself an observable event, including who owns that decision, on what facts, and on what clock.",
+      "O4 SEGREGATE: Test whether the organization can investigate an administrator without depending on that administrator's team for evidence, monitoring, or recovery.",
+      "O5 RECOVER: Evaluate the organization's ability to establish under pressure whether it can actually restore {{crown_jewels}}, and whether anyone has checked since the last time it mattered."
+    ]
+  }
+}
