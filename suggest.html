@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Suggest a scenario — TTX Builder</title>
+<!-- PE-226. Relative hrefs to match this site's own idiom (assets/ttx.css);
+     every page here lives at the docroot root, so these resolve to /favicon.*
+     either way. The .ico is declared first with sizes="any" so browsers that
+     understand SVG favicons take the vector and everything else falls back
+     without a second request. -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Suggest an insider threat tabletop scenario for TTX Builder, or report a correction. Two short email templates and a link to the issue tracker.">
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="assets/ttx.css">
