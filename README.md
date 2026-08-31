@@ -30,6 +30,7 @@ section that says "turn to 14" does not.
 | **The Approach** — a consulting invitation, a garnishment order, and a very patient stranger. | `the-approach` | Live |
 | **Keys to the Kingdom** — the administrator who can delete the evidence of what the administrator did. | `privileged` | Live |
 | **The Long Goodbye** — a resignation, a two-week notice period, and a great deal of downloading. | `the-long-goodbye` | Live |
+| **The Walk-In** — a flattering message, a $400 phone call, and an employee standing in your doorway. | `the-walk-in` | Live |
 
 Each is a self-contained JSON file in `content/`. Adding one is a content job,
 not a code job — see the authoring checklist below.

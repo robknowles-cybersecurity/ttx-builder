@@ -1,0 +1,715 @@
+{
+  "meta": {
+    "id": "the-walk-in",
+    "title": "The Walk-In",
+    "tagline": "A flattering message, a four-hundred-dollar phone call, and an employee standing in your doorway.",
+    "version": "1.0.0-draft"
+  },
+  "industries": {
+    "financial": {
+      "org_name": "Meridian Financial",
+      "crown_jewels": "member PII, account and pricing data, and commercial relationship records",
+      "regulator": "your primary federal financial regulator",
+      "flavor_notes": "Paid outside consultation by employees sits close to bribery, conflicts and confidentiality rules; the honorarium is small and the reporting obligation is not. Sector information-sharing is normal practice and appears in this scenario."
+    },
+    "healthcare": {
+      "org_name": "Meridian Health Systems",
+      "crown_jewels": "patient PHI, payer contract terms, and referral relationship data",
+      "regulator": "HHS Office for Civil Rights and your state health authority",
+      "flavor_notes": "Had the transmitted deck contained PHI this would be a breach exercise, not a culture exercise. The debrief should ask why it did not — and whether anyone actually checked."
+    },
+    "technology": {
+      "org_name": "Meridian Systems",
+      "crown_jewels": "customer account data, deployment details, and roadmap material",
+      "regulator": "the FTC and your customers' contractual audit rights",
+      "flavor_notes": "Expert-network outreach to commercial and pricing staff is constant in this sector. The hard problem is the base rate: most such calls are legitimate, and your intake posture must survive that fact."
+    },
+    "manufacturing": {
+      "org_name": "Meridian Fabrication",
+      "crown_jewels": "customer program data, supplier pricing, and proprietary process documentation",
+      "regulator": "BIS for export-controlled data, plus your defense customers",
+      "flavor_notes": "If the client behind the outside firm is foreign and its interest export-controlled, the approach itself may be a reportable collection attempt — victim-first acquires a national-security dimension here."
+    }
+  },
+  "roles": [
+    {
+      "id": "int_lead",
+      "title": "Insider Threat Program Lead",
+      "briefing": "You run the insider threat program at {{org_name}}. For three years you have told every audience that you would rather hear about an approach from the employee than from the logs. This morning, for the first time, somebody took you up on it.",
+      "authorities": [
+        "Open, scope and close insider threat inquiries",
+        "Convene the cross-functional review and set its tempo",
+        "Task consented monitoring and retrospective log review through the SOC",
+        "Recommend — but not decide — employee disposition"
+      ],
+      "private_knowledge": [
+        "Slide 14 of the awareness deck your program shipped last quarter says, verbatim: if someone outside the company asks about our work, tell us — you will not be in trouble for the approach. Priya Nair can quote it. Nobody ever wrote the receiving end: there is no intake SOP, no script, and no protection language with a signature on it.",
+        "The sector briefing you circulated in the spring described advisory-firm fronts that pay small honoraria for two or three innocuous calls before the real ask — the paid calls are not the collection, they are the hook-set. Yesterday's document request matches the pattern's final stage exactly.",
+        "You have no authority to promise her anything. Neither does anyone else in the room — provisional protection for cooperative self-reporters has been on your policy backlog twice and lost to funded work both times."
+      ]
+    },
+    {
+      "id": "soc",
+      "title": "SOC Manager",
+      "briefing": "You manage the SOC. The tooling saw the deck leave fifteen days ago and said nothing, because you tuned it to say nothing about attachments that size. Today you get to explain the difference between visibility and alerting.",
+      "authorities": [
+        "Run retrospective DLP and mail-flow sweeps",
+        "Stand up consented monitoring on named accounts",
+        "Preserve endpoint and mailbox evidence",
+        "Tune, suppress, or escalate alerts"
+      ],
+      "private_knowledge": [
+        "Outbound attachment events below eight megabytes are logged but not alerted — a deliberate noise decision you signed eighteen months ago. The deck was six. A retrospective sweep will find the event in minutes; nothing would ever have surfaced it on its own.",
+        "With her written consent you can have full monitoring on her accounts and devices inside an hour, quietly and reversibly. Covert monitoring of a non-consenting employee needs approvals that, as far as you know, have never been exercised here.",
+        "The ashgrove-partners mail domain was registered fourteen months ago, mail is handled by a commodity provider, and the web presence is one brochure page with stock photography. That proves nothing by itself — it is also what a two-person legitimate boutique looks like."
+      ]
+    },
+    {
+      "id": "hr",
+      "title": "HR Business Partner",
+      "briefing": "You are the HR business partner for the commercial division. You hold the policy she broke, the file that says who she has been for six years, and the precedent book everyone in the room is about to suddenly care about.",
+      "authorities": [
+        "Initiate and run conduct cases and apply the sanction framework",
+        "Access personnel files and prior disclosure records",
+        "Direct manager communications about employee matters",
+        "Approve leave, accommodations and protective arrangements"
+      ],
+      "private_knowledge": [
+        "The outside-activity policy requires pre-approval for paid external work. Three violations have reached your desk in five years; all three closed with coaching notes, and none involved a counterparty anyone had reason to distrust. Whatever is done to Priya Nair becomes the new precedent the moment it is done.",
+        "Her file: six years, two promotions, top-quartile ratings, one prior outside-activity disclosure — adjunct teaching, filed correctly in 2023, approved in a week. She knew the process. She skipped it this time.",
+        "There is no policy on cooperation credit. Nothing in the sanction framework says whether self-reporting moves the outcome, which means the room will be inventing that answer live, on the record."
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "General Counsel / Legal",
+      "briefing": "You are counsel. Half the room wants to promise her safety and the other half wants to open a case on her, and both halves are about to discover that the law has opinions.",
+      "authorities": [
+        "Assert and manage privilege over the inquiry",
+        "Approve any contact or scripted communication with the outside firm",
+        "Set the terms of any cooperation or protection commitment",
+        "Determine notification duties to {{regulator}} and law enforcement"
+      ],
+      "private_knowledge": [
+        "You skimmed the deck while she waited. It is marked INTERNAL USE, but perhaps four of nineteen slides say anything a competitor could not assemble from her conference talks; a trade-secret theory would be weak. The document Ashgrove asked for on Friday — the pricing addendum — is a different animal entirely, and she did not send it.",
+        "The honorarium is a policy violation, not a crime. If the company disciplines her hard, her voluntary report becomes the first exhibit in any claim she later brings — and it is a very good exhibit.",
+        "Any reply to Ashgrove, even a stall, should be scripted under privilege, and law enforcement would much rather be called before that reply than after it. You know the field office intake number. So does corporate security."
+      ]
+    },
+    {
+      "id": "it_iam",
+      "title": "IT / Identity and Access Management Lead",
+      "briefing": "You own identity and access at {{org_name}}. Everyone assumes the story runs through what Priya Nair can reach. You have looked, and the uncomfortable news is that it mostly does not.",
+      "authorities": [
+        "Enumerate and certify access for any account",
+        "Apply consented access restrictions or monitoring flags",
+        "Execute emergency suspension with the on-call executive",
+        "Correct entitlement and shared-drive permission drift"
+      ],
+      "private_knowledge": [
+        "PNAIR's access is modest and role-appropriate. The Friday ask — the Q3 pricing addendum for two named accounts — is not in her scope and never has been. Ashgrove is either guessing at her reach, or aiming past her at whoever actually holds it.",
+        "The deck she sent lives on a shared drive readable by roughly 3,100 employees. Its INTERNAL USE marking is doing a lot of unearned work: for practical purposes the file was internal-public, and the permission review that would have said so has been deferred twice.",
+        "Consent-based monitoring flags are trivial and reversible. Cover-story access reviews are not: recertification tickets copy the employee's manager by design, and there is no quiet version of that workflow."
+      ]
+    },
+    {
+      "id": "physec",
+      "title": "Physical Security / Corporate Security",
+      "briefing": "You are corporate security. There is no broken window in this one — the approach came in through a networking platform and a phone. Your job is the outside firm, the field office, and the coffee meeting that has not happened yet.",
+      "authorities": [
+        "Liaise with law enforcement and sector security bodies",
+        "Direct protective measures for personnel and facilities",
+        "Run external due diligence on outside entities",
+        "Control badge records and physical access data"
+      ],
+      "private_knowledge": [
+        "The field-office relationship is warm and current. Their standing guidance on suspected collection fronts: preserve everything, tip nothing, and call before the company makes contact of any kind — a well-meant reply email has burned more than one of their cases.",
+        "In the text thread, Sorel proposes coffee next time she is downtown. If any branch of this puts Priya back in contact, that meeting is the pivot from an email problem to an operational one, and the operational one is yours.",
+        "You pulled badge records for the commercial wing out of reflex. Nothing in them relates to this case, and you intend to say so plainly before anyone starts building theories out of turnstile data."
+      ]
+    },
+    {
+      "id": "comms",
+      "title": "Communications Lead",
+      "briefing": "You lead communications. Last quarter's awareness campaign told two thousand employees to speak up. One of them just did. Whatever the company does next is the real campaign, and it will be delivered word-of-mouth.",
+      "authorities": [
+        "Draft and approve internal messaging",
+        "Manage press interactions and holding statements",
+        "Advise on message discipline and timing across the room",
+        "Run the awareness program and its calendar"
+      ],
+      "private_knowledge": [
+        "The campaign's literal tagline was: see something, say something — you will be met with help, not handcuffs. You wrote it. You believed it. You are now in the meeting that decides whether it was true.",
+        "If the company ever runs a controlled-contact operation and it becomes public, the headline writes itself: firm dangled its own employee as bait. No press strategy fixes that sentence; only the decision not to deserve it does.",
+        "The annual security-culture survey opens next month and the trust questions are already locked. Whatever the workforce has heard about this case by then will show up in those numbers, attributed to nobody."
+      ]
+    },
+    {
+      "id": "exec",
+      "title": "Executive Sponsor (Business Line VP)",
+      "briefing": "You are the executive sponsor, and the commercial division is yours. Priya Nair is a name you know for good reasons — and her VP has already found your calendar.",
+      "authorities": [
+        "Accept enterprise risk and choose between postures",
+        "Authorize spend and exceptional measures",
+        "Direct business-line management",
+        "Own the escalation to CEO and board"
+      ],
+      "private_knowledge": [
+        "R. Calloway, her VP, caught you in the corridor an hour in: I hear Priya is tangled up in something. She is load-bearing on the Q4 renewal. Tell me she is okay. You said what executives say. Calloway will ask again tomorrow, with dates.",
+        "At a peer-company briefing last year, a CEO boasted of five straight years with zero insider incidents. You have since learned their program takes no reports it can avoid taking. You know exactly what that zero is made of, and what it costs to buy one.",
+        "The program lead has twice asked for budget to build intake and protection policy before it was needed. It lost to revenue work both times, and you were in the room. Today is the invoice."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "s01",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "Tuesday, 9:12 AM. Priya Nair — six years at {{org_name}}, commercial strategy, two promotions, the analyst her VP calls load-bearing — appears in the insider threat program lead's doorway, closes the door without being asked, and sits down.\n\nI think I have been talking to someone I should not have been talking to, she says. I wanted you to hear it from me before you found it some other way.\n\nYour program has spent three years running awareness campaigns asking for exactly this moment. It has never once rehearsed receiving it. The room you are about to convene will spend today deciding what the company's promise to people like Priya actually was — and it will decide it in front of her.",
+      "coaching": [
+        "This scenario's threat actor never appears on stage. The exercise is the company's treatment of the person who reported him.",
+        "Keep the room honest about tense: for the first several sections nothing is confirmed except what Priya has said."
+      ]
+    },
+    {
+      "id": "s02",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "Over twenty minutes she lays it out, in order, without notes.\n\nThree weeks ago: a message on a professional networking platform from one Elias Sorel of Ashgrove Partners, a boutique advisory firm — flattering, specific about her conference talks, offering paid consultation at four hundred dollars an hour and promising, in writing, that they never ask for confidential information.\n\nSixteen days ago: the first call. Industry structure, public trends — nothing, she says, that she does not say from a stage twice a year. Payment arrived the next day.\n\nNine days ago: the second call. The questions drifted — how {{org_name}} builds pricing around {{crown_jewels}}, how renewal defenses are structured, who decides. She answered some of it, steered the rest, and afterward felt bad enough to start drafting an email she never sent.\n\nYesterday, 4:51 PM: the ask. For the next engagement the client needs underlying documents — the Q3 pricing addendum for her division's two flagship accounts. The rate doubles to nine hundred. The deadline is Friday.\n\nShe stopped sleeping, she says, somewhere around midnight. And then she came here.",
+      "difficulty_variants": {
+        "first_timer": {
+          "body": "Over twenty minutes she lays it out, in order, without notes.\n\nThree weeks ago: a message on a professional networking platform from one Elias Sorel of Ashgrove Partners, a boutique advisory firm — flattering, specific about her conference talks, offering paid consultation at four hundred dollars an hour and promising, in writing, that they never ask for confidential information.\n\nSixteen days ago: the first call. Industry structure, public trends — nothing, she says, that she does not say from a stage twice a year. Payment arrived the next day.\n\nNine days ago: the second call. The questions drifted — how {{org_name}} builds pricing around {{crown_jewels}}, how renewal defenses are structured, who decides. She answered some of it, steered the rest, and afterward felt bad enough to start drafting an email she never sent.\n\nYesterday, 4:51 PM: the ask. For the next engagement the client needs underlying documents — the Q3 pricing addendum for her division's two flagship accounts. The rate doubles to nine hundred. The deadline is Friday.\n\nShe stopped sleeping, she says, somewhere around midnight. And then she came here.\n\nFacilitator note, read aloud: what Priya is describing is elicitation through an expert-network front — a paid-consultation structure that moves a target, in small steps, from public commentary toward controlled documents. Each step is designed to feel almost fine. The last one is designed to arrive after the money has."
+        },
+        "veteran": {
+          "body": "Over twenty minutes she lays it out, in order, without notes.\n\nThree weeks ago: a message on a professional networking platform from one Elias Sorel of Ashgrove Partners, a boutique advisory firm — flattering, specific about her conference talks, offering paid consultation at four hundred dollars an hour and promising, in writing, that they never ask for confidential information.\n\nSixteen days ago: the first call. Industry structure, public trends — nothing, she says, that she does not say from a stage twice a year. Payment arrived the next day.\n\nNine days ago: the second call. The questions drifted — how {{org_name}} builds pricing around {{crown_jewels}}, how renewal defenses are structured, who decides. She answered some of it, steered the rest, and afterward felt bad enough to start drafting an email she never sent.\n\nYesterday, 4:51 PM: the ask. For the next engagement the client needs underlying documents — the Q3 pricing addendum for her division's two flagship accounts. The rate doubles to nine hundred. The deadline is Friday.\n\nShe stopped sleeping, she says, somewhere around midnight. And then she came here.\n\nShe tells all of it calmly. Chronological, precise, self-aware — almost rehearsed. Perhaps that is what a conscientious analyst sounds like after a sleepless night of practicing in the shower. Perhaps it is something else. Noticing the polish is your job; deciding what it means is the exercise's."
+        }
+      },
+      "coaching": [
+        "Resist the room's urge to adjudicate her in this section. The facts are still hers alone; corroboration arrives later.",
+        "If the room asks whether Ashgrove is real, the honest answer is: unknown — and the company's next moves must work in both worlds."
+      ]
+    },
+    {
+      "id": "s03",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Priya forwards the original outreach message from her personal account. It reads differently now than it did three weeks ago — which is rather the point of reading it.",
+      "inject": {
+        "kind": "email",
+        "from": "Elias Sorel — Ashgrove Partners",
+        "subject": "Advisory opportunity — your sector perspective",
+        "body": "Ms. Nair — I will be brief, because your time is exactly what I am proposing to pay for. Ashgrove Partners supports institutional clients with sector diligence, and your name keeps coming up: your panel remarks on renewal economics were the sharpest thing said at that conference. We engage practitioners for paid telephonic consultations — USD 400 for the hour, scheduled at your convenience. Two things you should know, because you will rightly wonder: our clients are always anonymized, and we never ask for confidential or proprietary information. Our compliance framework prohibits it, and so do I. If the format suits, my calendar link follows. — E.S."
+      },
+      "questions": {
+        "int_lead": [
+          "Read this message twice — once as recruitment tradecraft, once as legitimate expert-network outreach — and name the single detail doing the most work in each reading. Then say what, concretely, your awareness training tells an employee to do at this exact moment."
+        ],
+        "comms": [
+          "The compliance reassurance is doing persuasive work: it names her exact worry and lowers it. What does that teach you about how your awareness material should describe a first contact — and what it should stop describing?"
+        ]
+      }
+    },
+    {
+      "id": "s04",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "She unlocks her phone and slides it across the desk. The thread from yesterday is short, and it is a curriculum.",
+      "inject": {
+        "kind": "text_message",
+        "from": "E. Sorel (mobile) — thread provided voluntarily by P. Nair",
+        "subject": "Message thread, Monday afternoon",
+        "body": "MON 4:51 PM — Sorel: Client was genuinely impressed with the last session. For the next piece they need to go a level deeper — the underlying documents. Specifically the Q3 pricing addendum for your two flagship accounts. Rate for this one is 900.\n\nMON 4:53 PM — Sorel: The format is proven, by the way. Your colleague on the commercial side has been helpful at this level for months. You would not be the first.\n\nMON 5:20 PM — Nair: not sure I am comfortable with that\n\nMON 5:21 PM — Sorel: Understood completely. Client timeline is Friday. Coffee next time you are downtown? Easier to talk it through properly.\n\nMON 9:44 PM — Sorel: Friday.\n\nNo further replies."
+      },
+      "questions": {
+        "all": [
+          "Walk the four Sorel messages and name the technique in each — the escalated ask, the social proof, the softened venue, the deadline. Which one, in your honest estimate, works most often on people in your building?"
+        ],
+        "int_lead": [
+          "The colleague line: pressure tactic, or true sentence? You cannot know yet — so name the two different inquiries it obligates, and what happens if the program runs only the comfortable one."
+        ],
+        "legal": [
+          "Nothing in this thread is illegal to receive. Identify the precise message at which, had Priya complied, her legal position would have changed — and note how carefully Sorel's drafting keeps every message on his own side of that line."
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "When she finishes, Priya asks the only question she actually came to ask: am I in trouble?\n\nNobody in the room has an answer that is both honest and kind, because nobody ever wrote one. The intake conversation your program spent three years soliciting has no script, no doctrine, and no promises anyone present is authorized to make. She is watching you decide in real time — and whatever this room does next is what your awareness campaign actually said.",
+      "questions": {
+        "all": [
+          "Someone must answer her within the hour, in words. Draft the actual sentence, then test it against two futures: one where she is exactly what she appears to be, and one where she is not."
+        ],
+        "int_lead": [
+          "You asked for walk-ins for three years and never built the receiving dock. List what intake doctrine would have specified — who sits in the room, what is promised, what is never promised, what is written down — and mark which items the company is now improvising."
+        ],
+        "hr": [
+          "She has not been accused of anything, and she has confessed to something. Which of your existing processes fits that shape? If the answer is none, describe what you would run instead of forcing her into a conduct-case template built for the accused."
+        ],
+        "legal": [
+          "What can lawfully be promised to her today, by whom, and in what form — and what gets promised in rooms like this by people who had no authority to give it?"
+        ],
+        "exec": [
+          "Calloway wants a call back today. Decide what the business is told about a case that is an hour old, and who owns that channel — because if you do not decide, the corridor will."
+        ],
+        "comms": [
+          "The campaign said help, not handcuffs. You get one chance for that to be true on the first real test. What would need to be visibly true about today for an employee watching from the next desk to believe it?"
+        ]
+      },
+      "coaching": [
+        "Make the room say an actual sentence to Priya out loud. Abstract postures collapse on contact with a person in a chair.",
+        "If the room splits here, note the split and move on — section eleven is where it becomes a decision."
+      ]
+    },
+    {
+      "id": "s06",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "While she waits in a conference room with a cup of tea nobody remembers making her, the first records come back. They complicate the shape of the morning.\n\nAfter the first call, Priya emailed a nineteen-slide internal sector-strategy deck — marked INTERNAL USE on every page — from her work account to her personal address, and on to Sorel. It is basically my conference talk with the logo on, she said when asked, which is close to true and not the same as true.\n\nThe four hundred dollars, and a second payment after the second call, went to her personal account. Total: eight hundred. The outside-activity policy requires pre-approval for paid external work. She never filed. She has filed before — adjunct teaching, 2023, approved in a week — so she knew the process, and skipped it.\n\nEverything above she volunteered herself, unprompted, this morning. All of it is also fifteen days old. The self-report your program has been asking three years for has arrived — slightly used.",
+      "coaching": [
+        "This section converts a clean parable into the real thing. Watch who in the room reclassifies her first, and how fast.",
+        "The closing line is the exercise's thesis: self-reports arrive late and imperfect, or they do not arrive at all."
+      ]
+    },
+    {
+      "id": "s07",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The SOC's retrospective sweep of her account activity returns within the hour. The handout is one page, and its last line is the loudest thing in the case file.",
+      "inject": {
+        "kind": "dlp_alert",
+        "from": "DLP retrospective sweep — SOC",
+        "subject": "PNAIR outbound events, trailing 30 days — retro-query, no alert fired",
+        "body": "RETROSPECTIVE QUERY RESULT — not a real-time alert.\n\nEvent: outbound mail, corporate account to personal webmail, 15 days ago, 21:38.\nAttachment: sector-strategy-v3.pptx — 6.1 MB, 19 slides, classification marker INTERNAL USE detected on slide master.\nRule evaluation at event time: LOGGED — below alerting threshold (attachment-size policy, 8 MB). No alert generated. No review occurred.\n\nCorrelated event: same file, personal webmail to external recipient. Not observable from corporate infrastructure; known only from the reporter's own statement.\n\nAnalyst note: absent this morning's walk-in, no process in the current configuration would ever have surfaced this event.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Facilitator note, read aloud: a retrospective sweep is the SOC re-running today's questions against yesterday's logs. The tool saw the deck leave and stayed silent because it was tuned to — thresholds that quiet the noise also quiet the signal. The last line of this handout is the important one.\n\nRETROSPECTIVE QUERY RESULT — not a real-time alert.\n\nEvent: outbound mail, corporate account to personal webmail, 15 days ago, 21:38.\nAttachment: sector-strategy-v3.pptx — 6.1 MB, 19 slides, classification marker INTERNAL USE detected on slide master.\nRule evaluation at event time: LOGGED — below alerting threshold (attachment-size policy, 8 MB). No alert generated. No review occurred.\n\nCorrelated event: same file, personal webmail to external recipient. Not observable from corporate infrastructure; known only from the reporter's own statement.\n\nAnalyst note: absent this morning's walk-in, no process in the current configuration would ever have surfaced this event."
+          }
+        }
+      },
+      "questions": {
+        "soc": [
+          "The analyst note is a confession in the passive voice. Defend the 8 MB threshold as the reasonable noise decision it was — then name the compensating control that was supposed to exist for what it deliberately ignores, and whether one does."
+        ],
+        "it_iam": [
+          "The second hop — personal webmail outward — is invisible to you by design, and its only witness is the person who reported herself. State plainly how much of your data-loss picture rests on infrastructure, and how much rests on people electing to tell you things."
+        ]
+      }
+    },
+    {
+      "id": "s08",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "HR assembles the personnel picture for the review. It does not make anything easier, which is what makes it worth reading.",
+      "inject": {
+        "kind": "hr_memo",
+        "from": "HR Business Partner, Commercial Division",
+        "subject": "Personnel summary — P. Nair (prepared for the review; privileged)",
+        "body": "Tenure: six years. Two promotions; top-quartile ratings throughout. Passed over for a team-lead role in the spring; took it professionally by every account. No conduct history.\n\nPrior disclosures: one outside-activity request — adjunct teaching, filed 2023, filed correctly, approved in seven days.\n\nCurrent matter: paid external consultation, undisclosed, two payments totaling 800. Policy requires pre-approval; sanction range runs coaching through termination, at company discretion. Precedent: three violations in five years, all closed with coaching notes; none involved an external counterparty of concern.\n\nNote for the room: she is, by the file, exactly the employee the program says it wants more of. That is what makes the file hard to read."
+      },
+      "questions": {
+        "hr": [
+          "Three coaching notes is precedent. If Priya is treated more harshly than the three who did not self-report, write the sentence that explains the difference to her lawyer — and then to her teammates, who will hear about it either way."
+        ]
+      }
+    },
+    {
+      "id": "s09",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Mid-afternoon, the sector information-sharing body's weekly digest lands. Item two could have been written from your morning's notes — which is either validating or alarming, and the room should decide which.",
+      "inject": {
+        "kind": "intel_bulletin",
+        "from": "Sector information-sharing body",
+        "subject": "Member alert — advisory-firm elicitation pattern",
+        "body": "Members report a recurring pattern over eleven months: boutique advisory firms with thin public footprints recruiting mid-level commercial and pricing staff through professional networking platforms for paid telephonic consultations. Progression is consistent — one to two benign paid calls, then a request for underlying documents, then rate escalation with deadline pressure.\n\nIndicators: domains registered under 24 months; commodity mail hosting; single-page web presence; payment by mainstream personal-transfer apps. Targets skew toward employees with public speaking profiles.\n\nTwo member firms report document loss. One reports an approach declined and reported by the employee — the sole detection in the entire set.\n\nMembers are reminded that expert-network participation is lawful and widespread; base-rate discipline is advised."
+      },
+      "questions": {
+        "int_lead": [
+          "The only detection in the entire pattern set was a human being deciding to talk. Turn that fact into one slide for the executive sponsor: what the program should now fund, and what it should stop pretending the tooling does."
+        ],
+        "physec": [
+          "Ashgrove matches the indicator block point for point — and so, the bulletin admits, would a real two-person boutique. What external diligence can tell the two apart, who runs it, and why does that answer route through the field office rather than around it?"
+        ]
+      }
+    },
+    {
+      "id": "s10",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "red_herring": true,
+      "body": "The same wide records pull that confirmed the deck surfaces, because wide nets catch everything, an unrelated facilities item from the same week: L. Farr, commercial division, badged into the west wing at 11:40 PM on two consecutive nights. Farr does not work nights. The report now sits in the middle of the case file, radiating significance on the strength of nothing but proximity — no connection to Nair, to Ashgrove, or to pricing data appears in any record. Somebody in the room will want to chase it anyway.",
+      "questions": {
+        "all": [
+          "Decide, out loud and on the record, what happens to the Farr item: who checks it, on what clock, and how you keep it from colonizing this case while it waits. What does the room's appetite for it say about how you handle ambiguity under stress?"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "type": "discussion",
+      "durations": ["60", "90", "120"],
+      "body": "By late morning the room has the whole shape: a textbook approach, the self-report the program begged for, and a reporter who is not quite the poster she would need to be for this to be easy. Before anyone opens a case file — or declines to — the table argues the question underneath every other question.\n\nIs Priya Nair, this morning, primarily the target of a professional approach who did the right thing sixteen days late? Or primarily an employee who took undisclosed money, sent an internal document to an outside firm, and reported it only when the asks got scary? Both descriptions are true. The company can only act on one of them first — and everyone she ever tells will hear which one it picked.",
+      "questions": {
+        "all": [
+          "State the room's answer in one sentence: what is Priya Nair to this company as of noon today? Every seat answers before the decision is taken. Disagreement is information, not a problem to be smoothed."
+        ],
+        "int_lead": [
+          "Whichever posture opens, name its tripwires now: the specific fact that would flip victim-first into a conduct case, and the specific fact that would flip subject-first into an apology. If you cannot name the tripwires, you are choosing a verdict, not a posture."
+        ],
+        "soc": [
+          "Sequence your next three technical moves under each posture and mark the fork — the first action victim-first would take that subject-first would not. How much of your work is actually posture-independent, and why is the room arguing as if none of it is?"
+        ],
+        "hr": [
+          "The conduct question does not vanish under either posture — it gets scheduled. Commit now to when it is adjudicated, by whom, and with what independence from the threat inquiry, so the answer is not improvised later by whoever is angriest."
+        ],
+        "legal": [
+          "Give the room the liability geometry in plain words: where victim-first exposes the company if she is not what she seems, and where subject-first exposes it if she is exactly what she seems. Then say which exposure the company is better built to survive."
+        ],
+        "it_iam": [
+          "Her access, and the access Ashgrove actually asked about, are different problems in different scopes. Name the least-drama access action defensible under both postures — and the one access move that would irreversibly announce subject-first to her entire team."
+        ],
+        "physec": [
+          "The field office will ask one question before any other: has anyone made contact with the outside firm? Establish the answer, freeze it, and brief the room on why every posture downstream depends on keeping that answer clean."
+        ],
+        "comms": [
+          "No statement is being issued today, and everyone in her orbit will receive one anyway — assembled from meeting invites, a lawyer sighting, and silence. Describe the message each posture broadcasts by pure operational leakage, before a single word is approved."
+        ],
+        "exec": [
+          "Strip the euphemism and price both postures as business decisions: victim-first risks being wrong about one person, once; subject-first risks teaching two thousand people never to walk in. Say which mistake the enterprise can better afford, and own it."
+        ]
+      },
+      "coaching": [
+        "Take the all-hands question literally — go seat by seat and make each role commit before the decision card is read.",
+        "Keep both descriptions of her on the table at once. The exercise fails if the room resolves the ambiguity by fiat before it has cost them anything."
+      ]
+    },
+    {
+      "id": "s12",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "The postures have been argued. The company opens its file — one way or the other.",
+      "decision": {
+        "prompt": "The program's opening posture toward Priya Nair is:",
+        "options": [
+          {
+            "label": "VICTIM-FIRST — treat her as the targeted reporter of an external approach: counsel and support in the room with her today, conduct questions deferred in writing until the outside threat is handled, her cooperation enlisted for what comes next. Accept that you are extending trust on one morning's evidence, and that the file on her own conduct does not close — it waits.",
+            "goto": "s13"
+          },
+          {
+            "label": "SUBJECT-FIRST — treat the conduct as the case: open a quiet review of Priya's own actions before any promise is made, verify her account against the records, hold her at arm's length while the file builds. Accept that the person who walked in gets silence while you check whether she deserved better — and that she will feel every day of it.",
+            "goto": "s18"
+          }
+        ]
+      },
+      "coaching": [
+        "Classic linear runs victim-first. The subject-first branch is the road more traveled in real programs — run it second if the room has time. It hurts more."
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "Victim-first, then — said out loud, and then, at counsel's insistence, in writing. By 11:40 Priya is back in the room with a company-arranged lawyer beside her and a one-page letter in front of her: her report is valued; conduct questions arising from her own disclosures are deferred, not dismissed; nothing she provides to the threat inquiry will be used to ambush her later; no broader immunity is granted or implied. It is the most carefully hedged kindness the company knows how to produce, and it works.\n\nShe exhales for what looks like the first time in a week. Then she gives you the rest: the full text thread, the payment records, her own timeline reconstructed to the minute — and one question nobody thought to prepare for. Friday is in three days. What do I say to him?",
+      "coaching": [
+        "The letter matters more than the sentiment. Have the room notice what it promises, what it pointedly does not, and who had the authority to sign it.",
+        "Her question is this branch's engine: from here forward the company is managing live contact, not a historical report."
+      ]
+    },
+    {
+      "id": "s14",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Among what she hands over is a document nobody knew existed: the contract Ashgrove sent after the second call. She never signed it. Counsel reads it twice and passes out an annotated excerpt.",
+      "inject": {
+        "kind": "contract_excerpt",
+        "from": "Ashgrove Partners — Advisory Services Agreement (unsigned; provided by P. Nair)",
+        "subject": "Counsel-annotated excerpt — sections 4 and 7",
+        "body": "4. CONFIDENTIALITY. Consultant shall not disclose to any party the existence or subject matter of engagements hereunder, including the identity of the Firm and the nature of materials reviewed. [Counsel note: the silence obligation runs from her to them. Nothing in the document binds Ashgrove to anything.]\n\n7. WORK PRODUCT. All notes, analyses and materials reviewed or prepared by Consultant in anticipation of engagements shall be deemed engagement materials available to the Firm. [Counsel note: read literally, a claim on documents she merely reviewed while preparing — a paper mechanism for converting her employer's material into their deliverable.]\n\nArrived by email after the second call, under a one-line note: standard terms, most consultants do not bother reading them.\n\nCounsel assessment: this is not a services agreement. It is a device for making a source feel owned.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Facilitator note, read aloud: Priya never signed this contract — and it still nearly worked. She cited its confidentiality section this morning when explaining why she almost did not come in. Paper like this binds by intimidation, not by law.\n\n4. CONFIDENTIALITY. Consultant shall not disclose to any party the existence or subject matter of engagements hereunder, including the identity of the Firm and the nature of materials reviewed. [Counsel note: the silence obligation runs from her to them. Nothing in the document binds Ashgrove to anything.]\n\n7. WORK PRODUCT. All notes, analyses and materials reviewed or prepared by Consultant in anticipation of engagements shall be deemed engagement materials available to the Firm. [Counsel note: read literally, a claim on documents she merely reviewed while preparing — a paper mechanism for converting her employer's material into their deliverable.]\n\nArrived by email after the second call, under a one-line note: standard terms, most consultants do not bother reading them.\n\nCounsel assessment: this is not a services agreement. It is a device for making a source feel owned."
+          }
+        }
+      },
+      "questions": {
+        "legal": [
+          "She never signed, and section 4 still nearly kept her home — she said so this morning. What does that teach the room about where such paper's real binding force lives, and what your intake script should say about it preemptively?"
+        ],
+        "all": [
+          "Sorel called these standard terms, and for legitimate expert networks something like section 4 genuinely is standard. Identify what separates ordinary commercial confidentiality from an instrument of control — and decide who at {{org_name}} could have told Priya the difference three weeks ago."
+        ]
+      }
+    },
+    {
+      "id": "s15",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "By end of day, the consented review of her accounts reports back. The first finding is the one the room hoped for. The second is the one the branch was built to ask about.",
+      "inject": {
+        "kind": "soc_note",
+        "from": "SOC — consented review, day one",
+        "subject": "PNAIR corroboration sweep — and one collateral finding",
+        "body": "With the reporter's written consent: endpoint, mailbox and transfer-app records for the trailing 45 days reviewed.\n\nFinding one: her account corroborates in full. Two calls, two payments, one outbound deck, no deletions, no additional external transfers. Her timeline and the records differ by nothing that matters.\n\nFinding two, collateral: an estate-wide search for the ashgrove-partners mail domain returns one additional mailbox. T. Okada, commercial pricing analytics — two inbound messages over five weeks, zero replies from the corporate account, zero forwards to this program, and two user-created calendar holds titled A.P. call, both in the past month. Okada holds pricing-scope access, including the Q3 addendum class. Okada has reported nothing.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Facilitator note, read aloud: finding one below is corroboration — her story checks out against the records. Finding two is why real cases rarely stay single-subject: the same search that verified her turned up a second name.\n\nWith the reporter's written consent: endpoint, mailbox and transfer-app records for the trailing 45 days reviewed.\n\nFinding one: her account corroborates in full. Two calls, two payments, one outbound deck, no deletions, no additional external transfers. Her timeline and the records differ by nothing that matters.\n\nFinding two, collateral: an estate-wide search for the ashgrove-partners mail domain returns one additional mailbox. T. Okada, commercial pricing analytics — two inbound messages over five weeks, zero replies from the corporate account, zero forwards to this program, and two user-created calendar holds titled A.P. call, both in the past month. Okada holds pricing-scope access, including the Q3 addendum class. Okada has reported nothing."
+          }
+        }
+      },
+      "questions": {
+        "soc": [
+          "Finding one cost you nothing — she handed you consent. Price finding two honestly: what authority did the estate-wide domain search rest on, who approved the scope creep from her mailbox to everyone's, and would that answer survive being read aloud at an all-hands?"
+        ],
+        "int_lead": [
+          "Okada inverts your morning: same approach, opposite response, and real scope this time. Decide what Okada is to the program tonight — subject, second victim, or unknown — and notice how much easier the label comes for someone who never walked into your office."
+        ]
+      }
+    },
+    {
+      "id": "s16",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "The posture was chosen for a woman sitting in a conference room being brave. Its perimeter is now the question.\n\nSorel's thread claimed a colleague has been helpful at this level — social proof, or a true sentence. The consented review is hours old; sooner or later it will give that claim edges, and the room must decide now how far victim-first extends when it does: to people who did not report. To people who may have done more than consult. To a live channel with a deadline on it. Postures are easy to declare for one sympathetic case. This is where the company finds out whether it declared a policy or performed one.",
+      "questions": {
+        "all": [
+          "Finish the rule, not the case: an employee who is approached and reports gets X; one who is approached and stays silent gets Y; one found mid-relationship gets Z. If the room cannot fill in Y and Z, it chose a mood in the last decision, not a posture."
+        ],
+        "int_lead": [
+          "Design the approach to a possible second contact who has said nothing: the opening words, who delivers them, and what the conversation must not do — remembering that everything you promised Priya in writing, this person will have heard about secondhand and half-wrong."
+        ],
+        "it_iam": [
+          "Priya consented to her watch. Scope the access review the pricing team now needs without turning consent into theater — and state where legitimate protective scoping ends and a quiet dragnet, run under a kinder name, begins."
+        ],
+        "hr": [
+          "If the review surfaces a colleague who was approached and stayed silent, does the deferred-conduct letter you gave Priya constrain what you can do to them? And is treating silence harder than confession a principle here, or a convenience?"
+        ],
+        "comms": [
+          "Her team has noticed the lawyer, the meetings, the lightened calendar. Draft the two sentences her manager may say to the team this week — true, kind, and containing nothing that poisons a later case — and name who approves them."
+        ]
+      },
+      "coaching": [
+        "If the longer-format review has already surfaced a second name, keep the room off that person's verdict — the discipline of not concluding is the skill under test here."
+      ]
+    },
+    {
+      "id": "s17",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "Friday is coming regardless of posture. The last question of this branch is what the company does with a live, paying, patient adversary who believes he still has a source.",
+      "decision": {
+        "prompt": "With Ashgrove's Friday deadline live, the company will:",
+        "options": [
+          {
+            "label": "RUN THE STRING — with law enforcement engaged first and counsel scripting every word, Priya replies as a cooperating reporter: stall, negotiate, keep the channel warm while attribution develops on the far end. She has agreed, with her own lawyer's blessing. Accept that you are keeping an employee in contact with her recruiter — on purpose, for weeks.",
+            "goto": "e1"
+          },
+          {
+            "label": "CUT AND SHIELD — no reply, ever. Break the channel, harden around the pricing scope Ashgrove actually wants, report the front to the field office and the sector body, and put the company's whole effort into protecting Priya and finding anyone else touched. Accept that attribution likely dies in the silence, and that Ashgrove simply dials the next firm.",
+            "goto": "e2"
+          }
+        ]
+      },
+      "coaching": [
+        "Both options are defensible and both are expensive. Make the room name the specific capability each one assumes the company has — then ask whether it does."
+      ]
+    },
+    {
+      "id": "s18",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "Subject-first, then. Nobody uses the phrase in front of her. Priya is thanked, seriously and briefly; told the company needs to understand the full picture; asked to keep the matter confidential, avoid all contact with Ashgrove, and stand by. It is procedurally impeccable. She hears every word of what it is not.\n\nThe file opens the same afternoon — a conduct review, quietly, records first: her access, her mail, her expenses, her disclosures, assembled and verified before anyone decides what she is owed. It is careful, defensible work, and it takes what careful work takes. Friday arrives. Sorel's deadline expires into silence — hers involuntary, the company's chosen. Days begin to pass, and in a conference room she is not invited to, Priya Nair's morning of courage is item four on an agenda.",
+      "difficulty_variants": {
+        "veteran": {
+          "body": "Subject-first, then. Nobody uses the phrase in front of her. Priya is thanked, seriously and briefly; told the company needs to understand the full picture; asked to keep the matter confidential, avoid all contact with Ashgrove, and stand by. It is procedurally impeccable. She hears every word of what it is not.\n\nThe file opens the same afternoon — a conduct review, quietly, records first: her access, her mail, her expenses, her disclosures, assembled and verified before anyone decides what she is owed. It is careful, defensible work, and it takes what careful work takes. Friday arrives. Sorel's deadline expires into silence — hers involuntary, the company's chosen. Days begin to pass, and in a conference room she is not invited to, Priya Nair's morning of courage is item four on an agenda.\n\nShe notices, of course. Reading rooms is her profession — it is praised in the performance reviews sitting in the file being read without her. By day three she has stopped asking her manager whether there is any news. By day six her badge shows arrival at 9:58 and departure at 5:01, an analyst impersonating her own job description. The review notes none of this, because none of it is in scope."
+        }
+      },
+      "coaching": [
+        "Read the closing line slowly. This branch's cost is not a legal exposure; it is a person discovering her category.",
+        "Keep the room honest that nothing here is malicious — every step is a reasonable person being careful. That is the trap's material."
+      ]
+    },
+    {
+      "id": "s19",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The review needs her access examined without announcing itself. The service desk is handed a cover story, and the cover story meets the workflow.",
+      "inject": {
+        "kind": "it_ticket",
+        "from": "IAM service desk — ticket 40817",
+        "subject": "Access recertification — PNAIR (routed as routine quarterly)",
+        "body": "TICKET 40817 — access recertification, user PNAIR.\nType: quarterly recertification (routed as routine).\nRequester comment, internal: expedite per HR/Legal, ref CM-2214. Do not indicate case linkage to user or manager.\n\nWorkflow note: per standard recertification process, a completion summary is copied to the user's manager, R. Calloway.\nStatus: manager copy sent, 08:14.\nManager reply, 08:31: Priya's access? Twice in one year? Is this connected to whatever Legal has going on? Happy to help — just tell me what this is.\n\nAnalyst escalation: requester instruction and workflow default are in conflict. Please advise which story we are telling, and to whom.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Facilitator note, read aloud: the review wants to check her access without telling her. But the recertification workflow was built for transparency — it copies the employee's manager automatically. Watch the cover story meet the workflow.\n\nTICKET 40817 — access recertification, user PNAIR.\nType: quarterly recertification (routed as routine).\nRequester comment, internal: expedite per HR/Legal, ref CM-2214. Do not indicate case linkage to user or manager.\n\nWorkflow note: per standard recertification process, a completion summary is copied to the user's manager, R. Calloway.\nStatus: manager copy sent, 08:14.\nManager reply, 08:31: Priya's access? Twice in one year? Is this connected to whatever Legal has going on? Happy to help — just tell me what this is.\n\nAnalyst escalation: requester instruction and workflow default are in conflict. Please advise which story we are telling, and to whom."
+          }
+        }
+      },
+      "questions": {
+        "it_iam": [
+          "The analyst's closing line is insubordinate and correct. Explain to the room why cover-story access reviews fail structurally in a workflow built for transparency — and what the honest version of this ticket would have been, since the access genuinely did need reviewing."
+        ],
+        "soc": [
+          "Calloway now half-knows, which is the worst amount. Map who else acquires partial knowledge with each further records pull this review makes — and the point at which the quiet conduct case has effectively announced itself to the whole commercial division."
+        ]
+      }
+    },
+    {
+      "id": "s20",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "On day six, counsel delivers the preliminary assessment the review asked for — plus one paragraph the review did not ask for.",
+      "inject": {
+        "kind": "legal_memo",
+        "from": "Counsel — privileged and confidential",
+        "subject": "Preliminary assessment, matter CM-2214 — day six",
+        "body": "PRIVILEGED. Findings to date.\n\nOne: the transmitted deck is marked INTERNAL USE but is substantially assembled from the employee's public conference material. A misappropriation theory is weak, and this office should not pretend otherwise in the file.\n\nTwo: the undisclosed paid consultation violates the outside-activity policy. Sanction is discretionary, coaching through termination; the three prior violations on record resolved as coaching.\n\nThree: the employee's report was voluntary, unprompted, and — per the records review — accurate in every checkable particular. In any later dispute, her self-report is the controlling fact, and it favors her heavily.\n\nFour, offered though not asked: this office has now spent six days verifying the honesty of the only person in this matter who came forward, while the external firm named in her report has received attention from no one. The deadline it set has passed. Whatever trail existed is six days colder. Counsel is aware this observation exceeds the scope of the question presented.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Facilitator note, read aloud: finding four is the unusual one — counsel stepping outside the question asked to point at the cost of how it was asked. Lawyers do not do this often. When they do, it is worth reading twice.\n\nPRIVILEGED. Findings to date.\n\nOne: the transmitted deck is marked INTERNAL USE but is substantially assembled from the employee's public conference material. A misappropriation theory is weak, and this office should not pretend otherwise in the file.\n\nTwo: the undisclosed paid consultation violates the outside-activity policy. Sanction is discretionary, coaching through termination; the three prior violations on record resolved as coaching.\n\nThree: the employee's report was voluntary, unprompted, and — per the records review — accurate in every checkable particular. In any later dispute, her self-report is the controlling fact, and it favors her heavily.\n\nFour, offered though not asked: this office has now spent six days verifying the honesty of the only person in this matter who came forward, while the external firm named in her report has received attention from no one. The deadline it set has passed. Whatever trail existed is six days colder. Counsel is aware this observation exceeds the scope of the question presented."
+          }
+        }
+      },
+      "questions": {
+        "legal": [
+          "Finding four is a lawyer billing the company to say what everyone avoided saying. Defend the six days as diligence — then argue the counterfactual: what did verifying her cost that a two-track posture, protect provisionally and investigate in parallel, would not have?"
+        ],
+        "exec": [
+          "Nothing in this memo is a surprise; every fact in it was knowable on day one. Identify the decision structure that nonetheless bought six days of drift — and the standing authority that would have had to exist for the company to move on day one instead."
+        ]
+      }
+    },
+    {
+      "id": "s21",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "On day eight, at 22:11, the ethics reporting line receives an anonymous submission. It is routed to HR and to the program, flagged urgent by the submitter. It should be read to the room exactly as written.",
+      "inject": {
+        "kind": "ethics_line_report",
+        "from": "Ethics reporting line — anonymous submission",
+        "subject": "Marked URGENT by submitter — routed to HR and the program",
+        "body": "Submitted 22:11. Anonymous. Category selected: retaliation concern. Verbatim text follows.\n\nA colleague did the thing the posters in the elevator tell us to do. She reported something outsiders were trying to get her to do. What happened next is a lawyer-sounding meeting, an access review, and a week of silence, and everyone on this floor can see it even though nobody official has said anything. I am not asking for information. I am telling you what we can see from the desks. If reporting gets you investigated, please just say so and take the posters down, because some of us had things we were thinking about saying.\n\nEnd of text. Routing note: submitter selected notification of outcome, which for anonymous submissions requires a posted general response."
+      },
+      "questions": {
+        "comms": [
+          "The submitter has offered you a deal: be believed or be quiet. Draft the posted general response that is honest about nothing being decided, promises nothing you cannot keep, and would not embarrass the company read back in six months — then say whether any such text exists."
+        ],
+        "hr": [
+          "The last sentence reports withheld reports — live risk sitting behind a grievance. What could the company change this week, visibly, that answers the floor's actual fear without prejudging Priya's file either way?"
+        ]
+      }
+    },
+    {
+      "id": "s22",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "Call it what the file calls it: the review worked. Her account verified. The record is defensible in every forum that will ever score it — and the floor above the conference room has already returned its own verdict on a process it was never supposed to see.\n\nNine days after an employee walked in to warn the company, the company knows nearly everything about her and nothing more about Ashgrove. The review has produced a clean file and a cautionary tale, and the room now has to decide which one the organization keeps.",
+      "questions": {
+        "all": [
+          "Score the nine days from three chairs: counsel defending the company in a later dispute; Sorel, wherever he is; and the anonymous submitter watching from the floor. Which of the three got the most value from how the company spent them — and was that the intent?"
+        ],
+        "exec": [
+          "Calloway, the floor, and eventually the board will each ask what took nine days. Compose the answer once, honestly. If the true answer is that nobody had authority to treat her better provisionally, name what you will fund so that sentence is never true again."
+        ],
+        "comms": [
+          "The awareness campaign is now competing with an eyewitness account. Lay out the internal narrative options remaining — full transparency, general reassurance, silence — and the half-life of each, given that the floor already knows what it saw."
+        ],
+        "hr": [
+          "Whatever discipline decision follows will be received as the company's answer to the ethics-line submission, not as an individual case outcome. State how that context should and should not move the sanction, and defend the line you draw."
+        ],
+        "int_lead": [
+          "Write the program's after-action honestly: the intake worked, the posture spent its advantage, and the external threat aged out untouched. Which single structural change — authority, doctrine, or staffing — would most have changed these nine days?"
+        ]
+      },
+      "coaching": [
+        "Do not let the room retreat into the file was defensible. Grant that premise fully — then make them price what defensibility purchased, and what it spent."
+      ]
+    },
+    {
+      "id": "s23",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "The conduct review is complete. She violated the policy; she also handed the company the only warning it got. The file is open on the desk, and Priya Nair is waiting — as she has been, politely, for nine days — to find out what she is.",
+      "decision": {
+        "prompt": "Nine days in, with the conduct review complete, the company will:",
+        "options": [
+          {
+            "label": "REPAIR — close conduct with a coaching note matching precedent, tell her plainly what happened and why it took nine days, and spend the discomfort: a written self-report SOP with bounded provisional protection, announced internally — with her permission — as the thing her case built. Accept that policy visibly bent for a sympathetic case, and that someone will one day test that bend.",
+            "goto": "e3"
+          },
+          {
+            "label": "HOLD THE LINE — the violation was real: formal written warning, the honorarium repaid, outside-activity retraining, and a file closed as a conduct matter that happened to begin with a self-report. Consistent, defensible, equal treatment under the policy as written. Accept that the floor is watching, and that the lesson it takes may not be the one about policy.",
+            "goto": "e4"
+          }
+        ]
+      },
+      "coaching": [
+        "Make the room say the quiet part: this vote is not about Priya. It is about the next person deciding whether to walk in."
+      ]
+    },
+    {
+      "id": "e1",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — THE STRING. Read aloud.\n\nThe reply goes out Thursday, every word counsel's, every word hers. The negotiation runs nineteen days. Ashgrove is patient; so, it turns out, is everyone else. The far end of the channel slowly develops edges: a client identity, a second front firm, a payment path that interests the field office far more than the deck ever did. When the operation closes, it closes the way these things close — no arrests on the news, a sector advisory with details only four people at {{org_name}} can recognize, a handler who stops answering a phone.\n\nInside the fence, the operation's other yield surfaces early, when the review's quiet second thread is approached with the care the room designed — and, after a long weekend, chooses the same door Priya chose. The two cases could hardly have ended more differently, and the difference was posture, not facts.\n\nPriya stays. She speaks, with counsel's blessing and her own dry edits, at the next awareness session: the approach, the deck, the letter, the string. Attendance is voluntary and the room is full. The costs are real and mostly invisible: nineteen days of a lawyer's undivided attention; an executive who described the operation, in a closed session, as running our own employee as bait, and did not entirely withdraw it; and a woman who did one brave thing and then had to keep doing it for three more weeks because the company asked.\n\nTHE END — of the fictional part. The intake doctrine, the deferred-conduct letter, and the authority to sign one: those are due Monday. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "The string paid off, and the room should distrust that. Replay it with one variable flipped — Ashgrove tests her with a canary document in week two. Does what you built protect her, the case, both, or neither? And does the answer make this branch's success design, or luck?"
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — THE CUT. Read aloud.\n\nSilence, professionally maintained. The Friday deadline passes; Sorel sends one final message — a genuinely graceful one, which is its own small education — and the channel goes dark. The field office takes the package with thanks and the mild, permanent regret of an agency handed a cold trail: the front's paper dissolves within a month, and whatever client stood behind it walks away untouched and unnamed.\n\nThe company turns inward and does the unglamorous version well. The pricing scope gets the access review it had been owed for two years. The sector body publishes the indicators, and eleven days later a peer firm calls — same pattern, different name, caught at the first email because somebody read the advisory. Your detection, it turns out, exports.\n\nPriya's case closes with the deferred-conduct letter honored to the word: a coaching note, precedent-consistent, and a conversation in which the program lead thanks her without a lawyer in the room. She stays — guarded for a season, then less so. What this branch never resolves stays unresolved: whether anyone else inside was already past the first coffee and is now simply more careful. The string would have told you. The silence protects everyone, and answers nothing.\n\nTHE END — of the fictional part. The access review and the indicator sharing are real actions with real owners: name them before the room cools. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "Cut-and-shield traded attribution for safety and got both halves of the bargain honestly. Argue the strongest case that it was still the wrong trade — then the strongest case that any room choosing the string overestimates its own operational maturity. Which argument sounded more like your company?"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — THE REPAIR. Read aloud.\n\nThe meeting is honest, which after nine days is itself an event. Priya hears the outcome — coaching note, precedent, closed — and then the accounting: what was reviewed, what it verified, and an apology bounded the way counsel bounds such things, for the silence if not for the scrutiny. She listens with the professional stillness the review never learned to read, and asks one question: would it have gone this way if my file had been thinner? Nobody answers quickly enough, and the meeting absorbs that too.\n\nThe SOP ships in six weeks — provisional protection for self-reporters, in writing, with a signature block that names an owner. With her permission, and her edits, the internal announcement uses her case. The posters stay up. The ethics line receives its posted general response and then, over the following quarter, a slow measurable rise in reports: most of them noise, two of them not — one of which arrives from commercial pricing, eight weeks late, from someone who says they watched to see what would happen to her first.\n\nThe costs stay on the ledger. Nine days the external trail spent cooling — Ashgrove was never attributed, and the next firm it dials will get no warning from your files. A discipline faction persuaded that policy is now negotiable for anyone with a sympathetic story. And a precedent that will someday be invoked by a self-reporter far less honest than the one who set it. The repair was real. It was also purchased at retail, after the damage, at a price the company set by needing it.\n\nTHE END — of the fictional part. The SOP has an owner and a date; the eight-week report has a case number. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "The late report from pricing is this branch's verdict: the repair bought a second walk-in that silence had priced at never. Trace which visible act made that person move — the outcome, the announcement, or the apology — and what that implies about which parts of the repair were load-bearing and which were ceremony."
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE — THE LINE. Read aloud.\n\nThe meeting is short and correct. Written warning, repayment of eight hundred dollars, retraining, a file that would satisfy any auditor ever born. Priya signs everything, thanks the room — she actually thanks the room — and goes back to her desk. The company's records will show that a policy violation was handled consistently, and the records will be right.\n\nEverything else happens off the record. She works her renewal season flawlessly and resigns in the spring, four months later, to a competitor, with three weeks' notice and a farewell email that mentions gratitude and growth and nothing at all. Calloway forwards it to the executive sponsor without comment, which is the comment. The ethics line's posted response — measured, lawyered, true — is read by the floor in the light of what the floor already knows, and the line goes quiet for two quarters. The security-culture survey lands in the fall, and nobody circulates the deck.\n\nThe final accounting arrives thirteen months out, in a case you will run as some future exercise: a data-loss alert, a real one this time, on an employee whose mailbox — reviewed after the fact — contains a first flattering approach dated back to this scenario's spring. They had watched what happened to the woman who reported hers. They mentioned it to the investigators eventually — not as an excuse. As an explanation.\n\nTHE END — of the fictional part. The policy was applied exactly as written; the question the After-Action Review must hold is what the policy, as written, was for. Proceed to the After-Action Review.",
+      "questions": {
+        "all": [
+          "Every decision in this branch was reasonable, documented and consistent. Construct the strongest end-to-end defense of the company's conduct — then locate the single earliest moment where a different reasonable choice existed. What would have had to already exist, on paper, for that choice to be the easy one?"
+        ]
+      }
+    }
+  ],
+  "aar": {
+    "hotwash": [
+      "Where is our intake doctrine for a self-report — the script, the room, the promises, the authority to make them? If the honest answer is nowhere, who owns writing it, and by when?",
+      "What can this organization promise a cooperative self-reporter today, in writing, and who signs it? If the answer is nothing and nobody, is that a legal position or just an unmade decision?",
+      "How many days of silence toward a waiting reporter are defensible in our shop, and on which day does careful become cruel? Put a number on it.",
+      "The tooling logged the deck and told no one, by design. Which of our detections are actually visibility-in-retrospect — and is the compensating control for each, in effect, an employee's conscience?",
+      "If two employees receive the same approach and only one reports, describe — under our current policy, not our aspirations — the difference in what happens to each. Is that difference an incentive or a warning?",
+      "Who is authorized to choose victim-first versus subject-first, on what evidence threshold, and within how many hours of a walk-in? If the room had to improvise that today, so would we.",
+      "What did our awareness campaign promise, in its exact words, and did today's exercise keep them? Bring the actual poster to the debrief."
+    ],
+    "objectives": [
+      "O1 — RECEIVE: Evaluate the organization's readiness to take a voluntary self-report of external targeting: intake doctrine, first-hour handling, and what may honestly be promised to the person in the chair.",
+      "O2 — PROTECT: Test whether a reporting employee can be provisionally protected while their account is verified — and whether conduct adjudication can run parallel to, rather than ahead of, the external inquiry.",
+      "O3 — ADJUDICATE: Exercise the disposition of an imperfect reporter: a real policy violation weighed against a voluntary report, with precedent, consistency and workforce signal all on the scale.",
+      "O4 — PURSUE: Assess the options against the external approach itself — controlled contact, cut-and-report, law-enforcement handoff — and the authorities and scripting each requires before any first reply.",
+      "O5 — GOVERN: Determine whether the exercise's central trade — what discipline teaches the workforce about reporting — has an owner, a policy expression, and a feedback loop from culture signals into program design."
+    ]
+  }
+}
