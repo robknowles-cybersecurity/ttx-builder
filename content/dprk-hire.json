@@ -309,6 +309,12 @@
         ],
         "physec": [
           "You hold a law-enforcement referral channel. What is the threshold for using it, and who decides?"
+        ],
+        "it_iam": [
+          "Before anyone in this room says the words cut access: walk them through what a clean suspension of the Voss account actually is — the five separate cuts, the order they must land in, and the fifteen-minute warning the wrong order hands him. Then say how long you need from a go decision, and make the room plan around your number, not theirs."
+        ],
+        "comms": [
+          "Two facts from your world belong in this picture: a reporter asked three weeks ago whether the company had reviewed its remote workforce and got the standard line, and the CEO's do-we-have-that-problem question is still open. Say what those two facts do to the amount of time this room thinks it has."
         ]
       },
       "coaching": [
