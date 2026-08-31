@@ -19,12 +19,36 @@
   };
 
   var INJECT_LABEL = {
+    /* the canonical five */
     email: 'Electronic mail',
     dlp:   'Data loss prevention alert',
     hr:    'Human resources memorandum',
     news:  'News item',
-    memo:  'Memorandum'
+    memo:  'Memorandum',
+    /* the richer vocabulary the live scenarios grew — each carries its own
+       chrome label and screen treatment (see "kind treatments" in ttx.css) */
+    dlp_alert:          'Data loss prevention alert',
+    hr_memo:            'Human resources memorandum',
+    intel_bulletin:     'Intelligence bulletin',
+    internal_note:      'Internal note',
+    press_inquiry:      'Press inquiry',
+    soc_note:           'SOC analyst note',
+    vendor_report:      'Vendor report',
+    contract_excerpt:   'Contract excerpt',
+    ethics_line_report: 'Ethics line report',
+    it_ticket:          'IT service ticket',
+    legal_memo:         'Legal memorandum',
+    text_message:       'Text message thread'
   };
+
+  /* A kind the table above has never heard of still deserves better than a
+     generic "Handout": print the slug as words so the drift is visible in
+     review instead of silently flattened. */
+  function injectLabel(kind) {
+    if (INJECT_LABEL[kind]) { return INJECT_LABEL[kind]; }
+    var words = String(kind || '').replace(/_/g, ' ').trim();
+    return words ? words.charAt(0).toUpperCase() + words.slice(1) : 'Handout';
+  }
 
   /* -- tiny DOM helpers --------------------------------------------------- */
 
@@ -82,7 +106,7 @@
     var box = el('article', 'inject inject--' + inject.kind);
 
     var chrome = el('div', 'inject__chrome');
-    chrome.appendChild(el('span', null, INJECT_LABEL[inject.kind] || 'Handout'));
+    chrome.appendChild(el('span', null, injectLabel(inject.kind)));
     chrome.appendChild(el('span', null,
       forHandout ? 'Deal at section ' + inject.sectionNum : 'Handout — section ' + inject.sectionNum));
     box.appendChild(chrome);

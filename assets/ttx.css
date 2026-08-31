@@ -800,12 +800,52 @@ a:hover { color: var(--signal); }
   margin: 0;
 }
 
-/* kind treatments */
-.inject--email  .inject__chrome { background: #24384a; }
-.inject--dlp    .inject__chrome { background: var(--signal-deep); }
-.inject--dlp    .inject__meta   { background: rgba(176, 32, 42, 0.07); }
-.inject--hr     .inject__chrome { background: #4a3a24; }
-.inject--news   .inject__chrome { background: #2c2c2c; }
+/* kind treatments
+   One dark chrome ink per kind, all drawn from the same letterpress family
+   as the base palette, so a spread of mixed handouts reads as one printing
+   job. Aliased pairs (dlp/dlp_alert, hr/hr_memo) share treatment on purpose:
+   they are the same artefact under an older and a newer name. */
+.inject--email          .inject__chrome { background: #24384a; }
+.inject--dlp            .inject__chrome,
+.inject--dlp_alert      .inject__chrome { background: var(--signal-deep); }
+.inject--dlp            .inject__meta,
+.inject--dlp_alert      .inject__meta   { background: rgba(176, 32, 42, 0.07); }
+.inject--hr             .inject__chrome,
+.inject--hr_memo        .inject__chrome { background: #4a3a24; }
+.inject--news           .inject__chrome,
+.inject--press_inquiry  .inject__chrome { background: #2c2c2c; }
+
+.inject--intel_bulletin .inject__chrome { background: #1c3a47; }
+.inject--intel_bulletin .inject__meta   { background: rgba(28, 58, 71, 0.07); }
+
+.inject--soc_note       .inject__chrome { background: #24443c; }
+.inject--it_ticket      .inject__chrome { background: #3a3a4a; }
+.inject--vendor_report  .inject__chrome { background: #364a24; }
+.inject--internal_note  .inject__chrome { background: var(--ink-soft); }
+
+/* the legal shelf — counsel's ink, and a document body set in book type
+   rather than teletype, because these arrive as typeset pages */
+.inject--legal_memo       .inject__chrome { background: var(--private); }
+.inject--contract_excerpt .inject__chrome { background: #40342c; }
+.inject--legal_memo .inject__body,
+.inject--contract_excerpt .inject__body {
+  font-family: var(--body);
+  font-size: 0.95rem;
+}
+
+/* an ethics-line submission prints like the web form it came from:
+   mono body kept, but boxed in the lighter sheet */
+.inject--ethics_line_report .inject__chrome { background: #4a2d47; }
+.inject--ethics_line_report .inject__body   { background: var(--paper-lit); }
+
+/* a text thread is a narrow artefact; letting it run the full measure
+   makes it read like a memo, which is exactly what it is not */
+.inject--text_message .inject__chrome { background: #274a5e; }
+.inject--text_message .inject__body {
+  max-width: 30rem;
+  background: var(--paper-lit);
+  border-left: 4px solid var(--rule);
+}
 
 .inject--news .inject__body {
   font-family: var(--body);

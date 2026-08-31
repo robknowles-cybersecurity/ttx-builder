@@ -207,8 +207,18 @@ silent on the console and only shows up as flat, generic prose.
 
 ### `inject.kind`
 
-`email` · `dlp` · `hr` · `news` · `memo` — each gets its own print treatment.
-An unrecognised kind still renders, with the default memo styling.
+The canonical five — `email` · `dlp` · `hr` · `news` · `memo` — plus the
+richer vocabulary the live scenarios use:
+
+`dlp_alert` · `hr_memo` · `intel_bulletin` · `internal_note` ·
+`press_inquiry` · `soc_note` · `vendor_report` · `contract_excerpt` ·
+`ethics_line_report` · `it_ticket` · `legal_memo` · `text_message`
+
+Each kind gets its own chrome label and screen treatment (`dlp_alert` and
+`hr_memo` deliberately share treatment with `dlp` and `hr` — same artefact,
+newer name). An unrecognised kind still renders: its slug is printed as words
+in the chrome so the drift is visible in review, with the default memo
+styling.
 
 ### Assembly rules
 
