@@ -35,6 +35,11 @@ section that says "turn to 14" does not.
 Each is a self-contained JSON file in `content/`. Adding one is a content job,
 not a code job — see the authoring checklist below.
 
+`actual-play.html` is a staged transcript of a fictional table mid-run through
+The New Hire — a teaching artifact for facilitation craft, linked beside the
+sample exercise on the console. (It lives at the docroot root, not under
+`/content/`, because the `/content/` location only serves `.json`.)
+
 ---
 
 ## Running an exercise

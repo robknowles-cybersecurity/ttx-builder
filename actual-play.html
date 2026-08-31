@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actual play — TTX Builder</title>
+<!-- PE-226. Relative hrefs to match this site's own idiom (assets/ttx.css);
+     every page here lives at the docroot root, so these resolve to /favicon.*
+     either way. The .ico is declared first with sizes="any" so browsers that
+     understand SVG favicons take the vector and everything else falls back
+     without a second request. -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="A fictional table runs The New Hire, module two: the reveals, the six-second silence, the steelman swap, and the three-three vote. A teaching transcript of what good tabletop facilitation sounds like.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="assets/ttx.css">
+<link rel="stylesheet" href="assets/print.css" media="print">
+</head>
+<body>
+
+<header class="banner">
+  <div class="banner__keyline">
+    <p class="banner__kicker">Actual Play</p>
+    <h1 class="banner__title">The Table Runs It</h1>
+    <div class="banner__rule"></div>
+    <p class="banner__sub">What the gamebook sounds like with seven people and a clock.</p>
+  </div>
+</header>
+
+<p class="masthead-note">The New Hire, module two &middot; Meridian Financial &middot; 90-minute format, Standard</p>
+
+<main class="wrap">
+
+  <div class="lede">
+    <p><span class="you">YOU are reading a table at work</span> &mdash; a fictional one. Ray facilitates. Janet has HR, Marcus the SOC, Tom is counsel, Alan the executive VP, Chris holds IT/IAM, and Dana leads the insider threat program. They are mid-exercise in <a href="exercise.html?s=dprk-hire&amp;i=financial&amp;m=formal&amp;d=90&amp;r=int_lead,soc,hr,legal,it_iam,physec,comms,exec&amp;x=standard&amp;l=0">The New Hire</a>, coming back from a break with the reveals about to land.</p>
+    <p>All persons and organizations are fictional. This transcript is a teaching artifact: it models what good facilitation sounds like, including the pauses.</p>
+  </div>
+
+  <div class="play">
+
+    <p class="turn turn--fac"><span class="turn__who">Ray (Facilitator):</span> Before we pick the story back up &mdash; quick temperature check. Janet, you&rsquo;ve had the hiring file in front of you since the break. One sentence.</p>
+
+    <p class="turn"><span class="turn__who">Janet (HR):</span> One sentence? Fine: I have a file that looked normal in April and looks radioactive in September, and nothing in it changed.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Hold that. Reading from section six. <em>&ldquo;While HR sits with the re-verification notice, the SOC&rsquo;s morning queue produces two items about the same account. Six weeks of hindsight are about to arrive at once.&rdquo;</em> Marcus, these are your team&rsquo;s artifacts. Take us through the analytics alert.</p>
+
+    <p class="turn"><span class="turn__who">Marcus (SOC):</span> Yeah. So the platform flagged account DVOSS &mdash; four point one gigs synced down from the primary repo over ten days. That&rsquo;s twelve times his baseline. Then two big archives created in a folder called <em>env-backup</em>. No egress that we&rsquo;ve seen. I want to be precise about that phrasing: no egress <em>that the platform can see</em>. It&rsquo;s blind to removable media on that endpoint profile and it doesn&rsquo;t cover two legacy repo trees.</p>
+
+    <p class="turn"><span class="turn__who">Tom (Legal):</span> When you say blind &mdash;</p>
+
+    <p class="turn"><span class="turn__who">Marcus:</span> I mean if it left the laptop by USB, we would not have an alert. We&rsquo;d have nothing.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> <span class="stage">(lets it sit &mdash; one, two, three, four, five)</span></p>
+
+    <p class="turn"><span class="turn__who">Alan (Exec VP):</span> Okay, I&rsquo;ll be the guy. He&rsquo;s a developer shipping a platform release in six weeks. Big syncs and local archives are what crunch looks like. If you pulled my top three engineers&rsquo; telemetry right now, how many would look like this?</p>
+
+    <p class="turn"><span class="turn__who">Marcus:</span> Honestly? Maybe one. And that&rsquo;s fair, and it&rsquo;s why my Tier&nbsp;3 kept digging instead of paging everyone at 2&nbsp;a.m. Which brings me to the part I don&rsquo;t love saying out loud.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Say it anyway. That&rsquo;s the exercise.</p>
+
+    <p class="turn"><span class="turn__who">Marcus:</span> There&rsquo;s a correlated event in the history. Forty-one days ago this account threw an impossible-travel alert. It auto-closed. VPN, low confidence, one of about forty that day. Nobody looked at it. If we&rsquo;d pulled the thread then &mdash; I don&rsquo;t know what we&rsquo;d have found then, but we&rsquo;d be having this meeting six weeks ago.</p>
+
+    <p class="turn"><span class="turn__who">Janet:</span> Marcus, I&rsquo;m not piling on, but I need to match that with mine, because I&rsquo;ve been sitting on it since the break and Ray said reveal when it&rsquo;s natural. It&rsquo;s natural. The hire was expedited. Recruiter flagged camera-off in two of three interviews. The hiring manager waived in-person onboarding &mdash; relocation in progress, it&rsquo;s approved, it&rsquo;s in the file. Week three, the replacement laptop shipped to a <em>different state</em> than his address of record. Week two, he split his direct deposit across two banks.</p>
+
+    <p class="turn"><span class="turn__who">Chris (IT/IAM):</span> And I&rsquo;ll stack mine: his MFA is enrolled to a VoIP number. Passed enrollment because we don&rsquo;t check number type &mdash; that&rsquo;s a finding, write it down. Week one he requested a remote-collaboration tool, got denied, then asked helpdesk whether <em>personal-device</em> repo access was allowed.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Dana, you&rsquo;ve been writing and not talking.</p>
+
+    <p class="turn"><span class="turn__who">Dana (InT Lead):</span> Because I&rsquo;m counting. <span class="stage">(reads)</span> Fails re-verification. Camera avoidance. Waived in-person onboarding. Out-of-state equipment shipping. Split deposits early. VoIP MFA. Remote-tool requests. Volume anomaly on the crown jewels. And Marcus&rsquo;s Tier&nbsp;3 note &mdash; the persistent inbound session, the thing that looks like his laptop is being operated <em>through</em> a device, from a third state, on a ten-p.m.-to-six-a.m. rhythm. Individually, every one of these has an innocent version. I want to say that clearly, because I&rsquo;m about to say the other thing. There&rsquo;s a sector bulletin from last month &mdash; I&rsquo;ve had it in my bag this whole meeting &mdash; describing remote-hire identity fraud tradecraft. It reads like someone wrote a biography of this account.</p>
+
+    <p class="turn"><span class="turn__who">Alan:</span> You&rsquo;ve had that the whole meeting?</p>
+
+    <p class="turn"><span class="turn__who">Dana:</span> I&rsquo;ve had it a month, Alan, and I want the room to notice why I hesitated, because it&rsquo;s the same reason the alert auto-closed and the same reason the waiver got approved: he&rsquo;s <em>good</em>. He&rsquo;s the best engineer on your release. Every one of us gave a high performer the benefit of the doubt in our own lane, and nobody could see the other lanes.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> I&rsquo;m going to name that and put it on the improvement list exactly as said: <em>high performance suppressed reporting in every function independently.</em> Okay. Tom. The room is leaning. Lawyer it.</p>
+
+    <p class="turn"><span class="turn__who">Tom:</span> Two things, and they cut opposite directions, which is why I get paid. First: everything we have is consistent with fraud and also consistent with a guy with a weird home network mid-relocation. If we act like it&rsquo;s proven and we&rsquo;re wrong, that&rsquo;s an employment action against a possibly innocent worker based on &mdash; Janet, help me &mdash; a <em>vendor letter and vibes</em>. Second, and this one keeps me up: if the fraud version is true, then payroll runs in four days, and there is a version of the world where wiring that money is itself a violation, whether or not we <em>knew</em>. Strict liability doesn&rsquo;t grade on effort. So I want the payments frozen almost more than I want the forensics, and I want both without tipping him, and I&rsquo;m aware those goals fight each other.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Which is the decision point, so let&rsquo;s take it formally. Section twelve. Two postures. <em>Contain now</em> &mdash; suspend access today, hold pay with counsel, go to a direct conversation, accept that we tip our hand. Or <em>monitor quietly</em> &mdash; access substantially intact, enhanced monitoring, verify identity and scope, accept that the crown jewels stay in reach while we watch. Before anyone votes: Alan, argue containment. Dana, argue the watch. Sixty seconds each.</p>
+
+    <p class="turn"><span class="turn__who">Alan:</span> Seriously?</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> It&rsquo;s the best minute of the whole exercise. Go.</p>
+
+    <p class="turn"><span class="turn__who">Alan:</span> &hellip;Fine. Contain, because everything we just listed says the identity is fake, and you don&rsquo;t leave a fake identity holding commit access to a payment platform while lawyers <em>verify</em>. My release is already dead if this is real &mdash; six more days of watching doesn&rsquo;t resurrect it, it just grows the blast radius I answer for. And the town-hall line about not spying on employees? Monitoring him harder <em>is</em> the surveillance program, we&rsquo;re just doing it without admitting we&rsquo;ve decided.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Dana. The watch.</p>
+
+    <p class="turn"><span class="turn__who">Dana:</span> Monitor, because right now we&rsquo;d be containing on correlation, and the moment we suspend, we&rsquo;ve told him &mdash; and whoever operates him &mdash; everything we know, and we&rsquo;ve told them with our weakest evidence. Nine days of full-fidelity watching with a hard tripwire converts suspicion into a case: identity confirmed or cleared, scope established, evidence preserved in a form that survives a courtroom. If we cut access today, we may never learn what already left. And if we&rsquo;re wrong about him, monitoring is the only option that lets us be wrong <em>privately.</em></p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Votes. Contain?</p>
+
+    <p class="stage stage--beat">(Alan. Chris. Janet, slowly.)</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Monitor?</p>
+
+    <p class="stage stage--beat">(Dana. Marcus. Tom.)</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> Three-three. Ties go to the senior role present, which &mdash; Alan.</p>
+
+    <p class="turn"><span class="turn__who">Alan:</span> <span class="stage">(long pause)</span> You know what convinced me? Tom&rsquo;s payroll thing. I can defend a slipped release. I cannot defend the wire we sent <em>after this meeting happened.</em> Contain. Do it clean, Chris &mdash; what was the phrase from your sheet?</p>
+
+    <p class="turn"><span class="turn__who">Chris:</span> SSO, VPN, repo, email, timesheet portal. In that order. Done wrong, he gets a fifteen-minute warning.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> The room chooses containment. <span class="stage">(flips pages, grinning)</span> Turn to section thirteen. And I&rsquo;ll tell you now &mdash; at 4:11 this afternoon, HR gets an email.</p>
+
+    <p class="turn"><span class="turn__who">Janet:</span> Oh, I hate that you&rsquo;re enjoying this.</p>
+
+    <p class="turn turn--fac"><span class="turn__who">Ray:</span> &mdash; after the break.</p>
+
+    <hr class="play__rule">
+
+    <p class="stage stage--beat">End of excerpt. In the full exercise, the vote leads to Section&nbsp;13 (Branch&nbsp;A: Containment) and the resignation inject at Section&nbsp;14.</p>
+
+  </div>
+
+  <section class="ask">
+    <h2 class="ask__title">Facilitation moves worth stealing</h2>
+    <p class="ask__body">Five moves modeled above, all of them portable to your own table:</p>
+    <p class="ask__body">The five-second silence after a hard reveal. Asking the reluctant discloser to <em>say it anyway</em>. Naming a systemic finding in the room&rsquo;s own words. The sixty-second steelman swap before any vote. And letting the tie land on a player, not the facilitator.</p>
+    <p class="ask__act"><a class="btn" href="exercise.html?s=dprk-hire&amp;i=financial&amp;m=formal&amp;d=90&amp;r=int_lead,soc,hr,legal,it_iam,physec,comms,exec&amp;x=standard&amp;l=0">Run the same table &rarr;</a></p>
+  </section>
+
+  <footer class="foot">
+    <p><strong>What this is.</strong> A staged transcript of a fictional table mid-exercise &mdash; written to model facilitation craft, not to depict any real organization or event. The exercise it plays is <a href="index.html">TTX Builder</a>&rsquo;s The New Hire.</p>
+    <p><a href="suggest.html">Suggest a scenario or report a correction</a> &middot; Part of <a href="https://insiderthreatanalyst.com/">insiderthreatanalyst.com</a>.</p>
+  </footer>
+
+</main>
+
+</body>
+</html>

@@ -1043,6 +1043,48 @@ a.btn {
   text-align: center;
 }
 
+/* ==========================================================================
+   Actual play page
+   A transcript set like a playscript: small-caps speaker tags, the
+   facilitator's turns carried on a red keyline so the reader can watch the
+   facilitation itself, stage directions in the editorial italic. The
+   closing craft box reuses .ask — same furniture, different conversation.
+   ========================================================================== */
+
+.play {
+  max-width: 46rem;
+  margin: 2.2rem auto 0;
+}
+.play > p { margin: 0 0 1.05rem; }
+
+.turn__who {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--signal-deep);
+  margin-right: 0.35rem;
+}
+.turn--fac {
+  border-left: 3px solid var(--signal);
+  padding-left: 0.95rem;
+}
+.turn--fac .turn__who { color: var(--ink); }
+
+.stage {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+.stage--beat { text-align: center; }
+
+.play__rule {
+  border: 0;
+  border-top: 2px solid var(--rule);
+  max-width: 12rem;
+  margin: 2rem auto;
+}
+
 /* ============================================================================
    TODO — typography
    Web-safe stacks are in place tonight so the site ships with zero font
