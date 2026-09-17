@@ -251,6 +251,43 @@ a:hover { color: var(--signal); }
   margin: 0.55rem 0 0.9rem;
 }
 
+/* -- scenario tracks ------------------------------------------------------
+   The Scenario dial is grouped: the general roster first, then the AI-as-
+   insider set with its own framing. Membership is declared per scenario
+   (meta.track in content/<id>.json, mirrored as data-track on the card), so a
+   new scenario joins a track by declaring one, not by relayout. A track with
+   no heading is simply the general set.
+   ------------------------------------------------------------------------ */
+
+.track__head {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 0.3rem;
+  margin: 0 0 0.9rem;
+}
+
+.cards + .track__head { margin-top: 1.6rem; }
+
+.track__intro {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  max-width: var(--measure);
+  margin: 0 0 0.55rem;
+}
+
+.track__credit {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-faint);
+  max-width: var(--measure);
+  margin: 0 0 0.95rem;
+}
+
 /* -- scenario cards (radio) ---------------------------------------------- */
 
 .cards {

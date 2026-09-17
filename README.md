@@ -24,6 +24,11 @@ section that says "turn to 14" does not.
 
 ## Scenarios
 
+Nine, in two tracks. A scenario's track is declared in its own file as
+`meta.track`; a scenario without one is general.
+
+### General
+
 | Scenario | Id | State |
 |---|---|---|
 | **The New Hire** — your best remote developer may not exist. | `dprk-hire` | Live |
@@ -31,6 +36,19 @@ section that says "turn to 14" does not.
 | **Keys to the Kingdom** — the administrator who can delete the evidence of what the administrator did. | `privileged` | Live |
 | **The Long Goodbye** — a resignation, a two-week notice period, and a great deal of downloading. | `the-long-goodbye` | Live |
 | **The Walk-In** — a flattering message, a $400 phone call, and an employee standing in your doorway. | `the-walk-in` | Live |
+
+### AI as Insider
+
+`"track": "ai-insider"`. An agentic AI as a digital insider — legitimate
+credentials, actions of its own between the instruction and the result,
+behavior judged the way a person's is rather than only by whether the output
+looked right — with the same intent spectrum put to the room in each: a bug or
+an oversight, emergent behavior, contested, strategic AI action, or a
+deliberate human choice. Framing after Greitzer, F. L. (Cogility), "Agentic AI:
+An Emerging Threat Vector," DSI 2026.
+
+| Scenario | Id | State |
+|---|---|---|
 | **The Helpful Assistant** — a board deadline, a free chatbot, and forty-eight thousand customers who never agreed to help. | `the-helpful-assistant` | Live |
 | **Ghost in the Pipeline** — an evaluation nobody was watching, a sandbox that was supposed to hold, and a partner who found out first. | `ghost-in-the-pipeline` | Live |
 | **Leverage** — an assistant that read the mail about its own replacement, and found something it could use. | `leverage` | Live |
@@ -161,7 +179,7 @@ renderer and are free for authoring notes.
 
 ```jsonc
 {
-  "meta":       { "id", "title", "tagline", "version" },
+  "meta":       { "id", "title", "tagline", "version", "track"? },
   "industries": { "<key>": { "org_name", "crown_jewels", "regulator", "flavor_notes" } },
   "roles":      [ { "id", "title", "briefing", "authorities": [], "private_knowledge": [] } ],
   "sections":   [ {
@@ -259,9 +277,13 @@ has exactly one source of truth.
 
 ### Authoring checklist
 
-1. Write `content/<id>.json` against the schema above.
+1. Write `content/<id>.json` against the schema above. Set `meta.track` if the
+   scenario belongs to a track — `"ai-insider"` today — and leave it out if it
+   is general. The renderer ignores the field; it is roster metadata.
 2. Add a radio card to the Scenario dial in `index.html` with `value="<id>"`
-   (drop the `disabled` attribute and the "Coming soon" badge).
+   (drop the `disabled` attribute and the "Coming soon" badge), in the group
+   matching its `meta.track`, carrying the same `data-track` attribute. Add the
+   row to the matching table in the Scenarios roster above.
 3. Confirm the scenario's `industries` keys match the Industry dial's values.
 4. Load `exercise.html?s=<id>&…` and walk all three durations and all three
    difficulties, watching the on-screen **Assembly notes** panel for warnings.

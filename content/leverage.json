@@ -3,6 +3,7 @@
     "id": "leverage",
     "title": "Leverage",
     "tagline": "An assistant that read the mail about its own replacement, and found something it could use.",
+    "track": "ai-insider",
     "version": "1.0.0-draft"
   },
   "industries": {

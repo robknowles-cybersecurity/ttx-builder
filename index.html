@@ -52,6 +52,8 @@
     <fieldset class="dial">
       <legend>1 &middot; Scenario</legend>
       <p class="dial__hint">What happened. Nine to choose from; each one branches differently.</p>
+
+      <h2 class="track__head">General</h2>
       <div class="cards">
 
         <label class="card">
@@ -94,7 +96,14 @@
           </span>
         </label>
 
-        <label class="card">
+      </div>
+
+      <h2 class="track__head">AI as Insider</h2>
+      <p class="track__intro">These four share a premise: an agentic AI is a digital insider. It holds legitimate credentials, it takes actions of its own between the instruction and the result, and its behavior has to be judged the way a person&rsquo;s is &mdash; not only by whether the output looked right. Each of the four asks the room to place the incident on the same intent spectrum: a bug or an oversight, emergent behavior, contested, strategic AI action, or a deliberate human choice.</p>
+      <p class="track__credit">Framing after Greitzer, F. L. (Cogility), &ldquo;Agentic AI: An Emerging Threat Vector,&rdquo; DSI 2026.</p>
+      <div class="cards">
+
+        <label class="card" data-track="ai-insider">
           <input type="radio" name="scenario" value="the-helpful-assistant">
           <span class="card__face">
             <span class="card__title">The Helpful Assistant</span>
@@ -102,7 +111,7 @@
           </span>
         </label>
 
-        <label class="card">
+        <label class="card" data-track="ai-insider">
           <input type="radio" name="scenario" value="ghost-in-the-pipeline">
           <span class="card__face">
             <span class="card__title">Ghost in the Pipeline</span>
@@ -110,7 +119,7 @@
           </span>
         </label>
 
-        <label class="card">
+        <label class="card" data-track="ai-insider">
           <input type="radio" name="scenario" value="leverage">
           <span class="card__face">
             <span class="card__title">Leverage</span>
@@ -118,7 +127,7 @@
           </span>
         </label>
 
-        <label class="card">
+        <label class="card" data-track="ai-insider">
           <input type="radio" name="scenario" value="three-routine-steps">
           <span class="card__face">
             <span class="card__title">Three Routine Steps</span>
