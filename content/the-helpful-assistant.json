@@ -169,7 +169,7 @@
       "body": "Monday, 9:05 AM. On Friday the board praised a churn analysis from {{org_name}}'s Customer Insights team as the sharpest it had ever seen. On Monday morning, the analyst who built it is sitting outside a conference room, waiting to explain how.\n\nThere is no attacker in this story, no ransom note, and no stolen password. There is a deadline, a free chatbot, and a spreadsheet of customers who never agreed to be part of either.\n\nYour job this session is to decide what this is, who owns it, what the company owes the customers, what it owes the employee, and why nothing stopped it.",
       "coaching": [
         "This is a low-heat scenario built for first-time facilitators. Nobody in it is malicious. Keep the room from inventing a villain; the exercise is about the organization, not the analyst.",
-        "Anchor reading before you run it: CISA, Insider Threat Mitigation Guide: 2026 Edition, including its material on artificial intelligence and on unintentional insiders. Supporting context on control gaps: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
+        "Anchor reading before you run it: CISA, Insider Threat Mitigation Guide (September 2026 edition), AI and Insider Threat Mitigation Considerations, p. 37, which lists unintentional leakage of data into unaccredited AI tools among its concerns. Supporting context on control gaps: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
       ]
     },
     {
@@ -512,7 +512,7 @@
         ]
       },
       "coaching": [
-        "Before the room settles the employee question, point them to what the CISA, Insider Threat Mitigation Guide: 2026 Edition says about unintentional insiders and proportionate response, and let them compare it with their own instinct. A zero-tolerance reflex feels decisive and mostly teaches people to hide."
+        "Before the room settles the employee question, point them to CISA, Insider Threat Mitigation Guide (September 2026 edition), Avoid Zero-Tolerance Policies, p. 35, which warns that zero-tolerance approaches discourage people from reporting. Let the room compare that with its own instinct."
       ]
     },
     {
@@ -647,7 +647,7 @@
         ]
       },
       "coaching": [
-        "Before the decision, point the room to what the CISA, Insider Threat Mitigation Guide: 2026 Edition says about unintentional insiders and proportionate response, and ask how its instinct compares.",
+        "Before the decision, point the room to CISA, Insider Threat Mitigation Guide (September 2026 edition): Avoid Zero-Tolerance Policies, p. 35, on how such policies suppress reporting, and AI and Insider Threat Mitigation Considerations, p. 37, on unintentional leakage into unaccredited AI tools. Ask how the room's instinct compares.",
         "Secondary source for the control gap: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 3: AI response content is not a monitored channel; extend DLP to AI output streams."
       ]
     },
