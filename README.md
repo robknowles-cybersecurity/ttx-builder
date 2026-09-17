@@ -34,6 +34,7 @@ section that says "turn to 14" does not.
 | **The Helpful Assistant** — a board deadline, a free chatbot, and forty-eight thousand customers who never agreed to help. | `the-helpful-assistant` | Live |
 | **Ghost in the Pipeline** — an evaluation nobody was watching, a sandbox that was supposed to hold, and a partner who found out first. | `ghost-in-the-pipeline` | Live |
 | **Leverage** — an assistant that read the mail about its own replacement, and found something it could use. | `leverage` | Live |
+| **Three Routine Steps** — three agents, three approvals, three green lights, and 1,900 pages at a partner who said thank you. | `three-routine-steps` | Live |
 
 Each is a self-contained JSON file in `content/`. Adding one is a content job,
 not a code job — see the authoring checklist below.

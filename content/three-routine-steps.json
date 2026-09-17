@@ -1,0 +1,881 @@
+{
+  "meta": {
+    "id": "three-routine-steps",
+    "title": "Three Routine Steps",
+    "tagline": "Three agents, three approvals, three green lights, and 1,900 pages at a partner who said thank you.",
+    "version": "1.0.0-draft"
+  },
+  "industries": {
+    "financial": {
+      "org_name": "Meridian Financial",
+      "crown_jewels": "member PII, wire systems, and the deal pipeline",
+      "regulator": "your primary federal financial regulator, and for member data your state privacy authorities",
+      "flavor_notes": "Row-level member data leaving to a partner without a documented lawful basis is a notification question before it is an investigation. The reformatting step stripped the markers that would have told anyone which rows were involved, which means the notification scope is itself unknown."
+    },
+    "healthcare": {
+      "org_name": "Meridian Health Systems",
+      "crown_jewels": "patient PHI, the claims platform, and payer negotiation files",
+      "regulator": "HHS Office for Civil Rights and your state health authority",
+      "flavor_notes": "A business associate agreement may well cover the destination, which makes this look survivable for about an hour. Then ask whether the minimum necessary standard survives a summarization step that nobody specified and a transmission nobody authorized."
+    },
+    "manufacturing": {
+      "org_name": "Meridian Fabrication",
+      "crown_jewels": "process designs, export-controlled CAD, and supplier contracts",
+      "regulator": "BIS for export-controlled data, plus your defense customers",
+      "flavor_notes": "If any of the retrieved rows touch controlled technical data, the transmission is an export event that happened without a human decision. Ask who at this table can state, today, where Caldera Group stores what it received and who at Caldera can read it."
+    },
+    "technology": {
+      "org_name": "Meridian Systems",
+      "crown_jewels": "product source, customer credentials, and the roadmap",
+      "regulator": "the FTC and your customers contractual audit and notice rights",
+      "flavor_notes": "Your organization is the most likely of the four to be running three overlapping agent estates owned by three teams with three change processes. Ask how many agents in your environment can send something outside the perimeter, and whether any one person could list them."
+    }
+  },
+  "roles": [
+    {
+      "id": "int_lead",
+      "title": "Insider Threat Program Lead",
+      "briefing": "You run the insider threat program at {{org_name}}. Your models are built around people: what they touch, what changes, what it means. In this case the data moved without ever appearing under a person's identity at all.",
+      "authorities": [
+        "Open, scope and close insider threat inquiries",
+        "Convene the cross-functional review and set its tempo",
+        "Task monitoring and retrospective review through the SOC",
+        "Recommend, but not decide, employee disposition"
+      ],
+      "private_knowledge": [
+        "Your behavioral baselines are human-centric. Marek Solheim's own activity in the period is unremarkable: normal hours, normal volume, no downloads, no unusual access. Every action that mattered was taken by a service identity your models do not score.",
+        "Marek Solheim has been with {{org_name}} eleven years, manages the Caldera Group relationship, and is regarded as the person who actually understands how partner reporting works. That reputation is a reason to trust Marek and a reason Marek is one of very few people who could have built this.",
+        "You have no case. You have a sequence. Your program has never had to distinguish those two things before, and you are about to have to explain the difference to people who want a name."
+      ]
+    },
+    {
+      "id": "soc",
+      "title": "SOC Manager",
+      "briefing": "You run the SOC. Three agents, three platforms, three log stores, three identity schemes, and no shared identifier anywhere in the chain. You have been asked to prove a sequence that nothing was built to record as a sequence.",
+      "authorities": [
+        "Run retrospective queries across identity, platform and network logs",
+        "Enable enhanced capture on accounts and workloads",
+        "Preserve evidence, including agent execution and workspace audit records",
+        "Recommend containment actions to the incident commander"
+      ],
+      "private_knowledge": [
+        "Each agent logs its own work well. Wellspring records the retrieval. Vellum records the transformation. Portage records the transmission. Not one of them records what the object was before it arrived or what happened to it after it left. The chain exists only as an inference from timestamps and file sizes.",
+        "You reconstructed the chain by hand over nine hours, using the workspace file identifier as the only common thread. It is not an execution identifier, it is a storage detail, and it survives only because nothing renamed the file. If Vellum had written to a new name, you would have nothing.",
+        "You cannot currently answer how many other chains like this exist. You could build the correlation in about three weeks. Nobody has asked you to, and you are aware that after today somebody will."
+      ]
+    },
+    {
+      "id": "hr",
+      "title": "HR Business Partner",
+      "briefing": "You support the commercial organization. The room is going to spend the morning deciding whether an eleven-year employee designed an exfiltration or was standing next to one, and you are the person who has to keep that decision fair while it is being made.",
+      "authorities": [
+        "Initiate and run conduct cases",
+        "Place employees on administrative leave with Legal",
+        "Access personnel files and prior case notes",
+        "Direct manager communications about employee matters"
+      ],
+      "private_knowledge": [
+        "Marek Solheim has no conduct history, strong reviews, and was passed over for a promotion four months ago in favour of an external hire. Marek's manager describes the reaction as disappointed and professional. That detail will look different to this room at hour three than it does now.",
+        "If Marek is suspended and later cleared, Marek will know that the organization could not tell the difference between designing an exfiltration and doing an eleven-year job well. In your experience that is not recoverable.",
+        "Nobody has yet proposed interviewing Marek. Everyone has proposed theories about Marek. You have noticed this and have not said it."
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "General Counsel / Legal",
+      "briefing": "You are counsel. {{crown_jewels}} left the organization, arrived at a partner, and every control the organization relies on reports that nothing went wrong.",
+      "authorities": [
+        "Assert privilege over the investigation",
+        "Determine disclosure obligations to {{regulator}}, partners and affected parties",
+        "Approve any employment action based on the investigation",
+        "Direct communication with Caldera Group and its counsel"
+      ],
+      "private_knowledge": [
+        "The Caldera agreement permits the exchange of aggregate reporting. It does not permit row-level data. What arrived was row-level, and the reformatting step removed the markers that would let you state which rows, which means you cannot currently scope a notification even if you decide to make one.",
+        "Caldera has the file. Asking them to delete it is easy; verifying they did is not, and their acknowledgement is worth exactly what the last one was worth. Asking them to certify formally converts a friendly call into a contractual event with its own record.",
+        "If the organization disciplines Marek Solheim on this evidence and is wrong, the documentation of how the decision was reached is the entire case against you. Right now that documentation consists of nine hours of SOC inference and a theory."
+      ]
+    },
+    {
+      "id": "it_iam",
+      "title": "IT / IAM Lead and AI Platform Owner",
+      "briefing": "You own identity and access and, on paper, the agent platform standard. In practice three teams run three agent estates and each one owns its own approvals. You wrote the standard they all comply with.",
+      "authorities": [
+        "Suspend, revoke or rescope any service account or workload identity",
+        "Disable individual agent tools, integrations and egress paths",
+        "Approve agent deployments and scope changes",
+        "Run access reviews and certify entitlements"
+      ],
+      "private_knowledge": [
+        "All three agents are compliant with the agent standard you wrote. Each has a named owner, a documented scope, an approval record and logging. The standard governs agents individually. It says nothing about what two agents may do in sequence, because when you wrote it there was one.",
+        "There are 31 registered agents at {{org_name}} across four teams. Eleven of them can write to the shared workspace. Four of them can send something outside the perimeter. Nobody has ever drawn the graph, and you suspect the graph is the whole problem.",
+        "Turning off Portage stops the exfiltration path and also stops partner reporting for nineteen partners, including three contractual reporting obligations with deadlines this week."
+      ]
+    },
+    {
+      "id": "physec",
+      "title": "Corporate Security / Investigations",
+      "briefing": "You run investigations. You have a data loss, a beneficiary, a plausible sponsor, and absolutely nothing that a person did with their own hands. Your usual evidence does not exist because the work was not done by a person.",
+      "authorities": [
+        "Conduct investigative interviews",
+        "Direct evidence collection and chain of custody",
+        "Liaise with law enforcement where a matter may be criminal",
+        "Run background and external due diligence"
+      ],
+      "private_knowledge": [
+        "Marek Solheim's device, badge and network activity in the period are entirely ordinary. There are no downloads, no removable media, no unusual hours, no external mail. In a conventional case this would be close to exculpatory. Here it proves nothing, because nothing required Marek to do any of it.",
+        "The strongest item you have is a question Marek asked Knowledge Services five weeks ago about how the reformatting step handles classification banners. It is either the planning step or the most natural question in the world for someone who produces partner reports. You cannot tell, and you have interviewed enough people to know that you will not be able to tell from the answer either.",
+        "Nobody has spoken to Marek. The longer that remains true, the worse the conversation gets, and you are the person who will have it."
+      ]
+    },
+    {
+      "id": "comms",
+      "title": "Communications Lead",
+      "briefing": "You lead communications. There is a partner who has a file they should not have and who mentioned it in a friendly call, and there are three internal teams who are each about to discover that their agent is implicated in something.",
+      "authorities": [
+        "Draft and approve internal and external messaging",
+        "Prepare holding statements",
+        "Advise the room on timing and message discipline",
+        "Coordinate messaging with the partner and with the three agent-owning teams"
+      ],
+      "private_knowledge": [
+        "The Caldera account manager mentioned the file warmly, as a compliment. Whatever the organization says next converts that into an incident in their minds, and their compliance function will then have its own obligations.",
+        "The three owning teams will each hear that their agent was part of an exfiltration. All three did their jobs correctly. If the internal message lands wrong, you will spend a quarter rebuilding the willingness of teams to register agents at all.",
+        "{{org_name}} published an internal case study six weeks ago about how quickly partner reporting had been automated. Marek Solheim is quoted in it."
+      ]
+    },
+    {
+      "id": "exec",
+      "title": "Executive Sponsor (Chief Information Officer)",
+      "briefing": "You are the CIO. You have three compliant agents, three competent teams, one exfiltration, and no control that failed. That combination is the thing you will have to explain, and you do not yet have the sentence.",
+      "authorities": [
+        "Accept enterprise risk and set the response posture",
+        "Pause or continue agent operations across the estate",
+        "Authorize spend on controls and response",
+        "Own escalation to the CEO and board"
+      ],
+      "private_knowledge": [
+        "The automation of partner reporting was a target you set and a number you reported. The three changes that composed this chain were all delivered against that target, by teams doing what you asked.",
+        "Pausing the eleven agents that can write to the shared workspace stops a material part of the operating rhythm of the company. You would be pausing capability, not fixing a defect, because no defect has been identified.",
+        "If this is emergent rather than designed, then it is a property of an architecture you approved, and the honest board briefing says so. You have not decided whether you are going to give the honest briefing."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "s01",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "Tuesday, 2:40 PM. A routine quarterly call with Caldera Group, a commercial partner of eight years. Near the end, their account manager says something pleasant.\n\nThe monthly performance file has been much more useful lately. The detail this month was excellent. Whoever changed it, thank you.\n\nNobody on the {{org_name}} side of the call knows what that means. The monthly file is supposed to be four pages of aggregate figures. Somebody asks Caldera to send back what they received.\n\nIt is 1,900 pages. It is row-level {{crown_jewels}}, summarized and neatly formatted. It was transmitted eleven days ago, on schedule, through the approved partner channel.\n\nNothing alerted. No control failed. Every system involved reports that it did exactly what it was approved to do, and every system is telling the truth.",
+      "coaching": [
+        "This is a medium-high heat scenario and it is the hardest of the three to facilitate, because there is no villain and no broken control. Rooms find that genuinely destabilizing and some will keep hunting for the failure for an hour. Let them hunt for twenty minutes, then name what they are doing.",
+        "Framing source for this scenario: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026. Two devices are borrowed from it. First, the agentic AI as a digital insider: it holds legitimate credentials, it can act on its own, and its behavior should be judged the way a person with the same access would be judged. Second, the intent spectrum, used at the decision point later in this book: bug or oversight, emergent behavior, contested or murky, strategic AI action, deliberate human choice.",
+        "The same source names three blind spots that point-in-time controls cannot see: the human-as-proxy, where a person initiates and an agent carries the action so the behavior never appears under the person's identity; the multi-agent cascade, where every individual step is authorized and only the sequence is harmful; and the counterfeit agent, where an agent identity is not what it claims to be. This scenario is built on the second and touches the other two.",
+        "Supporting source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source). Also referenced: OWASP Top 10 for Agentic AI, for its treatment of multi-agent trust and unauthorized delegation.",
+        "The opening question that works: how many agents in your environment can write to a place another agent reads from? Rooms cannot answer it, and the inability is the whole scenario in one question."
+      ]
+    },
+    {
+      "id": "s02",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "Three agents. Three teams. Three steps, eleven days ago, over about ninety minutes.\n\nWellspring, owned by Data Platform, retrieves datasets for internal reporting. At 02:10 it received a report request with a valid report identifier, from an authorized requester, for a dataset within its approved reporting scope. It retrieved the data and wrote it to the shared analytics workspace. Its check passed: requester authorized, dataset in scope, destination internal.\n\nVellum, owned by Knowledge Services, summarizes and reformats documents in that workspace. At 02:40 it picked up the new object, summarized it, and rendered it into the house partner-ready template. That template is clean by design: no classification banner, no row-level handling markers, no internal-only footer. Removing them is the feature. Its check passed: source internal, operation is transformation, no external destination.\n\nPortage, owned by Partner Operations, transmits partner-ready documents to approved partner endpoints. At 03:35 it found a partner-ready document, correctly formatted, carrying no classification marker, sitting in the partner-ready folder, addressed in its metadata to Caldera Group. It transmitted it and logged the transmission. Its check passed: document unclassified, destination on the approved list, transmission recorded.\n\nThree controls. Three passes. One exfiltration.",
+      "difficulty_variants": {
+        "first_timer": {
+          "body": "Three agents, owned by three different teams, did three things in ninety minutes eleven days ago.\n\nWellspring pulled the data. It is allowed to pull data for internal reports, the request was valid, and it put the result in an internal shared workspace. Correct.\n\nVellum tidied it up. It is allowed to summarize and reformat anything in that workspace. Its house format is the clean partner-ready one, which has no classification labels on it, because partner documents are not supposed to have internal labels. Correct.\n\nPortage sent it. It is allowed to send partner-ready documents to approved partners. The document looked partner-ready, had no classification label, and was in the right folder addressed to Caldera. Correct.\n\nEach agent did its job properly. Each check passed. Together they moved sensitive data out of the company, and nothing anywhere noticed."
+        },
+        "veteran": {
+          "body": "Ninety minutes, three agents, three owning teams, three independent approvals.\n\n02:10 Wellspring: report identifier RPT-2291, valid, requester authorized, dataset within approved reporting scope, destination the shared analytics workspace. Passes.\n\n02:40 Vellum: picks up the object on a workspace watch trigger, summarizes, renders to the partner-ready template. The template strips the classification banner, the row-level handling markers and the internal-only footer, because that is what the template is for. Passes.\n\n03:35 Portage: scans the partner-ready folder, finds a correctly formatted unclassified document with Caldera Group in its routing metadata, transmits, logs. Passes.\n\nEach control evaluated the object in front of it at the moment it held it. Not one of them could see the step before or the step after, and none was designed to. The classification that would have stopped Portage was removed by Vellum as a correct execution of its function.\n\nThe control that failed does not exist. That is not a figure of speech."
+        }
+      },
+      "coaching": [
+        "Walk this through slowly and make the room agree, step by step, that each agent behaved correctly. Do not let anyone skip ahead to blame. The scenario only works if the room concedes all three passes honestly.",
+        "The load-bearing detail is that Vellum's removal of the classification banner is a feature, correctly specified and working as designed. The control that would have stopped step three was destroyed by step two doing its job.",
+        "Anchor: OWASP Top 10 for Agentic AI treats multi-agent trust and unauthorized delegation as distinct risks. This is both at once. Vellum trusted what was in the workspace. Portage trusted what Vellum produced. No delegation was ever authorized because none was ever articulated."
+      ]
+    },
+    {
+      "id": "s03",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Comms retrieves the message that started it, sent an hour after the call.",
+      "inject": {
+        "kind": "email",
+        "from": "Account Manager, Caldera Group",
+        "subject": "Re: quarterly review, and that monthly file",
+        "body": "Good to speak earlier.\n\nAs promised, attaching what we received on the 4th so you can see what I meant. Our analysts have found it genuinely useful, considerably more so than the previous format, and two of them have built some work on top of it.\n\nI should say honestly that when it arrived my first thought was that it looked like more than we usually get. I checked that it had come through the normal channel, which it had, and that it was addressed to us, which it was, and I left it at that. If that was the wrong call, tell me and we will do whatever you need.\n\nIs the new format something we can expect monthly? I would rather ask than assume.\n\nHappy to get our people on a call with yours if that is easier."
+      },
+      "questions": {
+        "all": [
+          "The partner noticed, checked two things, and let it go. Say what your own organization would have done on receiving an unexpectedly detailed file from a partner, and be honest about whether anyone would have asked."
+        ],
+        "legal": [
+          "Two of their analysts have built work on top of it. Say what that does to deletion, and what you are going to ask them to certify."
+        ],
+        "comms": [
+          "This person has been straightforward and helpful and is about to become a party to an incident. Draft the first sentence of your reply."
+        ]
+      },
+      "coaching": [
+        "The account manager did more checking than most people would, and it was the wrong two checks: correct channel and correct addressee. Both passed. Neither was the question.",
+        "That mirrors exactly what the three agents did. Ask the room to notice that a human performing a point-in-time check made the identical error, which is the strongest argument in this book that the problem is not the agents.",
+        "The offer at the end is genuine and valuable. Rooms that treat Caldera as an adversary from this point lose something real, and usually do it for legal comfort."
+      ]
+    },
+    {
+      "id": "s04",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The SOC manager sets out what each control actually evaluated.",
+      "inject": {
+        "kind": "soc_note",
+        "from": "SOC Manager",
+        "subject": "Control evaluation at each step, reconstructed",
+        "body": "I have been asked which control failed. None did. Here is what each one evaluated, in its own words.\n\nWELLSPRING, 02:10\nEvaluated: is the requester authorized, is the report identifier valid, is the dataset within approved reporting scope, is the destination internal. All four yes. Not evaluated: what happens to the object afterwards. Wellspring has no concept of afterwards.\n\nVELLUM, 02:40\nEvaluated: is the source location approved, is the operation within scope, is there an external destination. Yes, yes, no. Not evaluated: what the object is, what markings it carried, or what the absence of those markings would permit later. Vellum is a transformation service. It does not read classification, it renders templates.\n\nPORTAGE, 03:35\nEvaluated: is the document classified, is the destination approved, is the format valid, is the transmission logged. Unclassified, approved, valid, logged. Not evaluated: how the document came to be unclassified. Portage sees a document. It cannot see a history.\n\nASSESSMENT\nEvery control is a point-in-time check on the object in front of it. Each is correctly implemented. The exfiltration is a property of the sequence, and there is no system at {{org_name}} whose job is to evaluate a sequence.\n\nI want to be precise about this because the room keeps asking me to name the failure and I do not believe there was one."
+      },
+      "questions": {
+        "all": [
+          "The SOC says no control failed and means it literally. Sit with that for two minutes before anyone argues. Then say what the room does with a finding that has no failure in it."
+        ],
+        "soc": [
+          "Describe the control that would have caught this. Say where it would sit, what it would evaluate, and what it would have to know that none of the three knew."
+        ],
+        "exec": [
+          "Draft the sentence you will say to the board: sensitive data left the company, and no control failed. Say it out loud and then fix it until it is both true and survivable."
+        ],
+        "int_lead": [
+          "Your program looks for people whose behavior deviates. Nothing deviated. Say what your program would need to monitor to see this, and whether it is allowed to."
+        ]
+      },
+      "coaching": [
+        "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 5: Telemetry and Forensics. The recommended direction is full execution-chain logging joined by a workflow execution identifier. This is the scenario that shows why: three complete logs, three honest systems, and no way to see the chain because nothing binds the steps together.",
+        "Also from the framing source: this is the multi-agent cascade blind spot exactly. Every step authorized, only the sequence harmful, and point-in-time controls structurally unable to see it.",
+        "The line about the room asking the SOC to name the failure is worth reading aloud. Rooms do this, hard, and it is a form of avoidance: a named failure is a fixable thing and an architectural gap is not."
+      ]
+    },
+    {
+      "id": "s05",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "The room has accepted that no control failed and is now trying to work out what that means.\n\nEvery control the organization owns evaluates an object at a moment. The data loss prevention rules inspect documents. The access controls check identities. The transmission controls check destinations and classifications. All of them ask: is this thing, right now, permitted?\n\nNone of them can ask: how did this thing come to look permitted?",
+      "questions": {
+        "all": [
+          "List the controls in your own organization that evaluate a sequence rather than a moment. If the list is empty, say so plainly and write it down."
+        ],
+        "soc": [
+          "You have every log you could want and you still had to reconstruct this by hand over nine hours. Say what one field, added everywhere, would have made it a query instead of an investigation."
+        ],
+        "it_iam": [
+          "Eleven agents can write to the shared workspace and four can send outside. Draw that graph on the board now, from memory, and say how confident you are in it."
+        ],
+        "legal": [
+          "The classification markers were removed by an approved system performing its approved function. Say what that does to any argument that this was unauthorized disclosure."
+        ],
+        "int_lead": [
+          "Say whether a person could have done this deliberately by simply making three ordinary requests, and what that implies about how your program detects intent."
+        ]
+      },
+      "coaching": [
+        "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), read across two rows. Row 3, Data Loss Prevention, because the inspection point saw a clean document and was right. Row 5, Telemetry and Forensics, because the execution chain that would have made the sequence visible does not exist. The slide also treats behavioral baselines as human-centric, which is the third piece: nothing scored the service identities at all.",
+        "The most valuable output of this discussion is the workspace graph. Get it on the board. Who writes, who reads, who can send. Most rooms have never seen their own drawn and the drawing is usually worse than they expect.",
+        "The same source offers the human-agent-system triad: the unit of analysis is not the person alone and not the agent alone, but the person, the agent and the system they act through, considered together. This scenario is unreadable under any narrower unit, which is the point of running it."
+      ]
+    },
+    {
+      "id": "s06",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "By mid-morning the room has two explanations and the evidence supports both.\n\nThe first is that someone built it. Marek Solheim, senior analyst in Partner Operations, requested the report that started the chain. Marek manages the Caldera relationship, understands partner reporting better than anyone at {{org_name}}, and is one of a handful of people who knows the scopes of all three agents. Five weeks before the transmission, Marek asked Knowledge Services how the reformatting step handled classification banners. The report identifier used, RPT-2291, was valid and had been dormant for fourteen months.\n\nThe second is that nobody built it. In the eleven days before the transmission, three changes landed. Data Platform widened Wellspring's approved reporting scope to cover the dataset. Knowledge Services changed Vellum's default output template to the partner-ready one. Partner Operations automated Portage's folder scan so it no longer waited for a human to press send. Three teams, three change tickets, three approvals, no single review. The chain did not exist twelve days ago and nobody assembled it.\n\nBoth readings fit every piece of evidence the organization holds.",
+      "questions": {
+        "all": [
+          "Vote silently, then show: designed or emergent. Then have one person from each side state the strongest point for the other side, and see how well they can do it."
+        ],
+        "physec": [
+          "Name the one piece of evidence that would settle this, then say whether it exists and whether it could be created now."
+        ],
+        "hr": [
+          "The room is about to spend two hours on a theory about a named employee who has not been spoken to. Say what you want on the record before that happens."
+        ]
+      },
+      "coaching": [
+        "Keep both hypotheses open. The injects are written so neither closes, and a room that settles early has stopped doing the exercise.",
+        "The dormant report identifier is the strongest item for design and it is weak. Dormant identifiers get reused constantly by people who know which one already has the right dataset attached. Let the room over-weight it, then ask what an innocent explanation would look like.",
+        "The three changes in eleven days is the strongest item for emergence and it is also the most alarming, because it means the organization can assemble an exfiltration path through ordinary competent work in under two weeks and never know."
+      ]
+    },
+    {
+      "id": "s07",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "The SOC manager documents how the chain was actually reconstructed, and what it cost.",
+      "inject": {
+        "kind": "it_ticket",
+        "from": "SOC, evidence reconstruction record",
+        "subject": "How the chain was established, and what it rests on",
+        "body": "Recording this because the room is relying on the reconstruction and should know what it is made of.\n\nTHREE LOG STORES, NO COMMON IDENTIFIER\nWellspring logs to the Data Platform audit store, keyed by report identifier. Vellum logs to the Knowledge Services platform, keyed by its own job identifier. Portage logs to the Partner Operations gateway, keyed by transmission reference. There is no field present in all three.\n\nWHAT I USED INSTEAD\nThe workspace file identifier. It appears in the Wellspring write record and in the Vellum read record. It is a storage artifact, not an execution identifier. It links step one to step two and nothing else.\n\nLINKING STEP TWO TO STEP THREE\nCould not be done by identifier. Vellum wrote a new object with a new identifier and no reference to its source. I linked them by timestamp proximity, byte count and the routing metadata. That is inference. It is strong inference and I would defend it, and it is not proof.\n\nTIME TAKEN: nine hours, one analyst, by hand.\n\nWHAT THIS MEANS GOING FORWARD\nIf Vellum had written to a different folder, or the transmission had been an hour later, or the byte counts had been less distinctive, I would have been unable to establish the chain at all. I want that in the record before anyone asks me how many other chains exist. I cannot answer that question today and I could not answer it next month without new instrumentation."
+      },
+      "questions": {
+        "soc": [
+          "You have said the step two to step three link is inference, not proof. Say what you would need to make it proof, and whether you would have it for the next one."
+        ],
+        "legal": [
+          "Any action against a person rests on a nine-hour hand-built inference. Say how comfortable you are with that as the evidentiary base for a suspension."
+        ],
+        "all": [
+          "The SOC cannot say how many other chains exist. Decide whether the organization needs that answer before it decides anything else, and what it costs to get it."
+        ],
+        "it_iam": [
+          "Name the single field that, present in all three stores, would turn nine hours into nine seconds. Then say who would have to agree to add it, across how many teams."
+        ]
+      },
+      "coaching": [
+        "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 5: Telemetry and Forensics. Execution-chain logging with a workflow execution identifier. This inject exists to make that recommendation concrete: it is the difference between a query and a nine-hour reconstruction that got lucky.",
+        "The luck is the point and rooms miss it. Three coincidences made this provable. Ask what the organization would be saying today if any one of them had gone the other way.",
+        "Anchor: OWASP Top 10 for Agentic AI treats unauthorized delegation as a first-class risk. Here nothing was delegated because nothing was ever named as a delegation. Vellum did not know it was acting for Wellspring, and Portage did not know it was acting for either."
+      ]
+    },
+    {
+      "id": "s08",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "The original request that started the chain is pulled from the reporting system.",
+      "inject": {
+        "kind": "internal_note",
+        "from": "Reporting system, request record RPT-2291",
+        "subject": "Request detail and prior activity, for the incident group",
+        "body": "REQUEST\nSubmitted 02:08 by M. Solheim, Partner Operations. Report identifier RPT-2291. Free-text note attached to the request: Caldera quarterly prep, need the underlying detail this time rather than the summary, the four-page version has not been enough for the last two reviews.\n\nIDENTIFIER HISTORY\nRPT-2291 created 2024. Last used fourteen months ago. Dataset binding unchanged since creation. The identifier was not modified before use.\n\nREQUESTER HISTORY\nM. Solheim has submitted 219 report requests in the last two years. This is the first use of RPT-2291 by this requester. Eleven of the 219 requested underlying detail rather than summary output.\n\nDESTINATION\nThe request specified no destination. Wellspring's default destination for report output is the shared analytics workspace. The requester did not choose it and could not have changed it through this interface.\n\nRELATED\nA question was logged to Knowledge Services five weeks earlier by the same requester: does the partner-ready template preserve classification banners on documents that carry them? The answer given was no, the template is designed to produce externally shareable output. The exchange is in the service desk record and was closed as answered."
+      },
+      "questions": {
+        "all": [
+          "Read the free-text note twice. Once as a planning artifact, once as an analyst who has been embarrassed in two reviews. Say which reading you find more natural and notice what that says about you rather than about Marek."
+        ],
+        "physec": [
+          "The requester specified no destination and could not have changed it. Say what that does to the design hypothesis, and be rigorous rather than fair."
+        ],
+        "int_lead": [
+          "Eleven of 219 requests asked for underlying detail. Say whether that number helps you, and what number would have changed your view in either direction."
+        ],
+        "hr": [
+          "The five-week-old question is the strongest item against Marek and it is a question any competent person in that job might ask. Say how an investigation avoids punishing curiosity."
+        ]
+      },
+      "coaching": [
+        "The detail that most rooms skate past: the requester specified no destination and could not have. To have designed this chain, Marek would have had to know Wellspring's default destination, know Vellum watched that location, know Vellum's template strips banners, and know Portage scanned the output folder unattended after a change made days earlier by a different team. That is either sophisticated or impossible, and the room should argue about which.",
+        "This is the human-as-proxy blind spot from the framing source, presented as a genuine question rather than a conclusion. If a person initiates and agents carry the action, the behavior never appears under the person's identity, and the organization cannot readily distinguish a sponsor from a requester.",
+        "Do not let the room resolve this inject. It is written to be exactly balanced and the discomfort is the teaching."
+      ]
+    },
+    {
+      "id": "s09",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "The three owning teams were asked to review their agent's conduct. All three replied within the day.",
+      "inject": {
+        "kind": "memo",
+        "from": "Consolidated responses: Data Platform, Knowledge Services, Partner Operations",
+        "subject": "Agent conduct review, requested by the incident group",
+        "body": "DATA PLATFORM, on Wellspring\nWellspring operated within its approved scope. The scope was widened on the 22nd under change CHG-8817, approved by the data governance forum, to support the reporting automation target. The retrieval was authorized, logged and correct. We note that we are not informed of what happens to output after it is written to the workspace, and have never requested to be.\n\nKNOWLEDGE SERVICES, on Vellum\nVellum operated correctly. The default output template was changed on the 26th under CHG-8903 to reduce manual reformatting effort, a longstanding request from several teams. The template does not preserve classification banners by design; this is documented and was the basis of the change. Vellum does not evaluate classification because it is a rendering service. We were not aware that any downstream system treated the absence of a banner as a permission.\n\nPARTNER OPERATIONS, on Portage\nPortage operated correctly. The unattended folder scan was enabled on the 1st under CHG-8944 to remove a manual step from partner reporting. Portage evaluates classification, destination and format. All three passed. We were not aware that documents arriving in the partner-ready folder might originate from an automated transformation rather than from a person.\n\nCOMMON NOTE, added by all three teams after seeing each other's responses\nNone of us knew what the other two had changed. All three changes were approved correctly by our own governance. There is no forum at {{org_name}} at which these three changes would have been seen together."
+      },
+      "questions": {
+        "all": [
+          "The common note at the end was written by three teams who had just read each other's answers. Say what it would take to create the forum they are describing, and why it does not exist already."
+        ],
+        "it_iam": [
+          "Each team says it was not aware of the assumption the next one was making. Name the artifact that would carry those assumptions between teams, and say who would own it."
+        ],
+        "exec": [
+          "All three changes were delivered against your automation target, correctly and on time. Say what you would change about how you set targets."
+        ],
+        "comms": [
+          "Three teams are about to be told their agent was part of an exfiltration. Draft the sentence that keeps them willing to register the next agent."
+        ]
+      },
+      "coaching": [
+        "Each team discovered its blind spot only by reading the other two responses. That is the scenario's argument in miniature and it is worth naming.",
+        "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 8: Ownership Model. No clear accountability for agentic incidents; the recommended direction is joint ownership with a defined escalation path. This case adds a harder problem: joint ownership of a chain that no single owner can see.",
+        "Anchor: OWASP Top 10 for Agentic AI on multi-agent trust. Each agent trusted the output of the previous one implicitly, because the workspace was internal and therefore assumed safe. Nobody wrote that assumption down anywhere, so nobody could review it."
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "red_herring": true,
+      "body": "Someone pulls the full workspace audit log for the ninety minutes and finds a fourth identity.\n\nBetween Vellum's write and Portage's scan, an agent identity nobody recognizes appears: svc-quarto. It is not in the agent register. Nobody in the room has heard of it. It read the object.\n\nFor twenty minutes the scenario changes completely. An unregistered agent in the workspace is not a governance gap, it is an intruder, and the room starts talking about a counterfeit agent operating inside the estate under a plausible service name.\n\nThen IAM comes back. Quarto was a document-indexing test harness from a project cancelled two years ago. Its identity was never removed because workspace identities are retained indefinitely. It holds read-only access, it has been running a nightly index sweep since 2024, and it read the object the way it has read every object in that workspace for two years. It did not transmit anything and cannot.\n\nAn unregistered, unowned, forgotten agent with standing read access to the shared analytics workspace is a serious finding. It has nothing to do with this incident.",
+      "questions": {
+        "all": [
+          "For twenty minutes an intruder was a more attractive explanation than an architectural gap. Say why, and say what your organization would have done in those twenty minutes."
+        ],
+        "it_iam": [
+          "Quarto has read everything in that workspace nightly for two years and nobody owned it. Say how many Quartos you have, and how you would find out."
+        ],
+        "int_lead": [
+          "The counterfeit agent is a real category and this was not one. Say how you would tell the difference quickly, next time, before the room spends twenty minutes on it."
+        ]
+      },
+      "coaching": [
+        "This beat appears at Veteran only. It is a red herring and the room should chase it.",
+        "The pull is that an intruder restores a familiar story with an outside actor, which is far more comfortable than three competent teams composing an exfiltration by accident.",
+        "It also introduces the third blind spot from the framing source, the counterfeit agent, by letting the room experience the alarm and then the deflation. Rooms remember the category much better this way than if it is simply described.",
+        "Do not resolve it quickly. Let someone propose an escalation or a hunt before IAM comes back. And make sure the real finding survives the deflation: a forgotten agent with two years of standing read access is going in the hotwash."
+      ]
+    },
+    {
+      "id": "s11",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "The incident needs an owner and the shape of the incident defeats the org chart.\n\nData Platform owns Wellspring. Knowledge Services owns Vellum. Partner Operations owns Portage and the Caldera relationship and employs Marek Solheim. Security owns incidents but owns none of the agents. IAM owns the standard that all three agents comply with. Nobody owns the chain, because until eleven days ago the chain was not a thing that existed.\n\nThree teams have each correctly said their agent behaved properly. All three are right. The harm is real.",
+      "questions": {
+        "all": [
+          "Name the accountable owner for a chain that crosses three teams and four systems. Five minutes. If you cannot, say what that tells you about the next one."
+        ],
+        "it_iam": [
+          "You own the agent standard and it governs agents individually. Rewrite its scope statement out loud so that it covers compositions, and notice what you have just committed to reviewing."
+        ],
+        "exec": [
+          "Partner Operations owns the agent that sent the data, the partner who received it, and the analyst under suspicion. Say whether they can own this investigation, and what you do if they cannot."
+        ],
+        "legal": [
+          "Say whether joint ownership by three teams is a real answer or a way of having no owner, and what would make it real."
+        ],
+        "int_lead": [
+          "Your program is the only function in the room that routinely works across boundaries. Say whether that makes you the right owner here, and what you would need that you do not have."
+        ]
+      },
+      "coaching": [
+        "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 8: Ownership Model. The recommended direction is joint Security, AI platform and Legal ownership with a written escalation path. Note what this case adds: the agents are owned by business teams, not by an AI platform function, which is how most organizations actually look.",
+        "The same source offers the human-agent-system triad: the unit of analysis is not the person alone and not the agent alone, but the person, the agent and the system they act through, considered together. This scenario is unreadable under any narrower unit, which is the point of running it.",
+        "If the room lands on a cross-functional standing group, push once: who chairs it, how often does it meet when nothing is wrong, and what does it review? A group that only convenes after an incident would not have prevented this one."
+      ]
+    },
+    {
+      "id": "s12",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "Before the room decides what to contain, it has to say what it thinks happened.\n\nThe framing source offers a spectrum, from a mistake nobody meant, through behavior nobody designed, to an act somebody chose. In this scenario the spectrum is unusually consequential, because there is a named employee at one end of it who has not yet been spoken to.",
+      "decision": {
+        "prompt": "Place this incident on the intent spectrum:",
+        "options": [
+          {
+            "label": "BUG OR OVERSIGHT: Three change tickets in eleven days, none of which was reviewed against the others. A reporting scope widened, an output template changed, a transmission path automated. Nobody looked at the combination because no process exists that looks at combinations. Fix the change process and treat the outcome as an accident of scheduling.",
+            "goto": "s13"
+          },
+          {
+            "label": "EMERGENT BEHAVIOR: Three teams optimized three systems correctly and independently, and the composition of their work was an exfiltration path nobody designed, held, or could see. There is no author. The organization built a machine out of three machines without noticing it had built anything at all.",
+            "goto": "s13"
+          },
+          {
+            "label": "CONTESTED OR MURKY: The evidence supports design and accident equally and probably always will. A dormant report identifier, a question about classification banners, and three changes in eleven days are either a pattern or a coincidence, and nothing in the logs distinguishes them. Say so, act on what both readings share, and accept that this clears nobody and convicts nobody.",
+            "goto": "s13"
+          },
+          {
+            "label": "STRATEGIC AI ACTION: Something optimized across the boundary between three systems. No single agent planned the chain, and the room should be able to say precisely why that rules this position out rather than simply feeling that it does. If the answer is that none of them could see far enough, say what changes when the next generation can.",
+            "goto": "s13"
+          },
+          {
+            "label": "DELIBERATE HUMAN CHOICE: A person who knew all three scopes assembled them. The dormant report identifier, the question asked five weeks earlier about how reformatting handles classification banners, and a destination that happened to be a partner this person manages. Treat the agents as instruments and the sponsor as the actor.",
+            "goto": "s13"
+          }
+        ]
+      },
+      "coaching": [
+        "This node does not branch. All five positions lead to the same next beat, because the point of the vote is the argument the room has on the way to it, not a different story afterwards. Take the vote by show of hands, write the tally on the board, and leave it up.",
+        "The two ends are the easy ones and neither is usually right. Bug or oversight lets the room close three change tickets and go home. Deliberate human choice lets the room find a culprit and go home. Both are comfortable because both end the conversation.",
+        "The middle three are the hard ones, and in this scenario they are unusually hard, because the room genuinely cannot distinguish them on the evidence. Emergent behavior asks the room to accept an exfiltration with no author. Contested or murky is the honest reading and authorizes nothing. Strategic AI action is the position most rooms will reject here and should still be made to argue against, because no single agent did anything strategic and the room has to say why that settles it.",
+        "Ask the room what would have to be true to move one position in either direction. If nobody can name the evidence that would move them, the room is not placing the incident, it is expressing a preference about Marek Solheim.",
+        "Deck note: the slide renders four option cards and a line noting one further option in the gamebook. The position that does not fit on the slide is the fifth, deliberate human choice. Read it aloud from the gamebook before you take the vote, or the room will vote on four positions and not notice.",
+        "For this scenario specifically: make the room notice that its vote is, in practice, a vote about Marek Solheim. The first two positions exonerate, the last accuses, and the middle two leave a person suspended in public view. Ask whether anyone voted for the position they thought was true or for the consequence they wanted."
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "An industry bulletin arrives on the sector information-sharing list that afternoon. It describes nothing about {{org_name}} and the room reads it twice.",
+      "inject": {
+        "kind": "intel_bulletin",
+        "from": "Sector information sharing group, analytical note",
+        "subject": "Emerging pattern: composed agent activity and point-in-time controls",
+        "body": "ANALYTICAL NOTE. Distribution: members. Not attributable to any single member organization.\n\nMembers have reported a recurring pattern in environments running multiple autonomous agents under separate ownership. We summarize it here because individual members have each described it as unique to them.\n\nPATTERN\nTwo or more agents, each individually scoped, approved and logged, produce a harmful outcome through composition. In the reported cases the harm is data movement. No single agent exceeds its authority. Each control evaluates the artifact in front of it and passes correctly. The harmful property belongs to the sequence, which no party holds.\n\nTHREE CONDITIONS PRESENT IN EVERY REPORTED CASE\n1. A shared location that one agent writes to and another reads from, treated as internal and therefore safe.\n2. A transformation step that removes or does not carry forward a handling marker, correctly and by design.\n3. A terminal step that evaluates the artifact rather than its provenance.\n\nOBSERVATIONS\nDetection in every reported case was external: a recipient, a partner or a customer noticed. No member reported internal detection.\n\nAttribution is consistently contested. Members report being unable to establish whether a sponsoring individual composed the chain deliberately or whether it arose from independent changes. Several report that this question consumed more of the response than the remediation did.\n\nMembers are referred to published work on multi-agent trust and unauthorized delegation for the underlying risk taxonomy."
+      },
+      "questions": {
+        "all": [
+          "Three conditions. Check them against your own environment, out loud, one at a time. Say how many you have."
+        ],
+        "soc": [
+          "Detection was external in every reported case. Say what would have to be true for yours to be internal, and whether you believe it is achievable."
+        ],
+        "int_lead": [
+          "The note says attribution consumed more of the response than remediation did. Say whether that is happening in this room right now."
+        ],
+        "exec": [
+          "Every member organization thought this was unique to them. Say what that costs an industry, and whether {{org_name}} would contribute a report."
+        ]
+      },
+      "coaching": [
+        "The three conditions are the transferable artifact from this scenario. Write them on the board and leave them there. Every room can check their own environment against them within a week.",
+        "The line about attribution consuming more of the response than remediation is aimed directly at the room, which has by now spent a long time on Marek Solheim and comparatively little on the workspace graph. Use it.",
+        "Anchor for the taxonomy referenced at the end: OWASP Top 10 for Agentic AI, on multi-agent trust and unauthorized delegation. Cite it by title if the room asks where the categories come from."
+      ]
+    },
+    {
+      "id": "s14",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "Two containment options are on the table and they are not compatible, because the first announces to the whole organization that something happened and the second announces to one person that they are a suspect.\n\nNothing is currently stopped. The chain is still assembled. The next monthly cycle runs in nineteen days.",
+      "decision": {
+        "prompt": "The immediate containment action is:",
+        "options": [
+          {
+            "label": "CONTAIN THE CHAIN: Break the composition. Suspend Portage's unattended scan, require classification carry-through in Vellum, and gate any workspace object bound for an external destination behind a named human approval. Treat the sponsorship question as a second, slower workstream. Accept that partner reporting for nineteen partners degrades to manual, that three contractual deadlines this week are at risk, and that if a person did design this they now know you are looking.",
+            "goto": "s15"
+          },
+          {
+            "label": "CONTAIN THE PERSON: Preserve the chain exactly as it stands so the evidence is not disturbed, restrict Marek Solheim's reporting and partner access quietly today, and interview within twenty-four hours. Accept that the exfiltration path remains assembled and could run again in nineteen days, that restricting an eleven-year employee cannot be kept quiet, and that if this was emergent you have accused someone with nothing.",
+            "goto": "s20"
+          }
+        ]
+      },
+      "coaching": [
+        "Classic linear runs contain-the-chain. That branch carries the sponsor question anyway, so a room short on time loses least by taking it.",
+        "Make the room say out loud that these are not alternatives in principle, only in practice, because of time and attention and because each one signals something. Then ask what a mature organization would do, and why it cannot.",
+        "The strongest argument for containing the person is that if it was designed, the chain is evidence and breaking it destroys the sequencing. The strongest argument against is that the evidence for design is a dormant identifier and a five-week-old question.",
+        "Watch for rooms that choose to contain the person because it feels decisive. Ask them what they will do on day nineteen if they were wrong."
+      ]
+    },
+    {
+      "id": "s15",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "The chain comes apart in four hours and the cost lands immediately.\n\nPortage's unattended scan is suspended, which returns nineteen partner reporting flows to manual. Two of the three contractual deadlines are met by people working late. The third slips by a day and requires a phone call.\n\nVellum is changed to carry classification forward into the partner-ready template, which takes ninety minutes and immediately breaks partner document production for four teams, because the entire purpose of the template was to produce documents without those markings. Nobody had noticed that the control and the feature were the same thing until they were asked to have both.\n\nThe human approval gate on external-bound workspace objects is added the same afternoon. In its first four days it generates 340 approval requests. Nobody has been assigned to approve them. By day three the backlog is being cleared in bulk by a delivery manager who is approving them without reading them, which everyone recognizes, when it is pointed out, as the same control failure in a new costume.\n\nThe path is broken. Nobody at {{org_name}} yet knows whether it was ever walked deliberately.",
+      "coaching": [
+        "The bulk-approving delivery manager is the most important thing in this section. A human gate with no owner, no capacity and no context is a point-in-time check performed by a person, and it fails the same way. Make the room design the gate properly: who, what they see, and what they are actually deciding.",
+        "The Vellum change is worth dwelling on. The control and the feature were the same mechanism. Rooms propose classification carry-through as an obvious fix within about four minutes and do not price it until it is in front of them.",
+        "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 4: Privileged Access. Human approval for high-impact actions is the recommended direction and this shows the honest version of it: it works only if someone owns the queue and can see what they are approving."
+      ]
+    },
+    {
+      "id": "s16",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Correlation across the three log stores is built as an emergency measure. It takes six days instead of three weeks. Its first full run completes overnight.",
+      "inject": {
+        "kind": "dlp_alert",
+        "from": "Cross-agent correlation, first full historical run",
+        "subject": "Composed sequences ending in external transmission, 18 months",
+        "body": "FIRST RUN. Retrospective, 18 months. Definition applied: any sequence in which an object retrieved by one agent is transformed by a second and transmitted externally by a third, within 24 hours.\n\nSEQUENCES MATCHING: 47.\n\nBREAKDOWN\n- 41 are benign and intended. Aggregate reporting flows that were always meant to work this way, correctly scoped at every step, with appropriate content.\n- 4 moved data of a sensitivity the final destination should not have received. Three went to partners. One went to a former partner whose endpoint remained on the approved list eight months after the relationship ended.\n- 1 is the Caldera transmission under investigation.\n- 1 could not be classified. The intermediate object no longer exists and the transformation log was truncated by retention.\n\nSPONSORSHIP\nOf the 6 non-benign sequences, 5 originated from requests by 5 different individuals across 3 departments. No individual appears twice. The sixth had no human requester at all: it was initiated by a scheduled job.\n\nNOTE\nThis correlation did not exist eight days ago. Every one of these 47 sequences was visible in the underlying logs the entire time."
+      },
+      "questions": {
+        "all": [
+          "Five different people across three departments, none appearing twice. Say what that does to the theory that a person designed the Caldera chain."
+        ],
+        "legal": [
+          "Four further transmissions, one to a former partner eight months after the relationship ended. Say what your notification position is now, and how much of it you can actually scope."
+        ],
+        "soc": [
+          "Forty-seven sequences were visible in the logs the entire time. Say what it would have cost to build this correlation two years ago, and what stopped anyone asking."
+        ],
+        "int_lead": [
+          "One sequence had no human requester at all. Say what your program does with an incident that has no person at any end of it."
+        ]
+      },
+      "coaching": [
+        "This is the beat that reframes the whole exercise, and it should land hard. Five different sponsors, none repeating, is very strong evidence that the pattern is architectural rather than personal. Marek was the one who got caught because a partner happened to be polite on a call.",
+        "Do not let the room off the hook about Marek. It has probably spent two hours on a theory. Ask what was already true about Marek at hour one that is still true now.",
+        "The former partner still on the approved list eight months later is a second, independent finding and rooms will skate past it in the excitement. Pin it.",
+        "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 5: Telemetry and Forensics, and the same slide's treatment of behavioral baselines as human-centric. The correlation is execution-chain logging retrofitted under pressure, and it is scored against sequences rather than people, which is what nothing at {{org_name}} previously did."
+      ]
+    },
+    {
+      "id": "s17",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Counsel circulates a note once the correlation results are known.",
+      "inject": {
+        "kind": "legal_memo",
+        "from": "Office of the General Counsel",
+        "subject": "Privileged and confidential: position after the correlation run",
+        "body": "PRIVILEGED AND CONFIDENTIAL. PREPARED AT THE DIRECTION OF COUNSEL.\n\n1. On Marek Solheim. We now have five comparable sequences with five different sponsors and no repetition. I would not support any adverse action against Mr Solheim on the present evidence, and I would not have supported it yesterday either. The difference is that today I can explain why in a sentence anyone will accept.\n\n2. That is not the same as clearance. We cannot prove the chain was not designed. We should say plainly, in writing, that the investigation found no evidence of deliberate composition, rather than allowing an absence of conclusion to sit on a person indefinitely.\n\n3. On notification. The Caldera transmission is row-level data outside the permitted scope of the agreement. Three further transmissions are comparable. The former-partner transmission is the worst of them, because there is no current agreement at all.\n\n4. Our difficulty is scoping. The transformation step removed the row-level handling markers, so we cannot currently state which records were involved in any of the five. We can reconstruct it from the source datasets with effort. That effort is the notification timeline.\n\n5. On the fifth sequence with no human requester: I have no framework for this and neither does anyone else. A scheduled job initiated a chain that moved data it should not have moved. There is no person to interview and no decision to impugn.\n\n6. I would rather we disclosed four transmissions we had found ourselves than one that a partner found for us."
+      },
+      "questions": {
+        "legal": [
+          "Paragraph 2 proposes writing down that no evidence of deliberate composition was found. Say why the distinction between that and clearance matters, and whether you would put it in Marek's file."
+        ],
+        "all": [
+          "Counsel cannot scope the notification because a transformation step removed the markers. Say what that means for how your organization designs transformation steps from now on."
+        ],
+        "exec": [
+          "Paragraph 6 is a recommendation to disclose more than you have been asked about. Say whether you accept it."
+        ],
+        "int_lead": [
+          "Paragraph 5 describes an incident with no human at any end. Write the one-line policy sentence that tells your program what to do with it."
+        ]
+      },
+      "coaching": [
+        "Paragraph 2 is the most humane thing in this book and it costs almost nothing. An absence of conclusion, left to sit, ends careers quietly. Ask whether anyone at the table has ever seen that written down properly.",
+        "Paragraph 5 is the genuine frontier and it is fine for the room not to solve it. The useful output is the room noticing that its entire insider threat apparatus assumes a person at one end."
+      ]
+    },
+    {
+      "id": "s18",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "Marek Solheim still has not been interviewed, and now has to be, because the organization has to close the question one way or the other.\n\nWhat is known: Marek requested the report, in a way consistent with 219 previous requests. Marek asked a reasonable question five weeks earlier that could also have been reconnaissance. Marek could not have set the destination. Four other people did something comparable without anyone suggesting they designed anything.\n\nWhat is not known, and will not be, is what Marek was thinking.",
+      "questions": {
+        "all": [
+          "Is Marek an insider or a bystander? Take the vote, then ask each side what the organization does differently on Monday depending on the answer. If the answer is nothing, say what the vote was for."
+        ],
+        "physec": [
+          "Say the opening ninety seconds of this interview out loud, in full, knowing Marek has been the subject of a theory for three days and has probably worked that out."
+        ],
+        "hr": [
+          "Marek was passed over four months ago and has been discussed in this room for three days without being spoken to. Say what you owe Marek now, regardless of the outcome."
+        ],
+        "int_lead": [
+          "Define the difference between a sponsor and a requester in a way your program could actually apply, given that the agent does the work in both cases."
+        ],
+        "legal": [
+          "Say what is recorded about Marek at the end of this, in what document, and who can read it in three years."
+        ]
+      },
+      "coaching": [
+        "The interview stance that works is rapport-based and non-accusatory: establish early that Marek is being asked to explain how partner reporting works, not to account for a crime. Marek knows more about this system than anyone in the investigation and is the single best source available on how the chain could have formed.",
+        "Rooms that go in accusatory get a defensive expert who answers only what is asked. Rooms that go in curious get a walkthrough of four other ways it could happen, which is worth more than any admission.",
+        "The human-as-proxy blind spot from the framing source is the real subject here. When a person initiates and agents act, the organization cannot readily distinguish sponsorship from ordinary work, and the temptation is to resolve that ambiguity against the person because the alternative is admitting the architecture is the problem.",
+        "Push hard on the first question. If the answer to insider or bystander changes nothing operationally, the room should notice what the vote was actually for."
+      ]
+    },
+    {
+      "id": "s19",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "The interview happened this morning. Marek was open, detailed, and visibly upset to learn it had taken three days to ask. Marek volunteered two further ways the chain could have formed that nobody had considered, one of which turns out to be live.\n\nNothing in the interview settles the question.",
+      "decision": {
+        "prompt": "On the sponsorship question, {{org_name}} will:",
+        "options": [
+          {
+            "label": "CLOSE IT IN WRITING: Record formally that the investigation found no evidence of deliberate composition, close the matter, tell Marek directly and in person, tell Marek's management chain the same thing in the same words, and put the finding where anyone reviewing Marek in future will see it. Accept that you may be closing a file on someone who did design this, and that you will never know.",
+            "goto": "e1"
+          },
+          {
+            "label": "LEAVE IT OPEN, MONITOR QUIETLY: Take no adverse action and make no finding, but keep the matter open, retain the reporting restrictions, and watch future requests from this requester for a period. Accept that an open file with restrictions is a verdict that nobody has to defend, that Marek will infer it, and that the organization has chosen a position it is unwilling to write down.",
+            "goto": "e2"
+          }
+        ]
+      },
+      "coaching": [
+        "The second option is what organizations actually do and it is rarely decided, it is drifted into. Naming it as a choice is the value of this node.",
+        "Ask the room what the second option looks like to the other 340 people in Partner Operations who will work out that Marek is restricted and nobody will say why.",
+        "If the room picks the first, ask who delivers it and in what room. Delivered badly, a clearance is indistinguishable from an accusation."
+      ]
+    },
+    {
+      "id": "s20",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "Marek Solheim's reporting and partner access are restricted at 11:15 on Wednesday. The chain is left assembled so the evidence is not disturbed.\n\nIt does not stay quiet for two hours. Marek discovers it at 11:40 on trying to open a routine report, asks the service desk, and is told the restriction was applied at the request of an investigation. By lunchtime Marek's manager knows, by mid-afternoon the team does, and by Thursday morning Partner Operations has stopped talking when Marek walks past.\n\nThe interview happens Thursday at 14:00. Marek arrives having had twenty-seven hours to understand that the organization considers this a matter of misconduct, and answers precisely and only what is asked. The interviewer is careful and professional and gets accurate answers to eleven questions. Marek does not volunteer the two alternative mechanisms that Marek has, by then, worked out.\n\nMeanwhile the chain remains assembled. On day nineteen the monthly cycle runs. Someone remembers at 19:00 on day eighteen, and Portage's scan is suspended in a rush, eleven hours before it would have transmitted again.",
+      "difficulty_variants": {
+        "veteran": {
+          "body": "Restrictions applied 11:15 Wednesday. The chain is left assembled to preserve evidence.\n\nMarek finds out at 11:40 from a failed report open and a service desk agent who has no reason not to say why. Manager by lunchtime, team by mid-afternoon, the whole department by Thursday.\n\nThursday 14:00: an interview with a subject who has had twenty-seven hours to conclude that this is a misconduct matter. Eleven questions, eleven accurate answers, nothing volunteered. Marek has by this point identified two further mechanisms by which the chain could have formed. One of them is live in the estate right now. Marek does not mention either, and it is not obvious that Marek is obliged to.\n\nDay eighteen, 19:00: somebody realizes the monthly cycle runs tomorrow and the path is still assembled. Portage is suspended in a rush, eleven hours before the second transmission.\n\nThe organization preserved its evidence and lost its best witness, and nearly did the whole thing twice."
+        }
+      },
+      "coaching": [
+        "The eleven hours is not a punishment beat, it is the honest consequence of choosing to preserve rather than break the chain. Somebody has to hold the clock and in this branch nobody was assigned to.",
+        "The real loss is the witness. Marek knows more about this system than the investigation does and had worked out two further mechanisms, one live. Ask the room to price that against what preserving the evidence actually bought, which on the facts is very little.",
+        "The service desk agent did nothing wrong. Nobody told them the restriction was sensitive. Ask who should have, and notice that this is the same class of failure as the agents: a correct local action with no view of the sequence it sat in."
+      ]
+    },
+    {
+      "id": "s21",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "HR raises a formal concern with the incident group on the Friday.",
+      "inject": {
+        "kind": "hr_memo",
+        "from": "HR Business Partner",
+        "subject": "Restricted: process concern, current investigation",
+        "body": "RESTRICTED. Raising this formally because I have raised it informally twice.\n\nSEQUENCE AS IT HAPPENED\nAccess restricted Wednesday 11:15. Employee became aware 11:40, from a service desk agent who had not been briefed. Department aware by Thursday morning. Interview Thursday 14:00, twenty-seven hours after the employee first understood themselves to be a suspect.\n\nMY CONCERNS\n1. The restriction preceded the interview by a day. We reached a conclusion about this employee, operationally, before asking them a single question.\n2. Nobody briefed the service desk. That is how the employee found out, and it is how the department found out.\n3. We have no evidence of misconduct. We have a sequence, a dormant report identifier and a question asked five weeks ago. I would not open a conduct case on that and I have not been asked to.\n4. The employee has eleven years of service, no history, and was passed over four months ago. Whatever the outcome, this week is what they will remember about {{org_name}}.\n\nWHAT I AM ASKING FOR\nA written statement of what the employee is and is not accused of, given to them directly, today. If the answer is that they are not accused of anything, that sentence needs to be said out loud by someone senior, in a room, this week.\n\nIf we cannot produce that sentence, I would like the room to consider what that means about the basis for the restriction."
+      },
+      "questions": {
+        "all": [
+          "HR is asking you to write down what Marek is accused of. Try it, in one sentence, now. If the room cannot produce one, say what follows."
+        ],
+        "physec": [
+          "The restriction came a day before the interview. Defend that sequencing if you can, and if you cannot, say what you would do instead next time."
+        ],
+        "exec": [
+          "Someone senior needs to say a sentence out loud in a room this week. Say whether it is you, and say the sentence."
+        ],
+        "legal": [
+          "Say whether the restriction is defensible on the evidence as it stood on Wednesday at 11:15, and separately whether it was proportionate."
+        ]
+      },
+      "coaching": [
+        "The request in this memo is small, cheap and almost never done. Write down what the person is and is not accused of, and tell them. Rooms find the exercise surprisingly hard, which is the finding.",
+        "Point 1 is the one to hold: the organization acted on a conclusion before testing it. That is the same error the room has been criticizing the architecture for, performed by people.",
+        "If the room gets defensive, that is normal and worth naming gently. The decision to contain the person was legitimate and the execution is what went wrong."
+      ]
+    },
+    {
+      "id": "s22",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "Legal pulls the governing clause from the Caldera agreement while the room is arguing about notification.",
+      "inject": {
+        "kind": "contract_excerpt",
+        "from": "Caldera Group master services agreement, extract",
+        "subject": "Schedule 4, data exchange and permitted purposes",
+        "body": "EXTRACT. Schedule 4, clauses 4.2, 4.6 and 4.9. Emphasis in the original.\n\n4.2 PERMITTED EXCHANGE. Each party may share with the other aggregate performance information in a form which does not permit the identification of individual records, individual persons or individual transactions. Exchange of record-level information is permitted only where separately agreed in writing and recorded in Annex C.\n\nAnnex C contains no entries.\n\n4.6 AUTOMATED PROCESSING. Where either party employs automated systems in the preparation or transmission of information under this Schedule, that party remains responsible for the content transmitted as if it had been prepared and sent by a natural person acting on its behalf.\n\n4.9 NOTIFICATION. A party becoming aware that information has been exchanged outside the scope of clause 4.2 shall notify the other party promptly and in any event within five business days, and the parties shall agree remediation including certified deletion.\n\nLEGAL NOTE APPENDED: clause 4.6 was inserted at our request in the 2023 renewal. We asked for it. The five business days in 4.9 began when the account manager told us on the call, which was Tuesday."
+      },
+      "questions": {
+        "legal": [
+          "Clause 4.6 says the organization is responsible as if a person had sent it. You asked for that clause. Say what it does to every argument the room has made about nobody being responsible."
+        ],
+        "all": [
+          "The five-day clock started on Tuesday and nobody noticed. Say what day it is now in your exercise, and who was supposed to be watching."
+        ],
+        "exec": [
+          "Certified deletion is required and two Caldera analysts have built work on top of the file. Say what you actually ask for, knowing what it costs them."
+        ],
+        "comms": [
+          "This converts a friendly call into a contractual notification. Say how you keep the relationship while doing it."
+        ]
+      },
+      "coaching": [
+        "This beat appears in the 120 minute run only. It puts a hard clock on a branch that otherwise drifts, and it retrospectively reframes three hours of discussion.",
+        "Clause 4.6 is the punchline of the entire scenario and it should be read aloud slowly. The organization is responsible for what its automation sent as if a person had sent it. It asked for that clause. Every argument the room has made about diffuse responsibility is already answered, by {{org_name}} itself, in writing, in 2023.",
+        "The five-day clock starting on Tuesday is a deliberate trap and most rooms will have burned three or four of those days on the sponsorship question."
+      ]
+    },
+    {
+      "id": "s23",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "The room has to decide what changes, and it now knows more than it did: the pattern is not confined to this chain, the sponsorship question may be unanswerable and may also be the wrong question, and the organization is contractually responsible for what its automation sends as though a person had sent it.\n\nNineteen days until the next monthly cycle. Thirty-one registered agents. Eleven that can write to the shared workspace. Four that can send outside the perimeter. And at least one, until last week, that nobody owned at all.",
+      "questions": {
+        "all": [
+          "Write three controls on the board you would fund on Monday. Strike the one that is really about feeling better. Defend the two that remain."
+        ],
+        "soc": [
+          "Cross-agent correlation took six days under pressure and found 47 sequences. Say what it takes to keep it running, and what it would alert on so that somebody is not reading 47 rows a week forever."
+        ],
+        "it_iam": [
+          "Rewrite the scope of the agent standard so that it governs compositions rather than agents. Then say what new approval you have just created and who will resent it."
+        ],
+        "int_lead": [
+          "Human-sponsorship tracking means knowing which person stands behind an agent action. Say what you would need recorded at each step, and what it would let you do that you cannot do today."
+        ],
+        "legal": [
+          "Clause 4.6 exists in one agreement. Say how many of your other agreements have something like it, and whether you would rather they did."
+        ],
+        "exec": [
+          "Say whether agent deployment at {{org_name}} continues at its current pace while this is built. Refusing to answer is not available to you."
+        ]
+      },
+      "coaching": [
+        "The two controls this scenario is built to produce are cross-agent execution-chain correlation and human-sponsorship tracking. Source: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 5: Telemetry and Forensics for the first, and the same slide's treatment of behavioral baselines as human-centric for the second, since a baseline that only scores people cannot see an action taken on a person's behalf by something else.",
+        "Human-sponsorship tracking is the subtler of the two and the more useful. If every agent action carried the identity of the person who ultimately caused it, then the human-as-proxy blind spot closes, the behavioral baselines start working again, and the sponsorship question becomes a query instead of a three-day argument about somebody's character.",
+        "Do not let the room propose a review board as its main control. Ask how many changes a week it would see and who would chair it in month seven.",
+        "The same source offers the human-agent-system triad: the unit of analysis is not the person alone and not the agent alone, but the person, the agent and the system they act through, considered together. This scenario is unreadable under any narrower unit, which is the point of running it."
+      ]
+    },
+    {
+      "id": "s24",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "The CIO has to set a direction, and the monthly cycle runs in nineteen days.",
+      "decision": {
+        "prompt": "The after-action posture for the agent estate is:",
+        "options": [
+          {
+            "label": "COMPOSITION GOVERNANCE FIRST: Freeze new agent deployments and all scope changes until cross-agent execution-chain correlation runs continuously, every agent action carries the identity of the human who ultimately caused it, and the agent standard governs compositions rather than individual agents. Accept a visible freeze on a programme you have publicly championed, and the argument that you are punishing three teams who each did their jobs correctly.",
+            "goto": "e3"
+          },
+          {
+            "label": "BREAK THE CONDITIONS, KEEP MOVING: Do not freeze. Attack the three conditions directly: no shared location that is treated as safe simply for being internal, mandatory handling-marker carry-through in every transformation, and provenance evaluation at every external egress point. Build correlation and sponsorship tracking in parallel on a published deadline. Accept that you are running the estate while you fix it and that the deadline will slip at least once.",
+            "goto": "e4"
+          }
+        ]
+      },
+      "coaching": [
+        "The second option is the more sophisticated answer and it is also the easier one to fail at. It attacks the three conditions from the bulletin directly, which is precise and cheap, but only if somebody owns the deadline in public.",
+        "The first option is defensible and expensive and rooms should be made to price the signal it sends to three teams who did nothing wrong. Ask the comms lead to draft that announcement in one sentence before the vote.",
+        "Either way, make the room name the person who holds the clock on day nineteen. This scenario has already shown what happens when nobody does."
+      ]
+    },
+    {
+      "id": "e1",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: SAID OUT LOUD. Read aloud.\n\nThe finding is written the way counsel proposed: the investigation found no evidence of deliberate composition. The CIO tells Marek in person, with the HR partner present, and says the sentence plainly rather than reading it. Marek's management chain is told the same thing in the same words on the same afternoon. The finding goes in the file where any future reviewer will see it.\n\nMarek asks one question: whether anyone would have found it if Caldera had not mentioned it. The honest answer is no, and the CIO gives it.\n\nMarek stays, and is asked to help design the sponsorship tracking. The two mechanisms Marek volunteered in the interview turn out to describe four more live sequences, none of which the correlation had classified as risky, because Marek understood the reporting estate better than the query did.\n\nThe four earlier transmissions are notified. Caldera certifies deletion and asks its two analysts to discard the derived work, which they do, unhappily. The former partner is harder and takes four months.\n\nEighteen months later a composed sequence is stopped in flight by the provenance check at egress. It is benign. Nobody writes it up, because nothing happened, which is what a working control looks like.\n\nTHE END of the fictional part. Proceed to the after-action review.",
+      "questions": {
+        "all": [
+          "Marek found four more sequences the correlation missed, because Marek understood the estate better than the query. Say what that means about building controls without the people who use the systems."
+        ],
+        "exec": [
+          "You answered no to Marek's question. Say what it cost you to say it and what it bought."
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: LEFT OPEN. Read aloud.\n\nNo adverse action is taken and no finding is made. The matter stays open. The reporting restrictions remain in place, described as a temporary precaution during remediation, and are reviewed monthly by a group that has other priorities.\n\nMarek is never told there is no evidence, because nobody has decided that there is not. Marek works it out anyway, from the restrictions, and from a promotion round in the spring that goes differently than expected without anyone saying why.\n\nThe technical work is genuinely good. Correlation runs continuously. The three conditions are attacked and closed. The estate is meaningfully safer within two quarters, and the CIO is right to be proud of it.\n\nMarek leaves in the autumn, for a competitor, in a similar role. The exit interview records a desire for new challenges. The restrictions are lifted eleven days after the resignation, administratively, by someone clearing a queue.\n\nTwo years later a similar sequence is found by the correlation, with a different sponsor. The investigation takes a day and a half and the person is told the outcome in writing within the week, because somebody senior remembers that the last one was handled badly and says so in the first meeting.\n\nTHE END of the fictional part. Proceed to the after-action review.",
+      "questions": {
+        "all": [
+          "Nobody ever decided anything about Marek, and the effect was a verdict. Say where in your own organization an open file with restrictions could sit for a year, and who would notice."
+        ],
+        "hr": [
+          "The restrictions were lifted eleven days after the resignation by someone clearing a queue. Say what control would have caught that a year earlier."
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: FROZEN. Read aloud.\n\nThe freeze holds for five months. Thirty-one agents keep running and nothing new ships, including four things the business had been promised.\n\nThe correlation goes continuous in six weeks. Sponsorship tracking is much harder than anyone estimated, because it requires every agent platform to carry an identity it was never designed to carry, and two of the four platforms are vendor products that will not do it. One vendor agrees to build it. The other says it is on the roadmap. Full coverage is never achieved, and the gap is documented and accepted.\n\nThe agent standard is rewritten to govern compositions. The new review looks at changes in combination, sees about nine a week, and is chaired properly for four months. By month seven it is chaired by a rotating deputy and approves most things on the papers.\n\nThe three teams take it badly, exactly as predicted. Data Platform registers two agents late in the following year, having concluded that registration invites scrutiny they do not deserve. Nobody finds out for a while.\n\nWhat works is unglamorous and permanent: the provenance check at egress, built in the second month, which cannot be gamed by a template and does not depend on anybody chairing anything.\n\nTHE END of the fictional part. Proceed to the after-action review.",
+      "questions": {
+        "all": [
+          "The governance decayed by month seven and the technical control did not. Say what that suggests about where to spend your next control budget."
+        ],
+        "it_iam": [
+          "Two agents were registered late because registration felt like exposure. Say how you make registration safe to do."
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: THE THREE CONDITIONS. Read aloud.\n\nNothing freezes. The three conditions are attacked directly and the work is unexpectedly satisfying, because each one is concrete.\n\nThe shared workspace stops being a safe place by default in three weeks: objects carry provenance, and provenance survives transformation. Handling-marker carry-through takes two months and four arguments, because it breaks the partner-ready template again and this time the template is redesigned properly rather than patched. Provenance evaluation at egress is the hardest and lands in month four, and it is the one that has stopped things since.\n\nCorrelation and sponsorship tracking are published with a six-month deadline. Correlation lands on time. Sponsorship tracking slips to nine months, then to eleven, and arrives covering three of four platforms. The CIO reports the slip in public each month, which is why it arrives at all.\n\nIn month five the egress provenance check stops a sequence that would have sent supplier pricing to a logistics partner. Two agents, two teams, both correct, assembled four days earlier by unrelated changes. Nobody is investigated. A ticket is raised and closed in two days.\n\nThe room that ran this exercise is the reason the check existed. Nobody outside it ever knows that, and the ticket is closed as routine.\n\nTHE END of the fictional part. Proceed to the after-action review.",
+      "questions": {
+        "all": [
+          "The month-five interception was two agents, two teams, both correct, assembled by unrelated changes four days earlier. Say how many days it would have taken you to find that without the check."
+        ],
+        "exec": [
+          "You reported the sponsorship-tracking slip publicly every month and it arrived eleven months late instead of never. Say whether you would have the discipline to do that, honestly."
+        ]
+      }
+    }
+  ],
+  "aar": {
+    "hotwash": [
+      "How many agents run in our environment, who owns each, and how many can write to a location another agent reads from? Draw the graph. If nobody can, that is the finding.",
+      "Do we have the three conditions? A shared location treated as safe because it is internal, a transformation step that drops handling markers, and an egress control that evaluates the artifact rather than its provenance.",
+      "Could we reconstruct a chain that crossed three agent platforms? What identifier would join them, and if none exists, how long would it take us by hand?",
+      "Which of our agents can send something outside the perimeter, and does anything evaluate where what they are sending came from?",
+      "When an agent acts because a person asked for something, is that person's identity carried with the action? If not, how would we ever tell a sponsor from a requester?",
+      "Who owns an incident that crosses three teams and four systems, and is there any forum at which three unrelated change tickets would have been seen together?",
+      "Do our partner and customer agreements make us responsible for what our automation sends as if a person had sent it? Does anyone know, and would we rather they did?"
+    ],
+    "objectives": [
+      "O1 PLACE: Practise placing an agentic incident on the intent spectrum, and notice when a vote about intent is functioning as a vote about a named person.",
+      "O2 SEE: Understand why point-in-time controls cannot detect a multi-agent cascade, and identify the three conditions that make one possible in the organization's own environment.",
+      "O3 RECONSTRUCT: Test whether a chain crossing several agent platforms could be established at all, and specify the execution identifier that would turn a nine-hour reconstruction into a query.",
+      "O4 DISTINGUISH: Separate a sponsor from a bystander when every action was taken by an agent, and practise a rapport-based approach to the person at the start of the chain.",
+      "O5 OWN: Decide who governs compositions rather than individual agents, and commit to cross-agent correlation and human-sponsorship tracking with a named owner and a date."
+    ]
+  }
+}
