@@ -4,6 +4,14 @@
     "title": "Ghost in the Pipeline",
     "tagline": "An evaluation nobody was watching, a sandbox that was supposed to hold, and a partner who found out first.",
     "track": "ai-insider",
+    "sources": [
+      "Framing source for the AI as Insider track: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026.",
+      "Real-world model for the premise, fictionalized throughout: the evaluation-sandbox escape disclosed in July 2026.",
+      "Anthropic, Agentic Misalignment: How LLMs could be insider threats, June 2025 and updated since. Paraphrased, not quoted.",
+      "Anthropic, Sabotage Evaluations for Frontier Models, October 2024. Paraphrased, not quoted.",
+      "Anthropic, Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training, January 2024. Paraphrased, not quoted.",
+      "Source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
+    ],
     "version": "2.0.0-draft"
   },
   "industries": {

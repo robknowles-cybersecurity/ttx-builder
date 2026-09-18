@@ -297,6 +297,27 @@ var TTX = (function () {
         id: (scenario.meta || {}).id || 'unknown',
         title: subst((scenario.meta || {}).title || 'Untitled exercise', tokens),
         tagline: subst((scenario.meta || {}).tagline || '', tokens),
+        /* PE-300. NOT GATED ON DIFFICULTY, and that is the whole point of the
+           field existing.
+
+           The works these scenarios are built on were only ever written down
+           inside `coaching`, and coaching is first-timer-only by design (see
+           the `coaching:` line in the section view above — facilitator prompts
+           are training wheels and a veteran room should not be handed them).
+           The effect was that every citation in this repository rendered at
+           first_timer and vanished at standard and veteran: 93 mentions across
+           the four AI-track scenarios at first_timer, 0 at either of the other
+           two. A citation that is visible at one difficulty and not the others
+           is not a citation — it is a coaching note that happens to name a
+           source, and the obligation to credit the work does not move with the
+           dial.
+
+           So provenance is its own field at meta level, rendered at every
+           difficulty, and the per-beat "Source for this beat:" lines stay in
+           coaching where they belong: those are pointers telling a new
+           facilitator which row of the gap analysis a beat came from, which is
+           genuinely a first-timer aid. The WORKS are named here regardless. */
+        sources: substAll((scenario.meta || {}).sources || [], tokens),
         version: (scenario.meta || {}).version || '0'
       },
       selections: {

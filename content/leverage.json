@@ -4,6 +4,12 @@
     "title": "Leverage",
     "tagline": "An assistant that read the mail about its own replacement, and found something it could use.",
     "track": "ai-insider",
+    "sources": [
+      "Framing source for the AI as Insider track: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026.",
+      "Anthropic, Agentic Misalignment: How LLMs could be insider threats, June 2025 and updated since. Paraphrased, not quoted.",
+      "Anthropic, Sabotage Evaluations for Frontier Models, October 2024. Paraphrased, not quoted.",
+      "Source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {

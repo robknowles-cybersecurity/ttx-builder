@@ -1135,3 +1135,32 @@ a.btn {
    If adopted: subset to latin, self-host under /assets/fonts, add font-display:
    swap, and keep the current stacks as the fallback chain.
    ========================================================================== */
+
+/* ==========================================================================
+   Sources (PE-300)
+   --------------------------------------------------------------------------
+   Rendered into the gamebook front matter and again at the foot of the AAR
+   pack, at EVERY difficulty. Until PE-300 the works these scenarios are built
+   on lived only inside `coaching`, which the engine emits at first_timer and
+   nowhere else — so a veteran room got the exercise with the credits stripped
+   off it. Provenance is not a coaching aid and does not move with the dial.
+   ========================================================================== */
+
+.sources { margin: 2rem 0 0; max-width: 48rem; }
+
+.sources__note {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  margin: 0 0 0.8rem;
+}
+
+.sources__list { margin: 0; padding-left: 1.1rem; }
+
+.sources__list li {
+  margin-bottom: 0.55rem;
+  line-height: 1.45;
+  /* A citation is a reference, not body copy: it is read when checked, so it
+     sits a shade down from the prose around it without dropping below the
+     contrast floor the rest of the sheet holds. */
+  font-size: 0.9rem;
+}

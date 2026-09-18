@@ -562,6 +562,26 @@ window.TTXDeck = (function () {
       fontSize: 15, minSize: 10, color: INK, lineSpacingMultiple: 1.18
     });
 
+    /* -- 5a. sources (PE-300) ------------------------------------------------
+       The deck is the third render target and it is the one that leaves the
+       building most often — it gets mailed to people who were never in the
+       room. Until PE-300 the works these scenarios are built on lived only in
+       `coaching`, which is first-timer-only, so the deck carried no credit at
+       any difficulty at all. It carries them at every difficulty now, from the
+       same ex.meta.sources the gamebook and the AAR pack read.
+
+       Placed before the closer rather than after it: the closer is the last
+       thing on the screen by design, and a credit slide after "the findings
+       are the deliverable" would step on it. A scenario that declares no
+       sources adds no slide. */
+    if (ex.meta.sources && ex.meta.sources.length) {
+      var sources = contentSlide('WHAT THIS IS BUILT ON', 'Sources');
+      fitBulletList(sources, ex.meta.sources, {
+        x: 0.75, y: 1.95, w: 11.9, h: CONTENT_BOTTOM - 1.95,
+        fontSize: 13, minSize: 9, color: INK_SOFT, lineSpacingMultiple: 1.18
+      });
+    }
+
     var close = pptx.addSlide({ masterName: 'TTX_BASE' });
     close.addText('The findings are the deliverable.', {
       x: 0.8, y: 3.0, w: 11.9, h: 0.9,

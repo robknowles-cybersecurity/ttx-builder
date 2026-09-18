@@ -255,3 +255,11 @@ nav {
 
 /* Links print as plain text — a URL in brackets is noise on a handout. */
 a { color: #000; text-decoration: none; }
+
+/* -- sources (PE-300) ----------------------------------------------------- */
+/* The pack is printed and handed over; the credits go with it. Kept off a page
+   of its own and never broken across a page boundary. */
+
+.sources { break-inside: avoid; margin-top: 18pt; }
+.sources__note { font-size: 8.5pt; color: #444; }
+.sources__list li { font-size: 9pt; margin-bottom: 4pt; }

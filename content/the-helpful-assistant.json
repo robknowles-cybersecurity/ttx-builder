@@ -4,6 +4,11 @@
     "title": "The Helpful Assistant",
     "tagline": "A board deadline, a free chatbot, and forty-eight thousand customers who never agreed to help.",
     "track": "ai-insider",
+    "sources": [
+      "Framing source for the AI as Insider track: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026.",
+      "CISA, Insider Threat Mitigation Guide (September 2026 edition): AI and Insider Threat Mitigation Considerations, p. 37; Avoid Zero-Tolerance Policies, p. 35.",
+      "Source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {

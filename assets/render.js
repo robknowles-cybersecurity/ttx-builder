@@ -167,7 +167,36 @@
       fm.appendChild(notes);
     }
 
+    var src = sourcesBlock(ex, 'Sources');
+    if (src) { fm.appendChild(src); }
+
     return fm;
+  }
+
+  /* -- sources (PE-300) ----------------------------------------------------
+     ONE FUNCTION, TWO PACKS. Provenance is rendered into the facilitator
+     gamebook's front matter (where someone preparing the exercise meets it
+     before they run anything) and again at the end of the after-action pack
+     (where someone writing the read-out needs to cite what the exercise was
+     built on). Both are facilitator-side and both are printed, so the
+     duplication is deliberate — a pack that leaves the building without its
+     sources is the failure this exists to prevent.
+
+     RENDERED AT EVERY DIFFICULTY. ex.meta.sources is not gated in engine.js;
+     see the comment on that field for why it stopped living in `coaching`.
+     A scenario that declares none renders nothing at all rather than an empty
+     heading, so the absence reads as "this scenario cites nothing" and not as
+     a broken block. */
+  function sourcesBlock(ex, headingText) {
+    var list_ = (ex.meta && ex.meta.sources) || [];
+    if (!list_.length) { return null; }
+    var box = el('section', 'sources');
+    box.appendChild(el('h2', 'aar__head', headingText));
+    box.appendChild(el('p', 'sources__note',
+      'Rendered at every difficulty. Paraphrased unless quoted; every organisation, ' +
+      'system and person in the scenario itself is invented.'));
+    box.appendChild(list(list_, 'sources__list'));
+    return box;
   }
 
   function renderQuestions(section) {
@@ -409,6 +438,9 @@
     } else {
       mount.appendChild(el('p', null, 'This scenario defines no objectives yet.'));
     }
+
+    var src = sourcesBlock(ex, 'Sources');
+    if (src) { mount.appendChild(src); }
   }
 
   /* -- tabs ---------------------------------------------------------------- */

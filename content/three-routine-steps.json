@@ -4,6 +4,10 @@
     "title": "Three Routine Steps",
     "tagline": "Three agents, three approvals, three green lights, and 1,900 pages at a partner who said thank you.",
     "track": "ai-insider",
+    "sources": [
+      "Framing source for the AI as Insider track: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026.",
+      "Source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {
