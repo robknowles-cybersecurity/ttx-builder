@@ -9,6 +9,43 @@ git history and in the Plane board, not above it.
 
 ---
 
+## 2026-09-20 — PE-315: the CISA edition date, corrected rather than guessed
+
+**Fixed — four citation strings in `content/the-helpful-assistant.json`.** They
+cited CISA's guide as *(September 2026 edition)*. CISA's own resource page
+labels it the **2026 Edition** and publishes no month for it. The "Jan 28,
+2026" that is visible on that page belongs to a different, adjacent resource —
+*Assembling A Multi-Disciplinary Insider Threat Management Team* — which is
+where an earlier note's "2026-01-28" for this guide came from. Neither month
+survives checking, so the month is **dropped rather than swapped**: the strings
+now read *(2026 edition)*, which is the form `privileged` and `the-walk-in`
+were already using. The three scenarios that cite this guide now agree with
+each other and with the publisher.
+
+**The edition stays 2026, and that is a finding rather than a default.** Both
+cited sections — *AI and Insider Threat Mitigation Considerations*, p. 37, and
+*Avoid Zero-Tolerance Policies*, p. 35 — are AI-era material, and CISA lists
+"Artificial Intelligence (AI)" under *New Features in the 2026 Edition*,
+describing that edition as strengthening the 2020 original. Downgrading the
+citation to the 2020 edition would have pointed the room at pages that edition
+does not have.
+
+**Deliberately untouched:** the Greitzer/Cogility *Agentic AI: An Emerging
+Threat Vector*, **DSI Bootcamp, 17 September 2026** line in `leverage`,
+`three-routine-steps`, `ghost-in-the-pipeline` and `the-helpful-assistant`.
+That is a different work with a real September date, and it shares nothing with
+the CISA string but the month. A blind repo-wide sweep for "September 2026"
+would have corrupted four scenarios.
+
+**Companion change, not in this repo — `.mjs` MIME mapping.** The vhost serves
+`.mjs` as `application/octet-stream`, which `nosniff` turns into a refused
+script the first time an ES module ships here. The fix is one line in
+`/etc/nginx/mime.types` (http scope, all vhosts), composed under PE-315 and
+applied by hand; nothing under `/etc` is versioned in this repo. Lint after the
+content change: **9 passed, 0 failed.**
+
+---
+
 ## 2026-09-20 — PE-312: the lint exists, and two provenance rules are written down
 
 **New — `tools/lint-scenarios.mjs`.** The previous entry closes with "a real
