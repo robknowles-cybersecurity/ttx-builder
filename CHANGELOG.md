@@ -9,6 +9,64 @@ git history and in the Plane board, not above it.
 
 ---
 
+## 2026-09-20 — PE-312: the lint exists, and two provenance rules are written down
+
+**New — `tools/lint-scenarios.mjs`.** The previous entry closes with "a real
+lint is still worth writing". This is it: Node standard library only, no
+`package.json` and no install step, run as `node tools/lint-scenarios.mjs` from
+the repo root. Every `content/*.json` must parse and must declare provenance
+exactly one of two ways. It prints a roster line per scenario — `id · N
+sources`, or `none — <the note>` — so a clean run doubles as the inventory, and
+exits non-zero if any file fails. An optional directory argument lints fixtures
+somewhere else, which is how the rule is tested against deliberately broken
+files without putting one in `content/`. Run on the nine: **9 passed, 0
+failed.**
+
+**Rule — sources carry their URLs.** Ratified after PE-304: the five rosters it
+wrote cite a URL per entry and the four AI-track rosters from PE-300 did not.
+URLs are the standard, documented in `README.md`. Four of the works cited by
+the AI-track four were opened and confirmed, and their URLs appended in the
+established form:
+
+| Work | Cited by |
+|---|---|
+| Anthropic, *Agentic misalignment: How LLMs could be insider threats* | `ghost-in-the-pipeline`, `leverage` |
+| Anthropic, *Sabotage evaluations for frontier models* | `ghost-in-the-pipeline`, `leverage` |
+| Anthropic, *Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training* | `ghost-in-the-pipeline` |
+| CISA, *Insider Threat Mitigation Guide* | `the-helpful-assistant` |
+
+**Three entries keep no URL, on purpose.** The Greitzer/Cogility DSI bootcamp
+talk and the Exabeam gap-analysis slide are conference materials whose agendas
+are behind an email request — no public page for either could be opened, so
+neither entry was touched. `ghost-in-the-pipeline` also cites "the
+evaluation-sandbox escape disclosed in July 2026", which names no publisher and
+no title and so has no primary page to link. Nothing was guessed. `three-routine-steps`
+cites only those two conference works and is therefore unchanged by this entry,
+though it still passes the lint.
+
+**Rule — sources XOR `sources_note`.** An empty roster stops being a valid
+state. A scenario with no documentable precedent declares `meta.sources_note`,
+one sentence saying why, and it renders in the slot the roster would have
+filled, under the same heading. The lint enforces the XOR; declaring both, or
+neither, fails. **No current scenario is in this state** — the field is
+plumbing laid ahead of the first scenario that needs it.
+
+**Renderer — three targets, two code paths.** `render.js`'s `sourcesBlock()`
+serves two of them (the gamebook front matter and the after-action pack) and
+now prints `sources_note` where the list would go; the standing "paraphrased
+unless quoted" line is suppressed there, because it describes how to read a
+roster and there is no roster. `pptx.js` has its **own** path and cannot call a
+function that builds DOM, so the rule is implemented twice and the two must be
+kept in step: the deck gets the same "What this is built on" slide with the
+sentence set as prose rather than a lone bullet. `engine.js` carries the new
+field through with token substitution, like any other authored prose. **Rosters
+render exactly as before** — same heading, same standing note, same list.
+
+*Adds `tools/`. Renderer and engine changed; `content/` changed in three files,
+`meta.sources` only.*
+
+---
+
 ## 2026-09-20 — PE-304: five scenarios declare their sources
 
 **New.** PE-300 made `meta.sources` render at every difficulty, in all three

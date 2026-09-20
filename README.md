@@ -179,7 +179,8 @@ renderer and are free for authoring notes.
 
 ```jsonc
 {
-  "meta":       { "id", "title", "tagline", "version", "track"? },
+  "meta":       { "id", "title", "tagline", "version", "track"?,
+                  "sources": [] | "sources_note": "…" },
   "industries": { "<key>": { "org_name", "crown_jewels", "regulator", "flavor_notes" } },
   "roles":      [ { "id", "title", "briefing", "authorities": [], "private_knowledge": [] } ],
   "sections":   [ {
@@ -275,6 +276,53 @@ has exactly one source of truth.
    screen chrome. Everything else falls through safely, because every branch is
    a contiguous run of sections terminated by a decision.
 
+### Provenance — two rules
+
+Every scenario declares what it was built on, and the declaration renders at
+every difficulty in all three packs: the gamebook's front matter, the end of
+the after-action pack, and a "What this is built on" slide in the deck.
+
+**Rule 1 — sources carry their URLs.** Each entry in `meta.sources` is a plain
+string naming the role the work plays, then its publisher, title and date, then
+the URL:
+
+```
+"Primary source for the scheme the scenario dramatises: U.S. Department of
+Justice, Office of Public Affairs, <title>, 30 June 2025. https://www.justice.gov/opa/pr/…"
+```
+
+The URL goes last and ends the sentence, with no full stop after it — unless a
+caution follows, in which case it is punctuated as an ordinary sentence and the
+caution follows it. Link to the work's **primary** page: the publisher's own,
+or DOJ / CISA / arXiv / the journal. Not an aggregator, not a summary, not a
+search result. A work whose primary page cannot be opened and confirmed keeps
+its entry **without** a URL rather than acquiring a guessed one — a wrong URL
+is worse than none, because it looks checked.
+
+**Rule 2 — sources XOR `sources_note`.** An empty roster is not a valid state.
+A scenario with no documentable precedent declares `meta.sources_note` instead
+— one sentence saying why — and that sentence prints in the slot the roster
+would have filled, under the same heading. Exactly one of the two: declaring
+both is a contradiction, declaring neither is the silence these rules exist to
+abolish.
+
+### Linting
+
+```sh
+node tools/lint-scenarios.mjs            # from the repo root; lints content/
+node tools/lint-scenarios.mjs <dir>      # lint a directory of fixtures instead
+```
+
+Node standard library only — no `package.json`, no install step. It checks that
+every `content/*.json` parses and satisfies rule 2 above, prints a roster line
+per scenario (`id · N sources`, or `none — <the note>`), and exits non-zero if
+any file fails. A clean run is also the inventory. It cannot check rule 1: only
+a person opening the page can confirm a URL is the work it claims to be.
+
+The optional directory argument is how the rule itself is tested — point it at
+a directory of deliberately broken fixtures outside `content/` and confirm each
+one fails for the reason you expect.
+
 ### Authoring checklist
 
 1. Write `content/<id>.json` against the schema above. Set `meta.track` if the
@@ -290,6 +338,9 @@ has exactly one source of truth.
 5. Check that every branch ends in a decision and every ending is reachable
    only by `goto`.
 6. Export the deck and open it.
+7. Declare provenance — `meta.sources` with URLs, or `meta.sources_note` saying
+   why there are none — and run `node tools/lint-scenarios.mjs`. It must print
+   your scenario and exit 0.
 
 ### Serving notes
 

@@ -318,6 +318,12 @@ var TTX = (function () {
            facilitator which row of the gap analysis a beat came from, which is
            genuinely a first-timer aid. The WORKS are named here regardless. */
         sources: substAll((scenario.meta || {}).sources || [], tokens),
+        /* PE-312. The other half of the same obligation: a scenario with no
+           documentable precedent says so in a sentence rather than rendering
+           nothing, and that sentence is tokenised like any other prose because
+           it may well name the org. Exactly one of the two is declared — the
+           lint in tools/ enforces the XOR, this only carries it through. */
+        sources_note: subst((scenario.meta || {}).sources_note || '', tokens),
         version: (scenario.meta || {}).version || '0'
       },
       selections: {

@@ -184,18 +184,39 @@
 
      RENDERED AT EVERY DIFFICULTY. ex.meta.sources is not gated in engine.js;
      see the comment on that field for why it stopped living in `coaching`.
-     A scenario that declares none renders nothing at all rather than an empty
-     heading, so the absence reads as "this scenario cites nothing" and not as
-     a broken block. */
+
+     PE-312 closed the third case. There used to be two: a roster, or nothing
+     at all — and "nothing at all" had to carry the meaning "this scenario
+     cites nothing", which is a lot to ask of an absence that looks identical
+     to a bug. A scenario with no documentable precedent now declares
+     meta.sources_note, one sentence saying why, and it prints HERE, in the
+     slot the roster would have occupied, under the same heading. The reader
+     gets an answer either way. Only a scenario declaring neither renders
+     nothing, and the lint in tools/ makes that state unshippable.
+
+     The roster path is untouched: same heading, same standing note, same list.
+     The standing note is deliberately NOT printed above a sources_note — it
+     describes how to read a roster ("paraphrased unless quoted") and there is
+     no roster to read. */
   function sourcesBlock(ex, headingText) {
-    var list_ = (ex.meta && ex.meta.sources) || [];
-    if (!list_.length) { return null; }
+    var meta = ex.meta || {};
+    var list_ = meta.sources || [];
+    var note = typeof meta.sources_note === 'string' ? meta.sources_note.trim() : '';
+
+    if (!list_.length && !note) { return null; }
+
     var box = el('section', 'sources');
     box.appendChild(el('h2', 'aar__head', headingText));
-    box.appendChild(el('p', 'sources__note',
-      'Rendered at every difficulty. Paraphrased unless quoted; every organisation, ' +
-      'system and person in the scenario itself is invented.'));
-    box.appendChild(list(list_, 'sources__list'));
+
+    if (list_.length) {
+      box.appendChild(el('p', 'sources__note',
+        'Rendered at every difficulty. Paraphrased unless quoted; every organisation, ' +
+        'system and person in the scenario itself is invented.'));
+      box.appendChild(list(list_, 'sources__list'));
+    } else {
+      box.appendChild(el('p', 'sources__note', note));
+    }
+
     return box;
   }
 
