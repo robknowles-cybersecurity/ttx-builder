@@ -3,6 +3,11 @@
     "id": "the-walk-in",
     "title": "The Walk-In",
     "tagline": "A flattering message, a four-hundred-dollar phone call, and an employee standing in your doorway.",
+    "sources": [
+      "Primary source for the approach the employee walks in about, and for the external referral path the exercise can use: U.S. Department of Justice, Office of Public Affairs, Justice Department, FBI Disable 13 Websites Backed by Suspected Chinese Agents That Sought Sensitive U.S. Information from Security Clearance Holders, 10 June 2026. https://www.justice.gov/opa/pr/justice-department-fbi-disable-13-websites-backed-suspected-chinese-agents-sought-sensitive",
+      "Source for threat management as intervention balancing organisational protection and individual care, which is the question this scenario asks: Cybersecurity and Infrastructure Security Agency, Insider Threat Mitigation Guide, 2026 edition (resource page). https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide",
+      "Primary source for the employee who reports an approach and the scheme that is stopped because of it: U.S. Department of Justice, U.S. Attorney's Office for the District of Nevada, Russian National Indicted for Conspiracy to Introduce Malware into a Computer Network, September 2020. https://www.justice.gov/usao-nv/pr/russian-national-indicted-conspiracy-introduce-malware-computer-network"
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {

@@ -3,6 +3,11 @@
     "id": "the-long-goodbye",
     "title": "The Long Goodbye",
     "tagline": "A resignation, a two-week notice period, and a great deal of downloading.",
+    "sources": [
+      "Primary source for the notice-period exfiltration the scenario turns on: U.S. Department of Justice, Office of Public Affairs, Engineer Pleads Guilty to Stealing for Chinese Government's Benefit Trade Secret Technology Designed for Missile Launch and Detection, 21 July 2025. https://www.justice.gov/opa/pr/engineer-pleads-guilty-stealing-chinese-governments-benefit-trade-secret-technology-designed",
+      "Primary source for the departure that begins long before the resignation letter, and for the recruitment of colleagues: U.S. Department of Justice, Office of Public Affairs, Federal Jury in Chicago Convicts Engineer for Stealing Trade Secrets from Philips Medical Systems on Behalf of Chinese Competitor, 24 August 2026. https://www.justice.gov/opa/pr/federal-jury-chicago-convicts-engineer-stealing-trade-secrets-philips-medical-systems-behalf",
+      "Primary source for the download made shortly before the resignation: U.S. Department of Justice, Office of Public Affairs, Former Google Engineer Found Guilty of Economic Espionage and Theft of Confidential AI Technology, 30 January 2026. https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology. One caution for the facilitator, carried here deliberately: the economic-espionage counts in that verdict are reported to have been vacated in August 2026, leaving the trade-secret-theft convictions standing. A departing employee who takes files has committed theft until someone proves a foreign-government nexus, and the room should not reach for \"espionage\" merely because the word is available."
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {

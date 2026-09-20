@@ -3,6 +3,12 @@
     "id": "privileged",
     "title": "Keys to the Kingdom",
     "tagline": "The administrator who can delete the evidence of what the administrator did.",
+    "sources": [
+      "Primary source for the privileged administrator who acts on a grievance and destroys the record of it: U.S. Department of Justice, Office of Public Affairs, Texas Man Convicted of Sabotaging his Employer's Computer Systems and Deleting Data, 7 March 2025. https://www.justice.gov/opa/pr/texas-man-convicted-sabotaging-his-employers-computer-systems-and-deleting-data",
+      "Primary source for the quiet misuse of query access followed by mass deletion: U.S. Department of Justice, Office of Public Affairs, Federal Jury Convicts Virgina Man on Charges Relating to the Deletion of U.S. Government Databases, 7 May 2026. https://www.justice.gov/opa/pr/federal-jury-convicts-virgina-man-charges-relating-deletion-us-government-databases",
+      "Source for the control questions and for threat management as intervention: Cybersecurity and Infrastructure Security Agency, Insider Threat Mitigation Guide, 2026 edition (resource page). https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide",
+      "Source for the IT-sabotage best practices and for separating audit from administration: CERT Division, Carnegie Mellon University Software Engineering Institute, Common Sense Guide to Mitigating Insider Threats, Seventh Edition, 7 September 2022. https://www.sei.cmu.edu/library/common-sense-guide-to-mitigating-insider-threats-seventh-edition/"
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {

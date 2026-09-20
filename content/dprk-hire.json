@@ -3,6 +3,12 @@
     "id": "dprk-hire",
     "title": "The New Hire",
     "tagline": "Your best remote developer may not exist.",
+    "sources": [
+      "Primary source for the scheme the scenario dramatises: U.S. Department of Justice, Office of Public Affairs, Justice Department Announces Coordinated, Nationwide Actions to Combat North Korean Remote Information Technology Workers' Illicit Revenue Generation Schemes, 30 June 2025. https://www.justice.gov/opa/pr/justice-department-announces-coordinated-nationwide-actions-combat-north-korean-remote",
+      "Primary source for the facilitator layer the staffing firm stands in for: U.S. Department of Justice, Office of Public Affairs, Two U.S. Nationals Sentenced for Facilitating Fraudulent Remote Information Technology Worker Scheme that Generated $5M in Revenue for the Democratic People's Republic of Korea, 15 April 2026. https://www.justice.gov/opa/pr/two-us-nationals-sentenced-facilitating-fraudulent-remote-information-technology-worker",
+      "Source for the sanctions and employment-law exposure once the worker is identified: Skadden, Arps, Slate, Meagher & Flom LLP, North Korean Remote IT Worker Fraud: Managing Insider Threat, Sanctions and Employment Risk, 8 June 2026 (legal analysis; secondary source). https://www.skadden.com/insights/publications/2026/06/north-korean-remote-it",
+      "Source for the hiring red flags and the mitigation measures: U.S. Department of State, U.S. Department of the Treasury and Federal Bureau of Investigation, Guidance on the Democratic People's Republic of Korea Information Technology Workers, 16 May 2022. https://ofac.treasury.gov/media/923126/download?inline"
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {
