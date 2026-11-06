@@ -51,7 +51,7 @@
     <!-- DIAL 1 ------------------------------------------------------------- -->
     <fieldset class="dial">
       <legend>1 &middot; Scenario</legend>
-      <p class="dial__hint">What happened. Nine to choose from; each one branches differently.</p>
+      <p class="dial__hint">What happened. Ten to choose from; each one branches differently.</p>
 
       <h2 class="track__head">General</h2>
       <div class="cards">
@@ -93,6 +93,19 @@
           <span class="card__face">
             <span class="card__title">The Walk-In</span>
             <span class="card__tag">A flattering message, a $400 phone call, and an employee standing in your doorway.</span>
+          </span>
+        </label>
+
+        <!-- NEW 2026-11-06, draft. content/employment-fraud.json was drafted for Rob
+             to adapt to his own employment-fraud exercise; names, timeline, the first
+             detection source and the count of three are placeholders listed in that
+             file's top-level "_placeholders" array. Drop the badge when it is final. -->
+        <label class="card">
+          <input type="radio" name="scenario" value="employment-fraud">
+          <span class="card__face">
+            <span class="card__title">Wrong Address</span>
+            <span class="card__tag">IT shipped the laptop to the address on the ticket. That was the first mistake, and it was not IT&rsquo;s.</span>
+            <span class="card__soon">New &middot; draft</span>
           </span>
         </label>
 

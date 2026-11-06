@@ -1,0 +1,719 @@
+{
+  "_placeholders": [
+    "Subject names (Ethan Morrow, Marco Alvarez, Brandon Cole), the facilitator 'T. Rudd', and every staff name: swap for the names used in the real exercise.",
+    "Timeline: 7 / 4 / 11 months in seat, Monday-to-Thursday case clock, Wednesday 14:00 pay lock. Match the real exercise's cadence and your payroll calendar.",
+    "First detection source: here it is payroll's bank-account name-mismatch check. If the real exercise started elsewhere (HR, a vendor re-verification, a peer tip, a SOC alert), move s03 and adjust s02.",
+    "1412 Larkin Ct and the 'different state': placeholder laptop-farm address; keep it generic or fictional.",
+    "Ridgeline Staffing (staffing vendor), Brightlane Analytics (second employer), Harlan & Voigt (outside counsel): invented names, swap or keep.",
+    "Prepaid card / fintech partner bank payroll routing: confirm it matches the payment pattern you actually saw.",
+    "The commit-email leak (s09, s15/s21) as the overlapping-employment tell: replace with whatever actually revealed the second employer in your case.",
+    "The number three and the mix (two farm-linked plus one ordinary overemployed worker): adjust to the real count and mix.",
+    "Korean keyboard layout as a false lead (s07, red herring s10): keep only if it suits your audience; it is there to test profiling discipline.",
+    "OFAC voluntary self-disclosure and the verbal law-enforcement 'keep it running' request: check against what your counsel and the real exercise assumed.",
+    "Industry blocks: copied from the other scenarios (Meridian names); financial flavor notes add the OFAC/BSA framing."
+  ],
+  "meta": {
+    "id": "employment-fraud",
+    "title": "Wrong Address",
+    "tagline": "IT shipped the laptop to the address on the ticket. That was the first mistake, and it was not IT's.",
+    "version": "0.1.0-draft",
+    "_status": "NEW 2026-11-06. Drafted by Claude for Rob to adapt to the employment-fraud exercise run at his own organization and presented at FS-ISAC. Every name, number and timeline here is invented; the _placeholders list at the top level names the details most worth swapping for the real exercise's facts."
+  },
+  "industries": {
+    "financial": {
+      "org_name": "Meridian Financial",
+      "crown_jewels": "member PII, payment platform source code, and wire transfer systems",
+      "regulator": "your primary federal financial regulator",
+      "flavor_notes": "BSA/AML and OFAC obligations both apply, and they are not the same conversation. Payroll to a sanctioned person is a sanctions problem even if no data ever left. A SAR consultation belongs in the room, and so does the question of whether your own payroll is the suspicious activity."
+    },
+    "healthcare": {
+      "org_name": "Meridian Health Systems",
+      "crown_jewels": "patient PHI, clinical scheduling systems, and the claims processing platform",
+      "regulator": "HHS Office for Civil Rights and your state health authority",
+      "flavor_notes": "If the subject's data-engineering access reached PHI, a HIPAA breach analysis runs alongside everything else, on its own clock. Clinical go-live pressure replaces quarter-end pressure."
+    },
+    "manufacturing": {
+      "org_name": "Meridian Fabrication",
+      "crown_jewels": "proprietary process designs, CAD libraries, and export-controlled technical data",
+      "regulator": "BIS and DDTC for export-controlled data, plus your defense customers",
+      "flavor_notes": "If a foreign national reached export-controlled technical data, that is a possible deemed export in its own right, separate from the fraud. Your defense customers have contract clauses about exactly this."
+    },
+    "technology": {
+      "org_name": "Meridian Systems",
+      "crown_jewels": "product source code, customer environment credentials, and the build pipeline",
+      "regulator": "the FTC and your customers' contractual audit rights",
+      "flavor_notes": "A data engineer with pipeline access can reach customer environments. Expect customer security questionnaires to ask, by name, whether you have found fraudulent remote workers in the last year."
+    }
+  },
+  "roles": [
+    {
+      "id": "int_lead",
+      "title": "Insider Risk Program Lead",
+      "briefing": "You run the insider risk program: three analysts, a case management tool, and a charter that says employees and contractors. You convene this group. In this case your team is the only one that can see HR, IT and security data side by side, and that is the reason it lands on you.",
+      "authorities": [
+        "Open an insider risk case and assign an analyst",
+        "Request enhanced monitoring through IT under the existing monitoring policy",
+        "Pull HR, payroll and IT records for an open case",
+        "Recommend, not order, suspension or termination"
+      ],
+      "private_knowledge": [
+        "Your team built a correlation search last spring that joins laptop shipping addresses against the HR address of record. It has never been run in production because the shipping data lives in IT's asset system and the access request is still open.",
+        "At a sector working group two months ago, a peer at another member firm said they had found four of these in one quarter and the first one took eleven weeks to confirm. You wrote it down and did not brief it upward."
+      ]
+    },
+    {
+      "id": "soc",
+      "title": "SOC Manager",
+      "briefing": "You run detection and response. Your EDR, identity and proxy telemetry is where the technical story lives. Your team closed more than three hundred impossible-travel alerts last month, almost all of them VPN noise.",
+      "authorities": [
+        "Isolate an endpoint or kill a session on your own authority during active exfiltration",
+        "Preserve logs and take forensic images",
+        "Tune, suppress or escalate detections"
+      ],
+      "private_knowledge": [
+        "The unapproved remote-access tool on the subject's laptop was blocked by application control in week two. The block was lifted after a helpdesk ticket said it was needed for a vendor demo. Nobody checked the vendor.",
+        "Your identity platform flagged the subject's sign-ins as coming from a commercial VPN provider that shows up in public advisories about remote IT-worker schemes. The flag is informational and goes to a dashboard nobody watches."
+      ]
+    },
+    {
+      "id": "hr",
+      "title": "HR Business Partner, Technology",
+      "briefing": "You own the employment relationship, the hiring file and the onboarding record. You will also be the one on the call if anyone asks this person to turn their camera on.",
+      "authorities": [
+        "Access the full personnel and onboarding file",
+        "Place an employment action on hold, or start one, with Legal's concurrence",
+        "Instruct payroll on holds, with Legal's concurrence"
+      ],
+      "private_knowledge": [
+        "The I-9 was completed remotely by an authorized representative the candidate chose, a notary in another state. Policy allows it. You have never checked who the notary is.",
+        "The hiring manager pushed hard to skip the second technical round because the candidate had another offer expiring. You approved the exception by email at 9:40 PM."
+      ]
+    },
+    {
+      "id": "legal",
+      "title": "Deputy General Counsel",
+      "briefing": "You protect the company, including from its own response. You also have to decide which lawyers are in the room, because employment counsel, sanctions counsel and white-collar counsel will each give you a different first instruction.",
+      "authorities": [
+        "Direct an investigation under privilege, and decide who works at counsel's direction",
+        "Issue legal holds",
+        "Approve or block employment and payroll actions",
+        "Engage outside counsel and decide on law enforcement contact"
+      ],
+      "private_knowledge": [
+        "Sanctions liability for payments to a sanctioned person is civil strict liability. It does not need knowledge. If one of these workers is who the indicators suggest, every pay run is a possible violation, and a voluntary self-disclosure changes the penalty math a great deal.",
+        "Your employment counsel has never handled a case where the employee might not be the person on the file. Your outside white-collar firm has. They cost three times as much and the CFO has asked you to justify every engagement this quarter."
+      ]
+    },
+    {
+      "id": "it_iam",
+      "title": "IT Operations and Identity Lead",
+      "briefing": "You own laptops, accounts, MFA and the machinery of cutting someone off. You also own the shipping process, which this morning everyone has suddenly become interested in.",
+      "authorities": [
+        "Suspend or restrict accounts on a documented request",
+        "Revoke sessions, tokens and MFA registrations",
+        "Lock, wipe or recall issued equipment"
+      ],
+      "private_knowledge": [
+        "Laptop shipping to an address other than the HR address of record needs only the employee's own ticket. About one in eight remote laptops last year shipped somewhere else, mostly for good reasons.",
+        "The subject's MFA was re-registered in month two to a new phone after a helpdesk call that passed knowledge-based verification. The helpdesk agent noted the caller had 'a strong accent, hard to hear, bad line.'"
+      ]
+    },
+    {
+      "id": "physec",
+      "title": "Corporate Security and Investigations",
+      "briefing": "You run investigations, hold the law enforcement relationships, and own the shipping and asset records for anything that leaves a building. Fully remote workers barely touch your world, which is the problem today.",
+      "authorities": [
+        "Pull shipping, courier and asset records",
+        "Contact law enforcement when Legal directs it",
+        "Run a pretext or welfare check through approved channels"
+      ],
+      "private_knowledge": [
+        "You have a working relationship with a federal agent who briefed sector security teams on laptop farms last year. One call gets you a callback the same day. You have not been asked to make it.",
+        "The courier's delivery record for the subject's laptop shows it was signed for by 'T. RUDD'. That name is not in your HR system."
+      ]
+    },
+    {
+      "id": "comms",
+      "title": "Communications Lead",
+      "briefing": "You handle what the company says, inside and out. This kind of story leaks along predictable lines: the team that loses a colleague with no explanation, a staffing vendor, peer companies comparing notes at a conference.",
+      "authorities": [
+        "Draft and approve internal and external statements",
+        "Handle press inquiries",
+        "Coordinate disclosure language with Legal"
+      ],
+      "private_knowledge": [
+        "A trade reporter has been calling sector communications teams for a story on fake remote workers in financial services. Your team gave a no-comment last week without asking anyone whether there was anything to comment on."
+      ]
+    },
+    {
+      "id": "exec",
+      "title": "Executive Sponsor (CIO)",
+      "briefing": "The subject works in your data engineering group. You carry the delivery cost of everything this room proposes, and you speak for leadership's risk appetite.",
+      "authorities": [
+        "Accept or escalate business risk",
+        "Authorize disruption to delivery commitments",
+        "Brief the CEO and the board"
+      ],
+      "private_knowledge": [
+        "The subject's team is three weeks from a data platform migration the board has been told about twice. He wrote most of the pipeline code.",
+        "You approved the remote-first hiring push that brought in forty engineers in nine months. You argued against in-person onboarding because it slowed hiring by three weeks."
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "id": "s01",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "FACILITATOR BRIEFING. This is a tabletop, not a test, and nobody in the room is being graded. Read these ground rules out before you start.\n\nEverything here is invented. The people, companies, addresses and numbers are made up. The pattern is not: remote-worker identity fraud has been described in public government advisories since 2022 and has kept growing.\n\nAnswer with what your organization would do on an ordinary Monday, not what the policy binder says.\n\nOne rule specific to this scenario. Being remote, keeping your camera off, having an accent, using a VPN or having a second job are not indicators of anything on their own. Most people who do any of those things are exactly who they say they are. If the room starts treating them as proof, the facilitator will say so.\n\nPick a note-taker who is not playing a role. Hand out the character sheets and give everyone two minutes with their private knowledge.",
+      "coaching": [
+        "This scenario has three subjects by the end, and they are not the same kind of case. Hold the room back from collapsing them into one story.",
+        "If you are running this inside a financial institution, have someone from BSA/AML or sanctions compliance in the room or on call. The OFAC question in Part Three is real and the room will want an answer."
+      ]
+    },
+    {
+      "id": "s02",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART ONE: PAYROLL NOTICES SOMETHING. Read aloud.\n\nMonday, 08:20. {{org_name}}'s payroll operations team works its exception queue before the Wednesday pay file goes out. Most of it is the usual: a new hire missing a W-4, a garnishment amount that changed.\n\nOne item is from the payroll provider's bank-account validation check. It concerns Ethan Morrow, a senior data engineer, fully remote, hired seven months ago. He changed his direct deposit last Thursday. His work touches {{crown_jewels}}, and his manager describes him in his last review as \"the guy who ships.\"\n\nPayroll forwards it to HR with one line: \"Is this normal? Pay file locks Wednesday 14:00.\" HR forwards it to you, because the last time payroll asked \"is this normal\" it was a business email compromise.",
+      "difficulty_variants": {
+        "first_timer": {
+          "body": "PART ONE: PAYROLL NOTICES SOMETHING. Read aloud.\n\nMonday morning. The payroll team at {{org_name}} is clearing its list of exceptions before Wednesday's pay run. One exception concerns Ethan Morrow, a senior data engineer who has worked fully remotely for seven months. He changed the bank account his pay goes into last week, and the payroll provider's automatic check says the name on the new account does not match his name.\n\nThat could be completely innocent. People open joint accounts and use payment apps. It could also be the first sign of something else. His work gives him access to {{crown_jewels}}.\n\nPayroll has asked HR whether this is normal, and HR has passed it to you."
+        },
+        "veteran": {
+          "body": "PART ONE: PAYROLL NOTICES SOMETHING. Read aloud.\n\nMonday, 08:20. Payroll's exception queue has two bank-account validation failures this week, not one. Ethan Morrow, senior data engineer, remote, seven months in, changed his direct deposit last Thursday. Dana Ostrowski in accounts payable changed hers on Friday. Both returned a name mismatch. Both are going to land on your desk, and the pay file locks Wednesday at 14:00.\n\nMorrow's work touches {{crown_jewels}}. Ostrowski processes vendor payments. Payroll's note says \"Is this normal?\" and nothing else."
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Deal the payroll exception. It came in as a CSV row; payroll pasted it into an email.",
+      "inject": {
+        "kind": "hr_memo",
+        "from": "Payroll Operations (B. Nakamura), to HRBP Technology, fwd to Insider Risk",
+        "subject": "FW: ACCT-VAL exception 0915-0042 - Morrow, Ethan - is this normal? pay file locks Wed 14:00",
+        "body": "Bri Nakamura, Payroll Ops, 08:20:\nIs this normal? I don't want to hold someone's pay if it's nothing but I also don't want to be the person who paid it if it isn't. Pay file locks Wed 14:00.\n\n---- exception row ----\nException ID:        ACCT-VAL-0915-0042\nEmployee:            MORROW, ETHAN J.   EE# 204417   Dept 4410 Data Engineering\nChange submitted:    Thu 23:47 via employee self-service (MFA: push approved)\nPrior account:       checking, regional bank, name match: YES (since hire)\nNew account:         routing 0XX-XXX-118 (prepaid card program, fintech partner bank)\nValidation result:   ACCOUNT OPEN / NAME MISMATCH\nAccount holder:      \"T RUDD\"\nSplit:               100% to new account\nPrior changes:       1 (month 2, same employee: split 50/50 -> 100% regional bank)\n\nProvider note: name mismatch is advisory. Payment will process unless the employer places a hold."
+      },
+      "questions": {
+        "all": [
+          "Who in your organization would see this row, and how long until anyone outside payroll did?",
+          "Is a name mismatch on a direct deposit an HR matter, a fraud matter, or a security matter on Monday morning? Who decides that?"
+        ],
+        "hr": [
+          "What can you lawfully do about Wednesday's pay before anyone has talked to him? What do you need from Legal to do it?"
+        ],
+        "legal": [
+          "If you hold pay and you are wrong, what is the exposure? If you pay and you are wrong, what is it then? Which one keeps you up?"
+        ]
+      },
+      "coaching": [
+        "Let the room argue whether this is anything at all. Plenty of people pay into a partner's account. The point of the inject is that payroll had no one to ask."
+      ]
+    },
+    {
+      "id": "s04",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "IT is asked what it knows about this person's equipment. The asset system answers in under a minute. Deal the ticket.",
+      "inject": {
+        "kind": "it_ticket",
+        "from": "IT Service Portal, ticket history for EE# 204417",
+        "subject": "RITM0031882 Laptop shipment - new hire Morrow, E. (closed)  +  RITM0034410 Software request: remote access tool (closed)",
+        "body": "RITM0031882   Opened: week 0   Closed: week 0\nItem: Std Dev Laptop (asset MFN-LT-51208), shipped FedEx 2-day\nShip-to: 1412 LARKIN CT, [different state from HR address of record]\nRequester comment: \"temporary address, staying with family while I close on a house. will update HR when moved\"\nApproval: auto (employee self-service; ship-to override allowed for remote staff)\nDelivery: signed for by T. RUDD, 10:42\n\nRITM0034410   Opened: week 2   Closed: week 2\nItem: Software exception - remote access tool (not on approved list)\nBusiness justification: \"needed for vendor demo with data pipeline partner, they use it for screen share\"\nAssigned: Helpdesk L2. Action: application control exception added for MFN-LT-51208. Expiry: none set.\nVendor named: none\n\nHR address of record (from Workday, as of today): unchanged since hire."
+      },
+      "questions": {
+        "all": [
+          "Two tickets, both closed correctly by the process as written. Which part of the process would you change first, and who owns it?"
+        ],
+        "it_iam": [
+          "How many of your remote laptops shipped somewhere other than the HR address last year? Can you get that number today?"
+        ],
+        "physec": [
+          "T. RUDD signed for a laptop that belongs to you. What is the least intrusive way to find out who that is?"
+        ]
+      }
+    },
+    {
+      "id": "s05",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "DISCUSSION ONE. The room has a pay change to a prepaid card in someone else's name, and a laptop signed for by that same someone at an address that is not his. Nothing has been confirmed. Nobody has talked to Ethan Morrow.\n\nBefore anything technical, settle who owns this. Then decide what can wait until Wednesday at 14:00 and what cannot.",
+      "questions": {
+        "all": [
+          "Is this above or below your program's intake threshold right now? If you do not have a threshold, who decided this was worth convening?",
+          "What is the most innocent explanation for both facts together? Say it as if you believed it."
+        ],
+        "int_lead": [
+          "Your correlation search would have caught the address mismatch months ago. Why isn't it running? Whose decision was that?"
+        ],
+        "exec": [
+          "Your best engineer on a board-visible migration might not be who he says he is. What do you need to hear before you agree to anything that slows the migration?"
+        ]
+      }
+    },
+    {
+      "id": "s06",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "PART TWO: THE TECHNICAL PICTURE. Read aloud.\n\nBy 11:00 the SOC has pulled what it has on Ethan Morrow's laptop and accounts. It has also tried to reach his manager, Greg Paulsen, who is on PTO until Thursday and has an out-of-office that says \"limited access to email.\" HR left him a voicemail at 09:30. He has not called back.\n\nThe SOC note is long. The analyst who wrote it has done this before at a previous job, and it shows."
+    },
+    {
+      "id": "s07",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Deal the SOC note.",
+      "inject": {
+        "kind": "soc_note",
+        "from": "SOC Tier 3 (L. Ferraro), case note on INC-26-0519",
+        "subject": "INC-26-0519 MFN-LT-51208 / emorrow: what the telemetry says (and doesn't)",
+        "body": "Pulled 30 days of EDR, identity and proxy. Notes as I went.\n\nENDPOINT\n- Remote access tool from RITM0034410 is installed and running as a service. Unattended access enabled. Connected 24/7 for 30 of 30 days, including weekends. Inbound sessions only, nothing outbound from our side.\n- Laptop has not slept in 30 days. Lid-close events: 0.\n- Display: one external monitor, EDID reports generic, no model string.\n- Keyboard layouts installed: en-US, ko-KR (added month 3). Language bar shows IME switching most nights. [Note: on its own this means nothing. Lots of our people have a second layout.]\n\nIDENTITY\n- Sign-ins come from residential IP 203.0.113.58 (same state as the ship-to address) AND, inside that session, from a commercial VPN provider's exit nodes. That VPN provider appears in public advisories on remote IT-worker schemes. Identity platform flagged it as \"informational\".\n- MFA push approvals: median time to approve 41 seconds. Our org median is 6.\n\nBEHAVIOR\n- Interactive work clusters 19:00-04:00 Eastern, Sun-Thu. Commits land in the same window.\n- Teams: camera on in 0 of 61 meetings over 30 days. Audio join only. Two people in his team chat describe \"a lag, like he's on a satellite phone.\"\n- Mouse movement during sessions is the remote tool's, not local input.\n\nWHAT I DON'T HAVE\n- Content of the remote sessions. The tool is end-to-end encrypted.\n- Who is on the other end.\n\nMy read: the laptop is in a house at the ship-to address, plugged in and left on, and someone else is driving it from somewhere else. That is the classic laptop-farm setup. I have not touched the endpoint. Evidence copied to \\\\soc-evidence\\INC-26-0519\\.",
+        "difficulty_variants": {
+          "first_timer": {
+            "body": "Facilitator note, read aloud: this is what a \"laptop farm\" looks like from the inside. The company laptop sits in someone's house, always on, and a remote-control program lets the actual worker use it from somewhere else. Nothing here proves who that worker is.\n\nSOC case note, plain-language version.\n\nThe laptop: has a remote-control program on it that is connected all day and all night, every day. The laptop has not been closed or put to sleep once in a month. It also has a Korean keyboard layout installed, which the analyst points out means nothing on its own.\n\nThe sign-ins: come from a home internet connection in the same state the laptop was shipped to, but pass through a commercial VPN that government advisories have linked to fake-remote-worker schemes. It takes him about forty seconds to approve an MFA prompt. Most people here take six.\n\nHis working pattern: mostly 7 PM to 4 AM Eastern, Sunday to Thursday. Camera off in every one of 61 meetings. Teammates say his audio lags.\n\nWhat the SOC cannot see: what was done in the remote sessions, or who is on the other end.\n\nThe analyst's view: the laptop is sitting in a house and somebody elsewhere is using it. Nothing has been touched yet."
+          }
+        }
+      },
+      "questions": {
+        "all": [
+          "Which of these facts would you be comfortable putting in front of Ethan Morrow, and which only make sense together?",
+          "The Korean keyboard layout is in the note. What does the room do with it? Who in the room is making sure it does not become the case?"
+        ],
+        "soc": [
+          "Your team lifted the block on that remote tool in week two. Walk the room through what that exception process checks, and what it should have checked."
+        ],
+        "it_iam": [
+          "The MFA was re-registered in month two after a phone call. What does your helpdesk verify before it moves MFA to a new device?"
+        ]
+      },
+      "coaching": [
+        "Expect someone to jump on the Korean keyboard layout. Ask them what percentage of the people at this company with a second keyboard layout they would be comfortable investigating. Then move on.",
+        "The forty-one-second MFA approval is a useful detail: one explanation is that the person approving the push is not the person who triggered it."
+      ]
+    },
+    {
+      "id": "s08",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Thursday morning is two days away. At 13:52 the hiring manager finally replies, from his phone, to HR's voicemail.",
+      "inject": {
+        "kind": "text_message",
+        "from": "Greg Paulsen (Data Engineering manager, on PTO), Teams to HRBP",
+        "subject": "Mon 13:52 to 14:20",
+        "body": "PAULSEN 13:52: sorry just saw this. what's going on with Ethan? is this about the deposit thing, he mentioned his wife handles their banking\n\nPAULSEN 13:53: he's honestly my best guy. ships more than anyone on the team. he's carrying the migration\n\nHRBP 13:58: Can't go into detail yet. Has he ever been on camera with you? Even once?\n\nPAULSEN 14:11: not that I can remember. bandwidth issue, he's rural. never been a problem, his work speaks for itself\n\nPAULSEN 14:12: wait are you saying he's not real?? I interviewed him\n\nPAULSEN 14:20: I'm going to call him\n\nHRBP 14:20: Please don't. Please don't contact him about this. I'll call you in 10."
+      },
+      "questions": {
+        "all": [
+          "The manager is about to tip off the subject, with good intentions. What does your process say about who can talk to whom once a case is open, and does any manager know that?"
+        ],
+        "hr": [
+          "He says Ethan mentioned his wife handles their banking. Does that change your read of the deposit, or does it just change how you feel about it?"
+        ],
+        "exec": [
+          "Greg reports to you. What do you tell him, and what do you not tell him?"
+        ]
+      }
+    },
+    {
+      "id": "s09",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "While everyone is waiting on Paulsen, one of the insider risk analysts pulls Morrow's commit history out of the source repository, mostly to see when he actually works. Something else falls out of it.",
+      "inject": {
+        "kind": "internal_note",
+        "from": "Insider Risk analyst (J. Okonkwo-Hart), working note, case IR-26-0088",
+        "subject": "IR-26-0088 commit metadata on git.{{org_domain}}: one commit not authored as us",
+        "body": "Ran git log on platform/ingest for author=emorrow, last 90 days. 412 commits. 411 have author email emorrow@{{org_domain}}.\n\nOne doesn't:\n\n  commit 7c41e09  (month 5, Tue 02:14 ET)\n  Author: Ethan Morrow <ethan.morrow@brightlane-analytics.example>\n  Msg:    fix schema drift in claims loader\n\nBrightlane Analytics is not a vendor of ours. Checked procurement and the vendor master. They're a data consultancy two states over, about 300 people per their website. Their careers page has a \"Senior Data Engineer\" opening closed four months ago.\n\nLooks like he committed from a machine (or a git config) set up for a different employer and fixed it afterwards. He force-pushed an amend to the branch 6 minutes later but the original is still in the reflog on the server.\n\nAlso: the same author name has a public profile on a code-hosting site with a different photo than the one in our HR system. I have NOT contacted Brightlane. I have not searched further than that because I'm not sure I'm allowed to. Need a steer."
+      },
+      "questions": {
+        "all": [
+          "If he is working a second full-time job on your time, is that a fraud case, a conduct case, or nothing until you prove the rest?",
+          "Who is allowed to contact Brightlane, and what would you say to them?"
+        ],
+        "legal": [
+          "The analyst stopped and asked whether she was allowed to keep looking. Was that the right call? What guidance does your program give an analyst about public-source research on a subject?"
+        ],
+        "int_lead": [
+          "This is the first fact that points at a second employer. What does it add to the case, and what does it take away?"
+        ]
+      },
+      "coaching": [
+        "The commit email is a common real-world tell: people working several jobs at once misconfigure git and leak the other employer's address. It proves overlapping employment at most. It says nothing about who the person is."
+      ]
+    },
+    {
+      "id": "s10",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "red_herring": true,
+      "body": "COMPLICATION (VETERAN TABLES ONLY). Someone in the SOC, trying to be helpful, runs a fleet-wide search for laptops with the ko-KR keyboard layout installed. It returns forty-three devices. One of them belongs to Daniel Seo in Finance, who also signs in through a VPN, works late, and changed his direct deposit last month.\n\nThe search result is pasted into the case channel with the note \"another one?\"\n\nThe truth, revealed only if the room checks with something better than a keyword: Daniel Seo has worked in the office three days a week for six years. Facilities badge records show him in the building twice last week. He uses the corporate VPN because Finance requires it from home. He changed banks after his credit union merged. His parents speak Korean at home and so does he.\n\nIf the room adds him to the case, let them. Then ask who is going to tell him, and how the forty-three-device search got pasted into a channel with eleven people in it.",
+      "questions": {
+        "all": [
+          "What did the room just do with a keyboard layout? What is the least invasive step that would have cleared Daniel in five minutes?",
+          "Forty-three names went into a chat channel. What is your program's rule for handling a search result like that, and who enforces it?"
+        ]
+      }
+    },
+    {
+      "id": "s11",
+      "type": "discussion",
+      "durations": ["60", "90", "120"],
+      "body": "DISCUSSION TWO. Pull it together. A payroll redirect to a prepaid card in another person's name. A laptop signed for by that person at an address that is not his. A remote-control tool that never disconnects. Night-shift hours, camera never on, slow MFA approvals, a VPN from the advisories. And a commit that says he also works somewhere else.\n\nIt is 16:00 Monday. The pay file locks Wednesday at 14:00. The manager is back Thursday and has already been asked not to call his own employee.\n\nThree things are open and they are not the same question. Legal has asked whether HR can put an administrative hold on pay. Corporate Security has asked whether it can call its federal contact. And someone has to decide whose lawyers are directing this, because the answer decides whether everything written from now on is privileged.",
+      "questions": {
+        "all": [
+          "State the leading hypothesis in one sentence. Then the best innocent one. Which single fact would move you most?",
+          "Who is directing this investigation as of now, and has that been written down anywhere?"
+        ],
+        "legal": [
+          "Employment counsel, sanctions counsel, white-collar counsel. Which one do you call first, and what will each one tell you to do in the first hour?"
+        ],
+        "hr": [
+          "What does an administrative pay hold look like at your organization? Who signs it, and what do you tell the employee if he asks?"
+        ],
+        "physec": [
+          "Your federal contact will call back today if you ask. What changes the moment you make that call?"
+        ],
+        "soc": [
+          "If this is live remote access, you could see data leave in real time. What is your tripwire, and who has authority to pull it?"
+        ]
+      },
+      "coaching": [
+        "The privilege question is where many real responses go sideways. Once outside counsel is directing the investigation, analyst notes start being written for a lawyer. If nobody decides, everyone writes for everyone.",
+        "Do not let the room settle the pay question by default. Not deciding by Wednesday at 14:00 is a decision to pay."
+      ]
+    },
+    {
+      "id": "s12",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT ONE. Read aloud. The room has to pick a posture before the pay file locks. Poll the room. Majority rules; a tie goes to whoever owns the budget for the outside lawyers.",
+      "decision": {
+        "prompt": "On Ethan Morrow, {{org_name}} will:",
+        "options": [
+          {
+            "label": "CONFRONT NOW: hold Wednesday's pay under counsel's direction, cut access, recall the laptop, and put him on a verification call with HR and Security, camera on, ID in hand. Accept that whoever is behind this learns today exactly what you know.",
+            "goto": "s13"
+          },
+          {
+            "label": "LET IT RUN: leave access in place under full monitoring with a hard tripwire on {{crown_jewels}}, pay Wednesday on counsel's documented advice, and bring in law enforcement quietly before anyone touches the account. Accept that you are knowingly paying and employing someone you think may not be real.",
+            "goto": "s19"
+          }
+        ]
+      },
+      "coaching": [
+        "Have each side argue the other's position for a minute before the vote.",
+        "Real programs split on this. Confront-now teams usually lose evidence; let-it-run teams carry legal and sanctions exposure for every day it runs."
+      ]
+    },
+    {
+      "id": "s13",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH A: THE CALL. Read aloud.\n\nTuesday, 10:00. IT cuts access in the order the runbook was rewritten for last night: SSO, VPN, the source repository, email, then the remote-access exception on MFN-LT-51208. Payroll places a hold on the new account with counsel's sign-off at 10:12. A courier label for the laptop goes to 1412 Larkin Ct.\n\nThe verification call is set for 11:00 on Teams. HR and Corporate Security are on it. \"Ethan\" joins at 11:04, audio only. Asked to turn on his camera, he says it is broken. Asked to hold up a government ID to his phone's camera instead, he says he will need to find it. There is a long pause with keyboard noise. He says he needs to step away for a family matter, and drops off at 11:09.\n\nAt 11:31 the payroll provider calls payroll ops. Someone has phoned the provider's employee help line, passed knowledge-based verification as Ethan Morrow, and asked why his pay is on hold."
+    },
+    {
+      "id": "s14",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Overnight, the laptop speaks up one more time. Deal the SOC note and the email together.",
+      "inject": {
+        "kind": "soc_note",
+        "from": "SOC on-call (D. Brennan), INC-26-0519 update, Wed 02:40",
+        "subject": "INC-26-0519 MFN-LT-51208 came back online 02:13, reset attempt, + email to HR",
+        "body": "02:13  MFN-LT-51208 checks in to MDM from 203.0.113.58 (the ship-to address).\n       Accounts are disabled, so it can't sign in. Local admin account used instead (LAPS password was last rotated at shipping; someone has it).\n02:19  \"Reset this PC: remove everything\" initiated locally.\n02:19  MDM lock command (queued yesterday 10:20) delivers. Device locked mid-reset. Disk state unknown.\n02:27  Device goes offline.\n\nSeparately, 01:58, to hr-personnel@{{org_domain}} from ethan.morrow.dev@mailbox.example:\n\n  \"I have been treated as a criminal for a camera. I resign. I will send the laptop by courier when my final pay including this period is paid to the account on file. I have done nothing wrong and I have kept copies of my work that prove it.\"\n\nCourier label for the laptop: not scanned. Ship-to address residents not reachable.\nNot touching anything else until someone tells me what we're preserving."
+      },
+      "questions": {
+        "all": [
+          "Somebody had the local admin password and tried to wipe the machine. What does that tell you about what was on it, and about who has been holding it?",
+          "The email ties the laptop's return to payment. Does anyone respond to it, and who?"
+        ],
+        "it_iam": [
+          "The local admin password was last rotated when the laptop shipped. What should that have been, and how many other remote laptops are in the same state today?"
+        ],
+        "legal": [
+          "You now have a probable evidence-destruction attempt and a demand for payment. Does this change who directs the investigation?"
+        ]
+      }
+    },
+    {
+      "id": "s15",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Wednesday, 09:15. The insider risk team finally gets read access to the IT shipping data and runs the correlation search that has been sitting in a folder since spring. Deal the result. Then wait.",
+      "inject": {
+        "kind": "internal_note",
+        "from": "Insider Risk (J. Okonkwo-Hart), search results, case IR-26-0088",
+        "subject": "IR-26-0088 address + payroll correlation: 3 hits, not 1",
+        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7\n        Ship-to 1412 Larkin Ct. Payroll to prepaid card, holder T RUDD. Remote tool exception. [known]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Ridgeline Staffing (SOW RS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct. (same address, different unit number \"B\")\n        Paid by Ridgeline, not us. Ridgeline confirms they pay to a prepaid card in his name.\n        Remote tool exception: yes, same tool, same week-2 justification text, word for word.\n        Camera on: 0 of 38 meetings.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Ship-to: a different address, same state as HR record. No name mismatch on payroll.\n        No remote tool. Camera on regularly.\n        Flagged only because his git config also leaked another employer: two commits as b.cole@<a fintech, real-looking domain>.example.\n        Badge: in the office twice last month.\n\nSo: two that look like the same laptop farm, and one that looks like an ordinary guy holding two jobs.\n\nHit 3 is probably not the same kind of case. Writing that down now so it doesn't get lumped in."
+      },
+      "questions": {
+        "all": [
+          "We hired three of these. Or two, or one and a half, depending on how you count. How do you count?",
+          "Hit 2 is a contractor. Whose case is that: yours, Ridgeline's, or both? What does your staffing contract say about identity verification and who pays when it fails?",
+          "Hit 3 may be a real person with two jobs. Is that a fraud case, a conduct case, a policy question, or none of your business?"
+        ],
+        "comms": [
+          "Two teams are about to lose people with no explanation, one of them mid-migration. What do the teams get told, and when?"
+        ],
+        "exec": [
+          "You now own two probable fraudulent hires and one possible moonlighter in your org. What goes to the CEO today, in three sentences?"
+        ]
+      },
+      "coaching": [
+        "This is the twist. Slow down. The room will want to treat all three the same way. Push them to separate the farm-linked pair from Hit 3, who may have violated a policy but is not the same kind of case.",
+        "If the room has not asked how many more there are, ask them."
+      ]
+    },
+    {
+      "id": "s16",
+      "type": "inject",
+      "durations": ["90", "120"],
+      "body": "Counsel circulates a short memo before the afternoon session.",
+      "inject": {
+        "kind": "legal_memo",
+        "from": "Deputy General Counsel, privileged and confidential, prepared at the direction of counsel",
+        "subject": "IR-26-0088: who is directing this, and the three clocks",
+        "body": "PRIVILEGED AND CONFIDENTIAL. ATTORNEY WORK PRODUCT. Do not forward outside the response group.\n\n1. From today this investigation is directed by outside white-collar counsel (Harlan & Voigt). Analyst notes go to them. Employment counsel stays engaged on the Hit 3 matter only, which I want kept in its own file.\n\n2. Sanctions. If Hits 1 and 2 are what the public advisories describe, payments to them may be payments to a sanctioned person. Civil liability is strict. A voluntary self-disclosure to OFAC is available and materially reduces penalties. It has to be voluntary, which means before someone else tells them. I want sanctions counsel's view by Friday.\n\n3. Law enforcement. Corporate Security may now call its federal contact. Before that call: agree what we are asking for, and that we will not delay protective steps at their request without my sign-off.\n\n4. Pay. The hold on Hit 1 stays. Hit 2 is paid by Ridgeline. I do not yet know if Ridgeline has already paid this week; please find out today. Hit 3: pay as normal.\n\n5. The person who signed for the laptops. \"T. Rudd\" may be a facilitator, a victim, or both. Do not contact.\n\n6. The real Ethan Morrow, if there is one, may be an identity-theft victim. Do not contact him until we know which name belongs to whom.\n\nI'll be on the 15:00 call."
+      },
+      "questions": {
+        "all": [
+          "Counsel has split the three cases into separate files with separate lawyers. What does that cost the investigators, and what does it protect?"
+        ],
+        "legal": [
+          "Walk the room through the voluntary self-disclosure decision: what you would need to know, by when, and who signs it."
+        ],
+        "physec": [
+          "You can call your federal contact now. Write the first two sentences of that call."
+        ],
+        "hr": [
+          "Ridgeline may have paid Hit 2 this week. Whose problem is that?"
+        ]
+      }
+    },
+    {
+      "id": "s17",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "BRANCH A DISCUSSION. The farm has been told. The laptop was nearly wiped. A demand for payment is sitting in HR's inbox. Two more names turned up and one of them may be a different kind of case.\n\nCounsel has the lawyers sorted out. What the room has not sorted out is whether this is a police matter, a sanctions matter, or a personnel matter.",
+      "questions": {
+        "all": [
+          "What has to be preserved today, by name, before anything else happens? The laptop is somewhere between a courier and a closet.",
+          "Is there anything about the confront-now choice you would change, knowing what Hit 2 now shows?"
+        ],
+        "int_lead": [
+          "Your search found two more in about four minutes once you had the data. It sat unrun for six months. What do you take upstairs about that?"
+        ],
+        "soc": [
+          "Hit 2 is still logged in. Same tool, same justification. What do you do in the next ten minutes, and who has to agree?"
+        ]
+      }
+    },
+    {
+      "id": "s18",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT TWO, BRANCH A. Read aloud. Counsel wants a direction by the end of the 15:00 call. Poll the room.",
+      "decision": {
+        "prompt": "With Morrow cut off and two more names on the table, {{org_name}} will:",
+        "options": [
+          {
+            "label": "REPORT IT ALL: cut off Hit 2 now with the same sequence, refer Hits 1 and 2 to federal law enforcement today, prepare an OFAC voluntary self-disclosure, notify Ridgeline under the staffing contract, and run Hit 3 separately as an employment matter. Accept the cost, the noise, and a migration that slips.",
+            "goto": "e1"
+          },
+          {
+            "label": "HANDLE IT AS EMPLOYMENT: terminate Hits 1 and 2 for cause through HR and Ridgeline, recover equipment, keep pay on hold, hold off on any external report until outside counsel finishes its review, and treat Hit 3 as a policy reminder. Accept that you are deciding later what you might have had to decide now.",
+            "goto": "e2"
+          }
+        ]
+      },
+      "coaching": [
+        "The second option is what many organizations actually do, and the room should feel how reasonable it sounds."
+      ]
+    },
+    {
+      "id": "s19",
+      "type": "narrative",
+      "durations": ["60", "90", "120"],
+      "body": "BRANCH B: THE WATCH. Read aloud.\n\nWednesday's pay runs, on a documented instruction from counsel that names the risk in its first paragraph. Full-fidelity logging goes on Morrow's account, his laptop and every system he can reach. A tripwire is written: any bulk read from {{crown_jewels}} over 200 MB, or any new outbound destination, and the SOC kills the session without a meeting.\n\nCorporate Security calls its federal contact at 15:10. She calls back at 16:40, and the conversation is short. The address is known to them. She asks a question nobody in the room expected."
+    },
+    {
+      "id": "s20",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Corporate Security's lead reads the follow-up out to the room from their phone.",
+      "inject": {
+        "kind": "text_message",
+        "from": "Federal case agent (name withheld), SMS to Corporate Security lead",
+        "subject": "Wed 17:02 to 17:20",
+        "body": "17:02  Thanks for the call. Confirming what I said. That address is part of something we're already working. Several employers, more than you'd guess.\n\n17:04  Big ask: can you leave him running for about two weeks? We're close on the people at the house. If he gets cut off they'll know something's up and clean out.\n\n17:05  I can't direct you to do anything and I'm not going to put that in writing. Your company's call.\n\n17:19  Also, check whether you have anyone else shipped to that address. Usually it isn't just one.\n\n17:20  Don't contact the resident."
+      },
+      "questions": {
+        "all": [
+          "Law enforcement has asked you to keep employing, and keep paying, someone you believe is a fraudulent worker. And they won't put it in writing. What do you do with that?",
+          "Who in the room has the authority to say yes to that request? Who has the authority to say no?"
+        ],
+        "legal": [
+          "What does a two-week extension do to your sanctions exposure, and does a verbal request from a federal agent change it?"
+        ],
+        "exec": [
+          "Two more weeks means he finishes most of the migration code. How do you feel about that, and does it matter?"
+        ]
+      },
+      "coaching": [
+        "The agent's last line but one is the cue for the twist. If the room has already found the other two, skip ahead."
+      ]
+    },
+    {
+      "id": "s21",
+      "type": "inject",
+      "durations": ["60", "90", "120"],
+      "body": "Thursday, 09:15. Prompted by the agent's text, the insider risk team gets the IT shipping data and runs the correlation search that has been sitting in a folder since spring. Deal the result. Then wait.",
+      "inject": {
+        "kind": "internal_note",
+        "from": "Insider Risk (J. Okonkwo-Hart), search results, case IR-26-0088",
+        "subject": "IR-26-0088 address + payroll correlation: 3 hits, not 1. Hit 2 pushed to prod last night.",
+        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7   [known, under watch]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Ridgeline Staffing (SOW RS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct, unit \"B\". Paid by Ridgeline to a prepaid card.\n        Remote tool exception: same tool, same week-2 justification, word for word.\n        Camera on: 0 of 38 meetings.\n        Last night 23:52: merged a change to the release pipeline's test stage. Reviewed and approved by... Ethan Morrow.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Different address, same state as HR record. Payroll matches. No remote tool. Camera on regularly. In the office twice last month.\n        Flagged because his git config leaked another employer's email on two commits.\n\nHits 1 and 2 have been approving each other's pull requests since month 5. 14 times.\n\nHit 3 looks like a different kind of case. Writing that down now so it doesn't get lumped in."
+      },
+      "questions": {
+        "all": [
+          "We hired three of these. Or two that review each other's code, and one who may just have a second job. How do you count, and does the count change what you owe law enforcement?",
+          "Hit 2 changed the release pipeline last night and Hit 1 approved it. Does the watch survive that?"
+        ],
+        "it_iam": [
+          "Two people who may be the same operation have been approving each other's code for two months. What control was supposed to prevent that, and did it exist?"
+        ],
+        "comms": [
+          "If you cut them off, two teams lose people without explanation. If you don't, you are sitting on this for two weeks. What do the teams get told either way?"
+        ]
+      },
+      "coaching": [
+        "This is the twist. The room will want to treat all three the same way. Push them to separate the farm-linked pair from Hit 3.",
+        "The mutual code review detail is what usually breaks the room's appetite for the watch. Let it."
+      ]
+    },
+    {
+      "id": "s22",
+      "type": "inject",
+      "durations": ["120"],
+      "body": "BRANCH B PRESSURE (120-minute exercises only). HR raises a problem nobody on the watch plan had thought about.",
+      "inject": {
+        "kind": "hr_memo",
+        "from": "HRBP Technology, to the response group",
+        "subject": "Hit 2 is paid by Ridgeline, not us, and Ridgeline has questions",
+        "body": "Ridgeline's account manager called me at 10:40. Their own compliance team flagged Marco Alvarez this morning: their bank-account validation came back with the same name mismatch ours did. They want to suspend him today and they want to know if we have \"anything they should know.\" Their contract with us requires them to notify us of exactly this, so they are not wrong to ask.\n\nI told them I'd call back by 14:00. I didn't say anything else.\n\nIf Ridgeline cuts him off, the house will know by tonight. If I ask Ridgeline to sit on it, I'm asking a vendor to keep paying someone I think is fraudulent, without telling them why, and I don't think I can do that without Legal on the call.\n\nAlso, for what it's worth: Ridgeline placed six other contractors with us this year. I've asked for the list."
+      },
+      "questions": {
+        "all": [
+          "Your vendor has found its own half of the case and is about to act. Do you bring Ridgeline inside the tent, and if so who makes that call?"
+        ],
+        "legal": [
+          "What can you lawfully ask Ridgeline to do, and what can you not ask them?"
+        ]
+      }
+    },
+    {
+      "id": "s23",
+      "type": "discussion",
+      "durations": ["90", "120"],
+      "body": "BRANCH B DISCUSSION. The watch is holding. The tripwire has not fired. Law enforcement wants two more weeks. Two of the subjects review each other's code, and one of them changed the release pipeline last night. The staffing vendor is about to act on its own, and the payroll clock is running again.",
+      "questions": {
+        "all": [
+          "What exactly does the watch protect right now, and what is it costing per day? Put a number on both if you can.",
+          "If the tripwire fires tonight, who makes the call at 02:00, and do they know they are the one?"
+        ],
+        "soc": [
+          "Hit 2's pipeline change: what does your team need to do to it today, and can you do it without tipping anyone off?"
+        ],
+        "int_lead": [
+          "Grade the let-it-run decision with what you know now. Same inputs, same call?"
+        ]
+      }
+    },
+    {
+      "id": "s24",
+      "type": "decision",
+      "durations": ["60", "90", "120"],
+      "body": "DECISION POINT TWO, BRANCH B. Read aloud. Ridgeline needs an answer by 14:00 and the agent is waiting on a yes or no. Poll the room.",
+      "decision": {
+        "prompt": "On the agent's request, {{org_name}} will:",
+        "options": [
+          {
+            "label": "KEEP IT RUNNING: give law enforcement its two weeks on Hits 1 and 2, roll back the pipeline change quietly, bring Ridgeline inside under counsel, keep the tripwire, file the OFAC voluntary self-disclosure now, and handle Hit 3 separately. Accept that you are knowingly employing and paying them for two more weeks.",
+            "goto": "e3"
+          },
+          {
+            "label": "CUT ALL THREE NOW: coordinated termination and access cut for Hits 1 and 2 today, tell the agent you could not wait, preserve everything, and suspend Hit 3 pending interview because you can no longer tell which cases are which. Accept that the agent loses the house, and that Hit 3 may be the wrong call.",
+            "goto": "e4"
+          }
+        ]
+      },
+      "coaching": [
+        "Watch for the room lumping Hit 3 in on the second option. If it does, make them say his name out loud and what they are suspending him for."
+      ]
+    },
+    {
+      "id": "e1",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: REPORTED. Read aloud.\n\nHit 2 is cut off at 15:40 with the same sequence, minus the mistakes from Tuesday. The referral lands on an agent who already knows the address. The laptop never comes back; it turns up three months later in a federal search of 1412 Larkin Ct, along with fourteen other laptops from nine employers, each with an asset tag and a sticky note naming the \"worker.\"\n\nThe OFAC voluntary self-disclosure takes six weeks and two outside firms. It is expensive and it is the right call, and the penalty, when it comes, is a fraction of the base amount.\n\nThe real Ethan Morrow turns out to be a retired teacher in another state whose identity was used for three different jobs. He finds out from your letter, which is better than most victims manage.\n\nBrandon Cole, Hit 3, gets a policy reminder about outside employment and keeps his job. He leaves four months later for the other employer, and says in his exit interview that the way the company handled it was fair.\n\nThe migration slips five weeks. The CIO tells the board it slipped because two of the engineers were not real.\n\nThat is the end of the story. Turn to the after-action pack.",
+      "questions": {
+        "all": [
+          "What in your real organization would have made this ending possible, and which of those things does not exist today?"
+        ]
+      }
+    },
+    {
+      "id": "e2",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: HANDLED INTERNALLY. Read aloud.\n\nThe terminations go out on Thursday, cleanly. Ridgeline removes Marco Alvarez the same day and, without being asked, does not mention it to anyone. The laptops are written off. Brandon Cole gets a policy reminder.\n\nOutside counsel's review takes eleven weeks. By the time it recommends a voluntary self-disclosure, it is no longer voluntary: a federal search of 1412 Larkin Ct has already turned up two laptops with your asset tags, and the agent's first question to your general counsel is why the company that paid two of these workers for months said nothing.\n\nThe answer is honest and it does not help. Nobody wanted to report until they were sure.\n\nThe migration ships on time. Four of Hit 2's merged changes to the test stage are found later in a routine audit. None of them did anything harmful, as far as anyone can tell. Nobody can say that with much confidence.\n\nEnd of the exercise. Go to the after-action pack.",
+      "questions": {
+        "all": [
+          "Being sure before reporting sounds responsible. What did it cost here, and who paid it?"
+        ]
+      }
+    },
+    {
+      "id": "e3",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: THE TWO WEEKS. Read aloud.\n\nThe watch holds. The tripwire fires once, on day six: a 340 MB read from a reporting database at 02:20. The SOC kills the session at 02:21 under the standing instruction, and the on-call analyst does not wake anyone up. Nothing moves. The agent is unhappy about the session kill for about a day.\n\nOn day twelve the house at 1412 Larkin Ct is searched. Your evidence is the cleanest the case team has received, because you had two weeks of full logging and a preservation instruction from day one. The OFAC disclosure, filed before the search, is treated as voluntary.\n\nBringing Ridgeline inside turns up one more of its contractors at another of its clients. Ridgeline rewrites its onboarding, and its contract with you, at its own expense.\n\nBrandon Cole is never told any of this. He gets a policy reminder and nothing else.\n\nAfterwards the response group agrees it would run the watch again, and also that it would not want to run it without the tripwire and the 02:00 authority written down in advance.\n\nStop the clock here and go to the after-action pack.",
+      "questions": {
+        "all": [
+          "The watch worked. What would have had to be different for it to go badly, and how many of those conditions exist at your organization?"
+        ]
+      }
+    },
+    {
+      "id": "e4",
+      "type": "epilogue",
+      "durations": ["60", "90", "120"],
+      "body": "EPILOGUE: ALL THREE. Read aloud.\n\nThe cut goes out at 13:30, before Ridgeline's deadline. Hits 1 and 2 go dark within the minute; preservation is clean. The agent says \"understood\" and nothing more, and the next time Corporate Security calls it takes four days to get a callback.\n\nThe house at 1412 Larkin Ct is empty when it is eventually searched.\n\nBrandon Cole is suspended pending interview. He is interviewed the next day and turns out to be exactly what he looked like: a real person with a second full-time job, a mortgage, and a lot of guilt about it. He resigns the following week. Two people on his team put in their own notice within the month, and one says on the way out that she does not want to work somewhere that \"suspends people with no explanation.\"\n\nThe OFAC disclosure goes in two weeks later. It is still voluntary, just.\n\nThe story ends here. Turn to the after-action pack.",
+      "questions": {
+        "all": [
+          "Cutting all three was the clean security answer. What did it cost that a security answer does not count?"
+        ]
+      }
+    }
+  ],
+  "aar": {
+    "hotwash": [
+      "Go round the table: one word for how that felt. No analysis yet.",
+      "Which team saw something first, and how long did it take to reach anyone else? In your real organization, which team would it have been?",
+      "Where did the room treat remote work, a camera, an accent or a second keyboard layout as evidence? Who caught it?",
+      "Who was directing the investigation at each point, and when did that get written down?",
+      "The correlation search found the others in minutes. What data in your organization sits in a system the insider risk team cannot query, and what would it take to change that?",
+      "Which private knowledge changed the picture most, and how long did its owner sit on it?",
+      "Pick one thing to fix in the next 30 days and give it an owner before you leave the room."
+    ],
+    "objectives": [
+      "Detect: recognize remote-worker identity-fraud indicators across payroll, HR, IT asset and security telemetry, and get them to one place.",
+      "Convene: test whether a trigger and an owner exist for a case that starts in payroll rather than security.",
+      "Separate: distinguish a laptop-farm case from overlapping employment by a real person, and handle each on its own terms.",
+      "Decide: exercise the confront, watch and report decisions, including pay holds, sanctions exposure and a law enforcement request made only verbally.",
+      "Counsel: decide which counsel directs the investigation and how privilege is established and kept.",
+      "Fix: name the onboarding, shipping, helpdesk and staffing-vendor controls that let three of these through."
+    ]
+  }
+}
