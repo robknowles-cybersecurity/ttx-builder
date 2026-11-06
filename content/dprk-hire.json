@@ -159,18 +159,18 @@
       "id": "s01",
       "type": "narrative",
       "durations": ["60", "90", "120"],
-      "body": "FACILITATOR BRIEFING. You are about to run a discussion-based exercise, not a test. Nobody fails. The exercise works when people disagree out loud, discover a gap, and decide who owns it. Ground rules to read to the room: this is fictional — every organization, person, and indicator is an invented composite, and any resemblance to real entities is coincidental; there are no trick answers; respond with what your organization would actually do on a normal Tuesday, not what the policy binder wishes; what is said here stays here except the improvement items we write down. Assign one note-taker now who is not playing a role. Hand each participant their character sheet and give them two minutes to read the PRIVATE KNOWLEDGE box silently. Private knowledge is theirs to reveal when it would naturally come up — that is the game. Artificialities to acknowledge: time is compressed, some facts arrive cleaner than real life delivers them, and functions not represented today are assumed cooperative. Exercise objectives are printed in your After-Action pack. When you see a numbered decision, poll the room, take the majority, and turn to the section indicated. Keep one eye on the clock: when a discussion is rich but long, say so, park it on the improvement list, and move.",
+      "body": "FACILITATOR BRIEFING. You are about to run a discussion-based exercise, not a test. Nobody fails. The exercise works when people disagree out loud, discover a gap, and decide who owns it. Ground rules to read to the room: this is fictional. Every organization, person, and indicator is an invented composite, and any resemblance to real entities is coincidental; there are no trick answers; respond with what your organization would actually do on a normal Tuesday, not what the policy binder wishes; what is said here stays here except the improvement items we write down. Assign one note-taker now who is not playing a role. Hand each participant their character sheet and give them two minutes to read the PRIVATE KNOWLEDGE box silently. Private knowledge is theirs to reveal when it would naturally come up, that is the game. Artificialities to acknowledge: time is compressed, some facts arrive cleaner than real life delivers them, and functions not represented today are assumed cooperative. Exercise objectives are printed in your After-Action pack. When you see a numbered decision, poll the room, take the majority, and turn to the section indicated. Keep one eye on the clock: when a discussion is rich but long, say so, park it on the improvement list, and move.",
       "coaching": [
         "If you have never facilitated before: your whole job is to ask the printed questions, count to five in silence after each one, and write down what people disagree about. Silence does the work. Let it.",
         "Open by asking each person to state their role in one sentence. It warms the room and surfaces who is missing.",
-        "If a senior leader dominates, redirect by name: 'Before we settle it — HR, what does this look like from your seat?'"
+        "If a senior leader dominates, redirect by name: 'Before we settle it. HR, what does this look like from your seat?'"
       ]
     },
     {
       "id": "s02",
       "type": "narrative",
       "durations": ["60", "90", "120"],
-      "body": "PART ONE: THE HIRE. Read aloud. You are the insider threat capability of {{org_name}}. Five months ago, under real delivery pressure, your company hired a senior software developer named Daniel Voss through the staffing firm Northgate Talent Partners. Fully remote, strong resume, glowing technical screen. The role touches {{crown_jewels}}. His work since has been genuinely good — the hiring manager calls him the best engineer on the team. Today, a routine vendor re-verification and a handful of security alerts are about to make Daniel Voss the only thing this room talks about. Before the alerts: turn to the hiring record.",
+      "body": "PART ONE: THE HIRE. Read aloud. You are the insider threat capability of {{org_name}}. Five months ago, under real delivery pressure, your company hired a senior software developer named Daniel Voss through the staffing firm Northgate Talent Partners. Fully remote, strong resume, glowing technical screen. The role touches {{crown_jewels}}. His work since has been genuinely good. The hiring manager calls him the best engineer on the team. Today, a routine vendor re-verification and a handful of security alerts are about to make Daniel Voss the only thing this room talks about. Before the alerts: turn to the hiring record.",
       "difficulty_variants": {
         "veteran": {
           "body": "PART ONE: THE HIRE. Read aloud. You are the insider threat capability of {{org_name}}. Five months ago, under real delivery pressure, your company hired two remote workers through the staffing firm Northgate Talent Partners: senior developer Daniel Voss, and payroll systems analyst Elena Vasquez. Both fully remote, both strong on paper, both well-reviewed since. The developer role touches {{crown_jewels}}. Today, a routine vendor re-verification and a handful of security alerts will put one or both of these names in front of this room, and part of your job will be deciding which signals are real. Before the alerts: turn to the hiring record."
@@ -184,9 +184,9 @@
       "body": "Hand out or read the following excerpt from the hiring file.",
       "inject": {
         "kind": "hr_memo",
-        "from": "Recruiting Operations — hiring file excerpt, D. Voss (placed via Northgate Talent Partners)",
-        "subject": "Interview and onboarding notes, assembled for this review",
-        "body": "Technical screen: exceptional (top 5 percent of candidates for this req). Panel notes: candidate kept camera off in interviews one and three, citing bandwidth; audio delay noted by two panelists; one panelist wrote 'answers occasionally paused as if relayed' and scored him highly anyway. Onboarding: in-person orientation requirement waived by hiring manager (approved, on file) due to relocation in progress. I-9 documents received by the staffing vendor and warranted under the services agreement; copies on file show an out-of-state license. Week 3: candidate requested equipment reshipment to an updated address, different state than residence of record — approved as relocation exception. Week 2 payroll note: direct deposit split across two institutions at employee request, processed as routine."
+        "from": "Recruiting Operations, ATS export for req ENG-24-0611 (D. Voss, placed via Northgate Talent Partners, SOW NTP-0723)",
+        "subject": "Interview scorecards + onboarding exceptions, pulled for this review",
+        "body": "REQ ENG-24-0611  Sr Software Engineer, Platform  |  Candidate C-88214 VOSS, DANIEL R.  |  Source: Northgate (agency)\n\nTECH SCREEN (HackerPad, 90 min): 4.8 / 5. Recruiter comment: \"top 5% for this req, move fast, 2 other offers.\"\n\nPANEL 1 (video): camera off, candidate cited bandwidth. Audio lag noted. Score 4.\nPANEL 2 (video): camera on for ~6 min, then froze, then off. Score 5.\nPANEL 3 (video): camera off. Panelist R. Ibarra wrote: \"answers kind of paused like he was being fed them? but the answers were right.\" Score 4.\n\nOFFER: accepted same day.\n\nONBOARDING EXCEPTIONS\nHRX-3317  In-person orientation waived. Reason: relocation in progress. Approved by hiring manager T. Okonkwo.\nI-9: Section 2 completed by Northgate as authorized representative (per SOW 6.2). Copy on file: out-of-state DL.\nIT-SHIP-20931  Week 3: laptop reshipped to updated address (different state from residence of record). Approved as relocation exception.\nPAY-CHG-1180  Week 2: direct deposit split 70/30 across two banks at employee request. Processed, no review step exists for this."
       }
     },
     {
@@ -196,9 +196,9 @@
       "body": "The first current-day artifact. Hand out or read the vendor notice.",
       "inject": {
         "kind": "vendor_report",
-        "from": "TrueNorth Verify (identity re-screening vendor) — automated notice to {{org_name}} HR Operations",
-        "subject": "Re-verification exception: VOSS, DANIEL R. — manual review required",
-        "body": "As part of contracted annual re-verification of vendor-placed personnel, the following exceptions were returned for the above identity. (1) The Social Security number on file returns a credit header associated with a Daniel R. Voss, age 61, at an address in a different state, with an active credit freeze in place since 2019. (2) The date of birth provided at hire does not match the credit header. (3) The driver's license number on file returns format-valid but does not match state issuance records for the name provided. Recommended action: manual review. This notice is informational and does not constitute an adverse determination."
+        "from": "TrueNorth Verify (re-screening vendor), automated notice to {{org_name}} HR Operations",
+        "subject": "[ACTION] Re-verification exception, case TNV-7731-0042: VOSS, DANIEL R.",
+        "body": "Case: TNV-7731-0042   Package: Annual re-verification, vendor-placed personnel   Generated: 06:12 ET\n\nSubject as submitted: VOSS, DANIEL R.   DOB as submitted: [on file]   SSN: ***-**-4417\n\nRESULTS\nSSN trace ......... MISMATCH. SSN returns credit header for Daniel R. Voss, age 61, different state. Credit freeze active since 2019.\nDOB check ......... MISMATCH against header.\nDL verification ... NO RECORD. Number is format-valid; issuing state returns no match to name.\nAddress history ... Residence of record not associated with SSN at any time.\n\nRecommended action: manual review.\n\nThis notice is informational and is not an adverse determination. Do not take employment action based solely on this report without completing your FCRA pre-adverse action process. Questions: support@truenorthverify.example, ref the case number above."
       },
       "coaching": [
         "First-time facilitators: resist explaining what this means. Ask the room: 'What is this document telling us, and how confident are we?' Someone will say identity theft. Someone else should say 'or a data entry error.' Both are load-bearing."
@@ -212,13 +212,13 @@
       "questions": {
         "all": [
           "Right now, today, in your real organization: who receives a notice like this, and would it reach anyone in this room within a week?",
-          "Is this a security matter, an HR matter, or a vendor matter at this moment — and who convenes the others? If you have a formal insider threat program, is this above or below its intake threshold? If you do not, who plays that role anyway?"
+          "Is this a security matter, an HR matter, or a vendor matter at this moment, and who convenes the others? If you have a formal insider threat program, is this above or below its intake threshold? If you do not, who plays that role anyway?"
         ],
         "int_lead": [
           "Does your program's charter cover a vendor-placed worker at all? Say the actual words from your policy if you can."
         ],
         "hr": [
-          "The waiver and the shipping exception are in your file. When do you surface them, and to whom — knowing they may embarrass a hiring manager sitting two doors down?"
+          "The waiver and the shipping exception are in your file. When do you surface them, and to whom. Knowing they may embarrass a hiring manager sitting two doors down?"
         ],
         "legal": [
           "What can be done with this worker's access and pay before anyone has verified anything, without creating employment-law exposure?"
@@ -228,14 +228,14 @@
         ]
       },
       "coaching": [
-        "Watch for the room jumping straight to 'fire him.' Pull them back: 'Slow down — what do we actually know versus suspect?' Write the distinction on the board; you will use it twice more today."
+        "Watch for the room jumping straight to 'fire him.' Pull them back: 'Slow down. What do we actually know versus suspect?' Write the distinction on the board; you will use it twice more today."
       ]
     },
     {
       "id": "s06",
       "type": "narrative",
       "durations": ["60", "90", "120"],
-      "body": "PART TWO: SIGNAL IN THE NOISE. Read aloud. While HR sits with the re-verification notice, the SOC's morning queue produces two items about the same account. One is from your behavioral analytics platform. One is an analyst's note that took real digging. Six weeks of hindsight are about to arrive at once."
+      "body": "PART TWO: SIGNAL IN THE NOISE. Read aloud. While HR sits with the re-verification notice, the SOC's morning queue produces two items about the same account. One is from your behavioral analytics platform. One is an analyst's note that took real digging. Both landed before 8 AM."
     },
     {
       "id": "s07",
@@ -244,12 +244,12 @@
       "body": "Hand out or read the analytics alert.",
       "inject": {
         "kind": "dlp_alert",
-        "from": "{{org_name}} UEBA/DLP platform — priority alert, account DVOSS",
-        "subject": "Anomalous repository sync and archive activity",
-        "body": "Over the trailing 10 days, account DVOSS synchronized 4.1 GB from the primary source repository to the issued endpoint, a 12x increase over the account's 90-day baseline. Two archive files totaling 3.7 GB were created in a user directory named 'env-backup'. No egress to unsanctioned cloud destinations has been observed by this platform. Note: platform visibility does not extend to removable media on this endpoint profile, and repository coverage excludes two legacy project trees. Correlated history: one impossible-travel alert on this account 41 days ago, disposition auto-closed (VPN, low confidence).",
+        "from": "{{org_name}} UEBA / DLP, priority alert, account dvoss (host MFN-LT-40917)",
+        "subject": "ALERT 2291847  UEBA-SRC-07 \"Repo pull volume >10x 90d baseline\" + ARCH-02 \"Large archive created in user profile\"",
+        "body": "Severity: HIGH   Risk score: 87 (was 22 last month)   Status: NEW, unassigned\n\nUEBA-SRC-07: trailing 10 days, dvoss pulled 4.1 GB from git.{{org_domain}}/platform/* to MFN-LT-40917. 90-day baseline: ~340 MB per 10 days.\nARCH-02: two 7z archives written to C:\\Users\\dvoss\\env-backup\\ (env-backup-01.7z 2.1 GB, env-backup-02.7z 1.6 GB). Password-protected: yes.\n\nEgress to unsanctioned cloud: none observed.\nCoverage gaps (auto-appended): removable media not inspected on endpoint profile ENG-DEV-2; repos /legacy/settlement and /legacy/batch-recon not onboarded to repo monitoring.\n\nCorrelated history: IMP-TRAVEL-03 on this account, 41 days ago. Disposition: auto-closed, \"VPN egress, low confidence\".",
         "difficulty_variants": {
           "first_timer": {
-            "body": "Over the trailing 10 days, account DVOSS synchronized 4.1 GB from the primary source repository to the issued endpoint — twelve times this account's normal volume. Two large archive files were then created in a folder named 'env-backup'. Plain reading: the account pulled far more of {{crown_jewels}} than the job needs, and packaged it. The platform has not seen the data leave the laptop — but it also admits it cannot see everything. History note: six weeks ago this account triggered a possible impossible-travel alert that was closed automatically as VPN noise."
+            "body": "Severity: HIGH. Status: new, nobody has picked it up yet.\n\nWhat it says in plain words: over the last ten days the account dvoss pulled 4.1 GB of source code onto its laptop. That is about twelve times its normal amount. Then it packed most of it into two password-protected archive files in a folder called env-backup.\n\nWhat it has NOT seen: the data leaving the laptop. What it admits it cannot see: USB drives on this laptop type, and two older code repositories that were never connected to monitoring.\n\nHistory: 41 days ago this same account set off an impossible-travel alert. It was closed automatically as VPN noise.\n\nFacilitator: the crown jewels at stake here are {{crown_jewels}}."
           }
         }
       }
@@ -261,9 +261,9 @@
       "body": "Then the analyst note. This one was human work.",
       "inject": {
         "kind": "soc_note",
-        "from": "SOC Tier 3 — analyst investigation note (internal)",
-        "subject": "DVOSS endpoint: persistent inbound session from residential IP space",
-        "body": "Working the UEBA alert, I pulled endpoint and network telemetry for the issued laptop. Finding: a persistent, low-bandwidth inbound session from a residential broadband IP in a third state — not the residence of record, not the shipping address — present across 34 of the last 40 days, including sessions where badge-equivalent VPN auth shows the user 'present'. Traffic pattern and device fingerprint are consistent with a hardware keyboard-video-mouse device attached to the issued laptop and operated remotely — i.e., the laptop may be sitting at a location where someone else physically hosts it, while the actual operator works it from elsewhere. Time-of-day analysis: interactive activity clusters 22:00–06:00 local to the residence of record, seven days a week. I have not touched the endpoint. Full pcap and notes preserved to case folder."
+        "from": "SOC Tier 3, J. Castellano, case note on SOCINC-4418 (internal)",
+        "subject": "SOCINC-4418 dvoss / MFN-LT-40917: persistent inbound session + something plugged into the laptop",
+        "body": "Picked up ALERT 2291847 at 07:40. Notes as I went, cleaned up a little.\n\n1. Netflow + EDR: MFN-LT-40917 holds a long-lived low-bandwidth session to 198.51.100.73 (residential cable ISP, third state; not the residence of record and not the IT-SHIP-20931 address). Present on 34 of the last 40 days. Same session is up during VPN logins where the user shows \"active\".\n\n2. EDR device inventory: USB composite device first seen day 19 after hire. VID:PID 1d6b:0104 (Linux USB gadget), enumerates as HID keyboard + HID mouse + mass storage. That is what the hobbyist IP-KVM boxes look like. Display reports a generic EDID with no monitor model, which fits an HDMI capture dongle.\n\n3. Keystroke cadence from the EDR telemetry is weird. Long runs with almost identical inter-key timing, then bursts. Not proof of anything by itself.\n\n4. Interactive activity clusters 22:00-06:00 local to the residence of record, 7 days a week. Commits land in the same window.\n\nRead: the laptop is probably sitting in a house somewhere with a KVM on it, and someone else is driving it from elsewhere.\n\nHave NOT touched the endpoint, have NOT isolated. Full pcap + EDR export in \\\\soc-evidence\\SOCINC-4418\\. Need a decision before I do anything else on this. Also flagging I closed the 41-day-old impossible travel myself. That one's on me."
       },
       "coaching": [
         "If the room stalls on the technology: the plain-language version is 'the company laptop appears to be parked at a farm, operated from somewhere else, on a night schedule.' Then ask what that changes."
@@ -274,11 +274,11 @@
       "type": "narrative",
       "durations": ["60", "90", "120"],
       "red_herring": true,
-      "body": "COMPLICATION (VETERAN TABLES ONLY — skip this section unless Difficulty is Veteran). The same UEBA sweep flags a second account: EVASQUEZ, the payroll systems analyst hired through the same vendor in the same quarter. Indicators: VPN logins from two states in alternating weeks, camera habitually off in meetings, and a direct-deposit change last month. The room's time and suspicion are now split. Facilitator: let them work it. The truth, revealed only if the room takes concrete steps to verify (a call with the employee and her manager, travel records, or a simple welfare-and-verification conversation): Elena Vasquez is a real person whose spouse travels for clinical work; she alternates locations openly with her manager's blessing, keeps the camera off for a home-care reason HR already knows, and changed banks. Every one of her indicators has an innocent explanation that ten minutes of respectful checking would surface. If the room proposes suspending both accounts 'to be safe,' let them — and make them say the sentence out loud with her name in it.",
+      "body": "COMPLICATION (VETERAN TABLES ONLY; skip this section unless Difficulty is Veteran). The same UEBA sweep flags a second account: EVASQUEZ, the payroll systems analyst hired through the same vendor in the same quarter. Indicators: VPN logins from two states in alternating weeks, camera habitually off in meetings, and a direct-deposit change last month. The room's time and suspicion are now split. Facilitator: let them work it. The truth, revealed only if the room takes concrete steps to verify (a call with the employee and her manager, travel records, or a simple welfare-and-verification conversation): Elena Vasquez is a real person whose spouse travels for clinical work; she alternates locations openly with her manager's blessing, keeps the camera off for a home-care reason HR already knows, and changed banks. Every one of her indicators has an innocent explanation that ten minutes of respectful checking would surface. If the room proposes suspending both accounts 'to be safe,' let them, and make them say the sentence out loud with her name in it.",
       "questions": {
         "all": [
           "What is the least invasive step that distinguishes these two cases?",
-          "What does it cost — in trust, morale, and legal exposure — to be wrong about Elena versus wrong about Voss? Who in this room is the voice for the innocent-explanation hypothesis on every case?"
+          "What does it cost (in trust, morale, and legal exposure) to be wrong about Elena versus wrong about Voss? Who in this room is the voice for the innocent-explanation hypothesis on every case?"
         ]
       }
     },
@@ -286,11 +286,11 @@
       "id": "s11",
       "type": "discussion",
       "durations": ["60", "90", "120"],
-      "body": "DISCUSSION TWO. The picture: an identity that fails re-verification, a packaging pattern on {{crown_jewels}}, a probable remote-operation setup, and a night-shift work rhythm — attached to your best-reviewed engineer. Facilitator: ALL questions first, then roles.",
+      "body": "DISCUSSION TWO. The picture: an identity that fails re-verification, a packaging pattern on {{crown_jewels}}, a probable remote-operation setup, and a night-shift work rhythm. Attached to your best-reviewed engineer. Facilitator: ALL questions first, then roles.",
       "questions": {
         "all": [
-          "Say the leading hypothesis out loud, in one sentence, and the strongest innocent alternative in another. Which does the evidence better support, and what single fact would most change your mind?",
-          "Who has the authority to convene a formal response right now — and has anyone actually done it in this room, or are we still in hallway mode? If you have a formal program, name the trigger that was just met. If you do not, name the person who owns the next hour."
+          "Give me the leading hypothesis in one sentence. Now the best innocent explanation in one sentence. Which does the evidence better support, and what single fact would most change your mind?",
+          "Who has the authority to convene a formal response right now, and has anyone actually done it in this room, or are we still in hallway mode? If you have a formal program, name the trigger that was just met. If you do not, name the person who owns the next hour."
         ],
         "int_lead": [
           "The sector bulletin in your private knowledge: is now the moment? What does sharing it change, and why did you wait?"
@@ -302,7 +302,7 @@
           "Payroll runs in four days. Walk the room through the exposure of paying versus the exposure of not paying a worker you have not yet confronted."
         ],
         "exec": [
-          "Your release depends on this person. Argue, honestly and out loud, the business case for going slow — then say what evidence would make you stop arguing it."
+          "Your release depends on this person. Make the business case for going slow. What would it take for you to drop that argument?"
         ],
         "hr": [
           "If this identity is stolen from a real 61-year-old man, what does the company owe him, and when?"
@@ -311,14 +311,14 @@
           "You hold a law-enforcement referral channel. What is the threshold for using it, and who decides?"
         ],
         "it_iam": [
-          "Before anyone in this room says the words cut access: walk them through what a clean suspension of the Voss account actually is — the five separate cuts, the order they must land in, and the fifteen-minute warning the wrong order hands him. Then say how long you need from a go decision, and make the room plan around your number, not theirs."
+          "Before anyone in this room says the words cut access: walk them through what a clean suspension of the Voss account actually is. The five separate cuts, the order they must land in, and the fifteen-minute warning the wrong order hands him. Then say how long you need from a go decision, and make the room plan around your number, not theirs."
         ],
         "comms": [
           "Two facts from your world belong in this picture: a reporter asked three weeks ago whether the company had reviewed its remote workforce and got the standard line, and the CEO's do-we-have-that-problem question is still open. Say what those two facts do to the amount of time this room thinks it has."
         ]
       },
       "coaching": [
-        "This is the emotional center of the exercise: the best engineer on the team is probably not real. Name it for the room if no one else does — 'notice how hard it is to believe this about a high performer' — because that reluctance is itself the finding.",
+        "This is the emotional center of the exercise: the best engineer on the team is probably not real. Name it for the room if no one else does, 'notice how hard it is to believe this about a high performer', because that reluctance is itself the finding.",
         "Keep score of decisions versus discussions. If forty minutes in nobody has been assigned an action, say so."
       ]
     },
@@ -331,11 +331,11 @@
         "prompt": "The company must act on the Voss account. Choose:",
         "options": [
           {
-            "label": "CONTAIN NOW — suspend access today, coordinate suspension of pay with counsel, and move to a direct conversation. You act on what you have and accept that you tip your hand.",
+            "label": "CONTAIN NOW. Suspend access today, coordinate suspension of pay with counsel, and move to a direct conversation. You act on what you have and accept that you tip your hand.",
             "goto": "s13"
           },
           {
-            "label": "MONITOR QUIETLY — leave access substantially intact under enhanced monitoring, buy time to verify identity and scope, and accept that {{crown_jewels}} remain within his reach while you watch.",
+            "label": "MONITOR QUIETLY. Leave access substantially intact under enhanced monitoring, buy time to verify identity and scope, and accept that {{crown_jewels}} remain within his reach while you watch.",
             "goto": "s17"
           }
         ]
@@ -349,7 +349,7 @@
       "id": "s13",
       "type": "narrative",
       "durations": ["60", "90", "120"],
-      "body": "BRANCH A: CONTAINMENT. Read aloud. Within two hours, IT executes the suspension sequence: SSO, VPN, repository, email, vendor timesheet portal — in that order, this time. Payroll is placed on hold with counsel's sign-off. HR and the staffing vendor schedule a verification call with the worker for 4:00 PM. He does not join it. At 4:11 PM, the account recovery inbox that HR uses for personnel matters receives the following message from a personal address."
+      "body": "BRANCH A: CONTAINMENT. Read aloud. Within two hours, IT executes the suspension sequence: SSO, VPN, repository, email, vendor timesheet portal. In that order, this time. Payroll is placed on hold with counsel's sign-off. HR and the staffing vendor schedule a verification call with the worker for 4:00 PM. He does not join it. At 4:11 PM, the account recovery inbox that HR uses for personnel matters receives the following message from a personal address."
     },
     {
       "id": "s14",
@@ -358,9 +358,9 @@
       "body": "Hand out or read the message. Let the room sit with it for a moment before anyone speaks.",
       "inject": {
         "kind": "email",
-        "from": "d.voss.dev@ (personal address) — to HR Operations",
-        "subject": "Resignation, effective immediately",
-        "body": "I resign effective today. Given how I have been treated, I will not be returning company equipment until my final pay, including the current period, is deposited in full. I would also remind you that over the past months I have had broad access to your systems and have retained personal copies of my work product and related materials for my records. I am sure neither of us wants a complicated separation. A prompt and complete settlement of what I am owed will keep it simple. Govern yourselves accordingly."
+        "from": "d.voss.dev@protonmail.example (personal), to hr-personnel@{{org_domain}}",
+        "subject": "resignation effective immediately",
+        "body": "Received 16:11. No signature block. Reply-to differs from sender: dvoss.payments@mailbox.example\n\nI resign effective today. Given how I have been treated I will not be returning company equipment until my final pay including the current period is deposited in full.\n\nI would also remind you that over the past months I have had broad access to your systems and have retained personal copies of my work product and related materials for my records. I am sure neither of us want a complicated separation. A prompt and complete settlement of what I am owed will keep it simple.\n\nGovern yourselves accordingly."
       },
       "coaching": [
         "Read it aloud slowly. Then ask one question and wait: 'What kind of message is this?' The room should arrive at 'extortion, in the passive voice' on its own."
@@ -373,13 +373,13 @@
       "body": "BRANCH A PRESSURE (120-minute exercises only). While Legal drafts a response posture, Communications receives this.",
       "inject": {
         "kind": "press_inquiry",
-        "from": "Metro business desk reporter — to {{org_name}} press office",
-        "subject": "Comment request: remote hiring fraud — deadline Thursday",
-        "body": "I am reporting a story on companies in your sector discovering fraudulent remote hires linked to overseas identity networks. Two sources familiar with regional information-sharing tell me your company recently suspended a remote worker under related circumstances. I want to be fair to you: can you confirm or deny, and does the company have a statement on the security of its remote workforce? My deadline is Thursday close of business."
+        "from": "Dana Whitcomb, business desk, The Capital Ledger, to press@{{org_domain}}",
+        "subject": "Comment request - remote hiring fraud - deadline Thurs COB",
+        "body": "Hi, Dana Whitcomb at the Ledger. We spoke briefly a few weeks ago.\n\nI'm working on a story about companies in your sector finding fraudulent remote hires tied to overseas identity networks. Two people familiar with regional information-sharing tell me {{org_name}} recently suspended a remote worker under related circumstances.\n\nCan you confirm or deny? And does the company have any statement on how it vets its remote workforce?\n\nDeadline is Thursday close of business. Cell is (555) 014-2290 if a call is easier.\n\nDana"
       },
       "questions": {
         "all": [
-          "Someone told this reporter something specific. List the plausible seams — internal, vendor, sector-sharing — and what that list implies about your need-to-know discipline over the last week.",
+          "Someone told this reporter something specific. List the plausible seams (internal, vendor, sector-sharing) and what that list implies about your need-to-know discipline over the last week.",
           "Confirm, deny, or hold: what does each option cost with the regulator, the board, and your own workforce reading it later?"
         ],
         "comms": [
@@ -395,7 +395,7 @@
       "questions": {
         "all": [
           "What changed legally the moment that email arrived, and what must be preserved right now, by name, before anything else happens?",
-          "Does anyone negotiate with this message at all — and if the answer is no, who communicates that, in what channel, and what do you do about the equipment and the pay hold?"
+          "Does anyone negotiate with this message at all, and if the answer is no, who communicates that, in what channel, and what do you do about the equipment and the pay hold?"
         ],
         "legal": [
           "Walk the room through the referral fork: what does bringing law enforcement in now buy, cost, and foreclose? Include the sanctions dimension of the payments already made.",
@@ -405,10 +405,10 @@
           "The laptop is at an address you now believe hosts equipment for multiple identities. What can you do to it remotely, what should you not do, and why?"
         ],
         "soc": [
-          "Scope, honestly: with your current logging, can you tell the executive sponsor what left, when, and what did not? Say what you can prove versus what you believe."
+          "With your current logging, can you tell the executive sponsor what left, when, and what did not? Say what you can prove versus what you believe."
         ],
         "exec": [
-          "You are about to brief the C-suite. Draft the three-sentence version out loud, including the part where the best engineer on the release was not real."
+          "You are about to brief the C-suite. You get three sentences with the CEO. Go. The part where the best engineer on the release was not real has to be in there."
         ]
       }
     },
@@ -416,29 +416,29 @@
       "id": "s21",
       "type": "decision",
       "durations": ["60", "90", "120"],
-      "body": "DECISION POINT TWO — BRANCH A. Read aloud. The response posture must be settled today. Poll the room.",
+      "body": "DECISION POINT TWO: BRANCH A. Read aloud. The response posture must be settled today. Poll the room.",
       "decision": {
         "prompt": "Facing the resignation-and-retention message, the company will:",
         "options": [
           {
-            "label": "REPORT AND PURSUE — refer to federal law enforcement now, notify the identity theft victim, brief the regulator proactively, preserve everything, and refuse the settlement framing entirely.",
+            "label": "REPORT AND PURSUE. Refer to federal law enforcement now, notify the identity theft victim, brief the regulator proactively, preserve everything, and refuse the settlement framing entirely.",
             "goto": "e1"
           },
           {
-            "label": "CLOSE IT QUIETLY — terminate the relationship through the vendor, release the withheld regular pay to end the dispute, write off the equipment, and handle the matter as a personnel separation without external reporting.",
+            "label": "CLOSE IT QUIETLY. Terminate the relationship through the vendor, release the withheld regular pay to end the dispute, write off the equipment, and handle the matter as a personnel separation without external reporting.",
             "goto": "e2"
           }
         ]
       },
       "coaching": [
-        "If the room chooses quietly, do not argue — the epilogue will do the work. Your job is to make sure they chose it on purpose, so ask once: 'Say out loud what we are choosing not to find out.'"
+        "If the room chooses quietly, do not argue. The epilogue will do the work. Your job is to make sure they chose it on purpose, so ask once: 'Say out loud what we are choosing not to find out.'"
       ]
     },
     {
       "id": "s17",
       "type": "narrative",
       "durations": ["60", "90", "120"],
-      "body": "BRANCH B: THE QUIET WATCH. Read aloud. The group holds access open and goes to enhanced monitoring: full-fidelity logging on the account, DLP rules tightened around {{crown_jewels}}, a daily case review, and a hard tripwire — any egress attempt gets the plug pulled without a meeting. Legal papers the monitoring decision against the town-hall promise in everyone's memory. For nine days it works. The verification file builds: the vendor confirms the identity documents were fabricated, the shipping address correlates to a residential node hosting sessions for at least two other identities at other companies, and the night-shift rhythm never breaks. On day ten, two things happen within an hour: the tripwire fires on a 600 MB upload attempt to a personal cloud account — blocked — and the timesheet portal receives his resignation, effective immediately, citing a better offer."
+      "body": "BRANCH B: THE QUIET WATCH. Read aloud. The group holds access open and goes to enhanced monitoring: full-fidelity logging on the account, DLP rules tightened around {{crown_jewels}}, a daily case review, and a hard tripwire. Any egress attempt gets the plug pulled without a meeting. Legal papers the monitoring decision against the town-hall promise in everyone's memory. For nine days it works. The verification file builds: the vendor confirms the identity documents were fabricated, the shipping address correlates to a residential node hosting sessions for at least two other identities at other companies, and the night-shift rhythm never breaks. On day ten, two things happen within an hour: the tripwire fires on a 600 MB upload attempt to a personal cloud account, blocked, and the timesheet portal receives his resignation, effective immediately, citing a better offer."
     },
     {
       "id": "s18",
@@ -447,9 +447,9 @@
       "body": "That afternoon, this arrives through your sector information-sharing channel. Hand out or read.",
       "inject": {
         "kind": "intel_bulletin",
-        "from": "Sector Threat Exchange (fictional) — member bulletin, marked for exercise use",
-        "subject": "Coordinated remote-worker identity fraud: multiple member institutions affected — recommended immediate actions",
-        "body": "Multiple member institutions report discovery of fraudulent remote IT workers using stolen or fabricated identities consistent with publicly documented overseas revenue-generation schemes. Common indicators reported by members: identity documents that fail re-verification against credit headers; issued equipment shipped to third-party addresses hosting hardware for multiple identities; persistent inbound remote-operation sessions from residential IP space; interview and meeting behavior minimizing live video; payroll routing changes shortly after hire. Two member institutions report post-separation extortion attempts referencing retained data. Members are advised to review vendor-placed remote hires from the trailing 24 months, engage counsel regarding payment and reporting obligations, and preserve evidence before taking visible action. Law enforcement engagement is strongly encouraged; several members report active federal interest in the hosting addresses."
+        "from": "Sector Threat Exchange (fictional), member bulletin STX-2026-0418, TLP:AMBER",
+        "subject": "STX-2026-0418 Remote IT worker identity fraud, multiple members affected",
+        "body": "TLP:AMBER. Share within your organization on a need-to-know basis. Fictional bulletin for exercise use.\n\nSUMMARY: 7 member institutions have now reported fraudulent remote IT workers using stolen or fabricated US identities. Reporting is consistent with publicly documented overseas IT-worker revenue schemes. 2 members report post-separation extortion emails referencing retained data.\n\nINDICATORS REPORTED BY MEMBERS (not all present in every case)\n- Re-screening returns SSN tied to an older person, often with a credit freeze\n- Laptop shipped to an address that is not the residence of record; same address seen at other members\n- USB device 1d6b:0104 or similar IP-KVM hardware on issued endpoints\n- Long-lived inbound sessions from residential IP space; activity outside the worker's stated time zone\n- Camera off in interviews and standups; MFA on VoIP numbers\n- Direct deposit split or changed within 30 days of start\n\nHOSTING ADDRESSES: 3 addresses shared on the member portal (STX-2026-0418-A). Do not act on them visibly; at least one is subject to active federal interest.\n\nRECOMMENDED: review vendor-placed remote hires from the trailing 24 months. Engage counsel on payment and reporting obligations before visible action. Preserve first."
       },
       "coaching": [
         "Ask the room: 'We have been watching for nine days. This bulletin says peers are already at law enforcement. What did waiting buy us, and what did it cost?' Both columns should have real entries."
@@ -461,15 +461,15 @@
       "durations": ["120"],
       "body": "BRANCH B PRESSURE (120-minute exercises only). The executive sponsor's phone buzzes during the case review.",
       "inject": {
-        "kind": "internal_note",
-        "from": "Chief of Staff to the CEO — informal message to the Executive Sponsor",
-        "subject": "Board question resurfacing",
-        "body": "Heads up. At dinner last night a director told the CEO that two peer institutions have quietly removed fraudulent remote hires and one is 'working with the Bureau.' The CEO wants a straight answer by Friday to the question she asked Communications last month: do we have this problem? I understand there is an active matter. She does not — yet. Recommend you get ahead of it."
+        "kind": "text_message",
+        "from": "M. Albrecht, Chief of Staff to the CEO, Teams DM to Executive Sponsor",
+        "subject": "Wed 7:52 PM",
+        "body": "ALBRECHT 7:52 PM: hey, heads up. at dinner last night one of the directors told her two peer companies quietly let go of fake remote hires and one is \"working with the Bureau\"\n\nALBRECHT 7:53 PM: she wants a straight answer by friday to the thing she asked comms last month. do we have this problem\n\nALBRECHT 7:55 PM: I'm hearing there's something active in your org. she doesn't know yet. I'd get ahead of it\n\nALBRECHT 8:21 PM: ?"
       },
       "questions": {
         "all": [
           "The CEO is about to learn there was an active case while her question sat unanswered. Who briefs her, when, and what does the first sentence say?",
-          "What does this note reveal about the escalation path between this room and the top of the house — and is that a people problem or a process problem?"
+          "What does this note reveal about the escalation path between this room and the top of the house, and is that a people problem or a process problem?"
         ]
       }
     },
@@ -484,17 +484,17 @@
           "The resignation is effective immediately and he still holds a session token, an issued laptop at a third-party address, and possibly credentials memorized. Sequence the next four hours, out loud, with names attached."
         ],
         "int_lead": [
-          "Nine days ago this room chose to watch. Grade that decision with what you know now — as a process, not an outcome. Would the same inputs produce the same call, and should they?"
+          "Nine days ago this room chose to watch. Grade that decision with what you know now, as a process, not an outcome. Would the same inputs produce the same call, and should they?"
         ],
         "soc": [
           "The blocked egress event is now evidence. Walk through preservation: what is captured, where it lives, who can touch it, and what your team must not do to that endpoint."
         ],
         "legal": [
-          "Five months of payments to a fabricated identity are now confirmed. Lay out the reporting map you will work from tomorrow morning — law enforcement, regulator, the sanctions dimension, the real Daniel Voss — and what order you take them in.",
+          "Five months of payments to a fabricated identity are now confirmed. Lay out the reporting map you will work from tomorrow morning (law enforcement, regulator, the sanctions dimension, the real Daniel Voss) and what order you take them in.",
           "For financial institutions in the room: does anything about these payments and this pattern belong in a suspicious activity filing conversation, and who has that conversation?"
         ],
         "hr": [
-          "The second vendor-placed hire from your private knowledge: this is the moment. What does the review of that file — and every file like it — look like, and who owns it by Friday?"
+          "The second vendor-placed hire from your private knowledge: this is the moment. What does the review of that file, and every file like it, look like, and who owns it by Friday?"
         ],
         "exec": [
           "The release you protected is still on schedule. Say what that is worth against what this room now knows, and whether you would make the same trade again in front of the board."
@@ -505,16 +505,16 @@
       "id": "s22",
       "type": "decision",
       "durations": ["60", "90", "120"],
-      "body": "DECISION POINT TWO — BRANCH B. Read aloud. The separation is happening either way. The question is how. Poll the room.",
+      "body": "DECISION POINT TWO: BRANCH B. Read aloud. The separation is happening either way. The question is how. Poll the room.",
       "decision": {
         "prompt": "With the resignation in hand and the case file built, the company will:",
         "options": [
           {
-            "label": "FULL RESPONSE NOW — treat it as an incident, not a separation: immediate coordinated access termination with preservation, law enforcement referral tonight, victim and regulator notification on counsel's schedule, and the trailing-24-month workforce review announced internally.",
+            "label": "FULL RESPONSE NOW. Treat it as an incident, not a separation: immediate coordinated access termination with preservation, law enforcement referral tonight, victim and regulator notification on counsel's schedule, and the trailing-24-month workforce review announced internally.",
             "goto": "e3"
           },
           {
-            "label": "STANDARD OFFBOARDING — process the resignation through normal vendor channels, recover equipment through the vendor, quietly complete the review, and decide on external reporting later, when the picture is complete.",
+            "label": "STANDARD OFFBOARDING. Process the resignation through normal vendor channels, recover equipment through the vendor, quietly complete the review, and decide on external reporting later, when the picture is complete.",
             "goto": "e4"
           }
         ]
@@ -527,7 +527,7 @@
       "id": "e1",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE — YOU REPORTED AND PURSUED. Read aloud. The referral lands on a field office already working the hosting address; your evidence package — the analyst's untouched telemetry, the preserved messages, the payment trail — folds into an active matter, and an agent tells your counsel, informally, that the preservation discipline made you the easiest victim company they have worked with. The real Daniel Voss, 61, is notified with a support package and does not sue. The regulator conversation is uncomfortable and short: you brought it to them. The withheld pay stays withheld on advice of counsel; the extortion message, it turns out, was a bluff run from a playbook — the data he retained was his own onboarding paperwork. The release slips six weeks. The board hears the story with the ending first. One week later: the trailing-24-month review of vendor-placed hires finds one more identity that fails re-verification, at which point nobody in this room argues about what to do. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "body": "EPILOGUE: YOU REPORTED AND PURSUED. Read aloud. The referral lands on a field office already working the hosting address; your evidence package (the analyst's untouched telemetry, the preserved messages, the payment trail) folds into an active matter, and an agent tells your counsel, informally, that the preservation discipline made you the easiest victim company they have worked with. The real Daniel Voss, 61, is notified with a support package and does not sue. The regulator conversation is uncomfortable and short: you brought it to them. The withheld pay stays withheld on advice of counsel; the extortion message, it turns out, was a bluff run from a playbook. The data he retained was his own onboarding paperwork. The release slips six weeks. The board hears the story with the ending first. One week later: the trailing-24-month review of vendor-placed hires finds one more identity that fails re-verification, at which point nobody in this room argues about what to do. That is the end of the story. Stop the clock and turn to the After-Action pack.",
       "questions": {
         "all": [
           "This ending was bought before the crisis: preservation discipline, a referral channel, counsel engaged early. Which of those exists in your real organization today, and which did this room invent on the fly?"
@@ -538,10 +538,10 @@
       "id": "e2",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE — YOU CLOSED IT QUIETLY. Read aloud. The vendor processes the separation; the final pay releases; the laptop never comes back. For five weeks, quiet holds and the release ships on time. Then a federal task force serves the hosting address in another state, and among the seized equipment is a laptop with your asset tag, still enrolled, its disk holding 3.7 GB of archives labeled env-backup. An agent calls your general counsel with two questions your quiet closure now makes expensive: why a company that paid a fabricated identity for five months filed nothing, and whether the payments continued after suspicion arose. The answer to the second question is yes — one final settlement payment, chosen in this room. The regulator learns the story from the task force, not from you. The real Daniel Voss learns his identity was used from a journalist. Inside the company, the two analysts who built the case file quietly conclude that building case files is not valued here. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "body": "EPILOGUE: YOU CLOSED IT QUIETLY. Read aloud. The vendor processes the separation; the final pay releases; the laptop never comes back. For five weeks, quiet holds and the release ships on time. Then a federal task force serves the hosting address in another state, and among the seized equipment is a laptop with your asset tag, still enrolled, its disk holding 3.7 GB of archives labeled env-backup. An agent calls your general counsel with two questions your quiet closure now makes expensive: why a company that paid a fabricated identity for five months filed nothing, and whether the payments continued after suspicion arose. The answer to the second question is yes. One final settlement payment, chosen in this room. The regulator learns the story from the task force, not from you. The real Daniel Voss learns his identity was used from a journalist. Inside the company, the two analysts who built the case file quietly conclude that building case files is not valued here. That is the end of the story. Stop the clock and turn to the After-Action pack.",
       "questions": {
         "all": [
-          "Quiet was chosen to protect the company. List what it actually protected, and who ended up holding the risk. What would your real organization have chosen — not should, would?"
+          "Quiet was chosen to protect the company. List what it actually protected, and who ended up holding the risk. What would your real organization have chosen, not should, would?"
         ]
       }
     },
@@ -549,7 +549,7 @@
       "id": "e3",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE — FULL RESPONSE, EYES OPEN. Read aloud. The four-hour sequence executes almost cleanly: one session token survives ninety minutes longer than planned because the vendor portal's deprovisioning queue runs hourly — an improvement item, not a disaster, because the watch-period logging proves nothing moved through it. The referral lands well; your nine days of full-fidelity telemetry turns out to be the best evidence package the task force has received on the hosting node, and the blocked tripwire event becomes a court exhibit. The regulator brief is proactive and calm. The victim notification is handled with care. The trailing-24-month review, announced rather than whispered, surfaces the second bad identity in eleven days and something better: three employees come forward with things they had noticed and not reported, because now they believe reporting works. The release slips two weeks. The town-hall promise gets rewritten honestly — the company does not surveil its people; it does verify that its people exist. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "body": "EPILOGUE: FULL RESPONSE, EYES OPEN. Read aloud. The four-hour sequence executes almost cleanly: one session token survives ninety minutes longer than planned because the vendor portal's deprovisioning queue runs hourly. An improvement item, not a disaster, because the watch-period logging proves nothing moved through it. The referral lands well; your nine days of full-fidelity telemetry turns out to be the best evidence package the task force has received on the hosting node, and the blocked tripwire event becomes a court exhibit. The regulator brief is proactive and calm. The victim notification is handled with care. The trailing-24-month review, announced rather than whispered, surfaces the second bad identity in eleven days and something better: three employees come forward with things they had noticed and not reported, because now they believe reporting works. The release slips two weeks. The town-hall promise gets rewritten honestly. The company does not surveil its people; it does verify that its people exist. That is the end of the story. Stop the clock and turn to the After-Action pack.",
       "questions": {
         "all": [
           "The nine-day watch made this ending possible and was also nine days of exposure. As a room: was that trade skill or luck, and what tripwire, staffing, and authority conditions would have to exist for you to run it again on purpose?"
@@ -560,10 +560,10 @@
       "id": "e4",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE — STANDARD OFFBOARDING. Read aloud. The vendor confirms the separation politely and the file goes to the review pile. Eight days later the equipment-recovery label is still unused when your SOC observes authentication attempts against the timesheet portal from the hosting address — failing, because that credential died on schedule, and then succeeding against something else: the legacy project tree your DLP never covered, reached through a service account the offboarding checklist does not know exists, because the checklist was written for employees and he was never one. The intrusion runs eleven minutes before the on-call analyst — one of the two who built the original case file — kills it on her own authority, which the after-action will note she technically did not have. External reporting, deferred until the picture was complete, now happens with the worst possible framing: after a second incident. The sector bulletin next quarter describes a member institution whose separated fraudulent hire regained access post-departure. Everyone in this room knows which member it describes. THE END — of the fictional part. The improvement items you wrote down are the true ending. Proceed to the After-Action Review.",
+      "body": "EPILOGUE: STANDARD OFFBOARDING. Read aloud. The vendor confirms the separation politely and the file goes to the review pile. Eight days later the equipment-recovery label is still unused when your SOC observes authentication attempts against the timesheet portal from the hosting address. Failing, because that credential died on schedule, and then succeeding against something else: the legacy project tree your DLP never covered, reached through a service account the offboarding checklist does not know exists, because the checklist was written for employees and he was never one. The intrusion runs eleven minutes before the on-call analyst, one of the two who built the original case file, kills it on her own authority, which the after-action will note she technically did not have. External reporting, deferred until the picture was complete, now happens with the worst possible framing: after a second incident. The sector bulletin next quarter describes a member institution whose separated fraudulent hire regained access post-departure. Everyone in this room knows which member it describes. That is the end of the story. Stop the clock and turn to the After-Action pack.",
       "questions": {
         "all": [
-          "The failure here was not the resignation — it was treating an incident as a separation. Name the exact artifact in your real organization that decides which one you are in, and who has the pen."
+          "The failure here was not the resignation. It was treating an incident as a separation. Name the exact artifact in your real organization that decides which one you are in, and who has the pen."
         ]
       }
     }
@@ -571,7 +571,7 @@
   "aar": {
     "hotwash": [
       "One word from each person: how did that feel? (Go around the table before any analysis.)",
-      "What is the single biggest gap this exercise exposed — named as a thing, not a person?",
+      "What is the single biggest gap this exercise exposed. Named as a thing, not a person?",
       "Where did we disagree the longest, and was that disagreement a people problem or a missing policy?",
       "Which private-knowledge reveal changed the room's picture the most, and how long did its holder sit on it? What does that say about information flow on a real case?",
       "If the re-verification notice arrived at your organization tomorrow morning, who would see it, and what is the honest over-under on it reaching this group within a week?",
@@ -579,11 +579,11 @@
       "Name one thing your organization should start, one it should stop, and one it should keep, based on today."
     ],
     "objectives": [
-      "O1 — DETECT: Evaluate the organization's ability to recognize and correlate identity-fraud hiring indicators across HR, vendor, and security telemetry.",
-      "O2 — CONVENE: Test whether a defined trigger and convening authority exist for insider risk matters involving vendor-placed personnel, and whether the room can name them.",
-      "O3 — COORDINATE: Exercise the seams between HR, Legal, IT/IAM, Security, and the business on containment, pay, monitoring authority, and employment action.",
-      "O4 — REPORT: Evaluate the decision process for external engagement — law enforcement referral, regulator posture, victim notification, and sector sharing — including who decides and on what facts.",
-      "O5 — COMMUNICATE: Test internal escalation to executives and the board, and external press posture, under incomplete information."
+      "O1: DETECT: Evaluate the organization's ability to recognize and correlate identity-fraud hiring indicators across HR, vendor, and security telemetry.",
+      "O2: CONVENE: Test whether a defined trigger and convening authority exist for insider risk matters involving vendor-placed personnel, and whether the room can name them.",
+      "O3: COORDINATE: Exercise the seams between HR, Legal, IT/IAM, Security, and the business on containment, pay, monitoring authority, and employment action.",
+      "O4: REPORT: Evaluate the decision process for external engagement (law enforcement referral, regulator posture, victim notification, and sector sharing) including who decides and on what facts.",
+      "O5: COMMUNICATE: Test internal escalation to executives and the board, and external press posture, under incomplete information."
     ]
   }
 }
