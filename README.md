@@ -24,7 +24,7 @@ section that says "turn to 14" does not.
 
 ## Scenarios
 
-Nine, in two tracks. A scenario's track is declared in its own file as
+Ten, in two tracks. A scenario's track is declared in its own file as
 `meta.track`; a scenario without one is general.
 
 ### General
@@ -36,6 +36,7 @@ Nine, in two tracks. A scenario's track is declared in its own file as
 | **Keys to the Kingdom** — the administrator who can delete the evidence of what the administrator did. | `privileged` | Live |
 | **The Long Goodbye** — a resignation, a two-week notice period, and a great deal of downloading. | `the-long-goodbye` | Live |
 | **The Walk-In** — a flattering message, a $400 phone call, and an employee standing in your doorway. | `the-walk-in` | Live |
+| **Wrong Address** — three remote hires, a laptop farm, and one who just had a second job. | `employment-fraud` | Draft (new 2026-11-06; placeholders listed in the file's `_placeholders`) |
 
 ### AI as Insider
 
