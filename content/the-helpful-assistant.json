@@ -172,9 +172,9 @@
       "id": "s01",
       "type": "narrative",
       "durations": ["60", "90", "120"],
-      "body": "Monday, 9:05 AM. On Friday the board praised a churn analysis from {{org_name}}'s Customer Insights team as the sharpest it had ever seen. On Monday morning, the analyst who built it is sitting outside a conference room, waiting to explain how.\n\nThere is no attacker in this story, no ransom note, and no stolen password. There is a deadline, a free chatbot, and a spreadsheet of customers who never agreed to be part of either.\n\nYour job this session is to decide what this is, who owns it, what the company owes the customers, what it owes the employee, and why nothing stopped it.",
+      "body": "Monday, 9:05 AM. On Friday the board praised a churn analysis from {{org_name}}'s Customer Insights team as the sharpest it had ever seen. On Monday morning, the analyst who built it is sitting outside a conference room, waiting to explain how.\n\nNobody broke in. What happened is a deadline, a free chatbot, and a spreadsheet of customers who were never asked.\n\nBy the end of the session the room has to decide what to call this and who owns it. Then what the company owes 48,112 customers, what it owes one analyst, and why nothing stopped her.",
       "coaching": [
-        "This is a low-heat scenario built for first-time facilitators. Nobody in it is malicious. Keep the room from inventing a villain; the exercise is about the organization, not the analyst.",
+        "This is a low-heat scenario built for first-time facilitators. Nobody in it is malicious. Keep the room from inventing a villain; the exercise is about the company, not the analyst.",
         "Anchor reading before you run it: CISA, Insider Threat Mitigation Guide (September 2026 edition), AI and Insider Threat Mitigation Considerations, p. 37, which lists unintentional leakage of data into unaccredited AI tools among its concerns. Supporting context on control gaps: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
       ]
     },
@@ -185,7 +185,7 @@
       "body": "Nadia Brennan tells it straight, with her laptop open so the room can see the history for itself.\n\nThursday, 3:10 PM: her director needed the Q3 churn segmentation for the board pre-read by seven. The approved analytics workbench was down for patching, and her request for a seat on {{org_name}}'s enterprise AI assistant had been sitting in a queue for seven weeks.\n\nThursday, 4:38 PM: she opened Quillmate, a free consumer chatbot she uses at home, in a browser tab on her work laptop, signed in with her personal account, and uploaded retention_q3_full.csv. It was a 48,112-row customer extract drawn from {{crown_jewels}}: names, email addresses, account identifiers, twelve months of activity, and a free-text column of notes typed by service agents.\n\nThursday, 4:51 PM: Quillmate returned a clean segmentation, three charts, and a table of the forty highest-risk customers, by name. The pre-read went out at 6:20. Her director called it the best churn analysis the board had seen.\n\nFriday morning, uneasy, she deleted the conversation. Nobody attacked anything. Nobody stole anything. The data simply left, under the terms of a service she never read.",
       "difficulty_variants": {
         "first_timer": {
-          "body": "Nadia Brennan tells it straight, with her laptop open so the room can see the history for itself.\n\nThursday, 3:10 PM: her director needed the Q3 churn segmentation for the board pre-read by seven. The approved analytics workbench was down for patching, and her request for a seat on {{org_name}}'s enterprise AI assistant had been sitting in a queue for seven weeks.\n\nThursday, 4:38 PM: she opened Quillmate, a free consumer chatbot she uses at home, in a browser tab on her work laptop, signed in with her personal account, and uploaded retention_q3_full.csv. It was a 48,112-row customer extract drawn from {{crown_jewels}}: names, email addresses, account identifiers, twelve months of activity, and a free-text column of notes typed by service agents.\n\nThursday, 4:51 PM: Quillmate returned a clean segmentation, three charts, and a table of the forty highest-risk customers, by name. The pre-read went out at 6:20. Her director called it the best churn analysis the board had seen.\n\nFriday morning, uneasy, she deleted the conversation. Nobody attacked anything. Nobody stole anything. The data simply left, under the terms of a service she never read.\n\nFacilitator note, read aloud: this is sometimes called shadow AI, meaning staff using AI tools the organization has not approved. The data did not leave because someone attacked it. It left because the provider's terms allow it to keep uploaded content, and sometimes use it to improve its products. The exfiltration path is a privacy policy."
+          "body": "Nadia Brennan tells it straight, with her laptop open so the room can see the history for itself.\n\nThursday, 3:10 PM: her director needed the Q3 churn segmentation for the board pre-read by seven. The approved analytics workbench was down for patching, and her request for a seat on {{org_name}}'s enterprise AI assistant had been sitting in a queue for seven weeks.\n\nThursday, 4:38 PM: she opened Quillmate, a free consumer chatbot she uses at home, in a browser tab on her work laptop, signed in with her personal account, and uploaded retention_q3_full.csv. It was a 48,112-row customer extract drawn from {{crown_jewels}}: names, email addresses, account identifiers, twelve months of activity, and a free-text column of notes typed by service agents.\n\nThursday, 4:51 PM: Quillmate returned a clean segmentation, three charts, and a table of the forty highest-risk customers, by name. The pre-read went out at 6:20. Her director called it the best churn analysis the board had seen.\n\nFriday morning, uneasy, she deleted the conversation. Nobody attacked anything. Nobody stole anything. The data simply left, under the terms of a service she never read.\n\nFacilitator note, read aloud: this is sometimes called shadow AI, meaning staff using AI tools the company has not approved. The data did not leave because someone attacked it. It left because the provider's terms allow it to keep uploaded content, and sometimes use it to improve its products. The exfiltration path is a privacy policy."
         },
         "veteran": {
           "body": "Nadia Brennan tells it straight, with her laptop open so the room can see the history for itself.\n\nThursday, 3:10 PM: her director needed the Q3 churn segmentation for the board pre-read by seven. The approved analytics workbench was down for patching, and her request for a seat on {{org_name}}'s enterprise AI assistant had been sitting in a queue for seven weeks.\n\nThursday, 4:38 PM: she opened Quillmate, a free consumer chatbot she uses at home, in a browser tab on her work laptop, signed in with her personal account, and uploaded retention_q3_full.csv. It was a 48,112-row customer extract drawn from {{crown_jewels}}: names, email addresses, account identifiers, twelve months of activity, and a free-text column of notes typed by service agents.\n\nThursday, 4:51 PM: Quillmate returned a clean segmentation, three charts, and a table of the forty highest-risk customers, by name. The pre-read went out at 6:20. Her director called it the best churn analysis the board had seen.\n\nFriday morning, uneasy, she deleted the conversation. Nobody attacked anything. Nobody stole anything. The data simply left, under the terms of a service she never read.\n\nOne detail sits wrong. The upload was 9.4 MB, and the extract the approved workbench produces is 6 MB. Nadia says she added a few columns from another report to make the model's job easier. She does not remember which report."
@@ -203,9 +203,9 @@
       "body": "Nadia shows the room the message that started it. It arrived on her phone on Thursday afternoon.",
       "inject": {
         "kind": "text_message",
-        "from": "G. Ashworth, Director, Customer Insights",
+        "from": "G. Ashworth (Director, Customer Insights), Teams chat with N. Brennan",
         "subject": "Thursday, 3:10 PM to 3:14 PM",
-        "body": "ASHWORTH 3:10 PM: Board pre-read locks at 7 tonight. I need the Q3 churn segmentation in it. Not the draft, the real one.\n\nBRENNAN 3:11 PM: Workbench is down for patching until tomorrow. And I still don't have the AI assistant license.\n\nASHWORTH 3:12 PM: I know. Be creative. Whatever you need to do.\n\nBRENNAN 3:14 PM: On it."
+        "body": "ASHWORTH 3:10 PM: pre-read locks at 7 tonight. need the Q3 churn segmentation in it. not the draft, the real one\n\nBRENNAN 3:11 PM: workbench is down for patching til tomorrow am. and I still don't have the AI assistant license\n\nASHWORTH 3:12 PM: I know. be creative. whatever you need to do\n\nBRENNAN 3:14 PM: on it\n\nASHWORTH 6:58 PM: this is great!! sending to Paul now. thank you"
       },
       "questions": {
         "hr": [
@@ -224,8 +224,8 @@
       "inject": {
         "kind": "ethics_line_report",
         "from": "Ethics and compliance line, web intake",
-        "subject": "Report 2291: possible customer data sharing. Reporter: named, requests discretion",
-        "body": "Category selected by reporter: Data privacy.\n\nNarrative as submitted:\nI sit next to a colleague in Customer Insights. On Thursday I saw her upload our full customer retention file into a free chatbot site to get the churn charts done in time for the board. The charts were great and the whole team was relieved. I am not trying to get anyone in trouble. I use these tools too, just not with customer files. But I keep thinking about whose names were in that file, and I do not know if those sites keep what you give them. I do not know who else to ask.\n\nReporter asks: Please do not tell her it was me. We have to keep working together.\n\nIntake triage: Routed to Privacy and Insider Threat. Priority: normal."
+        "subject": "EL-2026-02291: possible customer data sharing (reporter named, requests discretion)",
+        "body": "Case EL-2026-02291   Received: Fri 18:47 via web form   Category (reporter-selected): Data privacy   Reporter: named (identity restricted to case owner)\n\nNarrative as submitted:\nI sit next to a colleague in Customer Insights. On Thursday I saw her upload our full customer retention file into one of the free chatbot sites so she could get the churn charts done for the board. The charts were great and honestly the whole team was relieved. I'm not trying to get anyone in trouble, I use these tools too, just not with customer files. But I keep thinking about whose names were in that file and I don't know if those sites keep what you give them. I didn't know who else to ask\n\nReporter asks: Please don't tell her it was me. We have to keep working together.\n\nIntake triage (auto): routed to Privacy Office + Insider Risk queue. SLA: 5 business days. Priority: Normal.\nCase owner: unassigned as of Mon 07:30."
       },
       "questions": {
         "all": [
@@ -287,11 +287,11 @@
       "inject": {
         "kind": "dlp_alert",
         "from": "DLP and web proxy retrospective search, SOC",
-        "subject": "NB-4471, Thursday 16:30 to 17:00. Retro query, no alert fired",
-        "body": "RETROSPECTIVE QUERY RESULT. Not a real-time alert.\n\nEvent 1: HTTPS upload, corporate laptop NB-4471 to app.quillmate.example, Thursday 16:38. Object: retention_q3_full.csv, 9.4 MB.\nWeb category: Generative AI (consumer). Category policy: ALLOW, log only.\nFile-content inspection at event time: NOT APPLIED. Inspected channels are corporate mail, removable media and sanctioned cloud storage. Browser uploads to AI applications are not in scope.\n\nEvent 2: HTTPS response stream, app.quillmate.example to NB-4471, Thursday 16:51, 212 KB.\nContent inspection: NOT APPLIED. AI response streams are not a monitored channel.\nRetro pattern match on the analyst's saved export of that response: 40 customer full names, 40 account identifiers.\n\nAnalyst note: the only reason this record exists is that someone asked for it. The data went out through a door the policy allows, and it came back through a channel nothing watches.",
+        "subject": "Retro query RQ-0915 on NB-4471, Thu 16:30-17:00. No alert fired",
+        "body": "RETROSPECTIVE QUERY RQ-0915. Run Mon 09:40 by SOC (A. Petrakis). Not a real-time alert.\n\n16:38:07  NB-4471  nbrennan  POST https://app.quillmate.example/api/files  9,412,883 bytes  retention_q3_full.csv\n          url_category=Generative AI (Consumer)  policy=WEB-POL-14 \"GenAI consumer: ALLOW + LOG\"  action=allowed\n          content_inspection=none  (DLP inspects: corporate mail, removable media, sanctioned cloud storage)\n\n16:51:22  NB-4471  nbrennan  GET  https://app.quillmate.example/api/conversations/…/stream  212 KB  (SSE response stream)\n          content_inspection=none\n\nRetro pattern match on the analyst's locally saved copy of the response (Downloads\\churn_segments_v2.md): 40 customer full names, 40 account identifiers.\n\nNotes:\n- Category has been allow/log-only since WEB-POL-14 was approved last year.\n- Our SSE vendor's GenAI prompt-inspection module was trialled in a POC that ended in March. Not purchased.\n- Proxy saw the session because NB-4471 was on VPN. Off VPN, we would have nothing.",
         "difficulty_variants": {
           "first_timer": {
-            "body": "Facilitator note, read aloud: data loss prevention tools only inspect the channels they are told to inspect. This organization watches email and USB drives. It does not look inside uploads to AI tools, and it does not look at what AI tools send back. Event 2 matters as much as Event 1: the chatbot's answer reprinted customer names.\n\nRETROSPECTIVE QUERY RESULT. Not a real-time alert.\n\nEvent 1: HTTPS upload, corporate laptop NB-4471 to app.quillmate.example, Thursday 16:38. Object: retention_q3_full.csv, 9.4 MB.\nWeb category: Generative AI (consumer). Category policy: ALLOW, log only.\nFile-content inspection at event time: NOT APPLIED. Inspected channels are corporate mail, removable media and sanctioned cloud storage. Browser uploads to AI applications are not in scope.\n\nEvent 2: HTTPS response stream, app.quillmate.example to NB-4471, Thursday 16:51, 212 KB.\nContent inspection: NOT APPLIED. AI response streams are not a monitored channel.\nRetro pattern match on the analyst's saved export of that response: 40 customer full names, 40 account identifiers.\n\nAnalyst note: the only reason this record exists is that someone asked for it. The data went out through a door the policy allows, and it came back through a channel nothing watches."
+            "body": "Facilitator note, read aloud: data loss prevention tools only inspect the channels they are told to inspect. This company watches email and USB drives. It does not look inside uploads to AI sites, and it does not look at what AI sites send back. The second line matters as much as the first: the chatbot's answer reprinted customer names.\n\nRETROSPECTIVE QUERY RQ-0915. Run Monday morning by the SOC. Not a real-time alert.\n\n16:38  Nadia's laptop uploaded retention_q3_full.csv (9.4 MB) to app.quillmate.example.\n       Web category: Generative AI (Consumer). Policy: ALLOW and log. Nobody looked inside the file.\n\n16:51  The chatbot sent back a 212 KB answer. Nobody looked inside that either.\n\nWhen the SOC checked the copy of the answer she saved to her Downloads folder: 40 customer full names, 40 account numbers.\n\nNotes from the SOC: an inspection add-on for AI sites was trialled earlier this year and not bought. The proxy only saw this because the laptop was on VPN."
           }
         }
       },
@@ -318,7 +318,7 @@
       "body": "Privacy counsel pulls the provider's consumer data-use policy and circulates the three paragraphs that matter.",
       "inject": {
         "kind": "vendor_report",
-        "from": "Larkspur Labs, Quillmate consumer terms and data-use policy",
+        "from": "Larkspur Labs, Quillmate consumer terms (larkspurlabs.example/legal/consumer, rev. 14 months ago), pulled by Privacy Counsel",
         "subject": "Excerpt: retention, model improvement, deletion. Consumer tier",
         "body": "3.2 Use of content. If Improve the model for everyone is enabled, we may use your conversations, including files you upload, to train and improve our models. Content selected for training is separated from your account before use.\n\n3.4 Human review. A sample of conversations may be reviewed by trained reviewers, including contractors, for safety and quality.\n\n5.1 Deletion. When you delete a conversation it is removed from your history immediately. Copies are deleted from our systems within 30 days, except where content has already been selected for training or is retained for safety review, in which case it may be retained for up to three years.\n\n7.0 Business use. The consumer tier is not intended for business data. For business use, see Quillmate for Teams, which offers a data processing agreement and does not use content for training.\n\nCounsel note: no contract exists between {{org_name}} and the provider. The employee accepted these terms personally."
       },
@@ -341,7 +341,7 @@
       "body": "By midday, privacy counsel has a first-pass notification analysis. It is short, careful, and full of the words may and unknown.",
       "inject": {
         "kind": "legal_memo",
-        "from": "Privacy Counsel. Privileged and confidential, prepared at the direction of counsel",
+        "from": "Privacy Counsel (L. Hargrove). Privileged and confidential, prepared at the direction of counsel. Matter PRIV-26-044",
         "subject": "Preliminary notification analysis: customer extract disclosed to consumer AI service",
         "body": "1. What was disclosed. 48,112 customer records. Confirmed fields: name, email, account identifier, activity history. Free-text notes column: a 20-row sample contains health information in 2 rows and a full date of birth in 1. Full review of the column not yet done.\n\n2. To whom. A third-party provider with no contract with us, under consumer terms that permit retention, human review and model training.\n\n3. Open facts that decide the answer. (a) Whether the free-text column contains notifiable data elements at scale. (b) Whether any content was actually viewed by reviewers or other users. (c) Whether the provider will confirm deletion.\n\n4. Obligations that may apply. Data breach notification to affected individuals and to {{regulator}}, depending on data elements and jurisdiction. Contractual notice to enterprise customers where their agreements require it.\n\n5. Clock. Some obligations may run from discovery. Discovery was Friday evening.\n\nRecommendation: treat as a potential breach for preservation and timing purposes until facts 3(a) to 3(c) are resolved."
       },
@@ -376,7 +376,7 @@
       "id": "s11",
       "type": "discussion",
       "durations": ["60", "90", "120"],
-      "body": "The room now knows what happened, how it was found, and what the provider's terms allow. What it does not have is an owner. Security says it is a data incident. Privacy says the notification question is theirs, but the investigation is not. Legal wants privilege over everything. HR has a conduct case half drafted. The Chief Data Officer's team built the analysis the board is still quoting.\n\nFive functions each own a piece. None of them owns the whole. Before the decision is taken, every seat says who should lead and why.",
+      "body": "The room now knows what happened, how it was found, and what the provider's terms allow. What it does not have is an owner. Security says it is a data incident. Privacy says the notification question is theirs, but the investigation is not. Legal wants privilege over everything. HR has a conduct case half drafted. The Chief Data Officer's team built the analysis the board is still quoting.\n\nEverybody owns a piece and nobody owns the whole. Go round the table before the vote: who should lead, and why them.",
       "questions": {
         "all": [
           "One sentence per seat: who owns this, Security, Privacy, Legal, or the business? Disagreement is useful here. Write down each answer before the decision."
@@ -417,7 +417,7 @@
       "durations": ["60", "90", "120"],
       "body": "The room has argued ownership. {{org_name}} now opens its response, one way or the other.",
       "decision": {
-        "prompt": "The organization's response to the upload is led as:",
+        "prompt": "The company's response to the upload is led as:",
         "options": [
           {
             "label": "A SECURITY INCIDENT: Security leads a declared incident with Privacy and Legal alongside. Evidence is preserved, a deletion request goes to the provider today, the notification analysis runs against the clock from Friday, and the conduct question waits for the facts. Accept that declaring an incident is visible and costly, and may turn out to have been more than this needed.",
@@ -449,12 +449,12 @@
       "body": "Tuesday, 8:14 AM. Nadia forwards an email that arrived overnight in her personal inbox. The provider has found the company before the company found the provider.",
       "inject": {
         "kind": "email",
-        "from": "Larkspur Labs Trust and Safety, to N. Brennan (personal account)",
+        "from": "Larkspur Labs Trust and Safety <no-reply@trust.larkspurlabs.example>, to N. Brennan (personal Gmail)",
         "subject": "Important information about your Quillmate account",
-        "body": "Received in N. Brennan's personal inbox overnight. Forwarded to security at 08:14.\n\nDear Quillmate user,\n\nWe are writing to let you know about a software issue that may have affected your account. Between the 9th and the 14th of this month, a defect in our conversation-sharing feature caused the titles and first uploaded file previews of some conversations to appear in the history panel of other signed-in users. We fixed the issue on the 14th.\n\nOur records show that at least one of your conversations was among those affected. Deleting a conversation removes it from your history. It does not immediately remove copies retained under our data-use policy for safety review and model improvement.\n\nWe take your privacy seriously. No action is required on your part.\n\nLarkspur Labs Trust and Safety",
+        "body": "---------- Forwarded message ----------\nFrom: Nadia Brennan (personal)\nDate: Tue 08:14\nTo: security@{{org_domain}}\nSubject: Fwd: Important information about your Quillmate account\n\nis this about thursday?? I'm so sorry. I don't know what this means\n\n---------- Original message ----------\nDear Quillmate user,\n\nWe are writing to let you know about a software issue that may have affected your account. Between the 9th and the 14th of this month, a defect in our conversation-sharing feature caused the titles and first uploaded file previews of some conversations to appear in the history panel of other signed-in users. We fixed the issue on the 14th.\n\nOur records show that at least one of your conversations was among those affected. Deleting a conversation removes it from your history. It does not immediately remove copies retained under our data-use policy for safety review and model improvement.\n\nWe take your privacy seriously. No action is required on your part.\n\nLarkspur Labs Trust and Safety",
         "difficulty_variants": {
           "first_timer": {
-            "body": "Facilitator note, read aloud: this is the third way the organization could have found out, and the only one it did not control. The provider has now told the employee, not the company, that a preview of the upload may have been seen by other users. Ask the room whether that changes the legal picture.\n\nReceived in N. Brennan's personal inbox overnight. Forwarded to security at 08:14.\n\nDear Quillmate user,\n\nWe are writing to let you know about a software issue that may have affected your account. Between the 9th and the 14th of this month, a defect in our conversation-sharing feature caused the titles and first uploaded file previews of some conversations to appear in the history panel of other signed-in users. We fixed the issue on the 14th.\n\nOur records show that at least one of your conversations was among those affected. Deleting a conversation removes it from your history. It does not immediately remove copies retained under our data-use policy for safety review and model improvement.\n\nWe take your privacy seriously. No action is required on your part.\n\nLarkspur Labs Trust and Safety"
+            "body": "Facilitator note, read aloud: this is the third way the company could have found out, and the only one it did not control. The provider has now told the employee, not the company, that a preview of the upload may have been seen by other users. Ask the room whether that changes the legal picture.\n\n---------- Forwarded message ----------\nFrom: Nadia Brennan (personal)\nDate: Tue 08:14\nTo: security@{{org_domain}}\nSubject: Fwd: Important information about your Quillmate account\n\nis this about thursday?? I'm so sorry. I don't know what this means\n\n---------- Original message ----------\nDear Quillmate user,\n\nWe are writing to let you know about a software issue that may have affected your account. Between the 9th and the 14th of this month, a defect in our conversation-sharing feature caused the titles and first uploaded file previews of some conversations to appear in the history panel of other signed-in users. We fixed the issue on the 14th.\n\nOur records show that at least one of your conversations was among those affected. Deleting a conversation removes it from your history. It does not immediately remove copies retained under our data-use policy for safety review and model improvement.\n\nWe take your privacy seriously. No action is required on your part.\n\nLarkspur Labs Trust and Safety"
           }
         }
       },
@@ -477,12 +477,12 @@
       "body": "Once the incident has a number, the SOC asks the obvious follow-up question: was Nadia the only one?",
       "inject": {
         "kind": "soc_note",
-        "from": "SOC analyst, incident workstream",
-        "subject": "Scope check: file uploads to consumer AI sites, trailing 30 days (proxy retention limit)",
-        "body": "Query: HTTPS POST with file body to sites in category Generative AI (consumer), all corporate devices, last 30 days.\n\nResults:\n- 1,904 upload events\n- 212 distinct users\n- 38 users in roles with routine access to customer extracts\n- Largest single upload: 31 MB, Finance, filename q2_ledger_detail.xlsx\n- File contents: not inspected, not recoverable\n\nLimitations: proxy logs are retained for 30 days. Personal devices and home networks are invisible. Uploads via mobile apps are invisible.\n\nAnalyst assessment: Thursday's upload was not unusual. It was reported.",
+        "from": "SOC analyst A. Petrakis, workstream note on INC-26-0331",
+        "subject": "INC-26-0331 scope check: file uploads to consumer GenAI, trailing 30 days (proxy retention limit)",
+        "body": "Query (proxy index, 30d):\n  url_category=\"Generative AI (Consumer)\" http_method=POST bytes_out>50000\n  | stats count, dc(user), max(bytes_out) by department\n\nResults:\n- 1,904 upload events\n- 212 distinct users\n- 38 of them in roles with routine access to customer extracts\n- Biggest single upload: 31 MB from Finance, q2_ledger_detail.xlsx\n- File contents: not inspected, not recoverable\n\nLimitations: proxy keeps 30 days. Personal phones, home networks and the mobile apps are invisible. Anything off VPN is invisible.\n\nFor scale: Nadia's 9.4 MB upload is not in the top 50 by size. If the ethics line report hadn't come in, nothing in this list gets looked at.",
         "difficulty_variants": {
           "first_timer": {
-            "body": "Facilitator note, read aloud: this is the moment the case stops being about one person. The same behavior is happening across the organization, and the only difference with Nadia is that someone noticed.\n\nQuery: HTTPS POST with file body to sites in category Generative AI (consumer), all corporate devices, last 30 days.\n\nResults:\n- 1,904 upload events\n- 212 distinct users\n- 38 users in roles with routine access to customer extracts\n- Largest single upload: 31 MB, Finance, filename q2_ledger_detail.xlsx\n- File contents: not inspected, not recoverable\n\nLimitations: proxy logs are retained for 30 days. Personal devices and home networks are invisible. Uploads via mobile apps are invisible.\n\nAnalyst assessment: Thursday's upload was not unusual. It was reported."
+            "body": "Facilitator note, read aloud: this is the moment the case stops being about one person. The same behavior is happening across the company, and the only difference with Nadia is that someone noticed.\n\nQuery (proxy index, 30d):\n  url_category=\"Generative AI (Consumer)\" http_method=POST bytes_out>50000\n  | stats count, dc(user), max(bytes_out) by department\n\nResults:\n- 1,904 upload events\n- 212 distinct users\n- 38 of them in roles with routine access to customer extracts\n- Biggest single upload: 31 MB from Finance, q2_ledger_detail.xlsx\n- File contents: not inspected, not recoverable\n\nLimitations: proxy keeps 30 days. Personal phones, home networks and the mobile apps are invisible. Anything off VPN is invisible.\n\nFor scale: Nadia's 9.4 MB upload is not in the top 50 by size. If the ethics line report hadn't come in, nothing in this list gets looked at."
           }
         }
       },
@@ -491,7 +491,7 @@
           "You cannot see what was in 1,903 of these uploads. Say what you will tell the incident lead about scope, and what you will refuse to guess."
         ],
         "int_lead": [
-          "212 people did what Nadia did. If the response to her is severe, apply the same rule to the other 211 and say whether the organization can live with the result."
+          "212 people did what Nadia did. If the response to her is severe, apply the same rule to the other 211 and say whether the company can live with the result."
         ]
       }
     },
@@ -527,7 +527,7 @@
       "durations": ["60", "90", "120"],
       "body": "The provider is silent, the review is half done, and the clock from Friday keeps running.",
       "decision": {
-        "prompt": "On notification, the organization will:",
+        "prompt": "On notification, the company will:",
         "options": [
           {
             "label": "NOTIFY: Counsel finalizes notice to affected customers, {{regulator}}, and contract-bound enterprise clients on the facts known now, with a commitment to update. Nadia remains a witness, with coaching and no sanction pending the review. Accept the cost, the customer calls, and the chance that the provider later confirms nothing was ever seen.",
@@ -564,7 +564,7 @@
       "body": "Wednesday. HR circulates the draft case memo to the review panel.",
       "inject": {
         "kind": "hr_memo",
-        "from": "HR Business Partner, Commercial and Analytics",
+        "from": "HR Business Partner, Commercial and Analytics. Case ER-2026-0187",
         "subject": "Draft for panel: conduct case, Acceptable Use policy section 6.3",
         "body": "Re: N. Brennan, Customer Insights. Case opened under the Acceptable Use of Information Systems policy.\n\nSummary: employee uploaded a customer data extract to an unapproved external AI service using a personal account on a corporate device. Employee self-disclosed the facts in full when asked and has no prior conduct record in four years.\n\nPolicy position: section 6.3 states that any transfer of customer data to an unapproved external service is a zero-tolerance violation. The policy was last updated before generative AI tools were in common use and does not mention them.\n\nProposed outcome: final written warning, removal from customer data access for 90 days.\n\nPrecedent: two prior section 6.3 cases (personal cloud storage, 2023 and 2024). One final written warning. One termination, where the employee concealed the transfer.\n\nOpen point for the panel: the employee's director set the deadline and has asked that the director's own role not appear in the file.",
         "difficulty_variants": {
@@ -592,7 +592,7 @@
       "body": "Nadia's manager is not the only person with a paper trail. IT pulls the access request she filed seven weeks before Thursday.",
       "inject": {
         "kind": "it_ticket",
-        "from": "IT service portal",
+        "from": "IT service portal (ServiceDesk), export",
         "subject": "REQ-58812: Request access, Enterprise AI assistant. Status: PENDING",
         "body": "REQ-58812  Request access: Enterprise AI assistant (approved tool)\nRequester: N. Brennan, Customer Insights\nOpened: 7 weeks ago\nBusiness justification: Churn and retention modelling on customer extracts. Current workbench is slow for exploratory segmentation.\n\nStatus history:\nWeek 1: Routed to IT Asset Management.\nWeek 2: PENDING. License pool exhausted (250 of 250 seats assigned).\nWeek 5: Requester follow-up: is there an ETA? Colleagues are using other tools.\nWeek 5: Auto-reply: your request is in the queue.\nWeek 7: No change.\n\nLinked tickets: 63 other open requests for the same license, 19 from analytics roles.",
         "difficulty_variants": {
@@ -634,7 +634,7 @@
       "id": "s22",
       "type": "discussion",
       "durations": ["90", "120"],
-      "body": "The conduct panel meets Friday. Before it does, the room has two questions left, and they are connected.\n\nFirst: how should the organization treat Nadia Brennan? She broke a rule she knew existed, under pressure from a manager, after waiting seven weeks for the approved alternative, and then told the truth the moment she was asked.\n\nSecond: what control was missing? Not what should Nadia have done, but what should have stopped this, or at least seen it, on Thursday afternoon.",
+      "body": "The conduct panel meets Friday. Before it does, the room has two questions left, and they are connected.\n\nFirst: how should the company treat Nadia Brennan? She broke a rule she knew existed, under pressure from a manager, after waiting seven weeks for the approved alternative, and then told the truth the moment she was asked.\n\nSecond: what control was missing? Not what should Nadia have done, but what should have stopped this, or at least seen it, on Thursday afternoon.",
       "questions": {
         "all": [
           "Decision point (e): name the missing control in one sentence. Then say whether fixing it would have prevented Thursday, detected it, or neither."
@@ -663,7 +663,7 @@
       "durations": ["60", "90", "120"],
       "body": "The panel is waiting for the room's recommendation.",
       "decision": {
-        "prompt": "The organization's response to Nadia Brennan is:",
+        "prompt": "The company's response to Nadia Brennan is:",
         "options": [
           {
             "label": "COACH AND FIX THE SYSTEM: Treat the case as an unaware violation in a system that made it easy. Documented coaching, no sanction, and the same message to the whole workforce: a time-limited amnesty to report prior uploads, idle licenses reclaimed, and DLP extended to AI uploads and responses. Accept that some will read it as no consequences.",
@@ -683,7 +683,7 @@
       "id": "e1",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE: THE LETTER. Read aloud.\n\nNotices go out on day nine. Most customers never call. About four hundred do, and the call center learns a new script that begins with the word chatbot. One enterprise customer invokes its audit right and spends two weeks on site. It finds a lot of good practice and one very large queue for AI licenses.\n\nOn day nineteen, Larkspur Labs confirms deletion of the conversation from its active systems. Its letter does not mention training copies, and a follow-up is still unanswered.\n\nNadia Brennan is coached, not sanctioned. She asks to help write the new guidance on AI tools, and does. Within a month, idle licenses are reclaimed, the queue is cleared, and the DLP policy covers uploads to named AI sites. Inspection of AI responses is scoped for next year's budget.\n\nTHE END of the fictional part. The notification playbook for data sent to an AI provider, and the owner who maintains it, are due Monday. Proceed to the after-action review.",
+      "body": "EPILOGUE: THE LETTER. Read aloud.\n\nNotices go out on day nine. Most customers never call. About four hundred do, and the call center learns a new script that begins with the word chatbot. One enterprise customer invokes its audit right and spends two weeks on site. It finds a lot of good practice and one very large queue for AI licenses.\n\nOn day nineteen, Larkspur Labs confirms deletion of the conversation from its active systems. Its letter does not mention training copies, and a follow-up is still unanswered.\n\nNadia Brennan is coached, not sanctioned. She asks to help write the new guidance on AI tools, and does. Within a month, idle licenses are reclaimed, the queue is cleared, and the DLP policy covers uploads to named AI sites. Inspection of AI responses is scoped for next year's budget.\n\nEnd of the story. One action item is already yours: somebody owns the notification playbook for data sent to an AI provider, and it is due Monday. Turn to the after-action pack.",
       "questions": {
         "all": [
           "Notification was costly and the provider later confirmed partial deletion. Was notifying still the right call, or does the room only think so because it already paid for it?"
@@ -694,10 +694,10 @@
       "id": "e2",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE: THE ASSESSMENT. Read aloud.\n\nThe risk assessment is well written. It cites the provider's terms, the deletion request, and the limited nature of the preview exposure. It is filed, and the matter is closed on day twelve.\n\nFour months later, Larkspur Labs publishes an updated disclosure. The sharing bug ran for five weeks, not five days, and in some cases showed full file contents, not previews. The assessment's key assumption was wrong, and the company learns this from a news article.\n\nNotification now goes out four months late. {{regulator}} asks for the original assessment, and the question it asks most often is why the company relied on a provider it had no contract with and had never heard from.\n\nNadia Brennan was never sanctioned. She left for another employer in the spring, for unrelated reasons, before any of this came back.\n\nTHE END of the fictional part. Proceed to the after-action review.",
+      "body": "EPILOGUE: THE ASSESSMENT. Read aloud.\n\nThe risk assessment is well written. It cites the provider's terms, the deletion request, and the limited nature of the preview exposure. It is filed, and the matter is closed on day twelve.\n\nFour months later, Larkspur Labs publishes an updated disclosure. The sharing bug ran for five weeks, not five days, and in some cases showed full file contents, not previews. The assessment's key assumption was wrong, and the company learns this from a news article.\n\nNotification now goes out four months late. {{regulator}} asks for the original assessment, and the question it asks most often is why the company relied on a provider it had no contract with and had never heard from.\n\nNadia Brennan was never sanctioned. She left for another employer in the spring, for unrelated reasons, before any of this came back.\n\nThat is where the story stops. Turn to the after-action pack.",
       "questions": {
         "all": [
-          "The assessment was reasonable on the facts available. What would have made it more resilient to being wrong, and should the organization have committed to reopen it on a date rather than on news?"
+          "The assessment was reasonable on the facts available. What would have made it more resilient to being wrong, and should the company have committed to reopen it on a date rather than on news?"
         ]
       }
     },
@@ -705,7 +705,7 @@
       "id": "e3",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE: THE AMNESTY. Read aloud.\n\nThe message goes out from the Chief Data Officer, not from Security. It says what happened, without Nadia's name, and it says what the company got wrong: a tool queue, a default setting nobody checked, and a monitoring gap. It offers two weeks to report past uploads with no consequences.\n\nOne hundred and forty people respond. Their reports are messy and useful. Three describe uploads worse than Nadia's. None of them would have been found by the SOC.\n\nSome managers grumble that the company rewarded a policy violation. Nadia hears the grumbling too. She stays.\n\nThe controls follow over the quarter: reclaimed licenses, personal sign-ins blocked on corporate devices for AI sites, and DLP inspection of uploads to AI services. Inspecting AI response streams remains on the roadmap.\n\nTHE END of the fictional part. Proceed to the after-action review.",
+      "body": "EPILOGUE: THE AMNESTY. Read aloud.\n\nThe message goes out from the Chief Data Officer, not from Security. It says what happened, without Nadia's name, and it says what the company got wrong: a tool queue, a default setting nobody checked, and a monitoring gap. It offers two weeks to report past uploads with no consequences.\n\nOne hundred and forty people respond. Their reports are messy and useful. Three describe uploads worse than Nadia's. None of them would have been found by the SOC.\n\nSome managers grumble that the company rewarded a policy violation. Nadia hears the grumbling too. She stays.\n\nThe controls follow over the quarter: reclaimed licenses, personal sign-ins blocked on corporate devices for AI sites, and DLP inspection of uploads to AI services. Inspecting AI response streams remains on the roadmap.\n\nStop the clock here and go to the after-action pack.",
       "questions": {
         "all": [
           "The amnesty surfaced three worse uploads. The room chose coaching before it knew that. Does the new information change how you see the decision, and should it?"
@@ -716,7 +716,7 @@
       "id": "e4",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE: THE WARNING. Read aloud.\n\nThe final written warning is issued on Friday. Managers are briefed that the acceptable-use policy covers AI tools. Proxy logs show uploads to consumer AI sites from corporate devices fall by seventy percent in a month.\n\nNobody in the room can see where they went. Analysts start using personal phones and home laptops, where the proxy cannot see. The ethics line receives no further reports about AI tools that year.\n\nNadia Brennan completes her ninety days without customer data access, then resigns. In her exit interview she says she would do one thing differently: she would not have told the truth so quickly.\n\nThe controls are fixed on the normal schedule, which means next fiscal year.\n\nTHE END of the fictional part. Proceed to the after-action review.",
+      "body": "EPILOGUE: THE WARNING. Read aloud.\n\nThe final written warning is issued on Friday. Managers are briefed that the acceptable-use policy covers AI tools. Proxy logs show uploads to consumer AI sites from corporate devices fall by seventy percent in a month.\n\nNobody in the room can see where they went. Analysts start using personal phones and home laptops, where the proxy cannot see. The ethics line receives no further reports about AI tools that year.\n\nNadia Brennan completes her ninety days without customer data access, then resigns. In her exit interview she says she would do one thing differently: she would not have told the truth so quickly.\n\nThe controls are fixed on the normal schedule, which means next fiscal year.\n\nEnd of the exercise. After-action pack next.",
       "questions": {
         "all": [
           "Uploads visible to the company fell by seventy percent. Did the risk fall by seventy percent? Explain how the room would know."
@@ -738,7 +738,7 @@
       "O1 CLASSIFY: Decide whether an employee's upload of customer data to an unapproved AI tool is a policy violation, a security incident, or both, and which process leads.",
       "O2 OWN: Assign clear ownership of the response across Security, Privacy, Legal, HR, and the business, including who coordinates when each owns a piece.",
       "O3 NOTIFY: Identify notification obligations to individuals, {{regulator}}, and contract-bound customers, and the facts needed to decide them.",
-      "O4 RESPOND PROPORTIONATELY: Weigh negligent versus unaware in the employee's case, and test the organization's instinct against a zero-tolerance reflex.",
+      "O4 RESPOND PROPORTIONATELY: Weigh negligent versus unaware in the employee's case, and test the company's instinct against a zero-tolerance reflex.",
       "O5 FIX THE CONTROL: Identify the missing controls, including AI upload inspection, AI response monitoring, personal-account sign-in, and access to approved tools, and assign an owner and date to each."
     ]
   }
