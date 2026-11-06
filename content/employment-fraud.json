@@ -4,7 +4,7 @@
     "Timeline: 7 / 4 / 11 months in seat, Monday-to-Thursday case clock, Wednesday 14:00 pay lock. Match the real exercise's cadence and your payroll calendar.",
     "First detection source: here it is payroll's bank-account name-mismatch check. If the real exercise started elsewhere (HR, a vendor re-verification, a peer tip, a SOC alert), move s03 and adjust s02.",
     "1412 Larkin Ct and the 'different state': placeholder laptop-farm address; keep it generic or fictional.",
-    "Ridgeline Staffing (staffing vendor), Brightlane Analytics (second employer), Harlan & Voigt (outside counsel): invented names, swap or keep.",
+    "Corvane Staffing (staffing vendor), Tessaray Analytics (second employer), Harlan & Voigt (outside counsel): invented names, swap or keep.",
     "Prepaid card / fintech partner bank payroll routing: confirm it matches the payment pattern you actually saw.",
     "The commit-email leak (s09, s15/s21) as the overlapping-employment tell: replace with whatever actually revealed the second employer in your case.",
     "The number three and the mix (two farm-linked plus one ordinary overemployed worker): adjust to the real count and mix.",
@@ -324,12 +324,12 @@
         "kind": "internal_note",
         "from": "Insider Risk analyst (J. Okonkwo-Hart), working note, case IR-26-0088",
         "subject": "IR-26-0088 commit metadata on git.{{org_domain}}: one commit not authored as us",
-        "body": "Ran git log on platform/ingest for author=emorrow, last 90 days. 412 commits. 411 have author email emorrow@{{org_domain}}.\n\nOne doesn't:\n\n  commit 7c41e09  (month 5, Tue 02:14 ET)\n  Author: Ethan Morrow <ethan.morrow@brightlane-analytics.example>\n  Msg:    fix schema drift in claims loader\n\nBrightlane Analytics is not a vendor of ours. Checked procurement and the vendor master. They're a data consultancy two states over, about 300 people per their website. Their careers page has a \"Senior Data Engineer\" opening closed four months ago.\n\nLooks like he committed from a machine (or a git config) set up for a different employer and fixed it afterwards. He force-pushed an amend to the branch 6 minutes later but the original is still in the reflog on the server.\n\nAlso: the same author name has a public profile on a code-hosting site with a different photo than the one in our HR system. I have NOT contacted Brightlane. I have not searched further than that because I'm not sure I'm allowed to. Need a steer."
+        "body": "Ran git log on platform/ingest for author=emorrow, last 90 days. 412 commits. 411 have author email emorrow@{{org_domain}}.\n\nOne doesn't:\n\n  commit 7c41e09  (month 5, Tue 02:14 ET)\n  Author: Ethan Morrow <ethan.morrow@tessaray-analytics.example>\n  Msg:    fix schema drift in claims loader\n\nTessaray Analytics is not a vendor of ours. Checked procurement and the vendor master. They're a data consultancy two states over, about 300 people per their website. Their careers page has a \"Senior Data Engineer\" opening closed four months ago.\n\nLooks like he committed from a machine (or a git config) set up for a different employer and fixed it afterwards. He force-pushed an amend to the branch 6 minutes later but the original is still in the reflog on the server.\n\nAlso: the same author name has a public profile on a code-hosting site with a different photo than the one in our HR system. I have NOT contacted Tessaray. I have not searched further than that because I'm not sure I'm allowed to. Need a steer."
       },
       "questions": {
         "all": [
           "If he is working a second full-time job on your time, is that a fraud case, a conduct case, or nothing until you prove the rest?",
-          "Who is allowed to contact Brightlane, and what would you say to them?"
+          "Who is allowed to contact Tessaray, and what would you say to them?"
         ],
         "legal": [
           "The analyst stopped and asked whether she was allowed to keep looking. Was that the right call? What guidance does your program give an analyst about public-source research on a subject?"
@@ -445,12 +445,12 @@
         "kind": "internal_note",
         "from": "Insider Risk (J. Okonkwo-Hart), search results, case IR-26-0088",
         "subject": "IR-26-0088 address + payroll correlation: 3 hits, not 1",
-        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7\n        Ship-to 1412 Larkin Ct. Payroll to prepaid card, holder T RUDD. Remote tool exception. [known]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Ridgeline Staffing (SOW RS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct. (same address, different unit number \"B\")\n        Paid by Ridgeline, not us. Ridgeline confirms they pay to a prepaid card in his name.\n        Remote tool exception: yes, same tool, same week-2 justification text, word for word.\n        Camera on: 0 of 38 meetings.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Ship-to: a different address, same state as HR record. No name mismatch on payroll.\n        No remote tool. Camera on regularly.\n        Flagged only because his git config also leaked another employer: two commits as b.cole@<a fintech, real-looking domain>.example.\n        Badge: in the office twice last month.\n\nSo: two that look like the same laptop farm, and one that looks like an ordinary guy holding two jobs.\n\nHit 3 is probably not the same kind of case. Writing that down now so it doesn't get lumped in."
+        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7\n        Ship-to 1412 Larkin Ct. Payroll to prepaid card, holder T RUDD. Remote tool exception. [known]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Corvane Staffing (SOW CS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct. (same address, different unit number \"B\")\n        Paid by Corvane, not us. Corvane confirms they pay to a prepaid card in his name.\n        Remote tool exception: yes, same tool, same week-2 justification text, word for word.\n        Camera on: 0 of 38 meetings.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Ship-to: a different address, same state as HR record. No name mismatch on payroll.\n        No remote tool. Camera on regularly.\n        Flagged only because his git config also leaked another employer: two commits as b.cole@<a fintech, real-looking domain>.example.\n        Badge: in the office twice last month.\n\nSo: two that look like the same laptop farm, and one that looks like an ordinary guy holding two jobs.\n\nHit 3 is probably not the same kind of case. Writing that down now so it doesn't get lumped in."
       },
       "questions": {
         "all": [
           "We hired three of these. Or two, or one and a half, depending on how you count. How do you count?",
-          "Hit 2 is a contractor. Whose case is that: yours, Ridgeline's, or both? What does your staffing contract say about identity verification and who pays when it fails?",
+          "Hit 2 is a contractor. Whose case is that: yours, Corvane's, or both? What does your staffing contract say about identity verification and who pays when it fails?",
           "Hit 3 may be a real person with two jobs. Is that a fraud case, a conduct case, a policy question, or none of your business?"
         ],
         "comms": [
@@ -474,7 +474,7 @@
         "kind": "legal_memo",
         "from": "Deputy General Counsel, privileged and confidential, prepared at the direction of counsel",
         "subject": "IR-26-0088: who is directing this, and the three clocks",
-        "body": "PRIVILEGED AND CONFIDENTIAL. ATTORNEY WORK PRODUCT. Do not forward outside the response group.\n\n1. From today this investigation is directed by outside white-collar counsel (Harlan & Voigt). Analyst notes go to them. Employment counsel stays engaged on the Hit 3 matter only, which I want kept in its own file.\n\n2. Sanctions. If Hits 1 and 2 are what the public advisories describe, payments to them may be payments to a sanctioned person. Civil liability is strict. A voluntary self-disclosure to OFAC is available and materially reduces penalties. It has to be voluntary, which means before someone else tells them. I want sanctions counsel's view by Friday.\n\n3. Law enforcement. Corporate Security may now call its federal contact. Before that call: agree what we are asking for, and that we will not delay protective steps at their request without my sign-off.\n\n4. Pay. The hold on Hit 1 stays. Hit 2 is paid by Ridgeline. I do not yet know if Ridgeline has already paid this week; please find out today. Hit 3: pay as normal.\n\n5. The person who signed for the laptops. \"T. Rudd\" may be a facilitator, a victim, or both. Do not contact.\n\n6. The real Ethan Morrow, if there is one, may be an identity-theft victim. Do not contact him until we know which name belongs to whom.\n\nI'll be on the 15:00 call."
+        "body": "PRIVILEGED AND CONFIDENTIAL. ATTORNEY WORK PRODUCT. Do not forward outside the response group.\n\n1. From today this investigation is directed by outside white-collar counsel (Harlan & Voigt). Analyst notes go to them. Employment counsel stays engaged on the Hit 3 matter only, which I want kept in its own file.\n\n2. Sanctions. If Hits 1 and 2 are what the public advisories describe, payments to them may be payments to a sanctioned person. Civil liability is strict. A voluntary self-disclosure to OFAC is available and materially reduces penalties. It has to be voluntary, which means before someone else tells them. I want sanctions counsel's view by Friday.\n\n3. Law enforcement. Corporate Security may now call its federal contact. Before that call: agree what we are asking for, and that we will not delay protective steps at their request without my sign-off.\n\n4. Pay. The hold on Hit 1 stays. Hit 2 is paid by Corvane. I do not yet know if Corvane has already paid this week; please find out today. Hit 3: pay as normal.\n\n5. The person who signed for the laptops. \"T. Rudd\" may be a facilitator, a victim, or both. Do not contact.\n\n6. The real Ethan Morrow, if there is one, may be an identity-theft victim. Do not contact him until we know which name belongs to whom.\n\nI'll be on the 15:00 call."
       },
       "questions": {
         "all": [
@@ -487,7 +487,7 @@
           "You can call your federal contact now. Write the first two sentences of that call."
         ],
         "hr": [
-          "Ridgeline may have paid Hit 2 this week. Whose problem is that?"
+          "Corvane may have paid Hit 2 this week. Whose problem is that?"
         ]
       }
     },
@@ -518,11 +518,11 @@
         "prompt": "With Morrow cut off and two more names on the table, {{org_name}} will:",
         "options": [
           {
-            "label": "REPORT IT ALL: cut off Hit 2 now with the same sequence, refer Hits 1 and 2 to federal law enforcement today, prepare an OFAC voluntary self-disclosure, notify Ridgeline under the staffing contract, and run Hit 3 separately as an employment matter. Accept the cost, the noise, and a migration that slips.",
+            "label": "REPORT IT ALL: cut off Hit 2 now with the same sequence, refer Hits 1 and 2 to federal law enforcement today, prepare an OFAC voluntary self-disclosure, notify Corvane under the staffing contract, and run Hit 3 separately as an employment matter. Accept the cost, the noise, and a migration that slips.",
             "goto": "e1"
           },
           {
-            "label": "HANDLE IT AS EMPLOYMENT: terminate Hits 1 and 2 for cause through HR and Ridgeline, recover equipment, keep pay on hold, hold off on any external report until outside counsel finishes its review, and treat Hit 3 as a policy reminder. Accept that you are deciding later what you might have had to decide now.",
+            "label": "HANDLE IT AS EMPLOYMENT: terminate Hits 1 and 2 for cause through HR and Corvane, recover equipment, keep pay on hold, hold off on any external report until outside counsel finishes its review, and treat Hit 3 as a policy reminder. Accept that you are deciding later what you might have had to decide now.",
             "goto": "e2"
           }
         ]
@@ -573,7 +573,7 @@
         "kind": "internal_note",
         "from": "Insider Risk (J. Okonkwo-Hart), search results, case IR-26-0088",
         "subject": "IR-26-0088 address + payroll correlation: 3 hits, not 1. Hit 2 pushed to prod last night.",
-        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7   [known, under watch]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Ridgeline Staffing (SOW RS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct, unit \"B\". Paid by Ridgeline to a prepaid card.\n        Remote tool exception: same tool, same week-2 justification, word for word.\n        Camera on: 0 of 38 meetings.\n        Last night 23:52: merged a change to the release pipeline's test stage. Reviewed and approved by... Ethan Morrow.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Different address, same state as HR record. Payroll matches. No remote tool. Camera on regularly. In the office twice last month.\n        Flagged because his git config leaked another employer's email on two commits.\n\nHits 1 and 2 have been approving each other's pull requests since month 5. 14 times.\n\nHit 3 looks like a different kind of case. Writing that down now so it doesn't get lumped in."
+        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7   [known, under watch]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Corvane Staffing (SOW CS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct, unit \"B\". Paid by Corvane to a prepaid card.\n        Remote tool exception: same tool, same week-2 justification, word for word.\n        Camera on: 0 of 38 meetings.\n        Last night 23:52: merged a change to the release pipeline's test stage. Reviewed and approved by... Ethan Morrow.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Different address, same state as HR record. Payroll matches. No remote tool. Camera on regularly. In the office twice last month.\n        Flagged because his git config leaked another employer's email on two commits.\n\nHits 1 and 2 have been approving each other's pull requests since month 5. 14 times.\n\nHit 3 looks like a different kind of case. Writing that down now so it doesn't get lumped in."
       },
       "questions": {
         "all": [
@@ -600,15 +600,15 @@
       "inject": {
         "kind": "hr_memo",
         "from": "HRBP Technology, to the response group",
-        "subject": "Hit 2 is paid by Ridgeline, not us, and Ridgeline has questions",
-        "body": "Ridgeline's account manager called me at 10:40. Their own compliance team flagged Marco Alvarez this morning: their bank-account validation came back with the same name mismatch ours did. They want to suspend him today and they want to know if we have \"anything they should know.\" Their contract with us requires them to notify us of exactly this, so they are not wrong to ask.\n\nI told them I'd call back by 14:00. I didn't say anything else.\n\nIf Ridgeline cuts him off, the house will know by tonight. If I ask Ridgeline to sit on it, I'm asking a vendor to keep paying someone I think is fraudulent, without telling them why, and I don't think I can do that without Legal on the call.\n\nAlso, for what it's worth: Ridgeline placed six other contractors with us this year. I've asked for the list."
+        "subject": "Hit 2 is paid by Corvane, not us, and Corvane has questions",
+        "body": "Corvane's account manager called me at 10:40. Their own compliance team flagged Marco Alvarez this morning: their bank-account validation came back with the same name mismatch ours did. They want to suspend him today and they want to know if we have \"anything they should know.\" Their contract with us requires them to notify us of exactly this, so they are not wrong to ask.\n\nI told them I'd call back by 14:00. I didn't say anything else.\n\nIf Corvane cuts him off, the house will know by tonight. If I ask Corvane to sit on it, I'm asking a vendor to keep paying someone I think is fraudulent, without telling them why, and I don't think I can do that without Legal on the call.\n\nAlso, for what it's worth: Corvane placed six other contractors with us this year. I've asked for the list."
       },
       "questions": {
         "all": [
-          "Your vendor has found its own half of the case and is about to act. Do you bring Ridgeline inside the tent, and if so who makes that call?"
+          "Your vendor has found its own half of the case and is about to act. Do you bring Corvane inside the tent, and if so who makes that call?"
         ],
         "legal": [
-          "What can you lawfully ask Ridgeline to do, and what can you not ask them?"
+          "What can you lawfully ask Corvane to do, and what can you not ask them?"
         ]
       }
     },
@@ -634,12 +634,12 @@
       "id": "s24",
       "type": "decision",
       "durations": ["60", "90", "120"],
-      "body": "DECISION POINT TWO, BRANCH B. Read aloud. Ridgeline needs an answer by 14:00 and the agent is waiting on a yes or no. Poll the room.",
+      "body": "DECISION POINT TWO, BRANCH B. Read aloud. Corvane needs an answer by 14:00 and the agent is waiting on a yes or no. Poll the room.",
       "decision": {
         "prompt": "On the agent's request, {{org_name}} will:",
         "options": [
           {
-            "label": "KEEP IT RUNNING: give law enforcement its two weeks on Hits 1 and 2, roll back the pipeline change quietly, bring Ridgeline inside under counsel, keep the tripwire, file the OFAC voluntary self-disclosure now, and handle Hit 3 separately. Accept that you are knowingly employing and paying them for two more weeks.",
+            "label": "KEEP IT RUNNING: give law enforcement its two weeks on Hits 1 and 2, roll back the pipeline change quietly, bring Corvane inside under counsel, keep the tripwire, file the OFAC voluntary self-disclosure now, and handle Hit 3 separately. Accept that you are knowingly employing and paying them for two more weeks.",
             "goto": "e3"
           },
           {
@@ -667,7 +667,7 @@
       "id": "e2",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE: HANDLED INTERNALLY. Read aloud.\n\nThe terminations go out on Thursday, cleanly. Ridgeline removes Marco Alvarez the same day and, without being asked, does not mention it to anyone. The laptops are written off. Brandon Cole gets a policy reminder.\n\nOutside counsel's review takes eleven weeks. By the time it recommends a voluntary self-disclosure, it is no longer voluntary: a federal search of 1412 Larkin Ct has already turned up two laptops with your asset tags, and the agent's first question to your general counsel is why the company that paid two of these workers for months said nothing.\n\nThe answer is honest and it does not help. Nobody wanted to report until they were sure.\n\nThe migration ships on time. Four of Hit 2's merged changes to the test stage are found later in a routine audit. None of them did anything harmful, as far as anyone can tell. Nobody can say that with much confidence.\n\nEnd of the exercise. Go to the after-action pack.",
+      "body": "EPILOGUE: HANDLED INTERNALLY. Read aloud.\n\nThe terminations go out on Thursday, cleanly. Corvane removes Marco Alvarez the same day and, without being asked, does not mention it to anyone. The laptops are written off. Brandon Cole gets a policy reminder.\n\nOutside counsel's review takes eleven weeks. By the time it recommends a voluntary self-disclosure, it is no longer voluntary: a federal search of 1412 Larkin Ct has already turned up two laptops with your asset tags, and the agent's first question to your general counsel is why the company that paid two of these workers for months said nothing.\n\nThe answer is honest and it does not help. Nobody wanted to report until they were sure.\n\nThe migration ships on time. Four of Hit 2's merged changes to the test stage are found later in a routine audit. None of them did anything harmful, as far as anyone can tell. Nobody can say that with much confidence.\n\nEnd of the exercise. Go to the after-action pack.",
       "questions": {
         "all": [
           "Being sure before reporting sounds responsible. What did it cost here, and who paid it?"
@@ -678,7 +678,7 @@
       "id": "e3",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE: THE TWO WEEKS. Read aloud.\n\nThe watch holds. The tripwire fires once, on day six: a 340 MB read from a reporting database at 02:20. The SOC kills the session at 02:21 under the standing instruction, and the on-call analyst does not wake anyone up. Nothing moves. The agent is unhappy about the session kill for about a day.\n\nOn day twelve the house at 1412 Larkin Ct is searched. Your evidence is the cleanest the case team has received, because you had two weeks of full logging and a preservation instruction from day one. The OFAC disclosure, filed before the search, is treated as voluntary.\n\nBringing Ridgeline inside turns up one more of its contractors at another of its clients. Ridgeline rewrites its onboarding, and its contract with you, at its own expense.\n\nBrandon Cole is never told any of this. He gets a policy reminder and nothing else.\n\nAfterwards the response group agrees it would run the watch again, and also that it would not want to run it without the tripwire and the 02:00 authority written down in advance.\n\nStop the clock here and go to the after-action pack.",
+      "body": "EPILOGUE: THE TWO WEEKS. Read aloud.\n\nThe watch holds. The tripwire fires once, on day six: a 340 MB read from a reporting database at 02:20. The SOC kills the session at 02:21 under the standing instruction, and the on-call analyst does not wake anyone up. Nothing moves. The agent is unhappy about the session kill for about a day.\n\nOn day twelve the house at 1412 Larkin Ct is searched. Your evidence is the cleanest the case team has received, because you had two weeks of full logging and a preservation instruction from day one. The OFAC disclosure, filed before the search, is treated as voluntary.\n\nBringing Corvane inside turns up one more of its contractors at another of its clients. Corvane rewrites its onboarding, and its contract with you, at its own expense.\n\nBrandon Cole is never told any of this. He gets a policy reminder and nothing else.\n\nAfterwards the response group agrees it would run the watch again, and also that it would not want to run it without the tripwire and the 02:00 authority written down in advance.\n\nStop the clock here and go to the after-action pack.",
       "questions": {
         "all": [
           "The watch worked. What would have had to be different for it to go badly, and how many of those conditions exist at your organization?"
@@ -689,7 +689,7 @@
       "id": "e4",
       "type": "epilogue",
       "durations": ["60", "90", "120"],
-      "body": "EPILOGUE: ALL THREE. Read aloud.\n\nThe cut goes out at 13:30, before Ridgeline's deadline. Hits 1 and 2 go dark within the minute; preservation is clean. The agent says \"understood\" and nothing more, and the next time Corporate Security calls it takes four days to get a callback.\n\nThe house at 1412 Larkin Ct is empty when it is eventually searched.\n\nBrandon Cole is suspended pending interview. He is interviewed the next day and turns out to be exactly what he looked like: a real person with a second full-time job, a mortgage, and a lot of guilt about it. He resigns the following week. Two people on his team put in their own notice within the month, and one says on the way out that she does not want to work somewhere that \"suspends people with no explanation.\"\n\nThe OFAC disclosure goes in two weeks later. It is still voluntary, just.\n\nThe story ends here. Turn to the after-action pack.",
+      "body": "EPILOGUE: ALL THREE. Read aloud.\n\nThe cut goes out at 13:30, before Corvane's deadline. Hits 1 and 2 go dark within the minute; preservation is clean. The agent says \"understood\" and nothing more, and the next time Corporate Security calls it takes four days to get a callback.\n\nThe house at 1412 Larkin Ct is empty when it is eventually searched.\n\nBrandon Cole is suspended pending interview. He is interviewed the next day and turns out to be exactly what he looked like: a real person with a second full-time job, a mortgage, and a lot of guilt about it. He resigns the following week. Two people on his team put in their own notice within the month, and one says on the way out that she does not want to work somewhere that \"suspends people with no explanation.\"\n\nThe OFAC disclosure goes in two weeks later. It is still voluntary, just.\n\nThe story ends here. Turn to the after-action pack.",
       "questions": {
         "all": [
           "Cutting all three was the clean security answer. What did it cost that a security answer does not count?"

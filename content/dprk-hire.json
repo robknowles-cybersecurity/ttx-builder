@@ -196,9 +196,9 @@
       "body": "The first current-day artifact. Hand out or read the vendor notice.",
       "inject": {
         "kind": "vendor_report",
-        "from": "TrueNorth Verify (re-screening vendor), automated notice to {{org_name}} HR Operations",
+        "from": "Veracord Screening (re-screening vendor), automated notice to {{org_name}} HR Operations",
         "subject": "[ACTION] Re-verification exception, case TNV-7731-0042: VOSS, DANIEL R.",
-        "body": "Case: TNV-7731-0042   Package: Annual re-verification, vendor-placed personnel   Generated: 06:12 ET\n\nSubject as submitted: VOSS, DANIEL R.   DOB as submitted: [on file]   SSN: ***-**-4417\n\nRESULTS\nSSN trace ......... MISMATCH. SSN returns credit header for Daniel R. Voss, age 61, different state. Credit freeze active since 2019.\nDOB check ......... MISMATCH against header.\nDL verification ... NO RECORD. Number is format-valid; issuing state returns no match to name.\nAddress history ... Residence of record not associated with SSN at any time.\n\nRecommended action: manual review.\n\nThis notice is informational and is not an adverse determination. Do not take employment action based solely on this report without completing your FCRA pre-adverse action process. Questions: support@truenorthverify.example, ref the case number above."
+        "body": "Case: TNV-7731-0042   Package: Annual re-verification, vendor-placed personnel   Generated: 06:12 ET\n\nSubject as submitted: VOSS, DANIEL R.   DOB as submitted: [on file]   SSN: ***-**-4417\n\nRESULTS\nSSN trace ......... MISMATCH. SSN returns credit header for Daniel R. Voss, age 61, different state. Credit freeze active since 2019.\nDOB check ......... MISMATCH against header.\nDL verification ... NO RECORD. Number is format-valid; issuing state returns no match to name.\nAddress history ... Residence of record not associated with SSN at any time.\n\nRecommended action: manual review.\n\nThis notice is informational and is not an adverse determination. Do not take employment action based solely on this report without completing your FCRA pre-adverse action process. Questions: support@veracord.example, ref the case number above."
       },
       "coaching": [
         "First-time facilitators: resist explaining what this means. Ask the room: 'What is this document telling us, and how confident are we?' Someone will say identity theft. Someone else should say 'or a data entry error.' Both are load-bearing."
@@ -373,9 +373,9 @@
       "body": "BRANCH A PRESSURE (120-minute exercises only). While Legal drafts a response posture, Communications receives this.",
       "inject": {
         "kind": "press_inquiry",
-        "from": "Dana Whitcomb, business desk, The Capital Ledger, to press@{{org_domain}}",
+        "from": "Dana Whitcomb, business desk, The Brightwater Ledger, to press@{{org_domain}}",
         "subject": "Comment request - remote hiring fraud - deadline Thurs COB",
-        "body": "Hi, Dana Whitcomb at the Ledger. We spoke briefly a few weeks ago.\n\nI'm working on a story about companies in your sector finding fraudulent remote hires tied to overseas identity networks. Two people familiar with regional information-sharing tell me {{org_name}} recently suspended a remote worker under related circumstances.\n\nCan you confirm or deny? And does the company have any statement on how it vets its remote workforce?\n\nDeadline is Thursday close of business. Cell is (555) 014-2290 if a call is easier.\n\nDana"
+        "body": "Hi, Dana Whitcomb at the Brightwater Ledger. We spoke briefly a few weeks ago.\n\nI'm working on a story about companies in your sector finding fraudulent remote hires tied to overseas identity networks. Two people familiar with regional information-sharing tell me {{org_name}} recently suspended a remote worker under related circumstances.\n\nCan you confirm or deny? And does the company have any statement on how it vets its remote workforce?\n\nDeadline is Thursday close of business. Cell is (555) 014-2290 if a call is easier.\n\nDana"
       },
       "questions": {
         "all": [
