@@ -218,19 +218,19 @@
       "questions": {
         "all": [
           "In your real organization, today: is there any mechanism by which those three payroll events and that ethics note would ever appear in the same conversation? Should there be, and who would you trust to sit in the middle of it?",
-          "Say the uncomfortable version out loud: what is the difference between a stressor-informed risk program and a system that punishes employees for being broke? Where exactly is the line, and who enforces it? If you have a formal program with a ratified stressor policy: has it ever actually fired? If you do not: who in this room would even receive this information?"
+          "Here is the uncomfortable version: what is the difference between a stressor-informed risk program and a system that punishes employees for being broke? Where exactly is the line, and who enforces it? If you have a formal program with a ratified stressor policy: has it ever actually fired? If you do not: who in this room would even receive this information?"
         ],
         "int_lead": [
           "Your private knowledge includes a policy gap. This is the natural moment. Reveal it, and let the room react before you defend it."
         ],
         "hr": [
-          "The ethics note has been parked with you for five weeks. Defend the original routing decision honestly, it was defensible, and then say what would have to change for it to route differently."
+          "The ethics note has been parked with you for five weeks. Defend the original routing decision, it was defensible, and then say what would have to change for it to route differently."
         ],
         "legal": [
           "Draw the line for the room: what use of payroll-derived stress information is defensible, what is radioactive, and what words should never appear in a case file about it?"
         ],
         "exec": [
-          "Would you want to be told that one of your top performers is under this kind of pressure, and what would you honestly do with that knowledge? Answer as yourself, not as the policy."
+          "Would you want to be told that one of your top performers is under this kind of pressure, and what would you do with that knowledge? Answer as yourself, not as the policy."
         ]
       },
       "coaching": [
@@ -314,7 +314,7 @@
           "What do you still not know that most changes the answer, and which of the unknowns can be resolved without anyone talking to Greg?"
         ],
         "int_lead": [
-          "The sector briefing on consulting-front elicitation is in your files. Walk the room through the recruitment progression it describes, and mark honestly which stage the evidence suggests Greg is at."
+          "The sector briefing on consulting-front elicitation is in your files. Walk the room through the recruitment progression it describes, and mark which stage the evidence suggests Greg is at."
         ],
         "soc": [
           "Eleven seconds. Defend your playbook's economics to this room, the alert volume that made eleven seconds rational, and then say what one change makes this specific miss structurally impossible."
@@ -326,7 +326,7 @@
           "Sales leadership has said the word leak in three separate meetings without attaching a name. If a name attaches itself to this case before this room is ready (in a corridor, over a beer) say what happens in the next 48 hours, and what you can put in place today so the story the company eventually tells itself is one this table chose."
         ],
         "hr": [
-          "You now hold the stress file, the ethics note, and this picture. Say what HR's role is in the next 72 hours (advocate, investigator, both, neither) and who decides."
+          "You now hold the stress file, the ethics note, and this picture. Spell out what HR's role is in the next 72 hours (advocate, investigator, both, neither) and who decides."
         ],
         "legal": [
           "If a signed Halcyon agreement exists, it is both evidence and leverage. Theirs and ours. What must be true before anyone at this table uses the word theft, even privately?"
@@ -521,7 +521,7 @@
       "questions": {
         "all": [
           "Establish what the three transferred chunks contain. Can anyone at this table say right now, and if not, what does that ignorance do to every option on the table?",
-          "The watch plan said page, do not auto-block, reserving judgment to humans. Was that reservation wisdom or vanity? Answer honestly, because your organization has playbooks with the same clause."
+          "The watch plan said page, do not auto-block, reserving judgment to humans. Was that reservation wisdom or vanity? Answer it straight, because your organization has playbooks with the same clause."
         ],
         "soc": [
           "Give the room its technical options in plain language (block the client, kill the session, isolate the endpoint, throttle further, or watch) with what each one tells Greg and whoever is receiving."

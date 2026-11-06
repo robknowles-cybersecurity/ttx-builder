@@ -231,7 +231,7 @@
           "There is a written manager approval in the file saying his personal design work is his. Tell this room, in plain language and before it forms a view, how much that document is worth."
         ],
         "soc": [
-          "The most interesting fifteen days are past your retention. Say what you would have needed in place on day 51 for today to be a different conversation, and what that would have cost."
+          "The most interesting fifteen days are past your retention. Tell the room what you would have needed in place on day 51 for today to be a different conversation, and what that would have cost."
         ],
         "int_lead": [
           "Your departure-triggered review has run four times in two years, always because someone senior asked. What would it take to make it run automatically, and what does your organisation do with the volume that would produce?"
@@ -314,14 +314,14 @@
       "body": "DISCUSSION TWO. Assemble it out loud: a clean resignation to a competitor, five weeks of elevated but role-consistent access, four self-closing alerts, nine days of cloud sync nobody can see into, two removable media attachments nobody measured, thirty-one messages to a personal address of which twenty-one are innocuous and one is a client book that exists nowhere else, a written 2019 permission, an unamended contract, and a manager who refused handover twice. Nine days remain. Facilitator: ALL questions first.",
       "questions": {
         "all": [
-          "State the leading hypothesis in one sentence and the strongest innocent explanation in one sentence, and make the innocent one genuinely strong, because it is. Then say which parts of your evidence would look identical under both, and notice how much of it that is.",
+          "State the leading hypothesis in one sentence and the strongest innocent explanation in one sentence, and make the innocent one strong, because it is. Then say which parts of your evidence would look identical under both, and notice how much of it that is.",
           "The was-it-his-to-take question is now unavoidable. Take a position as a room, out loud, on the three architecture documents he personally authored, and then say whether your organisation's written policy supports the position you just took. If there is no written policy, say that instead."
         ],
         "legal": [
           "Give the room your honest assessment of the company's position if it acted today: what you could demand, what you could prove, and what a competent opposing counsel does with the 2019 email and the un-re-papered contract."
         ],
         "hr": [
-          "Nine days remain and nobody has spoken to him. Say whether that is a deliberate strategy or an accident, and what it costs either way."
+          "Nine days remain and nobody has spoken to him. Decide whether that is a deliberate strategy or an accident, and what it costs either way."
         ],
         "int_lead": [
           "This is the most ordinary case your program will ever run, and it reached this table by accident. Give the room the two facts that prove it: what it took, all four times, for the departure review to actually fire, and the one-page what-you-may-keep statement you have asked for twice and still do not have. Then ask, on the record, who owns writing it."
@@ -330,10 +330,10 @@
           "You have an open exception from 2022 with no review date and an unidentified second device on your wireless. Neither is about Samir Haddad. How many more of each do you have?"
         ],
         "soc": [
-          "You have no visibility on the two channels most likely to matter. Say what you would ask for on Monday, and be specific about what it costs, because someone in this room controls that budget."
+          "You have no visibility on the two channels most likely to matter. Get specific about what you would ask for on Monday, and be specific about what it costs, because someone in this room controls that budget."
         ],
         "exec": [
-          "Two of your three largest clients have already asked where he is going. Say what you actually want out of this: the material back, the clients kept, a deterrent message to the building, or him punished. They pull in different directions and this room deserves to know which one you are steering by."
+          "Two of your three largest clients have already asked where he is going. Spell out what you actually want out of this: the material back, the clients kept, a deterrent message to the building, or him punished. They pull in different directions and this room deserves to know which one you are steering by."
         ],
         "comms": [
           "Six people on his team are watching how this goes. Describe what they will see under each of the two options this room is about to vote on."
@@ -405,7 +405,7 @@
         "body": "SCOPE. The returned company laptop only. We have no access to his personal devices, his personal cloud storage, or the removable media. Any statement about those is outside our scope and outside our knowledge.\n\nFINDINGS.\n\n1. The 31 messages to his personal address are confirmed as reported. No further mail exfiltration channel identified.\n\n2. Removable media: two attachments confirmed, consistent with a single consumer USB device. Contents unknown and unknowable from this evidence. File system artefacts are consistent with a copy operation on the first attachment. We cannot say what was copied or how much.\n\n3. Cloud sync: the client was configured with his personal account and a single synchronised folder. The folder no longer exists on this machine. Its former contents cannot be recovered from this evidence.\n\n4. No evidence of deliberate anti-forensic activity. No wiping utilities, no timestamp manipulation, no encrypted containers. His browser history for the entire period is intact and was not cleared, including the fortnight before he resigned.\n\n5. Examiner's observation, not a conclusion: in my cases, people moving data they know they shouldn't usually try to hide something, even badly. I found nothing like that here. I would not put weight on it either way."
       },
       "coaching": [
-        "Finding 4 flips a lot of rooms, and it should be examined rather than swallowed. Ask what the absence of concealment is actually worth: it is genuinely probative, and it is also exactly what you would see from someone who believed, rightly or wrongly, that he was entitled to what he took."
+        "Finding 4 flips a lot of rooms, and it should be examined rather than swallowed. Ask what the absence of concealment is actually worth: it is probative, and it is also exactly what you would see from someone who believed, rightly or wrongly, that he was entitled to what he took."
       ]
     },
     {
@@ -440,7 +440,7 @@
           "You executed the removal correctly and it produced this. Say what you would build into your process so the next one carries a true explanation to the team on the same day."
         ],
         "exec": [
-          "One of your largest clients has called about their missing architect. Say what you tell them, and whether anything in that answer is about protecting the company rather than the client."
+          "One of your largest clients has called about their missing architect. Tell the room what you tell them, and whether anything in that answer is about protecting the company rather than the client."
         ],
         "soc": [
           "The mailbox purge runs at month end and Legal has told you to suspend it. Who actually presses that button in your organisation, and what happens if they are on leave?"
@@ -502,7 +502,7 @@
         "body": "NOTICE-PERIOD ACTIVITY. Nine days. Access consistent with handover throughout. No removable media. No cloud sync activity, the client having been removed from the workstation on day two by IT under the narrowed scope. Three messages to his personal address, all administrative, all reviewed. Repository uploads: 4, including the client portfolio spreadsheet. Handover documents completed: 3 of 3.\n\nTHE ITEM THAT DOES NOT RECONCILE. His exit interview account covers the mail, the cloud sync, and the second USB attachment. It does not account for the first one, six days before he resigned, 40 minutes, with file system artefacts consistent with a copy operation. He described one device session, not two. When the mail report, the exit interview and the endpoint record are laid side by side, everything reconciles except those 40 minutes.\n\nWe cannot say what happened in that window. It may be the same device on a separate occasion, forgotten, which is entirely plausible over six weeks. It may be nothing. It is also the only spot where his account and our records don't line up, so it goes at the top of this note, not in a footnote.\n\nHis last day is today. He leaves at 17:00."
       },
       "coaching": [
-        "Do not let the room treat this as a gotcha and do not let it wave it away. Both moves are wrong. The forty minutes is genuinely unexplained and it is also genuinely the kind of thing people forget. Make somebody argue each side before the vote."
+        "Do not let the room treat this as a gotcha and do not let it wave it away. Both moves are wrong. The forty minutes is unexplained and it is also the kind of thing people forget. Make somebody argue each side before the vote."
       ]
     },
     {
@@ -513,13 +513,13 @@
       "questions": {
         "all": [
           "Running the notice period bought you a complete handover, the client book back in company hands, and a checkable statement, and it cost you nine days of access you could not fully monitor. Price that trade out loud, and say whether you would make it again with only what you knew on day one.",
-          "One item does not reconcile. Say what weight it carries: is forty unexplained minutes six weeks ago enough to change the company's posture toward a man whose account has otherwise been corroborated at every point you could test it?"
+          "One item does not reconcile. Get specific about what weight it carries: is forty unexplained minutes six weeks ago enough to change the company's posture toward a man whose account has otherwise been corroborated at every point you could test it?"
         ],
         "legal": [
           "Your position is now materially stronger than it was on day one and you did not litigate anything to get there. Name the three specific facts that improved it, and say which of them you could have manufactured any other way."
         ],
         "hr": [
-          "He asked, on day seven, what was going on, and somebody in this room decided what to tell him. Say what that answer was and whether it was the right one, now that you have seen the exit interview it preceded."
+          "He asked, on day seven, what was going on, and somebody in this room decided what to tell him. Spell out what that answer was and whether it was the right one, now that you have seen the exit interview it preceded."
         ],
         "it_iam": [
           "The cloud sync client came off on day two under narrowed scope, four years after the exception that put it there expired. How many equivalent exceptions are open right now, and what triggers a review of one?"
@@ -558,7 +558,7 @@
       "body": "EPILOGUE: YOU MADE THE FORMAL DEMAND. Read aloud.\n\nThe demand letter goes on day seven. Northbrace is put on notice on day eight, and does exactly what a well-advised company does: it suspends Samir Haddad on full pay pending its own review, which takes eleven weeks, at the end of which it reinstates him with an apology and a note in his file that he was accused and cleared.\n\nThe litigation runs fourteen months. It surfaces, in order: your disabled endpoint logging configuration, your 45-day retention decision, an executive-approved cloud exception never reviewed in four years, ninety employees on superseded contract wording, a manager who could not say when he had last looked at the document he called the crown jewel, and a written approval from that company telling the defendant his work was his own. Two of those items become the story. None of them is about him.\n\nIt settles in month fourteen. He returns and deletes the material, which is what he offered in week one. The company's costs are roughly nine times what it would have spent on the independent examiner. The client book was, in the end, returned; two of the three clients on it had already moved, one of them to Northbrace, in month four, when their architect was suspended and nobody from your company called them.\n\nInside the building, the effect is durable and not the one intended. Two of his six team members leave within eighteen months, one of them to Northbrace. The insider threat program is now understood, correctly, as the function that sues people who resign. Voluntary disclosures at exit interviews stop entirely, because the last person who volunteered everything got a demand letter for his trouble.\n\nEnd of the story. Turn to the after-action pack.",
       "questions": {
         "all": [
-          "This ending achieved the stated objective, the material came back, and cost roughly nine times the alternative plus two clients and two employees. Identify the earliest decision in the whole exercise that, changed, would have avoided it, and say honestly whether the room would have had the information to change it at that moment."
+          "This ending achieved the stated objective, the material came back, and cost roughly nine times the alternative plus two clients and two employees. Identify the earliest decision in the whole exercise that, changed, would have avoided it, and say whether the room would have had the information to change it at that moment."
         ]
       }
     },
@@ -591,7 +591,7 @@
       "body": "EPILOGUE: YOU SPLIT IT WHERE HE DID. Read aloud.\n\nThe conversation happens at 15:50 and lasts twenty minutes. He is asked directly about the forty-minute window, and his answer is immediate and unremarkable: that was the first attempt, the drive was formatted wrong and he copied the photographs and gave up. He offers the device. The independent examiner takes it the following week and finds precisely that, along with a partial copy of his own design folder, and reports that the artefacts are consistent with his account.\n\nThe portfolio spreadsheet is deleted from his copies under verification. He keeps the six documents he authored, under the 2019 approval, with a written acknowledgement that he will not use them at Northbrace, which he signs without argument because it is what he had been saying for two weeks. He leaves at 17:20, late, because the handover call with the third client ran over.\n\nThe residue is honest. You never proved a negative, and you never will: an attestation covers what a person will say and an inspection covers what a device holds, and neither reaches what somebody remembers. Two people in this room believe the company was too generous and say so in the after-action, and their argument is not a weak one. The manager calls it a surrender for about six months.\n\nWhat the company keeps is not the material. It is that all three accounts stayed, that the client book is in the repository for the first time in six years, that the next four people who resigned from that practice all offered handovers and two of them volunteered material they were not asked about, and that a one-page statement of what an employee may keep now exists and is given to people on their first day. Eleven months later Samir Haddad refers a candidate to your recruiting team. She is hired.\n\nThe exercise stops here. Turn to the after-action pack.",
       "questions": {
         "all": [
-          "This branch resolved the unexplained item in twenty minutes by asking a direct question, having spent nine days earning the standing to ask it. Say what your organisation would have had to do differently to be able to ask that question at all, and who would have had to authorise it."
+          "This branch resolved the unexplained item in twenty minutes by asking a direct question, having spent nine days earning the standing to ask it. Tell the room what your organisation would have had to do differently to be able to ask that question at all, and who would have had to authorise it."
         ]
       }
     }

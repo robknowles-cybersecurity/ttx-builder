@@ -224,7 +224,7 @@
           "Your own file note predicted this. Walk the room through what you would need, in authority, policy or a named recipient, for that note to have gone somewhere other than the file."
         ],
         "int_lead": [
-          "Your escalation matrix has eleven indicators and none of them is administrator. Say what you would add today, and then say honestly whether adding it would make your program better or just busier."
+          "Your escalation matrix has eleven indicators and none of them is administrator. Tell the room what you would add today, and then say whether adding it would make your program better or just busier."
         ],
         "exec": [
           "He asked you for thirty minutes, twice, and told you one of the things he wanted to raise was a company risk unrelated to himself. You have not replied. What was the actual reason, and how many people in your organisation are currently in the same queue?"
@@ -318,17 +318,17 @@
       "body": "DISCUSSION TWO. Assemble the whole picture out loud, in order: an eleven-year administrator passed over nine weeks ago; a performance plan HR advised against in writing; two ignored requests for thirty minutes, one of which said he wanted to raise a company risk; a group membership carried as an accepted risk for nine quarters; a break-glass credential in a vault he administers; an alerting exclusion whose review date passed; a six-week audit-forwarding gap on the one host whose local logs he keeps; and, eleven days old, an unattributed job on that host, aimed at the backup catalogue, that runs only when an account check fails. Facilitator: ALL questions first.",
       "questions": {
         "all": [
-          "State the leading hypothesis in one sentence and the strongest innocent alternative in one sentence, and make the innocent one genuinely strong, because there is one. Then name which one this room WANTS to be true about a man who has been paged at three in the morning for eleven years, and say which direction that wanting pushes you.",
+          "State the leading hypothesis in one sentence and the strongest innocent alternative in one sentence, and make the innocent one strong, because there is one. Then name which one this room WANTS to be true about a man who has been paged at three in the morning for eleven years, and say which direction that wanting pushes you.",
           "What do you still not know that most changes the answer, and which of those unknowns can be resolved without Curtis Hale finding out you are asking?"
         ],
         "int_lead": [
           "Your privileged-user monitoring is a policy you own and a capability his team runs. Say out loud what you can and cannot verify in the next hour without going through the people you may be investigating."
         ],
         "soc": [
-          "Six weeks, nine occurrences, and a vendor defect that genuinely exists. Defend your ticket. Then say what one change would have made a benign explanation and a malicious one distinguishable at week one instead of week six."
+          "Six weeks, nine occurrences, and a vendor defect that exists. Defend your ticket. Then say what one change would have made a benign explanation and a malicious one distinguishable at week one instead of week six."
         ],
         "hr": [
-          "You wrote the reservation. It came true. Say what HR's role is in the next 72 hours, advocate, investigator, both or neither, and who decides, because the answer is about to be tested."
+          "You wrote the reservation. It came true. Get specific about what HR's role is in the next 72 hours, advocate, investigator, both or neither, and who decides, because the answer is about to be tested."
         ],
         "legal": [
           "There is a scheduled job aimed at the backup catalogue and an employee on a performance plan. Say precisely what must be true before anyone at this table connects those two facts in writing, and what preservation you are ordering in the next ten minutes."
@@ -343,11 +343,11 @@
           "Whatever this room decides, you write it, and your own brief says you cannot opt out of sending it. Before the vote, name the option on the table that you could not make sound fair to his team, and then say whether that difficulty is a reason to avoid it or just the cost of doing it."
         ],
         "exec": [
-          "You approved the performance plan without reading the attachment, and you know there are two systems nobody else can restore. Say what you owe this process now, and what you owe Curtis Hale."
+          "You approved the performance plan without reading the attachment, and you know there are two systems nobody else can restore. Spell out what you owe this process now, and what you owe Curtis Hale."
         ]
       },
       "coaching": [
-        "Someone will say we should just ask him. Do not resolve it. That instinct is the decision point, and here it is a genuinely defensible choice. Park it visibly and let the pressure build.",
+        "Someone will say we should just ask him. Do not resolve it. That instinct is the decision point, and here it is a defensible choice. Park it visibly and let the pressure build.",
         "If the room reaches certainty in under five minutes, slow it down with one question: which of these facts would look different if he were innocent and simply very good at his job? Several of them would not look different at all. That is the honest difficulty of privileged-user cases."
       ]
     },
@@ -446,7 +446,7 @@
           "Four of the nine gap windows aged out locally before this incident opened. Say what retention change you would make on Monday, and what it would cost."
         ],
         "exec": [
-          "Two systems have no administrator and the man who ran them is suspended. Say what you are doing about that this weekend, and note for the record that this is the risk he asked to talk to you about."
+          "Two systems have no administrator and the man who ran them is suspended. Tell the room what you are doing about that this weekend, and note for the record that this is the risk he asked to talk to you about."
         ],
         "legal": [
           "Write the one-sentence contemporaneous security rationale for this morning's action. Out loud. Now. That sentence is the whole exercise for your seat."
@@ -525,7 +525,7 @@
           "He resigns at 07:44 and his access is still live. Walk the room through the next fifteen minutes, in order, and say which step you would get wrong under pressure."
         ],
         "legal": [
-          "He has waived notice and asked not to be contacted. Say what preservation, what handover obligation and what agreement you can still reach for, and what you have lost."
+          "He has waived notice and asked not to be contacted. Get specific about what preservation, what handover obligation and what agreement you can still reach for, and what you have lost."
         ],
         "hr": [
           "A performance review was held on the subject of an active investigation, by a manager nobody had told. Design the boundary rule that stops that happening, in one sentence, and name who enforces it."

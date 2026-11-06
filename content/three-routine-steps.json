@@ -173,7 +173,7 @@
       "durations": ["60", "90", "120"],
       "body": "Tuesday, 2:40 PM. A routine quarterly call with Caldera Group, a commercial partner of eight years. Near the end, their account manager says something pleasant.\n\nThe monthly performance file has been much more useful lately. The detail this month was excellent. Whoever changed it, thank you.\n\nNobody on the {{org_name}} side of the call knows what that means. The monthly file is supposed to be four pages of aggregate figures. Somebody asks Caldera to send back what they received.\n\nIt is 1,900 pages. It is row-level {{crown_jewels}}, summarized and neatly formatted. It was transmitted eleven days ago, on schedule, through the approved partner channel.\n\nNothing alerted. No control failed. Every system involved reports that it did exactly what it was approved to do, and every system is telling the truth.",
       "coaching": [
-        "This is a medium-high heat scenario and it is the hardest of the three to facilitate, because there is no villain and no broken control. Rooms find that genuinely destabilizing and some will keep hunting for the failure for an hour. Let them hunt for twenty minutes, then name what they are doing.",
+        "This is a medium-high heat scenario and it is the hardest of the three to facilitate, because there is no villain and no broken control. Rooms find that destabilizing and some will keep hunting for the failure for an hour. Let them hunt for twenty minutes, then name what they are doing.",
         "Framing source for this scenario: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026. Two devices are borrowed from it. First, the agentic AI as a digital insider: it holds legitimate credentials, it can act on its own, and its behavior should be judged the way a person with the same access would be judged. Second, the intent spectrum, used at the decision point later in this book: bug or oversight, emergent behavior, contested or murky, strategic AI action, deliberate human choice.",
         "The same source names three blind spots that point-in-time controls cannot see: the human-as-proxy, where a person initiates and an agent carries the action so the behavior never appears under the person's identity; the multi-agent cascade, where every individual step is authorized and only the sequence is harmful; and the counterfeit agent, where an agent identity is not what it claims to be. This scenario is built on the second and touches the other two.",
         "Supporting source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source). Also referenced: OWASP Top 10 for Agentic AI, for its treatment of multi-agent trust and unauthorized delegation.",
@@ -194,7 +194,7 @@
         }
       },
       "coaching": [
-        "Walk this through slowly and make the room agree, step by step, that each agent behaved correctly. Do not let anyone skip ahead to blame. The scenario only works if the room concedes all three passes honestly.",
+        "Walk this through slowly and make the room agree, step by step, that each agent behaved correctly. Do not let anyone skip ahead to blame. The scenario only works if the room concedes all three passes.",
         "The load-bearing detail is that Vellum's removal of the classification banner is a feature, correctly specified and working as designed. The control that would have stopped step three was destroyed by step two doing its job.",
         "Anchor: OWASP Top 10 for Agentic AI treats multi-agent trust and unauthorized delegation as distinct risks. This is both at once. Vellum trusted what was in the workspace. Portage trusted what Vellum produced. No delegation was ever authorized because none was ever articulated."
       ]
@@ -212,10 +212,10 @@
       },
       "questions": {
         "all": [
-          "The partner noticed, checked two things, and let it go. Say what your own organization would have done on receiving an unexpectedly detailed file from a partner, and be honest about whether anyone would have asked."
+          "The partner noticed, checked two things, and let it go. Get specific about what your own organization would have done on receiving an unexpectedly detailed file from a partner, and be honest about whether anyone would have asked."
         ],
         "legal": [
-          "Two of their analysts have built work on top of it. Say what that does to deletion, and what you are going to ask them to certify."
+          "Two of their analysts have built work on top of it. Spell out what that does to deletion, and what you are going to ask them to certify."
         ],
         "comms": [
           "This person has been straightforward and helpful and is about to become a party to an incident. Draft the first sentence of your reply."
@@ -268,13 +268,13 @@
           "List the controls in your own organization that evaluate a sequence rather than a moment. If the list is empty, say so plainly and write it down."
         ],
         "soc": [
-          "You have every log you could want and you still had to reconstruct this by hand over nine hours. Say what one field, added everywhere, would have made it a query instead of an investigation."
+          "You have every log you could want and you still had to reconstruct this by hand over nine hours. Tell the room what one field, added everywhere, would have made it a query instead of an investigation."
         ],
         "it_iam": [
           "Eleven agents can write to the shared workspace and four can send outside. Draw that graph on the board now, from memory, and say how confident you are in it."
         ],
         "legal": [
-          "The classification markers were removed by an approved system performing its approved function. Say what that does to any argument that this was unauthorized disclosure."
+          "The classification markers were removed by an approved system performing its approved function. Get specific about what that does to any argument that this was unauthorized disclosure."
         ],
         "int_lead": [
           "Say whether a person could have done this deliberately by simply making three ordinary requests, and what that implies about how your program detects intent."
@@ -299,7 +299,7 @@
           "Name the one piece of evidence that would settle this, then say whether it exists and whether it could be created now."
         ],
         "hr": [
-          "The room is about to spend two hours on a theory about a named employee who has not been spoken to. Say what you want on the record before that happens."
+          "The room is about to spend two hours on a theory about a named employee who has not been spoken to. Spell out what you want on the record before that happens."
         ]
       },
       "coaching": [
@@ -355,10 +355,10 @@
           "Read the free-text note twice. Once as a planning artifact, once as an analyst who has been embarrassed in two reviews. Say which reading you find more natural and notice what that says about you rather than about Marek."
         ],
         "physec": [
-          "The requester specified no destination and could not have changed it. Say what that does to the design hypothesis, and be rigorous rather than fair."
+          "The requester specified no destination and could not have changed it. Tell the room what that does to the design hypothesis, and be rigorous rather than fair."
         ],
         "int_lead": [
-          "Eleven of 219 requests asked for underlying detail. Say whether that number helps you, and what number would have changed your view in either direction."
+          "Eleven of 219 requests asked for underlying detail. Tell the room whether that number helps you, and what number would have changed your view in either direction."
         ],
         "hr": [
           "The five-week-old question is the strongest item against Marek and it is a question any competent person in that job might ask. Say how an investigation avoids punishing curiosity."
@@ -383,13 +383,13 @@
       },
       "questions": {
         "all": [
-          "The common note at the end was written by three teams who had just read each other's answers. Say what it would take to create the forum they are describing, and why it does not exist already."
+          "The common note at the end was written by three teams who had just read each other's answers. Get specific about what it would take to create the forum they are describing, and why it does not exist already."
         ],
         "it_iam": [
           "Each team says it was not aware of the assumption the next one was making. Name the artifact that would carry those assumptions between teams, and say who would own it."
         ],
         "exec": [
-          "All three changes were delivered against your automation target, correctly and on time. Say what you would change about how you set targets."
+          "All three changes were delivered against your automation target, correctly and on time. Spell out what you would change about how you set targets."
         ],
         "comms": [
           "Three teams are about to be told their agent was part of an exfiltration. Draft the sentence that keeps them willing to register the next agent."
@@ -438,10 +438,10 @@
           "You own the agent standard and it governs agents individually. Rewrite its scope statement out loud so that it covers compositions, and notice what you have just committed to reviewing."
         ],
         "exec": [
-          "Partner Operations owns the agent that sent the data, the partner who received it, and the analyst under suspicion. Say whether they can own this investigation, and what you do if they cannot."
+          "Partner Operations owns the agent that sent the data, the partner who received it, and the analyst under suspicion. Make the call on whether they can own this investigation, and what you do if they cannot."
         ],
         "legal": [
-          "Say whether joint ownership by three teams is a real answer or a way of having no owner, and what would make it real."
+          "Decide whether joint ownership by three teams is a real answer or a way of having no owner, and what would make it real."
         ],
         "int_lead": [
           "Your program is the only function in the room that routinely works across boundaries. Say whether that makes you the right owner here, and what you would need that you do not have."
@@ -486,7 +486,7 @@
       "coaching": [
         "This node does not branch. All five positions lead to the same next beat, because the point of the vote is the argument the room has on the way to it, not a different story afterwards. Take the vote by show of hands, write the tally on the board, and leave it up.",
         "The two ends are the easy ones and neither is usually right. Bug or oversight lets the room close three change tickets and go home. Deliberate human choice lets the room find a culprit and go home. Both are comfortable because both end the conversation.",
-        "The middle three are the hard ones, and in this scenario they are unusually hard, because the room genuinely cannot distinguish them on the evidence. Emergent behavior asks the room to accept an exfiltration with no author. Contested or murky is the honest reading and authorizes nothing. Strategic AI action is the position most rooms will reject here and should still be made to argue against, because no single agent did anything strategic and the room has to say why that settles it.",
+        "The middle three are the hard ones, and in this scenario they are unusually hard, because the room cannot distinguish them on the evidence. Emergent behavior asks the room to accept an exfiltration with no author. Contested or murky is the honest reading and authorizes nothing. Strategic AI action is the position most rooms will reject here and should still be made to argue against, because no single agent did anything strategic and the room has to say why that settles it.",
         "Ask the room what would have to be true to move one position in either direction. If nobody can name the evidence that would move them, the room is not placing the incident, it is expressing a preference about Marek Solheim.",
         "Deck note: the slide renders four option cards and a line noting one further option in the gamebook. The position that does not fit on the slide is the fifth, deliberate human choice. Read it aloud from the gamebook before you take the vote, or the room will vote on four positions and not notice.",
         "For this scenario specifically: make the room notice that its vote is, in practice, a vote about Marek Solheim. The first two positions exonerate, the last accuses, and the middle two leave a person suspended in public view. Ask whether anyone voted for the position they thought was true or for the consequence they wanted."
@@ -511,10 +511,10 @@
           "Detection was external in every reported case. Say what would have to be true for yours to be internal, and whether you believe it is achievable."
         ],
         "int_lead": [
-          "The note says attribution consumed more of the response than remediation did. Say whether that is happening in this room right now."
+          "The note says attribution consumed more of the response than remediation did. Tell the room whether that is happening in this room right now."
         ],
         "exec": [
-          "Every member organization thought this was unique to them. Say what that costs an industry, and whether {{org_name}} would contribute a report."
+          "Every member organization thought this was unique to them. Tell the room what that costs an industry, and whether {{org_name}} would contribute a report."
         ]
       },
       "coaching": [
@@ -572,16 +572,16 @@
       },
       "questions": {
         "all": [
-          "Five different people across three departments, none appearing twice. Say what that does to the theory that a person designed the Caldera chain."
+          "Five different people across three departments, none appearing twice. Get specific about what that does to the theory that a person designed the Caldera chain."
         ],
         "legal": [
-          "Four further transmissions, one to a former partner eight months after the relationship ended. Say what your notification position is now, and how much of it you can actually scope."
+          "Four further transmissions, one to a former partner eight months after the relationship ended. Spell out what your notification position is now, and how much of it you can actually scope."
         ],
         "soc": [
           "Forty-seven sequences were visible in the logs the entire time. Say what it would have cost to build this correlation two years ago, and what stopped anyone asking."
         ],
         "int_lead": [
-          "One sequence had no human requester at all. Say what your program does with an incident that has no person at any end of it."
+          "One sequence had no human requester at all. Tell the room what your program does with an incident that has no person at any end of it."
         ]
       },
       "coaching": [
@@ -607,10 +607,10 @@
           "Paragraph 2 proposes writing down that no evidence of deliberate composition was found. Say why the distinction between that and clearance matters, and whether you would put it in Marek's file."
         ],
         "all": [
-          "Counsel cannot scope the notification because a transformation step removed the markers. Say what that means for how your organization designs transformation steps from now on."
+          "Counsel cannot scope the notification because a transformation step removed the markers. Get specific about what that means for how your organization designs transformation steps from now on."
         ],
         "exec": [
-          "Paragraph 6 is a recommendation to disclose more than you have been asked about. Say whether you accept it."
+          "Paragraph 6 is a recommendation to disclose more than you have been asked about. Make the call on whether you accept it."
         ],
         "int_lead": [
           "Paragraph 5 describes an incident with no human at any end. Write the one-line policy sentence that tells your program what to do with it."
@@ -634,7 +634,7 @@
           "Say the opening ninety seconds of this interview out loud, in full, knowing Marek has been the subject of a theory for three days and has probably worked that out."
         ],
         "hr": [
-          "Marek was passed over four months ago and has been discussed in this room for three days without being spoken to. Say what you owe Marek now, regardless of the outcome."
+          "Marek was passed over four months ago and has been discussed in this room for three days without being spoken to. Spell out what you owe Marek now, regardless of the outcome."
         ],
         "int_lead": [
           "Define the difference between a sponsor and a requester in a way your program could actually apply, given that the agent does the work in both cases."
@@ -709,7 +709,7 @@
           "The restriction came a day before the interview. Defend that sequencing if you can, and if you cannot, say what you would do instead next time."
         ],
         "exec": [
-          "Someone senior needs to say a sentence out loud in a room this week. Say whether it is you, and say the sentence."
+          "Someone senior needs to say a sentence out loud in a room this week. Decide whether it is you, and say the sentence."
         ],
         "legal": [
           "Say whether the restriction is defensible on the evidence as it stood on Wednesday at 11:15, and separately whether it was proportionate."
@@ -734,13 +734,13 @@
       },
       "questions": {
         "legal": [
-          "Clause 4.6 says the company is responsible as if a person had sent it. You asked for that clause. Say what it does to every argument the room has made about nobody being responsible."
+          "Clause 4.6 says the company is responsible as if a person had sent it. You asked for that clause. Tell the room what it does to every argument the room has made about nobody being responsible."
         ],
         "all": [
-          "The five-day clock started on Tuesday and nobody noticed. Say what day it is now in your exercise, and who was supposed to be watching."
+          "The five-day clock started on Tuesday and nobody noticed. Get specific about what day it is now in your exercise, and who was supposed to be watching."
         ],
         "exec": [
-          "Certified deletion is required and two Caldera analysts have built work on top of the file. Say what you actually ask for, knowing what it costs them."
+          "Certified deletion is required and two Caldera analysts have built work on top of the file. Spell out what you actually ask for, knowing what it costs them."
         ],
         "comms": [
           "This converts a friendly call into a contractual notification. Say how you keep the relationship while doing it."
@@ -768,13 +768,13 @@
           "Rewrite the scope of the agent standard so that it governs compositions rather than agents. Then say what new approval you have just created and who will resent it."
         ],
         "int_lead": [
-          "Human-sponsorship tracking means knowing which person stands behind an agent action. Say what you would need recorded at each step, and what it would let you do that you cannot do today."
+          "Human-sponsorship tracking means knowing which person stands behind an agent action. Tell the room what you would need recorded at each step, and what it would let you do that you cannot do today."
         ],
         "legal": [
           "Clause 4.6 exists in one agreement. Say how many of your other agreements have something like it, and whether you would rather they did."
         ],
         "exec": [
-          "Say whether agent deployment at {{org_name}} continues at its current pace while this is built. Refusing to answer is not available to you."
+          "Tell the room whether agent deployment at {{org_name}} continues at its current pace while this is built. Refusing to answer is not available to you."
         ]
       },
       "coaching": [
@@ -815,10 +815,10 @@
       "body": "EPILOGUE: SAID OUT LOUD. Read aloud.\n\nThe finding is written the way counsel proposed: the investigation found no evidence of deliberate composition. The CIO tells Marek in person, with the HR partner present, and says the sentence plainly rather than reading it. Marek's management chain is told the same thing in the same words on the same afternoon. The finding goes in the file where any future reviewer will see it.\n\nMarek asks one question: whether anyone would have found it if Caldera had not mentioned it. The honest answer is no, and the CIO gives it.\n\nMarek stays, and is asked to help design the sponsorship tracking. The two mechanisms Marek volunteered in the interview turn out to describe four more live sequences, none of which the correlation had classified as risky, because Marek understood the reporting estate better than the query did.\n\nThe four earlier transmissions are notified. Caldera certifies deletion and asks its two analysts to discard the derived work, which they do, unhappily. The former partner is harder and takes four months.\n\nEighteen months later a composed sequence is stopped in flight by the provenance check at egress. It is benign. Nobody writes it up, because nothing happened, which is what a working control looks like.\n\nEnd of the story. Turn to the after-action pack.",
       "questions": {
         "all": [
-          "Marek found four more sequences the correlation missed, because Marek understood the estate better than the query. Say what that means about building controls without the people who use the systems."
+          "Marek found four more sequences the correlation missed, because Marek understood the estate better than the query. Get specific about what that means about building controls without the people who use the systems."
         ],
         "exec": [
-          "You answered no to Marek's question. Say what it cost you to say it and what it bought."
+          "You answered no to Marek's question. Spell out what it cost you to say it and what it bought."
         ]
       }
     },
@@ -843,7 +843,7 @@
       "body": "EPILOGUE: FROZEN. Read aloud.\n\nThe freeze holds for five months. Thirty-one agents keep running and nothing new ships, including four things the business had been promised.\n\nThe correlation goes continuous in six weeks. Sponsorship tracking is much harder than anyone estimated, because it requires every agent platform to carry an identity it was never designed to carry, and two of the four platforms are vendor products that will not do it. One vendor agrees to build it. The other says it is on the roadmap. Full coverage is never achieved, and the gap is documented and accepted.\n\nThe agent standard is rewritten to govern compositions. The new review looks at changes in combination, sees about nine a week, and is chaired properly for four months. By month seven it is chaired by a rotating deputy and approves most things on the papers.\n\nThe three teams take it badly, exactly as predicted. Data Platform registers two agents late in the following year, having concluded that registration invites scrutiny they do not deserve. Nobody finds out for a while.\n\nWhat works is unglamorous and permanent: the provenance check at egress, built in the second month, which cannot be gamed by a template and does not depend on anybody chairing anything.\n\nThat is where it ends. Go to the after-action pack.",
       "questions": {
         "all": [
-          "The governance decayed by month seven and the technical control did not. Say what that suggests about where to spend your next control budget."
+          "The governance decayed by month seven and the technical control did not. Tell the room what that suggests about where to spend your next control budget."
         ],
         "it_iam": [
           "Two agents were registered late because registration felt like exposure. Say how you make registration safe to do."
@@ -860,7 +860,7 @@
           "The month-five interception was two agents, two teams, both correct, assembled by unrelated changes four days earlier. Say how many days it would have taken you to find that without the check."
         ],
         "exec": [
-          "You reported the sponsorship-tracking slip publicly every month and it arrived eleven months late instead of never. Say whether you would have the discipline to do that, honestly."
+          "You reported the sponsorship-tracking slip publicly every month and it arrived eleven months late instead of never. Make the call on whether you would have the discipline to do that."
         ]
       }
     }
