@@ -286,11 +286,45 @@ has exactly one source of truth.
    matching its `meta.track`, carrying the same `data-track` attribute. Add the
    row to the matching table in the Scenarios roster above.
 3. Confirm the scenario's `industries` keys match the Industry dial's values.
-4. Load `exercise.html?s=<id>&…` and walk all three durations and all three
-   difficulties, watching the on-screen **Assembly notes** panel for warnings.
-5. Check that every branch ends in a decision and every ending is reachable
-   only by `goto`.
+4. Run the validator (next section). It walks every duration, difficulty and
+   linear setting for you and fails on anything structural.
+5. Load `exercise.html?s=<id>&…` and read the result at the settings you mean
+   to run, watching the on-screen **Assembly notes** panel for warnings.
 6. Export the deck and open it.
+
+### Validating content
+
+`tools/validate.mjs` is a structural check for `content/*.json`. It needs
+Node 20 or newer and nothing else: no `package.json`, no install.
+
+```
+node tools/validate.mjs                              # every scenario
+node tools/validate.mjs content/the-approach.json    # one or more files
+```
+
+It loads the real `assets/engine.js` and assembles every scenario at all
+three durations, all three difficulties and both linear settings, with every
+seat at the table and each industry in turn (180 runs for ten scenarios). It
+prints one line per finding and exits 0 when clean, 1 otherwise, so it drops
+into a pre-commit hook or CI step unchanged.
+
+| Check | What it catches |
+|---|---|
+| `duplicate-id` | Two sections with the same id (the later one steals the display number). |
+| `unknown-role-key` | A `questions` key that is neither `all` nor a role id. |
+| `unknown-token` | A `{{token}}` the engine does not know, in source or in assembled output. |
+| `placeholder` | `TODO`, `TBD`, `XXX`-style masks or `<angle-bracket notes>` in printed text. Deliberate exceptions are whitelisted in the script with a comment. |
+| `goto-missing` | A decision option pointing at no section. |
+| `goto-backward` | A resolved `goto` that lands at or before the decision. |
+| `retargeted` | A `goto` whose literal target was filtered out at this setting, so the engine walked forward. Legal, but worth knowing. |
+| `unreachable` | A kept section nothing leads to (branching mode only). |
+| `fallthrough-epilogue` | A narrative or inject that reads straight into an ending. |
+| `no-terminator` | A run that does not end on a decision or epilogue. |
+| `engine-warning` | Any other assembly warning. |
+
+The script header lists the places where it had to pick an interpretation of
+the engine's behavior (direction of a `goto`, fall-through into endings,
+unreachable sections in linear mode).
 
 ### Serving notes
 
