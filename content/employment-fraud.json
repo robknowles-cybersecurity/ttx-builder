@@ -238,7 +238,7 @@
     {
       "id": "s05",
       "type": "discussion",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "DISCUSSION ONE. The room has a pay change to a prepaid card in someone else's name, and a laptop signed for by that same someone at an address that is not his. Nothing has been confirmed. Nobody has talked to Ethan Morrow.\n\nBefore anything technical, settle who owns this. Then decide what can wait until Wednesday at 14:00 and what cannot.",
       "questions": {
         "all": [
@@ -494,7 +494,7 @@
     {
       "id": "s17",
       "type": "discussion",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "BRANCH A DISCUSSION. The farm has been told. The laptop was nearly wiped. A demand for payment is sitting in HR's inbox. Two more names turned up and one of them may be a different kind of case.\n\nCounsel has the lawyers sorted out. What the room has not sorted out is whether this is a police matter, a sanctions matter, or a personnel matter.",
       "questions": {
         "all": [
@@ -615,7 +615,7 @@
     {
       "id": "s23",
       "type": "discussion",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "BRANCH B DISCUSSION. The watch is holding. The tripwire has not fired. Law enforcement wants two more weeks. Two of the subjects review each other's code, and one of them changed the release pipeline last night. The staffing vendor is about to act on its own, and the payroll clock is running again.",
       "questions": {
         "all": [
