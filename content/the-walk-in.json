@@ -260,7 +260,7 @@
       },
       "coaching": [
         "Make the room say an actual sentence to Priya out loud. Abstract postures collapse on contact with a person in a chair.",
-        "If the room splits here, note the split and move on. Section eleven is where it becomes a decision."
+        "If the room splits here, note the split and move on. The discussion just before the first decision is where it becomes one."
       ]
     },
     {
@@ -319,7 +319,7 @@
       "id": "s09",
       "type": "inject",
       "durations": ["90", "120"],
-      "body": "Mid-afternoon, the sector information-sharing body's weekly digest lands. Item two could have been written from your morning's notes, which is either validating or alarming, and the room should decide which.",
+      "body": "Late morning, the sector information-sharing body's weekly digest lands. Item two could have been written from your morning's notes, which is either validating or alarming, and the room should decide which.",
       "inject": {
         "kind": "intel_bulletin",
         "from": "Sector information-sharing body, weekly digest item 2 (TLP:GREEN), ref MA-26-044",

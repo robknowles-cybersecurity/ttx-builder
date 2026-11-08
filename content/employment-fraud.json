@@ -1,15 +1,15 @@
 {
   "_placeholders": [
-    "Subject names (Ethan Morrow, Marco Alvarez, Brandon Cole), the facilitator 'T. Rudd', and every staff name: swap for the names used in the real exercise.",
-    "Timeline: 7 / 4 / 11 months in seat, Monday-to-Thursday case clock, Wednesday 14:00 pay lock. Match the real exercise's cadence and your payroll calendar.",
-    "First detection source: here it is payroll's bank-account name-mismatch check. If the real exercise started elsewhere (HR, a vendor re-verification, a peer tip, a SOC alert), move s03 and adjust s02.",
+    "Subject names (Ethan Morrow, Marco Alvarez, Brandon Cole), the facilitator 'T. Rudd', and every staff name: swap for the names used in your exercise.",
+    "Timeline: 7 / 4 / 11 months in seat, Monday-to-Thursday case clock, Wednesday 14:00 pay lock. Match your exercise's cadence and your payroll calendar.",
+    "First detection source: here it is payroll's bank-account name-mismatch check. If your exercise starts elsewhere (HR, a vendor re-verification, a peer tip, a SOC alert), move s03 and adjust s02.",
     "1412 Larkin Ct and the 'different state': placeholder laptop-farm address; keep it generic or fictional.",
     "Corvane Staffing (staffing vendor), Tessaray Analytics (second employer), Harlan & Voigt (outside counsel): invented names, swap or keep.",
-    "Prepaid card / fintech partner bank payroll routing: confirm it matches the payment pattern you actually saw.",
-    "The commit-email leak (s09, s15/s21) as the overlapping-employment tell: replace with whatever actually revealed the second employer in your case.",
-    "The number three and the mix (two farm-linked plus one ordinary overemployed worker): adjust to the real count and mix.",
+    "Prepaid card / fintech partner bank payroll routing: confirm it matches the payment pattern your exercise uses.",
+    "The commit-email leak (s09, s15/s21) as the overlapping-employment tell: replace with whatever reveals the second employer in your exercise.",
+    "The number three and the mix (two farm-linked plus one ordinary overemployed worker): adjust to the count and mix you want.",
     "Korean keyboard layout as a false lead (s07, red herring s10): keep only if it suits your audience; it is there to test profiling discipline.",
-    "OFAC voluntary self-disclosure and the verbal law-enforcement 'keep it running' request: check against what your counsel and the real exercise assumed.",
+    "OFAC voluntary self-disclosure and the verbal law-enforcement 'keep it running' request: check against what your counsel assumes.",
     "Industry blocks: copied from the other scenarios (Meridian names); financial flavor notes add the OFAC/BSA framing."
   ],
   "meta": {
@@ -17,7 +17,7 @@
     "title": "Wrong Address",
     "tagline": "IT shipped the laptop to the address on the ticket. That was the first mistake, and it was not IT's.",
     "version": "0.1.0-draft",
-    "_status": "NEW 2026-11-06. Drafted by Claude for Rob to adapt to the employment-fraud exercise run at his own organization and presented at FS-ISAC. Every name, number and timeline here is invented; the _placeholders list at the top level names the details most worth swapping for the real exercise's facts."
+    "_status": "NEW 2026-11-06. Draft for a facilitator to adapt to their own exercise. Every name, number and timeline here is invented; the _placeholders list at the top level names the details most worth swapping for your own exercise's facts."
   },
   "industries": {
     "financial": {
@@ -296,7 +296,7 @@
       "id": "s08",
       "type": "inject",
       "durations": ["90", "120"],
-      "body": "Thursday morning is two days away. At 13:52 the hiring manager finally replies, from his phone, to HR's voicemail.",
+      "body": "Thursday morning is three days away. At 13:52 the hiring manager finally replies, from his phone, to HR's voicemail.",
       "inject": {
         "kind": "text_message",
         "from": "Greg Paulsen (Data Engineering manager, on PTO), Teams to HRBP",
@@ -445,7 +445,7 @@
         "kind": "internal_note",
         "from": "Insider Risk (J. Okonkwo-Hart), search results, case IR-26-0088",
         "subject": "IR-26-0088 address + payroll correlation: 3 hits, not 1",
-        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7\n        Ship-to 1412 Larkin Ct. Payroll to prepaid card, holder T RUDD. Remote tool exception. [known]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Corvane Staffing (SOW CS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct. (same address, different unit number \"B\")\n        Paid by Corvane, not us. Corvane confirms they pay to a prepaid card in his name.\n        Remote tool exception: yes, same tool, same week-2 justification text, word for word.\n        Camera on: 0 of 38 meetings.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Ship-to: a different address, same state as HR record. No name mismatch on payroll.\n        No remote tool. Camera on regularly.\n        Flagged only because his git config also leaked another employer: two commits as b.cole@<a fintech, real-looking domain>.example.\n        Badge: in the office twice last month.\n\nSo: two that look like the same laptop farm, and one that looks like an ordinary guy holding two jobs.\n\nHit 3 is probably not the same kind of case. Writing that down now so it doesn't get lumped in."
+        "body": "Search: ship-to address != HR address of record, joined to payroll accounts with ACCT-VAL name mismatch, joined to remote-access exceptions. All active workers incl. contractors (staffing vendor feed). 24 months.\n\nHIT 1   MORROW, Ethan J.   FTE, Data Engineering, month 7\n        Ship-to 1412 Larkin Ct. Payroll to prepaid card, holder T RUDD. Remote tool exception. [known]\n\nHIT 2   ALVAREZ, Marco   CONTRACTOR via Corvane Staffing (SOW CS-2025-114), QA Automation, month 4\n        Ship-to 1412 Larkin Ct. (same address, different unit number \"B\")\n        Paid by Corvane, not us. Corvane confirms they pay to a prepaid card in his name.\n        Remote tool exception: yes, same tool, same week-2 justification text, word for word.\n        Camera on: 0 of 38 meetings.\n\nHIT 3   COLE, Brandon   FTE, Platform Support L2, month 11\n        Ship-to: a different address, same state as HR record. No name mismatch on payroll.\n        No remote tool. Camera on regularly.\n        Flagged only because his git config also leaked another employer: two commits as b.cole@fernway-pay.example.\n        Badge: in the office twice last month.\n\nSo: two that look like the same laptop farm, and one that looks like an ordinary guy holding two jobs.\n\nHit 3 is probably not the same kind of case. Writing that down now so it doesn't get lumped in."
       },
       "questions": {
         "all": [
