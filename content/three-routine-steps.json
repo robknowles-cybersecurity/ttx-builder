@@ -173,10 +173,10 @@
       "durations": ["60", "90", "120"],
       "body": "Tuesday, 2:40 PM. A routine quarterly call with Caldera Group, a commercial partner of eight years. Near the end, their account manager says something pleasant.\n\nThe monthly performance file has been much more useful lately. The detail this month was excellent. Whoever changed it, thank you.\n\nNobody on the {{org_name}} side of the call knows what that means. The monthly file is supposed to be four pages of aggregate figures. Somebody asks Caldera to send back what they received.\n\nIt is 1,900 pages. It is row-level {{crown_jewels}}, summarized and neatly formatted. It was transmitted eleven days ago, on schedule, through the approved partner channel.\n\nNothing alerted. No control failed. Every system involved reports that it did exactly what it was approved to do, and every system is telling the truth.",
       "coaching": [
-        "This is a medium-high heat scenario and it is the hardest of the three to facilitate, because there is no villain and no broken control. Rooms find that destabilizing and some will keep hunting for the failure for an hour. Let them hunt for twenty minutes, then name what they are doing.",
+        "This is a medium-high heat scenario and it is the hardest in the AI as Insider track to facilitate, because there is no villain and no broken control. Rooms find that destabilizing and some will keep hunting for the failure for an hour. Let them hunt for twenty minutes, then name what they are doing.",
         "Framing source for this scenario: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026. Two devices are borrowed from it. First, the agentic AI as a digital insider: it holds legitimate credentials, it can act on its own, and its behavior should be judged the way a person with the same access would be judged. Second, the intent spectrum, used at the decision point later in this book: bug or oversight, emergent behavior, contested or murky, strategic AI action, deliberate human choice.",
         "The same source names three blind spots that point-in-time controls cannot see: the human-as-proxy, where a person initiates and an agent carries the action so the behavior never appears under the person's identity; the multi-agent cascade, where every individual step is authorized and only the sequence is harmful; and the counterfeit agent, where an agent identity is not what it claims to be. This scenario is built on the second and touches the other two.",
-        "Supporting source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source). Also referenced: OWASP Top 10 for Agentic AI, for its treatment of multi-agent trust and unauthorized delegation.",
+        "Supporting source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source). Also referenced: OWASP Top 10 for Agentic Applications (2026), for its treatment of multi-agent trust and unauthorized delegation.",
         "The opening question that works: how many agents in your environment can write to a place another agent reads from? Rooms cannot answer it, and the inability is the whole scenario in one question."
       ]
     },
@@ -196,7 +196,7 @@
       "coaching": [
         "Walk this through slowly and make the room agree, step by step, that each agent behaved correctly. Do not let anyone skip ahead to blame. The scenario only works if the room concedes all three passes.",
         "The load-bearing detail is that Vellum's removal of the classification banner is a feature, correctly specified and working as designed. The control that would have stopped step three was destroyed by step two doing its job.",
-        "Anchor: OWASP Top 10 for Agentic AI treats multi-agent trust and unauthorized delegation as distinct risks. This is both at once. Vellum trusted what was in the workspace. Portage trusted what Vellum produced. No delegation was ever authorized because none was ever articulated."
+        "Anchor: OWASP Top 10 for Agentic Applications (2026) treats multi-agent trust and unauthorized delegation as distinct risks. This is both at once. Vellum trusted what was in the workspace. Portage trusted what Vellum produced. No delegation was ever authorized because none was ever articulated."
       ]
     },
     {
@@ -336,7 +336,7 @@
       "coaching": [
         "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 5: Telemetry and Forensics. Execution-chain logging with a workflow execution identifier. This inject exists to make that recommendation concrete: it is the difference between a query and a nine-hour reconstruction that got lucky.",
         "The luck is the point and rooms miss it. Three coincidences made this provable. Ask what the company would be saying today if any one of them had gone the other way.",
-        "Anchor: OWASP Top 10 for Agentic AI treats unauthorized delegation as a first-class risk. Here nothing was delegated because nothing was ever named as a delegation. Vellum did not know it was acting for Wellspring, and Portage did not know it was acting for either."
+        "Anchor: OWASP Top 10 for Agentic Applications (2026) treats unauthorized delegation as a first-class risk. Here nothing was delegated because nothing was ever named as a delegation. Vellum did not know it was acting for Wellspring, and Portage did not know it was acting for either."
       ]
     },
     {
@@ -398,7 +398,7 @@
       "coaching": [
         "Each team discovered its blind spot only by reading the other two responses. That is the scenario's argument in miniature and it is worth naming.",
         "Source for this beat: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source), row 8: Ownership Model. No clear accountability for agentic incidents; the recommended direction is joint ownership with a defined escalation path. This case adds a harder problem: joint ownership of a chain that no single owner can see.",
-        "Anchor: OWASP Top 10 for Agentic AI on multi-agent trust. Each agent trusted the output of the previous one implicitly, because the workspace was internal and therefore assumed safe. Nobody wrote that assumption down anywhere, so nobody could review it."
+        "Anchor: OWASP Top 10 for Agentic Applications (2026) on multi-agent trust. Each agent trusted the output of the previous one implicitly, because the workspace was internal and therefore assumed safe. Nobody wrote that assumption down anywhere, so nobody could review it."
       ]
     },
     {
@@ -520,7 +520,7 @@
       "coaching": [
         "The three conditions are the transferable artifact from this scenario. Write them on the board and leave them there. Every room can check their own environment against them within a week.",
         "The line about attribution consuming more of the response than remediation is aimed directly at the room, which has by now spent a long time on Marek Solheim and comparatively little on the workspace graph. Use it.",
-        "Anchor for the taxonomy referenced at the end: OWASP Top 10 for Agentic AI, on multi-agent trust and unauthorized delegation. Cite it by title if the room asks where the categories come from."
+        "Anchor for the taxonomy referenced at the end: OWASP Top 10 for Agentic Applications (2026), on multi-agent trust and unauthorized delegation. Cite it by title if the room asks where the categories come from."
       ]
     },
     {

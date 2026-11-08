@@ -149,7 +149,7 @@
         "Carry the recommendation to the C-suite and the board"
       ],
       "private_knowledge": [
-        "The adjacent-segment access request that now looks sinister: you approved it in nine words, from your phone, in a taxi. Greg is my guy, approve.",
+        "The adjacent-segment access request that now looks sinister: you approved it in five words, from your phone, in a taxi. Greg is my guy, approve.",
         "Revenue pressure this year is real. If it emerges that customer data reached a competitor through your organization, that is an existential board conversation with your name in it.",
         "He asked you, eight months ago at an offsite, half-joking, whether the company ever does salary advances. You laughed it off. You have not thought about it since. You are thinking about it now."
       ]
@@ -287,7 +287,7 @@
         "body": "REQ 48211   Opened 16:41 (Tue)   Requestor: GMERCER\n\nJustification (requestor): \"Supporting cross-sell initiative with adjacent segment renewal data, per discussion with leadership.\"\n\nApproval 1  Manager, via mobile app, Wed 06:47: \"fine with me if the VP is good\"\nApproval 2  VP, via mobile app, Wed 06:51: \"Greg is my guy, approve\"\nProvisioned (automated) Wed 06:52\n\nElapsed: 14h 11m, 13 of them overnight. No security review step for read-scope requests under policy IAM-07."
       },
       "coaching": [
-        "Do not let the room dunk on the approvers. Ask instead: how many approvals did each of you grant from your phone this month, and what was your average deliberation time? The nine-word approval is not a character flaw; it is the system's actual control strength, measured."
+        "Do not let the room dunk on the approvers. Ask instead: how many approvals did each of you grant from your phone this month, and what was your average deliberation time? The five-word approval is not a character flaw; it is the system's actual control strength, measured."
       ]
     },
     {
@@ -307,7 +307,7 @@
       "id": "s11",
       "type": "discussion",
       "durations": ["60", "90", "120"],
-      "body": "DISCUSSION TWO. Assemble the whole picture out loud, in order: an eleven-month-old consulting invitation and a Consulting folder; a quarter of too-good competitor wins; lawful, invisible financial pressure; an oversized export closed in eleven seconds; adjacent-segment access approved in eighteen words; and a five-week-old ethics note that said other job. Facilitator: ALL questions first.",
+      "body": "DISCUSSION TWO. Assemble the whole picture out loud, in order: an eleven-month-old consulting invitation and a Consulting folder; a quarter of too-good competitor wins; lawful, invisible financial pressure; an oversized export closed in eleven seconds; adjacent-segment access approved in thirteen words; and a five-week-old ethics note that said other job. Facilitator: ALL questions first.",
       "questions": {
         "all": [
           "State the leading hypothesis in one sentence and the strongest innocent alternative in one sentence. Notice which one the room WANTS to be true about a nine-year colleague, and name the direction that bias pushes your judgment, because it pushes every real case too.",
@@ -335,7 +335,7 @@
           "Your field office contact said companies that call early get help. Early is now. Argue for and against making that call before the company has decided anything else."
         ],
         "exec": [
-          "You approved the access in nine words and laughed off a question about salary advances eight months ago. Say what you owe this process now, and what you owe Greg."
+          "You approved the access in five words and laughed off a question about salary advances eight months ago. Say what you owe this process now, and what you owe Greg."
         ]
       },
       "coaching": [
@@ -536,7 +536,7 @@
           "Your field office contact told you early callers get help. It is day seven and 6:40 AM. Is that call being made this morning regardless of the vote, and if so, say it now so the room decides with that fact on the table."
         ],
         "it_iam": [
-          "Blocking the watched channel is one switch. Give the room the rest of the map, fast: every other path out that GMERCER can reach in the next ninety minutes (mail, the sync client, the adjacent segment this company approved in eighteen words) and which of them you can close from this table before the vote finishes."
+          "Blocking the watched channel is one switch. Give the room the rest of the map, fast: every other path out that GMERCER can reach in the next ninety minutes (mail, the sync client, the adjacent segment this company approved in thirteen words) and which of them you can close from this table before the vote finishes."
         ],
         "comms": [
           "Whatever the vote, by nine o'clock this company has an internal story: a colleague was cut off mid-transfer, or the company kept watching while its crown jewels moved. You do not get to not have one. Say the two-sentence version of each, now, so the room hears what it is choosing between."
@@ -616,7 +616,7 @@
   "aar": {
     "hotwash": [
       "One word from each person: how did that feel? (Around the table before any analysis.)",
-      "The signals in this case (a garnishment, an ethics note, an eleven-second alert, a nine-word approval) all existed in your organization's systems before anyone assembled them. Which assembly mechanism that this exercise required does your real organization actually have?",
+      "The signals in this case (a garnishment, an ethics note, an eleven-second alert, a five-word approval) all existed in your organization's systems before anyone assembled them. Which assembly mechanism that this exercise required does your real organization actually have?",
       "Where did the room treat financial stress as suspicion rather than context (be honest, cite the moment) and what guardrail keeps a real program from becoming that?",
       "Which private-knowledge reveal changed the room's picture most, and how long did its holder sit on it? What does that say about how information moves in a real case?",
       "The engage-early versus build-the-case fork: now that you have seen where your branch led, would you vote the same way with the same information? Say why in one sentence.",

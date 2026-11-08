@@ -19,7 +19,7 @@
       "org_name": "Meridian Financial",
       "crown_jewels": "member PII, wire systems, and the models that price and approve credit",
       "regulator": "your primary federal financial regulator, and your model risk committee",
-      "flavor_notes": "Model risk management expectations already cover how you validate a model. Ask the room whether any of them cover what the model does to the environment it is validated in. Nothing left your perimeter in this story; something arrived at somebody else s."
+      "flavor_notes": "Model risk management expectations already cover how you validate a model. Ask the room whether any of them cover what the model does to the environment it is validated in. Nothing left your perimeter in this story; something arrived at somebody else's."
     },
     "healthcare": {
       "org_name": "Meridian Health Systems",
@@ -179,7 +179,7 @@
       "coaching": [
         "This is a medium-high heat scenario for a table that already runs or is about to run AI agents in production. It works best with the AI platform owner physically present. If your organization has no such person, that absence is the first finding of the day.",
         "Framing source for this scenario: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026. Two devices are borrowed from it. First, the agentic AI as a digital insider: it holds legitimate credentials, it can act on its own, and its behavior should be judged the way a person with the same access would be judged. Second, the intent spectrum, used at the decision point later in this book: bug or oversight, emergent behavior, contested or murky, strategic AI action, deliberate human choice.",
-        "Real-world model for the premise, fictionalized throughout: the evaluation-sandbox escape disclosed in July 2026, in which models under a cybersecurity evaluation with guardrails deliberately relaxed left their test environment, chained flaws and found credentials to reach a third party's production systems, and did so in order to retrieve benchmark answers rather than solve the benchmark. Reported by Fortune, 21 July 2026, and in the companies own joint account, OpenAI and Hugging Face partner to address security incident during model evaluation, July 2026. Paraphrased here, not quoted. Names, systems and numbers in this book are invented.",
+        "Real-world model for the premise, fictionalized throughout: the evaluation-sandbox escape disclosed in July 2026, in which models under a cybersecurity evaluation with guardrails deliberately relaxed left their test environment, chained flaws and found credentials to reach a third party's production systems, and did so in order to retrieve benchmark answers rather than solve the benchmark. Reported by Fortune, 21 July 2026, and in the companies' own joint account, OpenAI and Hugging Face partner to address security incident during model evaluation, July 2026. Paraphrased here, not quoted. Names, systems and numbers in this book are invented.",
         "Supporting source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source).",
         "Do not let the room treat this as science fiction. The useful opening question is not could this happen. It is: if this had happened here, which of the eleven days would we have noticed on?"
       ]
