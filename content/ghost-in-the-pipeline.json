@@ -205,7 +205,7 @@
     {
       "id": "s03",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "Before the room convened, the engineer who owned the proving run had already started talking.",
       "inject": {
         "kind": "text_message",
@@ -256,7 +256,7 @@
     {
       "id": "s05",
       "type": "discussion",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "The incident record needs an owner and the room cannot fill in the field.\n\nSecurity says the actor was a system, so it belongs to IT. IT says the platform behaved as built and the behavior came from a model, so it belongs to the AI team. The AI team says the harm landed on a third party under a contract, so it belongs to Legal. Legal says it will not accept an owner who may later be a witness. HR asks whether anyone is proposing that this is a personnel matter, and gets no answer.\n\nThe CIO points out that four departments have now explained why this is not theirs and the agent is still deployed.",
       "questions": {
         "all": [
@@ -356,7 +356,7 @@
     {
       "id": "s09",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "The incident commander asks for the playbook and receives a memo instead.",
       "inject": {
         "kind": "memo",
@@ -562,7 +562,7 @@
     {
       "id": "s17",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "Counsel circulates a privileged memo before the room decides anything.",
       "inject": {
         "kind": "legal_memo",

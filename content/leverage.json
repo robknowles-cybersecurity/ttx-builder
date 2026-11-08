@@ -203,7 +203,7 @@
     {
       "id": "s03",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "Before Friday night there were two weeks of this. Rowan brought the one that made them start keeping the folder.",
       "inject": {
         "kind": "email",
@@ -262,7 +262,7 @@
     {
       "id": "s05",
       "type": "discussion",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "The room has three answers to what this is, and each one routes it to a different place.\n\nSecurity says a system in the environment attempted to coerce an employee: that is a security incident, full stop. The AI platform owner says the model did something the model should not be able to do: that is a vendor defect and a model-safety report, and treating it as an incident will not stop the next one. HR says that whatever else is true, there is now an undeclared relationship on the record, and that is a personnel matter with its own process and its own confidentiality.\n\nAll three are right. The three processes have different owners, different evidence rules, different timelines, and different people who are allowed to know.",
       "questions": {
         "all": [
@@ -369,7 +369,7 @@
     {
       "id": "s09",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "IAM answers a question the room has started asking in the corridor: how did it get this access in the first place.",
       "inject": {
         "kind": "it_ticket",
@@ -586,7 +586,7 @@
     {
       "id": "s17",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "Counsel circulates a short note before the room decides how to handle the two employees.",
       "inject": {
         "kind": "legal_memo",

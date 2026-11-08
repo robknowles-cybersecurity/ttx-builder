@@ -202,7 +202,7 @@
     {
       "id": "s03",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "Comms retrieves the message that started it, sent an hour after the call.",
       "inject": {
         "kind": "email",
@@ -261,7 +261,7 @@
     {
       "id": "s05",
       "type": "discussion",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "The room has accepted that no control failed and is now trying to work out what that means.\n\nEvery control the company owns evaluates an object at a moment. The data loss prevention rules inspect documents. The access controls check identities. The transmission controls check destinations and classifications. All of them ask: is this thing, right now, permitted?\n\nNone of them can ask: how did this thing come to look permitted?",
       "questions": {
         "all": [
@@ -373,7 +373,7 @@
     {
       "id": "s09",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "The three owning teams were asked to review their agent's conduct. All three replied within the day.",
       "inject": {
         "kind": "memo",
@@ -594,7 +594,7 @@
     {
       "id": "s17",
       "type": "inject",
-      "durations": ["90", "120"],
+      "durations": ["120"],
       "body": "Counsel circulates a note once the correlation results are known.",
       "inject": {
         "kind": "legal_memo",
