@@ -545,7 +545,7 @@
       "id": "s23",
       "type": "decision",
       "durations": ["60", "90", "120"],
-      "body": "DECISION POINT THREE, BRANCH B. Read aloud.\n\nIt is 08:10 on Tuesday. The man is gone, the keys are not, the backups are one third broken, and the room's own investigation has produced a finding about the company that is larger than the finding about the person. Counsel needs a posture within the hour. Poll the room.",
+      "body": "DECISION POINT TWO, BRANCH B. Read aloud.\n\nIt is 08:10 on Tuesday. The man is gone, the keys are not, the backups are one third broken, and the room's own investigation has produced a finding about the company that is larger than the finding about the person. Counsel needs a posture within the hour. Poll the room.",
       "decision": {
         "prompt": "With the resignation in hand and the access still live, the company will:",
         "options": [

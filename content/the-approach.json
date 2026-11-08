@@ -555,7 +555,7 @@
         "prompt": "With staged egress in progress and roughly ninety minutes on the clock, the company will:",
         "options": [
           {
-            "label": "INTERDICT NOW (block the sync, isolate the endpoint, suspend access and Greg in the same hour, preserve everything, and take the case) Greg, Halcyon, the three transferred chunks. To law enforcement today. Certain containment; the recipient network learns you saw them, and attribution likely dies at a shell address.",
+            "label": "INTERDICT NOW. Block the sync, isolate the endpoint, suspend access and Greg in the same hour, preserve everything, and take the case (Greg, Halcyon, the three transferred chunks) to law enforcement today. Certain containment; the recipient network learns you saw them, and attribution likely dies at a shell address.",
             "goto": "e3"
           },
           {

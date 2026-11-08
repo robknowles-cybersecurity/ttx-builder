@@ -451,7 +451,7 @@
       "id": "s18",
       "type": "decision",
       "durations": ["60", "90", "120"],
-      "body": "DECISION POINT TWO, BRANCH A. Read aloud.\n\nDay six. You have a forensic report that closes nothing, a legal assessment that says your position is weaker than your grievance, and an open offer with eight days left on it. The executive sponsor wants the client relationships stabilised. The manager wants him sued. Poll the room.",
+      "body": "DECISION POINT TWO, BRANCH A. Read aloud.\n\nDay six. You have a forensic report that closes nothing, a legal assessment that says your position is weaker than your grievance, and an open offer with eleven days left on it. The executive sponsor wants the client relationships stabilised. The manager wants him sued. Poll the room.",
       "decision": {
         "prompt": "The company's response to the offer, and its posture toward Northbrace, will be:",
         "options": [
@@ -536,7 +536,7 @@
       "id": "s23",
       "type": "decision",
       "durations": ["60", "90", "120"],
-      "body": "DECISION POINT THREE, BRANCH B. Read aloud.\n\nIt is 15:30 on his last day. He has done everything asked and several things that were not. He still holds copies of six documents he authored, under a 2021 written permission the company's own file confirms, and a copy of a client book that is now also back in the company's repository. Forty minutes remain unexplained.\n\nHe is expecting to shake hands at 17:00. Counsel needs a decision before that. Poll the room.",
+      "body": "DECISION POINT TWO, BRANCH B. Read aloud.\n\nIt is 15:30 on his last day. He has done everything asked and several things that were not. He still holds copies of six documents he authored, under a 2021 written permission the company's own file confirms, and a copy of a client book that is now also back in the company's repository. Forty minutes remain unexplained.\n\nHe is expecting to shake hands at 17:00. Counsel needs a decision before that. Poll the room.",
       "decision": {
         "prompt": "On the question of what was his to take, the company will:",
         "options": [
