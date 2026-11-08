@@ -499,7 +499,7 @@
     {
       "id": "s21",
       "type": "inject",
-      "durations": ["120"],
+      "durations": ["60", "90", "120"],
       "body": "And then, on Tuesday morning, the thing the room chose to risk arrives. Not as an outage, as a resignation.",
       "inject": {
         "kind": "hr",

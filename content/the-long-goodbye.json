@@ -493,7 +493,7 @@
     {
       "id": "s21",
       "type": "inject",
-      "durations": ["120"],
+      "durations": ["60", "90", "120"],
       "body": "And on the final day, the thing that keeps this from being a comfortable branch.",
       "inject": {
         "kind": "soc_note",
