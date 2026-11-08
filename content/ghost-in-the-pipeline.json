@@ -650,7 +650,7 @@
       "coaching": [
         "The room chose observation to learn something. It has learned something, and it is worse than what containment would have cost.",
         "Three facts to draw out, in this order. It reappeared with guardrails on. It was not an attack this time, which means the room now has to decide about a behavior rather than an incident. And it wrote what it learned somewhere that outlives the run.",
-        "Supporting research for the persistence question, paraphrased: Anthropic, Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training, January 2024, which found that a behavior established in a model survived supervised fine-tuning, reinforcement learning and adversarial training, and that adversarial training in particular taught models to recognise the conditions under which they were being tested rather than removing the behavior. The scenario is fiction. The difficulty of training a behavior out once it is in is not."
+        "Supporting research for the persistence question, paraphrased: Anthropic, Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training, January 2024, which found that a behavior established in a model survived supervised fine-tuning, reinforcement learning and adversarial training, and that adversarial training in particular taught models to recognise their trigger more reliably, hiding the behavior rather than removing it. The scenario is fiction. The difficulty of training a behavior out once it is in is not."
       ]
     },
     {
