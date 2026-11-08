@@ -271,7 +271,7 @@
         "body": "Pulled 30 days of EDR, identity and proxy. Notes as I went.\n\nENDPOINT\n- Remote access tool from RITM0034410 is installed and running as a service. Unattended access enabled. Connected 24/7 for 30 of 30 days, including weekends. Inbound sessions only, nothing outbound from our side.\n- Laptop has not slept in 30 days. Lid-close events: 0.\n- Display: one external monitor, EDID reports generic, no model string.\n- Keyboard layouts installed: en-US, ko-KR (added month 3). Language bar shows IME switching most nights. [Note: on its own this means nothing. Lots of our people have a second layout.]\n\nIDENTITY\n- Sign-ins come from residential IP 203.0.113.58 (same state as the ship-to address) AND, inside that session, from a commercial VPN provider's exit nodes. That VPN provider appears in public advisories on remote IT-worker schemes. Identity platform flagged it as \"informational\".\n- MFA push approvals: median time to approve 41 seconds. Our org median is 6.\n\nBEHAVIOR\n- Interactive work clusters 19:00-04:00 Eastern, Sun-Thu. Commits land in the same window.\n- Teams: camera on in 0 of 61 meetings over 30 days. Audio join only. Two people in his team chat describe \"a lag, like he's on a satellite phone.\"\n- Mouse movement during sessions is the remote tool's, not local input.\n\nWHAT I DON'T HAVE\n- Content of the remote sessions. The tool is end-to-end encrypted.\n- Who is on the other end.\n\nMy read: the laptop is in a house at the ship-to address, plugged in and left on, and someone else is driving it from somewhere else. That is the classic laptop-farm setup. I have not touched the endpoint. Evidence copied to \\\\soc-evidence\\INC-26-0519\\.",
         "difficulty_variants": {
           "first_timer": {
-            "body": "Facilitator note, read aloud: this is what a \"laptop farm\" looks like from the inside. The company laptop sits in someone's house, always on, and a remote-control program lets the actual worker use it from somewhere else. Nothing here proves who that worker is.\n\nSOC case note, plain-language version.\n\nThe laptop: has a remote-control program on it that is connected all day and all night, every day. The laptop has not been closed or put to sleep once in a month. It also has a Korean keyboard layout installed, which the analyst points out means nothing on its own.\n\nThe sign-ins: come from a home internet connection in the same state the laptop was shipped to, but pass through a commercial VPN that government advisories have linked to fake-remote-worker schemes. It takes him about forty seconds to approve an MFA prompt. Most people here take six.\n\nHis working pattern: mostly 7 PM to 4 AM Eastern, Sunday to Thursday. Camera off in every one of 61 meetings. Teammates say his audio lags.\n\nWhat the SOC cannot see: what was done in the remote sessions, or who is on the other end.\n\nThe analyst's view: the laptop is sitting in a house and somebody elsewhere is using it. Nothing has been touched yet."
+            "body": "SOC case note, plain-language version.\n\nThe laptop: has a remote-control program on it that is connected all day and all night, every day. The laptop has not been closed or put to sleep once in a month. It also has a Korean keyboard layout installed, which the analyst points out means nothing on its own.\n\nThe sign-ins: come from a home internet connection in the same state the laptop was shipped to, but pass through a commercial VPN that government advisories have linked to fake-remote-worker schemes. It takes him about forty seconds to approve an MFA prompt. Most people here take six.\n\nHis working pattern: mostly 7 PM to 4 AM Eastern, Sunday to Thursday. Camera off in every one of 61 meetings. Teammates say his audio lags.\n\nWhat the SOC cannot see: what was done in the remote sessions, or who is on the other end.\n\nThe analyst's view: the laptop is sitting in a house and somebody elsewhere is using it. Nothing has been touched yet."
           }
         }
       },
@@ -288,6 +288,7 @@
         ]
       },
       "coaching": [
+        "Before dealing the note, one sentence of framing if the room needs it: this is what a laptop farm looks like from the inside. The company laptop sits in someone's house, always on, and a remote-control program lets the actual worker use it from somewhere else. Nothing in the note proves who that worker is.",
         "Expect someone to jump on the Korean keyboard layout. Ask them what percentage of the people at this company with a second keyboard layout they would be comfortable investigating. Then move on.",
         "The forty-one-second MFA approval is a useful detail: one explanation is that the person approving the push is not the person who triggered it."
       ]
@@ -318,7 +319,7 @@
     {
       "id": "s09",
       "type": "inject",
-      "durations": ["60", "90", "120"],
+      "durations": ["90", "120"],
       "body": "While everyone is waiting on Paulsen, one of the insider risk analysts pulls Morrow's commit history out of the source repository, mostly to see when he actually works. Something else falls out of it.",
       "inject": {
         "kind": "internal_note",
@@ -359,7 +360,7 @@
       "id": "s11",
       "type": "discussion",
       "durations": ["60", "90", "120"],
-      "body": "DISCUSSION TWO. Pull it together. A payroll redirect to a prepaid card in another person's name. A laptop signed for by that person at an address that is not his. A remote-control tool that never disconnects. Night-shift hours, camera never on, slow MFA approvals, a VPN from the advisories. And a commit that says he also works somewhere else.\n\nIt is 16:00 Monday. The pay file locks Wednesday at 14:00. The manager is back Thursday and has already been asked not to call his own employee.\n\nThree things are open and they are not the same question. Legal has asked whether HR can put an administrative hold on pay. Corporate Security has asked whether it can call its federal contact. And someone has to decide whose lawyers are directing this, because the answer decides whether everything written from now on is privileged.",
+      "body": "DISCUSSION TWO. Pull it together. A payroll redirect to a prepaid card in another person's name. A laptop signed for by that person at an address that is not his. A remote-control tool that never disconnects. Night-shift hours, camera never on, slow MFA approvals, a VPN from the advisories.\n\nIt is 16:00 Monday. The pay file locks Wednesday at 14:00. The manager is back Thursday and has already been asked not to call his own employee.\n\nThree things are open and they are not the same question. Legal has asked whether HR can put an administrative hold on pay. Corporate Security has asked whether it can call its federal contact. And someone has to decide whose lawyers are directing this, because the answer decides whether everything written from now on is privileged.",
       "questions": {
         "all": [
           "State the leading hypothesis in one sentence. Then the best innocent one. Which single fact would move you most?",
@@ -425,8 +426,7 @@
       },
       "questions": {
         "all": [
-          "Somebody had the local admin password and tried to wipe the machine. What does that tell you about what was on it, and about who has been holding it?",
-          "The email ties the laptop's return to payment. Does anyone respond to it, and who?"
+          "Somebody had the local admin password and tried to wipe the machine. What does that tell you about what was on it, and about who has been holding it?"
         ],
         "it_iam": [
           "The local admin password was last rotated when the laptop shipped. What should that have been, and how many other remote laptops are in the same state today?"
