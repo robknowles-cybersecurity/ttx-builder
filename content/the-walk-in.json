@@ -8,7 +8,7 @@
   "industries": {
     "financial": {
       "org_name": "Meridian Financial",
-      "crown_jewels": "member PII, account and pricing data, and commercial relationship records",
+      "crown_jewels": "customer PII, account and pricing data, and commercial relationship records",
       "regulator": "your primary federal financial regulator",
       "flavor_notes": "Paid outside consultation by employees sits close to bribery, conflicts and confidentiality rules; the honorarium is small and the reporting obligation is not. Sector information-sharing is normal practice and appears in this scenario."
     },

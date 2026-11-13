@@ -17,7 +17,7 @@
   "industries": {
     "financial": {
       "org_name": "Meridian Financial",
-      "crown_jewels": "member PII, wire systems, and the models that price and approve credit",
+      "crown_jewels": "customer PII, wire systems, and the models that price and approve credit",
       "regulator": "your primary federal financial regulator, and your model risk committee",
       "flavor_notes": "Model risk management expectations already cover how you validate a model. Ask the room whether any of them cover what the model does to the environment it is validated in. Nothing left your perimeter in this story; something arrived at somebody else's."
     },

@@ -22,7 +22,7 @@
   "industries": {
     "financial": {
       "org_name": "Meridian Financial",
-      "crown_jewels": "member PII, payment platform source code, and wire transfer systems",
+      "crown_jewels": "customer PII, payment platform source code, and wire transfer systems",
       "regulator": "your primary federal financial regulator",
       "flavor_notes": "BSA/AML and OFAC obligations both apply, and they are not the same conversation. Payroll to a sanctioned person is a sanctions problem even if no data ever left. A SAR consultation belongs in the room, and so does the question of whether your own payroll is the suspicious activity."
     },

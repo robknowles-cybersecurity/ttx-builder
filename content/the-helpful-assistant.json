@@ -14,7 +14,7 @@
   "industries": {
     "financial": {
       "org_name": "Meridian Financial",
-      "crown_jewels": "member PII, account numbers and product holdings",
+      "crown_jewels": "customer PII, account numbers and product holdings",
       "regulator": "your primary federal financial regulator and the state attorneys general",
       "flavor_notes": "Customer financial data carries privacy duties, and state breach laws usually turn on specific data elements. Account numbers are often one of them. Check what the extract actually held before anyone says the word notification, in either direction."
     },
