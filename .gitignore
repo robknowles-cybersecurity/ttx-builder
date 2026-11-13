@@ -75,3 +75,4 @@ tmp/
 # -- Build inputs, if a build step is ever added ------------------------------
 node_modules/
 package-lock.json
+.claude/
