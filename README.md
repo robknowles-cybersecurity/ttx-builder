@@ -46,7 +46,7 @@ behavior judged the way a person's is rather than only by whether the output
 looked right — with the same intent spectrum put to the room in each: a bug or
 an oversight, emergent behavior, contested, strategic AI action, or a
 deliberate human choice. Framing after Greitzer, F. L. (Cogility), "Agentic AI:
-An Emerging Threat Vector," DSI 2026.
+An Emerging Threat Vector," DSI National Insider Risk Symposium, 15–16 September 2026.
 
 | Scenario | Id | State |
 |---|---|---|
