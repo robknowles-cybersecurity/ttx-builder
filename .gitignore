@@ -1,7 +1,6 @@
-# This repository IS the webroot. Anything committed here is a file nginx will
-# be asked to serve, so the ignore list is a security control, not tidiness.
-# It is the second layer; the vhost 404s these classes too. Neither layer is
-# allowed to be the only one.
+# The site is served from a checkout of this repository, so the files below
+# are kept out of the repository and out of the served site. This list is a
+# security control, not tidiness, and the server refuses these classes too.
 
 # -- Editor and backup droppings ---------------------------------------------
 # Keep working notes and local config out of the served tree.

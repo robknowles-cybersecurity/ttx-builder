@@ -33,8 +33,8 @@ The interesting surface is small and worth stating plainly:
   a real finding.
 - **CSP.** The site is served with `script-src 'self'` and no `'unsafe-eval'`.
   A way to execute script within that policy is a real finding.
-- **Server configuration.** The webroot on the live host is the repository
-  itself. `.git`, dotfiles, backup droppings and all `.md` files are meant to
+- **Server configuration.** The site is served as static files from a
+  checkout of this repository. `.git`, dotfiles, backup droppings and all `.md` files are meant to
   404, and `/content/` is meant to serve `.json` and nothing else. Anything
   reachable that should not be is a real finding — that includes any file whose
   name suggests it was never meant for a browser.
@@ -60,8 +60,8 @@ The interesting surface is small and worth stating plainly:
 - **One vendored dependency.** `pptxgenjs`, committed in `vendor/` with its
   hash recorded in `THIRDPARTY.md`, loaded only when a deck is exported. It
   contains two dynamic-code sites, both analysed as unreachable in normal
-  operation; the reasoning is written out in the nginx vhost, next to the CSP
-  it justifies. Evidence that either is reachable is a real finding.
+  operation. The response headers, including the CSP, are set by the web
+  server configuration, which is not part of this repository. Evidence that either is reachable is a real finding.
 
 ## Content, not code
 
