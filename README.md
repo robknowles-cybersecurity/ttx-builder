@@ -344,6 +344,7 @@ own licence — see [`THIRDPARTY.md`](THIRDPARTY.md).
 Security policy and reporting: [`SECURITY.md`](SECURITY.md).
 
 All organisations, people and events in the scenarios are fictional.
+Real product names appear only as scenery; no real organisation is depicted.
 
 ---
 

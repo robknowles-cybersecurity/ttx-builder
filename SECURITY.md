@@ -68,5 +68,6 @@ The interesting surface is small and worth stating plainly:
 The scenarios describe insider threat activity for the purpose of exercising a
 response. Everything in them is fictional, and tradecraft is deliberately held
 at the level of published public advisories, written from the defender's side.
+Real product names appear only as scenery; no real organisation is depicted.
 If you think a scenario crosses that line and is operationally useful to an
 attacker, that is worth reporting too — same address.
