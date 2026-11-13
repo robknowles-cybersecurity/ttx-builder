@@ -1137,10 +1137,10 @@ a.btn {
    ========================================================================== */
 
 /* ==========================================================================
-   Sources (PE-300)
+   Sources
    --------------------------------------------------------------------------
    Rendered into the gamebook front matter and again at the foot of the AAR
-   pack, at EVERY difficulty. Until PE-300 the works these scenarios are built
+   pack, at EVERY difficulty. Previously the works these scenarios are built
    on lived only inside `coaching`, which the engine emits at first_timer and
    nowhere else — so a veteran room got the exercise with the credits stripped
    off it. Provenance is not a coaching aid and does not move with the dial.

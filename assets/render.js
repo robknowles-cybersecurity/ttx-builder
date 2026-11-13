@@ -173,7 +173,7 @@
     return fm;
   }
 
-  /* -- sources (PE-300) ----------------------------------------------------
+  /* -- sources -------------------------------------------------------------
      ONE FUNCTION, TWO PACKS. Provenance is rendered into the facilitator
      gamebook's front matter (where someone preparing the exercise meets it
      before they run anything) and again at the end of the after-action pack
@@ -185,7 +185,7 @@
      RENDERED AT EVERY DIFFICULTY. ex.meta.sources is not gated in engine.js;
      see the comment on that field for why it stopped living in `coaching`.
 
-     PE-312 closed the third case. There used to be two: a roster, or nothing
+     A later change closed the third case. There used to be two: a roster, or nothing
      at all — and "nothing at all" had to carry the meaning "this scenario
      cites nothing", which is a lot to ask of an absence that looks identical
      to a bug. A scenario with no documentable precedent now declares
