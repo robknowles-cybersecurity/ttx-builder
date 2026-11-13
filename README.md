@@ -46,7 +46,7 @@ behavior judged the way a person's is rather than only by whether the output
 looked right — with the same intent spectrum put to the room in each: a bug or
 an oversight, emergent behavior, contested, strategic AI action, or a
 deliberate human choice. Framing after Greitzer, F. L. (Cogility), "Agentic AI:
-An Emerging Threat Vector," DSI 2026.
+An Emerging Threat Vector," DSI National Insider Risk Symposium, 15–16 September 2026.
 
 | Scenario | Id | State |
 |---|---|---|
@@ -328,16 +328,8 @@ unreachable sections in linear mode).
 
 ### Serving notes
 
-- vhost: `/etc/nginx/sites-available/ttx`, root `/var/www/ttx`, static only.
-- TLS reuses the Cloudflare Origin CA cert at
-  `/etc/ssl/cloudflare/ita-cert.pem`, whose SAN set covers
-  `*.insiderthreatanalyst.com`.
-- **The webroot is the repository.** `.md` files 404 at the vhost — including
-  this one — as do `.git`, dotfiles and `.bak` variants. `/content/` is an
-  allow-list: it serves `.json` and returns 404 for everything else.
-- Ownership convention matches the sibling webroots: `rob:www-data`,
-  directories `755`, files `644`.
-- After changing anything served here, purge the Cloudflare cache.
+Static files only. `.md` files, dotfiles and `.git` are not served, and `/content/` serves only `.json`.
+See SECURITY.md for the browser-side protections.
 
 ---
 
@@ -352,6 +344,7 @@ own licence — see [`THIRDPARTY.md`](THIRDPARTY.md).
 Security policy and reporting: [`SECURITY.md`](SECURITY.md).
 
 All organisations, people and events in the scenarios are fictional.
+Real product names appear only as scenery; no real organisation is depicted.
 
 ---
 

@@ -1,11 +1,9 @@
-# This repository IS the webroot. Anything committed here is a file nginx will
-# be asked to serve, so the ignore list is a security control, not tidiness.
-# It is the second layer; the vhost 404s these classes too. Neither layer is
-# allowed to be the only one.
+# The site is served from a checkout of this repository, so the files below
+# are kept out of the repository and out of the served site. This list is a
+# security control, not tidiness, and the server refuses these classes too.
 
 # -- Editor and backup droppings ---------------------------------------------
-# The exact class of file that caused the 2026-08-08 webroot exposure on the
-# ita vhost.
+# Keep working notes and local config out of the served tree.
 *.bak
 *.bak.*
 *.bak-*
@@ -75,3 +73,4 @@ tmp/
 # -- Build inputs, if a build step is ever added ------------------------------
 node_modules/
 package-lock.json
+.claude/
