@@ -173,7 +173,7 @@
     return fm;
   }
 
-  /* -- sources (PE-300) ----------------------------------------------------
+  /* -- sources -------------------------------------------------------------
      ONE FUNCTION, TWO PACKS. Provenance is rendered into the facilitator
      gamebook's front matter (where someone preparing the exercise meets it
      before they run anything) and again at the end of the after-action pack
