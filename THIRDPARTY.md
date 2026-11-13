@@ -41,10 +41,10 @@ sha256  4fb9eac5cfefb213e2d8743c2b7151025f31bfb3f834c73c12062916daa0f3f8
         vendor/pptxgen.bundle.js   (460,889 bytes)
 ```
 
-To re-verify at any time:
+To re-verify at any time, from the site root:
 
 ```sh
-openssl dgst -sha256 /var/www/ttx/vendor/pptxgen.bundle.js
+openssl dgst -sha256 vendor/pptxgen.bundle.js
 ```
 
 ### Why the `bundle` build
