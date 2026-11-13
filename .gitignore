@@ -4,8 +4,7 @@
 # allowed to be the only one.
 
 # -- Editor and backup droppings ---------------------------------------------
-# The exact class of file that caused the 2026-08-08 webroot exposure on the
-# ita vhost.
+# Keep working notes and local config out of the served tree.
 *.bak
 *.bak.*
 *.bak-*
