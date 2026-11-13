@@ -37,12 +37,10 @@ That is a different work with a real September date, and it shares nothing with
 the CISA string but the month. A blind repo-wide sweep for "September 2026"
 would have corrupted four scenarios.
 
-**Companion change, not in this repo — `.mjs` MIME mapping.** The vhost serves
-`.mjs` as `application/octet-stream`, which `nosniff` turns into a refused
-script the first time an ES module ships here. The fix is one line in
-`/etc/nginx/mime.types` (http scope, all vhosts), composed under PE-315 and
-applied by hand; nothing under `/etc` is versioned in this repo. Lint after the
-content change: **9 passed, 0 failed.**
+**Companion change, not in this repo.** The web server needs a one-line
+change so ES modules are served as JavaScript. It is applied by hand on the
+host and nothing for it is versioned here. Lint after the content change:
+**9 passed, 0 failed.**
 
 ---
 
