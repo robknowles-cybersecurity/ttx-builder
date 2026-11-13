@@ -13,9 +13,9 @@
   "industries": {
     "financial": {
       "org_name": "Meridian Financial",
-      "crown_jewels": "the client book, the pricing models, and the member data sitting behind them",
+      "crown_jewels": "the client book, the pricing models, and the customer data sitting behind them",
       "regulator": "your primary federal financial regulator and your state attorney general",
-      "flavor_notes": "Client lists and pricing models are the classic trade-secret fight, and the classic loss: a departing architect who takes pricing hands a competitor a quarter of free road. Note that anything containing member identifiers converts this from a commercial dispute into a notification problem."
+      "flavor_notes": "Client lists and pricing models are the classic trade-secret fight, and the classic loss: a departing architect who takes pricing hands a competitor a quarter of free road. Note that anything containing customer identifiers converts this from a commercial dispute into a notification problem."
     },
     "healthcare": {
       "org_name": "Meridian Health Systems",

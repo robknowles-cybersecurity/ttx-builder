@@ -13,9 +13,9 @@
   "industries": {
     "financial": {
       "org_name": "Meridian Financial",
-      "crown_jewels": "member PII, wire systems, and the deal pipeline",
-      "regulator": "your primary federal financial regulator, and for member data your state privacy authorities",
-      "flavor_notes": "Row-level member data leaving to a partner without a documented lawful basis is a notification question before it is an investigation. The reformatting step stripped the markers that would have told anyone which rows were involved, which means the notification scope is itself unknown."
+      "crown_jewels": "customer PII, wire systems, and the deal pipeline",
+      "regulator": "your primary federal financial regulator, and for customer data your state privacy authorities",
+      "flavor_notes": "Row-level customer data leaving to a partner without a documented lawful basis is a notification question before it is an investigation. The reformatting step stripped the markers that would have told anyone which rows were involved, which means the notification scope is itself unknown."
     },
     "healthcare": {
       "org_name": "Meridian Health Systems",
