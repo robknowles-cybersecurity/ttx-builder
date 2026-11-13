@@ -5,11 +5,11 @@ render targets and the shell. Newest first. Dates are the date the change was
 committed.
 
 This file starts here, on 2026-09-20. Everything before this entry is in the
-git history and in the Plane board, not above it.
+git history, not above it.
 
 ---
 
-## 2026-09-20 — PE-315: the CISA edition date, corrected rather than guessed
+## 2026-09-20 — The CISA edition date, corrected rather than guessed
 
 **Fixed — four citation strings in `content/the-helpful-assistant.json`.** They
 cited CISA's guide as *(September 2026 edition)*. CISA's own resource page
@@ -37,14 +37,13 @@ That is a different work with a real September date, and it shares nothing with
 the CISA string but the month. A blind repo-wide sweep for "September 2026"
 would have corrupted four scenarios.
 
-**Companion change, not in this repo.** The web server needs a one-line
-change so ES modules are served as JavaScript. It is applied by hand on the
-host and nothing for it is versioned here. Lint after the content change:
+**Companion change, not in this repo.** ES module files are now served
+with a JavaScript content type. Lint after the content change:
 **9 passed, 0 failed.**
 
 ---
 
-## 2026-09-20 — PE-312: the lint exists, and two provenance rules are written down
+## 2026-09-20 — The lint exists, and two provenance rules are written down
 
 **New — `tools/lint-scenarios.mjs`.** The previous entry closes with "a real
 lint is still worth writing". This is it: Node standard library only, no
@@ -57,8 +56,9 @@ somewhere else, which is how the rule is tested against deliberately broken
 files without putting one in `content/`. Run on the nine: **9 passed, 0
 failed.**
 
-**Rule — sources carry their URLs.** Ratified after PE-304: the five rosters it
-wrote cite a URL per entry and the four AI-track rosters from PE-300 did not.
+**Rule — sources carry their URLs.** Ratified after the source rosters below:
+the five rosters added there cite a URL per entry and the four AI-track rosters
+did not.
 URLs are the standard, documented in `README.md`. Four of the works cited by
 the AI-track four were opened and confirmed, and their URLs appended in the
 established form:
@@ -102,9 +102,9 @@ render exactly as before** — same heading, same standing note, same list.
 
 ---
 
-## 2026-09-20 — PE-304: five scenarios declare their sources
+## 2026-09-20 — Five scenarios declare their sources
 
-**New.** PE-300 made `meta.sources` render at every difficulty, in all three
+**New.** An earlier change made `meta.sources` render at every difficulty, in all three
 packs — the facilitator gamebook's front matter, the end of the after-action
 pack, and a "What this is built on" slide in the deck. Five scenarios were
 still declaring none, so those blocks rendered nothing at all. They now carry
@@ -130,7 +130,7 @@ vacated in August 2026 while the trade-secret-theft convictions stand. The
 scenario should not teach a room to reach for "espionage" because the word is
 available. No URL is cited for the vacatur, because none was verified.
 
-**No lint ran, because this repository has none.** PE-304 assumed one. At
+**No lint ran, because this repository has none.** This change assumed one. At
 `a8b0374` there is no `package.json`, no `scripts/` directory and no shell
 script anywhere in the tree; the *Authoring checklist* in `README.md` is
 manual. The five files were validated by hand instead: every `content/*.json`

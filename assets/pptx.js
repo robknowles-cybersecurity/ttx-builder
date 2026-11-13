@@ -117,7 +117,7 @@ window.TTXDeck = (function () {
   var OPTION_MIN_PT = 10;
 
   /* Ground rules are a site-level default: the content schema does not carry
-     them today. If the desk wants per-scenario rules, add a `ground_rules`
+     them today. If per-scenario rules are wanted, add a `ground_rules`
      array to the schema and prefer it over this list. */
   var GROUND_RULES = [
     'No-fault. We are testing the process, not the people in the room.',
@@ -562,10 +562,10 @@ window.TTXDeck = (function () {
       fontSize: 15, minSize: 10, color: INK, lineSpacingMultiple: 1.18
     });
 
-    /* -- 5a. sources (PE-300) ------------------------------------------------
+    /* -- 5a. sources ---------------------------------------------------------
        The deck is the third render target and it is the one that leaves the
        building most often — it gets mailed to people who were never in the
-       room. Until PE-300 the works these scenarios are built on lived only in
+       room. Previously the works these scenarios are built on lived only in
        `coaching`, which is first-timer-only, so the deck carried no credit at
        any difficulty at all. It carries them at every difficulty now, from the
        same ex.meta.sources the gamebook and the AAR pack read.
@@ -574,7 +574,7 @@ window.TTXDeck = (function () {
        thing on the screen by design, and a credit slide after "the findings
        are the deliverable" would step on it.
 
-       PE-312: the deck is the third render target and it has its OWN path —
+       The deck is the third render target and it has its OWN path —
        it cannot call render.js's sourcesBlock, which builds DOM. So the
        roster-XOR-note rule is implemented twice, here and there, and the two
        must be kept in step. A scenario declaring meta.sources_note instead of

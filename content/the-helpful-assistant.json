@@ -5,7 +5,7 @@
     "tagline": "A board deadline, a free chatbot, and forty-eight thousand customers who never agreed to help.",
     "track": "ai-insider",
     "sources": [
-      "Framing source for the AI as Insider track: Greitzer, F. L. (Cogility), Agentic AI: An Emerging Threat Vector, DSI Bootcamp, 17 September 2026.",
+      "Framing after Greitzer, F. L. (Cogility), \"Agentic AI: An Emerging Threat Vector,\" DSI National Insider Risk Symposium, 15-16 September 2026.",
       "CISA, Insider Threat Mitigation Guide (2026 edition): AI and Insider Threat Mitigation Considerations, p. 37; Avoid Zero-Tolerance Policies, p. 35. https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide",
       "Source for the control gaps used throughout: Exabeam, Program Gap Analysis: Where Existing Controls Need to Evolve (DSI 2026 vendor slide; secondary source)."
     ],
@@ -14,7 +14,7 @@
   "industries": {
     "financial": {
       "org_name": "Meridian Financial",
-      "crown_jewels": "member PII, account numbers and product holdings",
+      "crown_jewels": "customer PII, account numbers and product holdings",
       "regulator": "your primary federal financial regulator and the state attorneys general",
       "flavor_notes": "Customer financial data carries privacy duties, and state breach laws usually turn on specific data elements. Account numbers are often one of them. Check what the extract actually held before anyone says the word notification, in either direction."
     },

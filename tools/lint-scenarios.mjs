@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-/* lint-scenarios.mjs — PE-312
+/* lint-scenarios.mjs
    ---------------------------------------------------------------------------
-   The scenario schema check that PE-300 was believed to have and did not.
+   The scenario schema check this repository was believed to have and did not.
    Node standard library only, no dependencies, no package.json: run it from the
    repo root with `node tools/lint-scenarios.mjs`.
 

@@ -58,7 +58,7 @@ var TTX = (function () {
        section.difficulty_variants.<level>.body         (s02 — reframes the section)
        section.inject.difficulty_variants.<level>.body  (s07 — rewrites the artefact itself)
 
-     The inject-level form was added by the desk after the original dispatch:
+     The inject-level form was added after the original spec:
      a first-timer needs the DLP alert's own text to spell out what it is
      showing, which is a different edit from softening the narrative around it.
      Keeping one function means the two levels can never drift apart. */
@@ -195,7 +195,7 @@ var TTX = (function () {
       var picked = bodyForDifficulty(s, sel.difficulty);
       var type = s.type || 'narrative';
 
-      /* Flow control — contract items 2 and 4.
+      /* Flow control — per the original spec.
          The gamebook is read in array order and falls through from one section
          to the next, EXCEPT where flow terminates. Two types terminate it:
 
@@ -208,7 +208,7 @@ var TTX = (function () {
                         array, so falling out of one reads the next three.
 
          Everything else falls through safely, precisely because every branch
-         slice is terminated by a decision (contract item 3). The renderer must
+         slice is terminated by a decision (per the original spec). The renderer must
          print a visible stop for anything non-null here. */
       var flowStop = (type === 'decision') ? 'decision'
                    : (type === 'epilogue') ? 'epilogue'
@@ -297,7 +297,7 @@ var TTX = (function () {
         id: (scenario.meta || {}).id || 'unknown',
         title: subst((scenario.meta || {}).title || 'Untitled exercise', tokens),
         tagline: subst((scenario.meta || {}).tagline || '', tokens),
-        /* PE-300. NOT GATED ON DIFFICULTY, and that is the whole point of the
+        /* NOT GATED ON DIFFICULTY, and that is the whole point of the
            field existing.
 
            The works these scenarios are built on were only ever written down
@@ -318,7 +318,7 @@ var TTX = (function () {
            facilitator which row of the gap analysis a beat came from, which is
            genuinely a first-timer aid. The WORKS are named here regardless. */
         sources: substAll((scenario.meta || {}).sources || [], tokens),
-        /* PE-312. The other half of the same obligation: a scenario with no
+        /* The other half of the same obligation: a scenario with no
            documentable precedent says so in a sentence rather than rendering
            nothing, and that sentence is tokenised like any other prose because
            it may well name the org. Exactly one of the two is declared — the
@@ -343,7 +343,7 @@ var TTX = (function () {
       },
       /* org_name / crown_jewels / regulator are the token VALUES, so they are
          emitted as authored — running subst over them would be a no-op at best.
-         flavor_notes is prose the desk may well write with tokens in it, so it
+         flavor_notes is prose an author may well write with tokens in it, so it
          goes through like every other body-bearing field. */
       industry: industry ? {
         orgName: industry.org_name,

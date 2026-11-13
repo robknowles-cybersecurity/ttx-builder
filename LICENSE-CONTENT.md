@@ -37,6 +37,7 @@ Full legal text: <https://creativecommons.org/licenses/by/4.0/legalcode>
 ## A note on the scenarios
 
 Every organisation, person, vendor and event in these scenarios is fictional.
+Real product names appear only as scenery; no real organisation is depicted.
 Tradecraft detail is held at the level of published public advisories and is
 written from the defender's side — what a program might observe, and what it
 might do about it. If you adapt a scenario, please keep it that way.

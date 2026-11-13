@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Suggest a scenario — TTX Builder</title>
-<!-- PE-226. Relative hrefs to match this site's own idiom (assets/ttx.css);
+<!-- Relative hrefs to match this site's own idiom (assets/ttx.css);
      every page here lives at the docroot root, so these resolve to /favicon.*
      either way. The .ico is declared first with sizes="any" so browsers that
      understand SVG favicons take the vector and everything else falls back
@@ -37,10 +37,9 @@
     <p>There is no form here and no account to make. Nothing on this site collects anything about you, and a suggestion box that did would be a strange exception. The two buttons below open your mail client with a subject line and a short template already filled in. Delete any part of the template that does not apply.</p>
   </div>
 
-  <!-- The two mailto links are wrapped in Cloudflare's email_off opt-out
-       comments. Without them the zone's Email Address Obfuscation rewrites each href to
-       /cdn-cgi/l/email-protection#<hex> and injects a decoder script to restore
-       it on click. Two reasons not to accept that here. First, the encoded blob
+  <!-- The two mailto links are wrapped in opt-out marker comments. Without
+       them, an edge email-obfuscation feature may rewrite each href to an
+       encoded link and inject a decoder script to restore it on click. Two reasons not to accept that here. First, the encoded blob
        captures the raw attribute source, "&amp;" entity and all; if the decoder
        writes that back with setAttribute — which does not re-parse entities —
        the separator becomes "&amp;body=" and the body template is silently

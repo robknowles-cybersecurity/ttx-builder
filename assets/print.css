@@ -15,7 +15,7 @@
      - gamebook sections: never split across a page boundary, but several may
                         share a page. Real gamebooks pack numbered sections;
                         one-per-page would triple the print job for no gain.
-                        Flip .section to `break-after: page` if the desk wants
+                        Flip .section to `break-after: page` for
                         strict one-per-page.
    ========================================================================== */
 
@@ -256,7 +256,7 @@ nav {
 /* Links print as plain text — a URL in brackets is noise on a handout. */
 a { color: #000; text-decoration: none; }
 
-/* -- sources (PE-300) ----------------------------------------------------- */
+/* -- sources -------------------------------------------------------------- */
 /* The pack is printed and handed over; the credits go with it. Kept off a page
    of its own and never broken across a page boundary. */
 
