@@ -3,6 +3,11 @@
     "id": "the-approach",
     "title": "The Approach",
     "tagline": "A consulting invitation, a garnishment order, and a very patient stranger.",
+    "sources": [
+      "Primary source for the cultivation tradecraft the scenario dramatises: U.S. Department of Justice, Office of Public Affairs, Justice Department, FBI Disable 13 Websites Backed by Suspected Chinese Agents That Sought Sensitive U.S. Information from Security Clearance Holders, 10 June 2026. https://www.justice.gov/opa/pr/justice-department-fbi-disable-13-websites-backed-suspected-chinese-agents-sought-sensitive",
+      "Primary source for employment grievance and financial pressure as the lever: U.S. Department of Justice, Office of Public Affairs, Former Defense Contractor Sentenced to Over 10 Years in Prison for Attempted Espionage, 15 September 2025. https://www.justice.gov/opa/pr/former-defense-contractor-sentenced-over-10-years-prison-attempted-espionage",
+      "Case precedent for the patient approach: Federal Bureau of Investigation, Game of Pawns (2014), dramatising the Glenn Duffie Shriver case. https://www.fbi.gov/video-repository/newss-game-of-pawns/view"
+    ],
     "version": "1.0.0-draft"
   },
   "industries": {
