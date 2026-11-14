@@ -17,10 +17,9 @@ validator and the tenth scenario, `employment-fraud`. The event name and credit
 wording corrected on main in November is kept; the entries below describe the
 wording as it stood on their dates.
 
-**Open:** `employment-fraud` declares neither `meta.sources` nor
-`meta.sources_note`, so the lint reports **9 passed, 1 failed** until its
-provenance is written. The engine and renderers tolerate the absence; the
-scenario renders without a sources block.
+`employment-fraud` declares `meta.sources_note`: it is a composite of case
+studies and practitioner accounts shared across information-sharing groups, with
+no single documented case behind it. The lint reports **10 passed**.
 
 ---
 
