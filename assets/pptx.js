@@ -572,13 +572,29 @@ window.TTXDeck = (function () {
 
        Placed before the closer rather than after it: the closer is the last
        thing on the screen by design, and a credit slide after "the findings
-       are the deliverable" would step on it. A scenario that declares no
-       sources adds no slide. */
+       are the deliverable" would step on it.
+
+       The sources_note rule: the deck is the third render target and it has its OWN path —
+       it cannot call render.js's sourcesBlock, which builds DOM. So the
+       roster-XOR-note rule is implemented twice, here and there, and the two
+       must be kept in step. A scenario declaring meta.sources_note instead of
+       a roster gets the same slide with the sentence on it, as prose rather
+       than a one-item bullet list: a lone bullet reads as the first of
+       several that went missing. A scenario declaring neither adds no slide,
+       which is now a state the lint refuses to ship. */
+    var sourcesNote = typeof ex.meta.sources_note === 'string' ? ex.meta.sources_note.trim() : '';
     if (ex.meta.sources && ex.meta.sources.length) {
       var sources = contentSlide('WHAT THIS IS BUILT ON', 'Sources');
       fitBulletList(sources, ex.meta.sources, {
         x: 0.75, y: 1.95, w: 11.9, h: CONTENT_BOTTOM - 1.95,
         fontSize: 13, minSize: 9, color: INK_SOFT, lineSpacingMultiple: 1.18
+      });
+    } else if (sourcesNote) {
+      var noSources = contentSlide('WHAT THIS IS BUILT ON', 'Sources');
+      noSources.addText(sourcesNote, {
+        x: 0.75, y: 1.95, w: 11.9, h: CONTENT_BOTTOM - 1.95,
+        fontFace: SERIF, fontSize: 15, italic: true, color: INK_SOFT,
+        lineSpacingMultiple: 1.18, valign: 'top', fit: 'shrink'
       });
     }
 
